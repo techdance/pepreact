@@ -6,12 +6,10 @@ import { Textbox } from 'react-inputs-validation';
 import 'react-inputs-validation/lib/react-inputs-validation.min.css';
 
 
-function HomepageImage() {
+function Register(props) {
 	const [preFix, setPreFix] = useState('');
 	const [isShowPassword, setIsShowPassword] = useState(false);
 	const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
-
-
 
 	const [firstName, setFirstName] = useState('');
 	const [firstNameError, setFirstNameError] = useState(false);
@@ -69,26 +67,37 @@ function HomepageImage() {
 			setShowConfirmPasswordError(true)
 			allowSbmit = false;
 		}
-		console.log(confirmPasswordError)
+		console.log(preFix);
 
 		if (allowSbmit && !confirmPasswordError) {
-			axios.post('http://23.99.141.44:3000/api/registration', {
-				firstname: firstName,
-				lastname: lastName,
-				prefix: "Mr",
-				institutionemail: email,
-				institutionname: instName,
-				password: password
-			})
-				.then(function (response) {
-					//handle success					
-					alert("You have registered successfully.");
-					//console.log(response)
+		let formData = new FormData();    //formdata object
+
+		formData.append('prefix', preFix);   //append the values with key, value pair
+		formData.append('firstName', firstName);
+		formData.append('lastName', lastName);
+		formData.append('institutionEmail', email);
+		formData.append('institutionName', instName);
+		formData.append('password', password);
+
+		const config = {     
+			headers: { 'content-type': 'multipart/form-data' }
+		}
+
+		axios.post('http://23.99.141.44:3000/register', formData, config)
+			.then(response => {
+				alert("You have registered successfully.");
+				props.history.push({
+					pathname : '/login',
+					state : {
+						message : true
+					}
 				})
-				.catch(function (response) {
-					//handle error
-					console.log(response)
-				});
+				
+			})
+			.catch(error => {
+				console.log(error);
+			});
+			
 		}
 	}
 
@@ -111,7 +120,8 @@ function HomepageImage() {
 				</div>
 				<form>
 					<div class="wrap-input icon-briefcase">
-						<select name="txt_prefix" label="" id="txt_prefix" placeholder="Prefix" onChange={(val, e) => { setPreFix(val) }}>
+						<select name="txt_prefix" label="" id="txt_prefix" placeholder="Prefix" onChange={(val, e) => { 
+							setPreFix(val.target.value) }}>
 							<option class="" value="">Prefix</option>
 							<option class="" value="Dr"> Dr </option>
 							<option class="" value="Miss"> Miss </option>
@@ -129,7 +139,7 @@ function HomepageImage() {
 							value={firstName}
 							placeholder="First Name" // Optional.[String].Default: "".
 							onChange={(val, e) => { setFirstName(val) }}
-							onBlur={(e) => { console.log(e) }} s
+							onBlur={(e) => { console.log(e) }} 
 							validationCallback={res => setFirstNameError(res)}
 							validate={showFirstNameError}
 							validationOption={{
@@ -219,13 +229,14 @@ function HomepageImage() {
 								type: (isShowPassword) ? 'text' : 'password',
 							}} // Optional.[String].Default: "text". Input type [text, password, number].
 							value={password} // Optional.[String].Default: "".
-							placeholder="Place your name here ^-^" // Optional.[String].Default: "".
+							placeholder="Place your password here ^-^" // Optional.[String].Default: "".
 							onChange={(val, e) => { setPassword(val) }} // Required.[Func].Default: () => {}. Will return the value.
 							onBlur={(e) => { console.log(e) }} // Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
 							validationCallback={res => setPasswordError({ passwordError: res, validate: false })}
 							validate={showPasswordError}
 							validationOption={{
-								msgOnError: 'Please enter your password', // Optional.[String].Default: "". To display in the Error message. i.e Please enter your {name}.
+								min: 6,
+								msgOnError: 'Please enter valid password', // Optional.[String].Default: "". To display in the Error message. i.e Please enter your {name}.
 								check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
 								required: true // Optional.[Bool].Default: true. To determin if it is a required field. passwordMatch
 							}}
@@ -282,5 +293,5 @@ function HomepageImage() {
 	);
 }
 
-export default HomepageImage;
+export default Register;
 

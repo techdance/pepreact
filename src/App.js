@@ -8,7 +8,7 @@ import {
 import './App.css';
 import './assets/css/style-register.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';	 
-import HomepageImage from './components/HomepageImage';
+import Register from './components/Register';
 import Login from './components/Login';
 import registerImg from './assets/images/logo-tower-register.png';
 
@@ -18,12 +18,8 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
-            <HomepageImage />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
+          <Route exact path="/register" component={Register} />
+          <Route path="/" component={Login} />
         </Switch>
         <footer class="wrap-logo-bottom">
           <img src={registerImg} class="block" />
