@@ -18,8 +18,12 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route path="/" component={Login} />
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route path="/">
+            <Login />
+          </Route>
         </Switch>
         <footer class="wrap-logo-bottom">
           <img src={registerImg} class="block" />

@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom'
 import axios from 'axios';
 import logo from '../assets/images/logo-ahea.png';
 import '../style-register.css';
 
-function Login(props) {
+function Login() {
 
 	const [password, setPassword] = useState('');
 	const [userName, setUserName] = useState('');
 	const [showError, setShowError] = useState(false);
-	const [showSuccess, setShowSuccess] = useState(false);
 
-
-	const showSuccessFromRegister =()=>{
-		setShowSuccess(true);
-		setTimeout(()=>{
-			setShowSuccess(false);
-		}, 5000);
-	} 
-	useEffect(() => {
-		if (props.location.state && props.location.state.message) {
-			showSuccessFromRegister();
-		}
-	}, [props.location.state])
-
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
 
 	function loginAction(e) {
 		e.preventDefault();
@@ -50,39 +44,40 @@ function Login(props) {
 		// 	});
 
 
-
-	
 		let formData = new FormData();    //formdata object
 
 		formData.append('institutionEmail', userName);   //append the values with key, value pair
 		formData.append('password', password);
 
 		const config = {
-			headers: { 'content-type': 'multipart/form-data' }
+			headers: { 'content-type': 'application/json' }
 		}
 
-		axios.post('http://23.99.141.44:3000/login', formData, config)
+		axios.post('http://23.99.141.44:3000/api/login', formData, config)
 			.then(response => {
 				console.log(response)
 				if (response.data.status == true) {
 					//window.location.href = 'http://localhost:8080?access_token=' + response.data.user;
 					window.location.href = 'http://13.88.11.67:8080?access_token=' + response.data.user;
+				} else if (response.data.success == "Incorrect username or password") {
+					setShowError(true)
 				}
 			})
 			.catch(error => {
 				setShowError(true)
 			});
 	}
+	var isregister = getUrlVars()["isregister"];
 
 	const url = 'https://cdn.filestackcontent.com/XYrHCaFGRSaq0EPKY1S6';
 	return (
 		<div>
-			{showSuccess && <div class="box-message p0">
-				<p>Congratulations! You have successfully created your account. <br></br> Please login to begin using CollaboratED.</p>
-			</div> }
-			<div class="box-message p0">
+			<div className="box-message p0">
+				{(isregister && <p>You have registered successfully.</p>)}
 				{showError && <p className="error">Invalid credentials</p>}
 			</div>
+
+
 			<div id="container" className="page-sign-in">
 
 				<header id="wrap-logo" className="ac">
@@ -107,6 +102,7 @@ function Login(props) {
 								<a href="#">Forgot password?</a>
 							</div>
 						</div>
+
 
 						<div className="wrap-input-submit">
 							<input type="submit" name="" onClick={(event) => loginAction(event)} value="Sign In" className="btn2" />

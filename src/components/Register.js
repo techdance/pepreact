@@ -68,7 +68,7 @@ function Register(props) {
 			allowSbmit = false;
 		}
 		console.log(preFix);
-
+		
 		if (allowSbmit && !confirmPasswordError) {
 		let formData = new FormData();    //formdata object
 
@@ -80,18 +80,19 @@ function Register(props) {
 		formData.append('password', password);
 
 		const config = {     
-			headers: { 'content-type': 'multipart/form-data' }
+			headers: { 'content-type': 'application/json' }
 		}
 
-		axios.post('http://23.99.141.44:3000/register', formData, config)
+		axios.post('http://23.99.141.44:3000/registerUser', formData, config)
 			.then(response => {
-				alert("You have registered successfully.");
-				props.history.push({
-					pathname : '/login',
-					state : {
-						message : true
-					}
-				})
+				//alert("You have registered successfully.");
+				// props.history.push({
+				// 	pathname : '/',
+				// 	state : {
+				// 		message : true
+				// 	}
+				// })
+				window.location.href='/?isregister=true';
 				
 			})
 			.catch(error => {
