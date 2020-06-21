@@ -2,18 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="robots" content="noindex" />
+
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link
@@ -23,6 +21,7 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700,700i,800,800i&display=swap"
       rel="stylesheet"
@@ -31,148 +30,19 @@
     <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-
-    <script src="js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-profile.css" />
     <link rel="stylesheet" type="text/css" href="css/style-custom-icon.css" />
 
     <script type="text/javascript" src="js/custom.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 
-    <title>Bradley BlendED Home Screen</title>
+    <title>bradley profile #1 screen</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <script src="js/owl.carousel.js"></script>
-
-    <script>
-      jQuery(document).ready(function () {
-        jQuery(".owl-carousel").owlCarousel({
-          singleItem: true,
-          autoplay: true,
-          autoplayTimeout: 5000,
-          autoplayHoverPause: true,
-          loop: true,
-          margin: 10,
-          navigation: true,
-          responsiveClass: true,
-          responsive: {
-            1000: {
-              items: 1,
-              nav: true,
-              loop: true,
-              margin: 20,
-            },
-            300: {
-              items: 1,
-              nav: true,
-              loop: true,
-              margin: 20,
-            },
-          },
-        });
-
-        jQuery(".owl-dots").appendTo("#dots-number");
-      });
-    </script>
-
-    <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css" />
-
-    <!-- initialize the calendar on ready -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        var eventData = [
-          //blue-event, green-event, orange-event, purple-event
-          /*{
-															"date":"orders.html",
-															"badge":true,
-															"title":"Human Subjects Approval",
-															"description":"<b>William Stinson</b>, <i>Organizer</i>",
-															"hour":"",
-															"link":"http://www.google.com",
-															"textlink":"View More <i class='fas fa-angle-double-right'></i>",
-															"classname":"orange-event"
-														},
-														{
-															"date":"2020-03-06",
-															"badge":true,
-															"title":"Human Subjects Approval",
-															"description":"<b>William Stinson</b>, <i>Organizer</i>",
-															"hour":"",
-															"link":"#",
-															"textlink":"View More <i class='fas fa-angle-double-right'></i>",
-															"classname":"orange-event"
-														}*/
-        ];
-
-        $("#my-calendar").zabuto_calendar({
-          year: "2020",
-          month: "03",
-          data: eventData,
-          weekstartson: 0,
-          nav_icon: {
-            prev: '<i class="fa fa-angle-left"></i>',
-            next: '<i class="fa fa-angle-right"></i>',
-          },
-        });
-
-        $("#my-calendar-container").on(
-          "click",
-          ".zabuto_calendar .event-styled .day",
-          function () {
-            //$(".zabuto_calendar .event-styled .day").live('click', function(){
-            var myId = $(this).parent(".event-styled").attr("id");
-            var date = myId.substr(-10, 10);
-            var title = "";
-            var description = "";
-            var hour = "";
-            var link = "";
-            var textlink = "";
-
-            for (var i = 0; i < eventData.length; i++) {
-              if (eventData[i].date == date) {
-                title = eventData[i].title;
-                description = eventData[i].description;
-                hour = eventData[i].hour;
-                link = eventData[i].link;
-                textlink = eventData[i].textlink;
-              }
-            }
-
-            if ($(this).find(".popup").length === 0)
-              $(this).append(
-                "<span class='popup'><span class='event-title'>" +
-                  title +
-                  "<span class='popup-close'>x</span></span><span class='event-content'>" +
-                  description +
-                  "<br>" +
-                  hour +
-                  "</span><span class='event-link'><span onclick=\"location.href='" +
-                  link +
-                  '\'" style="color:black;">' +
-                  textlink +
-                  "</span></span></span>"
-              );
-
-            if ($(this).find(".popup").css("display") == "none") {
-              $(this).find(".popup").css("display", "block");
-            }
-          }
-        );
-
-        $("#my-calendar-container").on(
-          "click",
-          ".event-styled .popup-close",
-          function (e) {
-            e.stopPropagation();
-            $(this).parents(".popup").css("display", "none");
-          }
-        );
-      });
-    </script>
+    <div id="signOutModal-root"></div>
+    <div id="areaInterestModal-root"></div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -210,85 +80,6 @@
         jQuery(".sortable").sortable({
           placeholderClass: "col-lg-3",
         });
-      });
-    </script>
-    <!-- include the calendar js and css files -->
-    <script src="js/zabuto_calendar.js"></script>
-
-    <!-- JAVASCRIPT FOR DONUT CHART -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function ($) {
-        $.fn.greenify = function (options) {
-          // This is the easiest way to have default options.
-          var settings = $.extend(
-            {
-              // These are the defaults.
-              size: "60",
-              perc: "40",
-            },
-            options
-          );
-
-          var canvas = document.getElementsByClassName("donut")[0];
-          canvas.width = parseInt(settings.size);
-          canvas.height = parseInt(settings.size);
-          var percentage = parseInt(settings.perc);
-          var colorDonut = "#339900";
-          var fontSizeText = parseInt(canvas.width) / 4.5 + "px";
-
-          jQuery(this)
-            .find(".text")
-            .html(percentage + "%")
-            .css("color", colorDonut)
-            .css("font-size", fontSizeText)
-            .css("font-family", "arial");
-
-          var donutEl = canvas.getContext("2d");
-
-          var donut = new Chart(donutEl).Doughnut(
-            // Datas
-            [
-              {
-                value: parseInt(percentage),
-                color: colorDonut, //green
-                highlight: "#FF5A5E",
-                label: "Red",
-              },
-              {
-                value: parseInt(100) - parseInt(percentage),
-                color: "#e6e6e6", //grey
-                highlight: "#5AD3D1",
-                label: "Green",
-              },
-            ],
-            // Options
-            {
-              segmentShowStroke: true,
-              segmentStrokeColor: "#fff",
-              segmentStrokeWidth: 1,
-              percentageInnerCutout: 70,
-              animationSteps: 100,
-              responsive: true,
-              maintainAspectRatio: true,
-            }
-          );
-        };
-      })(jQuery);
-
-      jQuery("#donut1").greenify({
-        perc: "98",
-      });
-
-      jQuery("#donut2").greenify({
-        perc: "15",
-      });
-
-      jQuery("#donut3").greenify({
-        perc: "1",
       });
     </script>
   </body>

@@ -1,19 +1,35 @@
 import React from "react";
+import signOutModal from "./components/signOutModal";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <div id="menu-top-responsive" className="">
-          <div id="wrap-logo">
-            <a href="#" logo>
-              <img src="images/logo.png" />
+          <div id="wrap-logo" className="d-flex justify-content-between">
+            <a
+              href="#"
+              className="d-flex justify-content-center align-items-center"
+            >
+              <span className="mr-1">
+                <img
+                  src="images/logo-universidade-lisboa.png"
+                  width="60"
+                  height="60"
+                />
+              </span>
+              <span className="group-hide logo-text">
+                UNIVERSIDADE
+                <br />
+                DE LISBOA
+              </span>
             </a>
             <a href="#" id="menu-button-responsive">
               <i className="fas fa-bars"></i>
             </a>
           </div>
         </div>
+
         <div id="sidebar-content-mobile" className="menu-mobile">
           <ul id="nav-mobile" className="nav">
             <li className="active">
@@ -28,7 +44,7 @@ class App extends React.Component {
             </li>
             <li className="disabled-link">
               <a href="#" className="icon-fa icon-user-group">
-                <span className="group-hide">Committees & Teams</span>
+                <span className="group-hide">Committees &amp; Teams</span>
               </a>
             </li>
             <li className="disabled-link">
@@ -71,10 +87,23 @@ class App extends React.Component {
         <div id="container">
           <div id="sidebar" className="sidebar-fixed">
             <div id="sidebar-wrap">
-              <div id="wrap-logo">
-                <a href="#" logo>
-                  <img src="images/logo-a.png" />
-                  <img className="group-hide" src="images/logo-b.png" />
+              <div id="wrap-logo" className="logo-lisboa">
+                <a
+                  href="#"
+                  className="d-flex justify-content-center align-items-center"
+                >
+                  <span className="span-logo-lisboa">
+                    <img
+                      src="images/logo-universidade-lisboa.png"
+                      width="75"
+                      height="26"
+                    />
+                  </span>
+                  <span className="group-hide">
+                    UNIVERSIDADE
+                    <br />
+                    DE LISBOA
+                  </span>
                 </a>
               </div>
               <div id="sidebar-content" className="aux">
@@ -254,7 +283,7 @@ class App extends React.Component {
                                   <p>
                                     Karthic Koothrappali, Joanne Byrne and
                                     others have matched with you as suggested
-                                    partners{" "}
+                                    partners
                                   </p>
                                 </div>
                               </div>
@@ -271,7 +300,7 @@ class App extends React.Component {
                                 <div className="toltip-text">
                                   <p>
                                     Inez Campos was added to the Ethics in
-                                    Multinational Management project{" "}
+                                    Multinational Management project
                                   </p>
                                 </div>
                               </div>
@@ -527,873 +556,846 @@ class App extends React.Component {
                       </div>
                     </div>
                     <div className="wrap-top-search">
-                      <div className="top-search">
-                        <div className="box-search">
-                          <form action="">
-                            <input type="text" placeholder="Search" />
-                            <button type="submit">
-                              <i className="fas fa-search"></i>
-                            </button>
-                          </form>
+                      <div className="d-flex">
+                        <div className="top-search">
+                          <div className="box-search">
+                            <form action="" className="d-flex">
+                              <input type="text" placeholder="Search" />
+                              <button type="submit">
+                                <i className="fas fa-search"></i>
+                              </button>
+                            </form>
+                          </div>
+                          <div className="box-question">
+                            <a href="#">
+                              <img src="images/search-icon.png" width="38" />
+                            </a>
+                          </div>
                         </div>
-                        <div className="box-question">
-                          <a href="#">
-                            <span className="icon-solid icon-input-search"></span>
-                          </a>
-                        </div>
+                        <a href="#" className="btn btn-grey btn-w-100 ml-3">
+                          Submit for Review{" "}
+                          <i className="far fa-arrow-alt-circle-right"></i>
+                        </a>
                       </div>
                     </div>
                   </section>
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                      <li className="breadcrumb-item active">
+                      <li className="breadcrumb-item">
                         <a href="#">Home</a>
+                      </li>
+                      <li className="breadcrumb-item">
+                        <a href="#">Messages</a>
+                      </li>
+                      <li className="breadcrumb-item">
+                        <a href="#">Project Invites</a>
+                      </li>
+                      <li
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                      >
+                        Bradley Dexter
                       </li>
                     </ol>
                   </nav>
-                  <section className="row row-custom announcements mb-4">
-                    <div className="col-lg-12">
-                      <div className="box box-border-radius box-shadow bg-white w-100">
-                        <h2 className="box-subhead">
-                          <i className="fas fa-bullhorn"></i> Announcements
-                        </h2>
-
-                        <div id="wrap-owl-announcement">
-                          <div
-                            id="owl-announcement"
-                            className="owl-carousel owl-theme"
-                          >
-                            <div className="item">
-                              <p>
-                                Fall Term registration is open Wednesday,
-                                2020-04-01 to 2020-05-01.{" "}
-                                <a href="#">Learn More</a>.{" "}
-                              </p>
-                            </div>
-                            <div className="item">
-                              <p>
-                                AHEA Conference Grant Deadline is 2020-08-26.
-                                <br /> <a href="#">Learn More</a>.{" "}
-                              </p>
-                            </div>
-                            <div className="item">
-                              <p>
-                                Help us welcome our newest CollaboratED members:
-                                Georgia International University; Ballsbridge
-                                University, Dominica; and Edinburgh Institute
-                                for Global Affairs.{" "}
-                                <a href="https://en.wikipedia.org/w/index.php?title=Ballsbridge_University,_Dominica&amp;action=edit&amp;redlink=1">
-                                  Learn More
-                                </a>
-                                .{" "}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="dots-number"></div>
-                      </div>
-                    </div>
-                  </section>
-                  <section className="three-columns">
-                    <div className="row row-custom mb-4 sortable">
-                      <div className="col-lg-4 mb-4">
-                        <div className="resources box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="fas fa-cogs"></i>Resources
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="box-image text-center">
-                              <img src="images/icon-resources.png" alt=" " />
-                            </div>
-                          </div>
-                          <div className="box-bottom list-bullet">
-                            <ul>
-                              <li>
-                                <a href="#">Getting Started</a>
-                              </li>
-                              <li>
-                                <a href="#">Best Practices</a>
-                              </li>
-                              <li>
-                                <a href="#">Templates</a>
-                              </li>
-                              <li>
-                                <a href="#">Tutorial</a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  More Resources{" "}
-                                  <i className="fas fa-angle-double-right fa-xs"></i>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-4 mb-4">
-                        <div className="resources box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead pl-0">
-                                <img
-                                  src="images/icon-refresh-black.png"
-                                  className="mr-2"
-                                  width="25"
-                                />
-                                Committees &amp; Teams
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="box-image text-center">
-                              <img src="images/icon-committees.png" alt="" />
-                            </div>
-                          </div>
-                          <div className="box-bottom list-bullet">
-                            <ul>
-                              <li>
-                                <a href="#">International Business Partners</a>
-                              </li>
-                              <li>
-                                <a href="#">MBA Online Exploratory</a>
-                              </li>
-                              <li>
-                                <a href="#">New Faculty Mentors</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-4 mb-4">
-                        <div className="calendar box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="far fa-calendar-alt"></i>My
-                                Calendar
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            {/* define the calendar element */}
-                            <div id="my-calendar-container">
-                              <div id="my-calendar"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-9 mb-4 my-projects">
-                        <div className="box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="fas fa-address-card"></i> My
-                                Courses
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box btn-menu"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">Create New Course</a>
-                                  </li>
-                                  <li>
-                                    <a href="#">Go to My Course</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
+                  <section className="wrap-profile">
+                    <div className="row row-custom ">
+                      <div className="col-lg-6">
+                        <div className="row row-custom sortable">
+                          <div className="col-lg-12 mb-4">
+                            {" "}
+                            {/* Personal Information */}
+                            <div className="personal box box-border-radius box-shadow bg-white position-relative">
+                              <div className="inner-wrap">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead">
+                                    <i className="fas fa-user"></i>Personal
+                                    Information
+                                  </h2>
+                                </div>
+                                <div className="box-middle d-flex align-items-center">
+                                  <div className="content-left">
+                                    <div className="bg-profile">
+                                      <img
+                                        src="images/bradley.png"
+                                        width="141"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="content-right">
+                                    <div className="profile-info profile-name">
+                                      <div className="title">
+                                        <i className="fas fa-user"></i> Name
+                                      </div>
+                                      <div className="text">
+                                        <a href="#" className="cl-gray">
+                                          Dr. Bradley Dexter
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div className="profile-info profile-title">
+                                      <div className="title">
+                                        <i className="fa fa-users"></i> Title
+                                      </div>
+                                      <div className="text">
+                                        <a href="#" className="cl-gray">
+                                          Professor
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <div className="mt-2 d-flex">
+                                      <a href="#">
+                                        <span className="wrap-fa-comment">
+                                          <i className="far fa-comment-alt-lines"></i>
+                                        </span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="box-middle">
+                                  <h4>
+                                    <i className="far fa-user-cog"></i> My
+                                    Thoughts
+                                  </h4>
+                                  <p>
+                                    "Success in business requires training and
+                                    discipline and hard work." David Rockefeller
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                            <div className="box-middle">
-                              <div className="table-wrapper-scroll-x my-custom-scrollbar">
-                                <table className="table table2 table-sm">
-                                  <thead>
-                                    <th align="left">COURSE NAME/NUMBER</th>
-                                    <th align="center">SCHEDULE</th>
-                                    <th align="center">LOCATION</th>
-                                    <th align="center">ROSTER</th>
-                                    <th align="center">SYLLABUS</th>
-                                    <th align="center">ATTENDANCE</th>
-                                    <th align="center">GRADEBOOK</th>
-                                    <th align="center">REPORTS</th>
-                                  </thead>
-                                  <tbody>
-                                    <tr className="row-color-blue">
-                                      <td>
-                                        BUSINESS IN THE GLOBAL POLITICAL
-                                        ENVIRONMENT
-                                        <br />
-                                        BUS105
-                                      </td>
-                                      <td className="align-center">
-                                        <span className="txt">T</span>
-                                        <span className="txt">TH</span>
-                                        <span className="d-block">
-                                          10:00-11:00 AM
-                                        </span>
-                                      </td>
-                                      <td className="align-center">
-                                        <i
-                                          className="fa fa-university font20"
-                                          aria-hidden="true"
-                                        ></i>
-                                        <span className="d-block">
-                                          McMurtry Hall-Room 32
-                                        </span>
-                                      </td>
-                                      <td className="align-center font20">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#rosterModal"
-                                        >
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
+                          </div>{" "}
+                          {/* END COL */}
+                          <div className="col-lg-12 mb-4">
+                            {" "}
+                            {/* Communication Preferences */}
+                            <div className="institution box box-border-radius box-shadow bg-white">
+                              <div className="inner-wrap">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead">
+                                    <i className="far fa-comment-dots"></i>{" "}
+                                    Communication Preferences
+                                  </h2>
+                                </div>
+                                <div className="box-middle">
+                                  <div className="row row-custom">
+                                    <div className="col-md-12">
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-comment-check"></i>{" "}
+                                        English
+                                      </div>
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-comment-plus"></i>{" "}
+                                        Spanish
+                                      </div>
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-envelope"></i>{" "}
+                                        <a href="mailto:bdexter@ahea.edu">
+                                          bdexter@ahea.edu
                                         </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-blue.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-check-blue.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#gradebookModal"
-                                        >
-                                          <img
-                                            src="images/icon-doc-list-blue.png"
-                                            height="40"
-                                            alt=""
-                                          />
+                                      </div>
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-phone-office"></i>{" "}
+                                        <a href="tel:+1 555-432-1100">
+                                          +1 555-432-1100
                                         </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-stat-blue.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                    </tr>
-                                    <tr className="row-color-green">
-                                      <td>
-                                        EMERGING ECONOMICS
-                                        <br />
-                                        BUS110
-                                      </td>
-                                      <td className="align-center">
-                                        <span className="txt">M</span>
-                                        <span className="txt">W</span>
-                                        <span className="txt">F</span>
-                                        <span className="d-block">
-                                          2:30-3:30 PM
-                                        </span>
-                                      </td>
-                                      <td className="align-center">
-                                        <i
-                                          className="fa fa-university font20"
-                                          aria-hidden="true"
-                                        ></i>
-                                        <span className="d-block">
-                                          McMurtry Hall-Room 47
-                                        </span>
-                                      </td>
-                                      <td className="align-center font20">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#rosterModal"
-                                        >
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
+                                      </div>
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-phone-laptop"></i>{" "}
+                                        <a href="tel:+1 555-432-1122">
+                                          +1 555-432-1122
                                         </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-green.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-check-green.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#gradebookModal"
-                                        >
-                                          <img
-                                            src="images/icon-doc-list-green.png"
-                                            height="40"
-                                            alt=""
-                                          />
+                                      </div>
+                                      <div className="content-icon content-icon2 mb-2 line-height-15">
+                                        <i className="far fa-desktop-alt"></i>{" "}
+                                        <a href="https://www.ahea.edu/about-ahea/college-of-business/bdexter">
+                                          https://www.ahea.edu/about-ahea/college-of-business/bdexter
                                         </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-stat-green.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                    </tr>
-                                    <tr className="row-color-orange">
-                                      <td>
-                                        <a
-                                          href="bradley blendED course screen.html"
-                                          className="color-inherit link"
-                                        >
-                                          ETHICS IN MULTINATIONAL MANAGEMENT
-                                          <br />
-                                          BUS131
-                                        </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <span className="txt">M</span>
-                                        <span className="txt">W</span>
-                                        <span className="txt">F</span>
-                                        <span className="d-block">
-                                          1:00 PM - 2:00 PM PM
-                                        </span>
-                                      </td>
-                                      <td className="align-center">
-                                        <i className="font20">
-                                          <img
-                                            src="images/Ethics-online-orange.png"
-                                            width="22"
-                                          />
-                                        </i>
-                                        <span className="d-block">
-                                          Online Learning-Room 6
-                                        </span>
-                                      </td>
-                                      <td className="align-center font20">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#rosterModal"
-                                        >
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                          <i
-                                            className="fas fa-male"
-                                            aria-hidden="true"
-                                          ></i>
-                                        </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-orange.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <img
-                                          src="images/icon-doc-check-orange.png"
-                                          height="40"
-                                          alt=""
-                                        />
-                                      </td>
-                                      <td className="align-center">
-                                        <a
-                                          href="javascript:void(0);"
-                                          data-toggle="modal"
-                                          data-target="#gradebookModal"
-                                        >
-                                          <img
-                                            src="images/icon-doc-list-orange.png"
-                                            height="40"
-                                            alt=""
-                                          />
-                                        </a>
-                                      </td>
-                                      <td className="align-center">
-                                        <div className="dropdown">
-                                          <a href="javascript:void(0);">
-                                            <img
-                                              src="images/icon-doc-stat-orange.png"
-                                              height="40"
-                                              alt="stat"
-                                            />
-                                          </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>{" "}
+                          {/* END COL */}
+                          <div className="col-lg-12 mb-4">
+                            {/* Professional Bio */}
+                            <div className="profesional box box-border-radius box-shadow bg-white">
+                              <div className="inner-wrap">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead">
+                                    <i className="fas fa-user"></i>Professional
+                                    Bio
+                                  </h2>
+                                </div>
+                                <div className="box-middle">
+                                  <div className="row row-custom mb-4">
+                                    <div className="col-md-12">
+                                      <h4 className="mb-3">
+                                        <i className="fab fa-youtube"></i>{" "}
+                                        Introduction Video
+                                      </h4>
+                                    </div>
+                                    <div className="col-md-6">
+                                      <div className="wrap-video img-resp mb-2">
+                                        <img src="images/video-bradley.png" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="content-icon position-relative">
+                                    <div>
+                                      <i className="fas fa-binoculars"></i>
+                                      <strong>Areas of Expertise</strong>
+                                    </div>
+                                    <p className="blue-color ml20">
+                                      <a href="#">
+                                        Business Analytics &#38; Intelligence
+                                      </a>
+                                      <br />
+                                      <a href="#">Business Ethics</a>
+                                      <br />
+                                      <a href="#">
+                                        International​ Operations Research &#38;
+                                        Management
+                                      </a>
+                                    </p>
+                                  </div>
+                                  <div className="content-icon plane">
+                                    <p>
+                                      <i className="fas fa-plane rotate320deg"></i>
+                                      1-2 Years of International Experience
+                                    </p>
+                                  </div>
+                                  <div className="content-icon">
+                                    <div>
+                                      <i className="fas fa-portrait"></i>
+                                      <strong>Bio</strong>
+                                    </div>
+                                    <div className="text">
+                                      <p>
+                                        Divides professional time between
+                                        teaching undergraduate courses in both
+                                        classNameroom and online settings, and
+                                        providing private consulting
+                                        specializing in the growth and
+                                        globalization of small businesses. I
+                                        also serve on the editorial board of 
+                                        <em>
+                                          The Academy of Management Journal
+                                        </em>
+                                        .
+                                      </p>
+                                    </div>
+                                  </div>
 
-                                          <div
-                                            className="dropdown-menu dropdown-menu-toltip"
-                                            aria-labelledby="dropdownMenu2"
-                                          >
-                                            <table
-                                              border="0"
-                                              cellpadding="0"
-                                              cellspacing="0"
-                                              className="reportStat"
+                                  <a href="#" className="btn btn-blue view-cv">
+                                    View CV
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* END COL */}
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="row row-custom sortable">
+                          <div className="col-lg-12 mb-4">
+                            {/* Institution Profile */}
+                            <div className="comunication box box-border-radius box-shadow bg-white">
+                              <div className="inner-wrap position-relative">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead">
+                                    <i className="fas fa-comments"></i>
+                                    Institution Profile
+                                  </h2>
+                                </div>
+                                <div id="profile-map">
+                                  <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11922.656204986277!2d-91.534944!3d41.663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1578620721149!5m2!1sen!2sus"
+                                    frameBorder="0"
+                                    style={{ border: "0" }}
+                                    allowFullScreen=""
+                                  ></iframe>
+                                </div>
+                                <div className="box-middle">
+                                  <div className="content-icon">
+                                    <i className="fas fa-shield-alt"></i>
+                                    <a href="">
+                                      AHEA University, Iowa City Campus
+                                    </a>
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="fas fa-map"></i>
+                                    <a href="#">Google Maps</a>
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="far fa-building"></i>4-year
+                                    Institution
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="fas fa-globe-americas"></i>
+                                    <a href="#">Iowa City, IA USA</a>
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                    North America
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="far fa-calendar-check"></i>
+                                    Semester
+                                  </div>
+                                  <div className="content-icon">
+                                    <i className="fa fa-address-card-o"></i>
+                                    College of Business
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>{" "}
+                          {/* END COL */}
+                          <div className="col-lg-12 mb-4">
+                            {/* Credentials */}
+                            <div className="credentials box box-border-radius box-shadow bg-white">
+                              <div className="inner-wrap">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead">
+                                    <i className="fas fa-user"></i>Credentials
+                                  </h2>
+                                </div>
+                                <div className="box-middle">
+                                  <div className="content-icon">
+                                    <p>
+                                      <i className="fas fa-trophy"></i>
+                                      <strong>Professional Memberships</strong>
+                                    </p>
+                                    <p className="blue-color ml20">
+                                      <a href="#">
+                                        Academy of International Business
+                                        <br />
+                                        ​American Management Association
+                                      </a>
+                                    </p>
+                                  </div>
+                                  <div className="content-icon">
+                                    <p>
+                                      <i
+                                        className="fas fa-certificate"
+                                        aria-hidden="true"
+                                      ></i>
+                                      <strong>Certificates</strong>
+                                    </p>
+                                    <p className="ml20 cl-gray">
+                                      Business Data Analytics Certification
+                                    </p>
+                                  </div>
+                                  <div className="content-icon">
+                                    <p>
+                                      <i className="fas fa-graduation-cap"></i>
+                                      <strong>Highest Education Level</strong>
+                                    </p>
+                                    <p className="ml20 cl-gray">PhD</p>
+                                  </div>
+                                </div>
+                                <div className="box-bottom text-center">
+                                  <a href="#" className="view-more">
+                                    View More
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* END COL */}
+                          <div className="col-lg-12 mb-4">
+                            {" "}
+                            {/* Collaboration Interests */}
+                            <div className="collaboration box box-border-radius box-shadow bg-white">
+                              <div className="inner-wrap">
+                                <div className="box-top position-relative">
+                                  <h2 className="box-subhead mw-100">
+                                    <i className="fas fa-user"></i>Collaboration
+                                    Interests
+                                  </h2>
+                                </div>
+                                <div className="box-middle">
+                                  <div className="row row-custom">
+                                    <div className="col-md-12">
+                                      <h4 className="mb-3">
+                                        Areas of interest
+                                      </h4>
+                                      <div className="row">
+                                        <div
+                                          className="col-md-6"
+                                          id="areas-of-interest-1"
+                                        >
+                                          <div className="areas-of-interest">
+                                            <div className="row row-custom position-relative">
+                                              <span className="left-corner">
+                                                1
+                                              </span>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Project</strong>
+                                                  <br />
+                                                  <small>Research</small>
+                                                </p>
+                                                <p>
+                                                  <strong>
+                                                    Preferred Language
+                                                  </strong>
+                                                  <br />
+                                                  <small>English</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Discipline</strong>
+                                                  <br />
+                                                  <small>Economic</small>
+                                                </p>
+                                                <p>
+                                                  <strong>Region</strong>
+                                                  <br />
+                                                  <small>Europe</small>
+                                                </p>
+                                              </div>
+                                            </div>
+                                            <div className="row row-custom mt-2">
+                                              <div className="col-md-12 d-flex justify-content-between">
+                                                <div className="text-center">
+                                                  <a
+                                                    href="javascript:void(0);"
+                                                    data-toggle="modal"
+                                                    data-target="#areaInterestVm1Modal"
+                                                  >
+                                                    View more
+                                                  </a>
+                                                </div>
+                                                <div className="text-center">
+                                                  <a
+                                                    href="#"
+                                                    data-id="2"
+                                                    className="btn btn-blue btn-w-100"
+                                                  >
+                                                    FIND MATCHES
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {/* Modal Areas of interest - modalareainterestview more 1 */}
+                                            <div
+                                              className="modal fade modalToltip modalareainterest"
+                                              id="areaInterestVm1Modal"
+                                              tabIndex="-1"
+                                              role="dialog"
+                                              aria-labelledby="modalLabel"
+                                              aria-hidden="true"
                                             >
-                                              <tr>
-                                                <td
-                                                  className="first"
-                                                  valign="middle"
-                                                >
-                                                  <i className="fas fa-sliders-h"></i>
-                                                </td>
-                                                <td className="second">
-                                                  <a href="#">
-                                                    <strong>
-                                                      Add, Drop, or Withdraw
-                                                    </strong>
-                                                    <br />
-                                                    <em>
-                                                      Last Accessed 1/31/2020
-                                                    </em>
-                                                  </a>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td
-                                                  className="first"
-                                                  valign="middle"
-                                                >
-                                                  <i className="fas fa-user-plus"></i>
-                                                </td>
-                                                <td className="second">
-                                                  <a href="#">
-                                                    <strong>
-                                                      Student Engagement
-                                                    </strong>
-                                                    <br />
-                                                    <em>
-                                                      Last Accessed 2/25/2020
-                                                    </em>
-                                                  </a>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td
-                                                  className="first"
-                                                  valign="middle"
-                                                >
-                                                  <i className="fas fa-flag-checkered"></i>
-                                                </td>
-                                                <td className="second">
-                                                  <a href="#">
-                                                    <strong>
-                                                      Plagiarism Tracker
-                                                    </strong>
-                                                    <br />
-                                                    <em>
-                                                      Last Accessed 1/31/2020
-                                                    </em>
-                                                  </a>
-                                                </td>
-                                              </tr>
-                                            </table>
-                                          </div>
+                                              <div
+                                                className="modal-dialog"
+                                                role="document"
+                                              >
+                                                <div className="modal-content">
+                                                  <div className="modal-header position-relative">
+                                                    <div className="toltip-close3">
+                                                      <a
+                                                        href="javascript:void(0);"
+                                                        data-dismiss="modal"
+                                                      >
+                                                        <i className="fa fa-times-circle"></i>
+                                                      </a>
+                                                    </div>
+                                                    <div className="text-left font15">
+                                                      <strong>Project</strong>
+                                                      <br />
+                                                      Research
+                                                    </div>
+                                                  </div>
+                                                  <div className="modal-body">
+                                                    <div className="interest-modal">
+                                                      <div className="view-more-interest-modal-inner">
+                                                        <div className="view-more-interest-modal-inner-content text-left">
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Description
+                                                              </strong>
+                                                              <br />I am
+                                                              interested in
+                                                              finding one or two
+                                                              partners to
+                                                              conduct a
+                                                              longitudinal study
+                                                              on the impact of
+                                                              Brexit on the EU
+                                                              and what changes
+                                                              will take place in
+                                                              the economy as a
+                                                              result.
+                                                            </div>
+                                                          </div>
+                                                          <div className="row  mb-2">
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Discipline
+                                                              </strong>
+                                                              <br />
+                                                              Economic
+                                                            </div>
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Delivery Method
+                                                              </strong>
+                                                              <br />
+                                                              Online
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Collaboration
+                                                                Type
+                                                              </strong>
+                                                              <br />
+                                                              Global
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Region
+                                                              </strong>
+                                                              <br />
+                                                              Europe
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Length
+                                                              </strong>
+                                                              <br />
+                                                              Trimester
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Preferred
+                                                                Language
+                                                              </strong>
+                                                              <br />
+                                                              English
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Credits
+                                                              </strong>
+                                                              <br />4
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Level
+                                                              </strong>
+                                                              <br />
+                                                              Undergraduate
+                                                            </div>
+                                                          </div>
+
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Project Date
+                                                                Range
+                                                              </strong>
+                                                              <div className="top-label-range">
+                                                                <div className="year-init-range">
+                                                                  Today 2020
+                                                                </div>
+                                                                <div className="year-last-range">
+                                                                  2021
+                                                                </div>
+                                                              </div>
+                                                              <div className="wrap-range">
+                                                                <input
+                                                                  type="range"
+                                                                  min="1"
+                                                                  max="16"
+                                                                  value="12"
+                                                                />
+                                                              </div>
+                                                              <div className="wrap-range-label width-inherit">
+                                                                <ul className="d-flex">
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                  <li>Mar</li>
+                                                                  <li>Apr</li>
+                                                                  <li>May</li>
+                                                                  <li>Jun</li>
+                                                                  <li>Jul</li>
+                                                                  <li>Aug</li>
+                                                                  <li>Sep</li>
+                                                                  <li>Oct</li>
+                                                                  <li>Nov</li>
+                                                                  <li>Dec</li>
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                </ul>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>{" "}
+                                          {/* areas of interest */}
                                         </div>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4 my-projects">
-                        <div className="recommended box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i
-                                  className="fa fa-users"
-                                  aria-hidden="true"
-                                ></i>
-                                My Advisees
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
+                                        <div
+                                          className="col-md-6"
+                                          id="areas-of-interest-2"
+                                        >
+                                          <div className="areas-of-interest">
+                                            <div className="row row-custom position-relative">
+                                              <span className="left-corner">
+                                                2
+                                              </span>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Project</strong>
+                                                  <br />
+                                                  <small>
+                                                    Academic Journal
+                                                  </small>
+                                                </p>
+                                                <p>
+                                                  <strong>
+                                                    Preferred Language
+                                                  </strong>
+                                                  <br />
+                                                  <small>English</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Discipline</strong>
+                                                  <br />
+                                                  <small>Business</small>
+                                                </p>
+                                                <p>
+                                                  <strong>Region</strong>
+                                                  <br />
+                                                  <small>All</small>
+                                                </p>
+                                              </div>
+                                            </div>
+                                            <div className="row row-custom mt-2">
+                                              <div className="col-md-12 d-flex justify-content-between">
+                                                <div className="text-center">
+                                                  <a
+                                                    href="javascript:void(0);"
+                                                    data-toggle="modal"
+                                                    data-target="#areaInterestVm1Modal-2"
+                                                  >
+                                                    View more
+                                                  </a>
+                                                </div>
+                                                <div className="text-center">
+                                                  <a
+                                                    href="#"
+                                                    data-id="2"
+                                                    className="btn btn-blue btn-w-100"
+                                                  >
+                                                    FIND MATCHES
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {/* Modal Areas of interest - modalareainterestview more 1 */}
+                                            <div
+                                              className="modal fade modalToltip modalareainterest"
+                                              id="areaInterestVm1Modal-2"
+                                              tabIndex="-1"
+                                              role="dialog"
+                                              aria-labelledby="modalLabel"
+                                              aria-hidden="true"
+                                            >
+                                              <div
+                                                className="modal-dialog"
+                                                role="document"
+                                              >
+                                                <div className="modal-content">
+                                                  <div className="modal-header position-relative">
+                                                    <div className="toltip-close3">
+                                                      <a
+                                                        href="javascript:void(0);"
+                                                        data-dismiss="modal"
+                                                      >
+                                                        <i className="fa fa-times-circle"></i>
+                                                      </a>
+                                                    </div>
+                                                    <div className="text-left font15">
+                                                      <strong>Project</strong>
+                                                      <br />
+                                                      Academic Journal
+                                                    </div>
+                                                  </div>
+                                                  <div className="modal-body">
+                                                    <div className="interest-modal">
+                                                      <div className="view-more-interest-modal-inner">
+                                                        <div className="view-more-interest-modal-inner-content text-left">
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Description
+                                                              </strong>
+                                                              <br />I am looking
+                                                              for partners to
+                                                              help author an
+                                                              article on the
+                                                              impact of mobile
+                                                              technology on
+                                                              business acumen.
+                                                              There is a lot of
+                                                              literature on
+                                                              international
+                                                              business acumen,
+                                                              but nothing has
+                                                              been updated since
+                                                              the onset of our
+                                                              24/7 connectivity
+                                                              with mobile
+                                                              devices.
+                                                            </div>
+                                                          </div>
+                                                          <div className="row  mb-2">
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Discipline
+                                                              </strong>
+                                                              <br />
+                                                              Business
+                                                            </div>
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Delivery Method
+                                                              </strong>
+                                                              <br />
+                                                              Online
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Collaboration
+                                                                Type
+                                                              </strong>
+                                                              <br />
+                                                              Global
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Region
+                                                              </strong>
+                                                              <br />
+                                                              All
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Length
+                                                              </strong>
+                                                              <br />
+                                                              Trimester
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Preferred
+                                                                Language
+                                                              </strong>
+                                                              <br />
+                                                              English
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Credits
+                                                              </strong>
+                                                              <br />4
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Level
+                                                              </strong>
+                                                              <br />
+                                                              Undergraduate
+                                                            </div>
+                                                          </div>
 
-                            <div className="box-middle">
-                              <div className="item d-flex">
-                                <div className="item-img partner-img position-relative">
-                                  <a href="javascript:void(0);">
-                                    <img src="images/Erika.png" width="59" />
-                                  </a>
-                                  <div className="toltip3 any-toltip">
-                                    <div className="d-flex">
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-1.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-2.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-3.png"
-                                          width="50"
-                                        />
-                                      </a>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Project Date
+                                                                Range
+                                                              </strong>
+                                                              <div className="top-label-range">
+                                                                <div className="year-init-range">
+                                                                  Today 2020
+                                                                </div>
+                                                                <div className="year-last-range">
+                                                                  2021
+                                                                </div>
+                                                              </div>
+                                                              <div className="wrap-range">
+                                                                <input
+                                                                  type="range"
+                                                                  min="1"
+                                                                  max="100"
+                                                                  value="90"
+                                                                />
+                                                              </div>
+                                                              <div className="wrap-range-label width-inherit">
+                                                                <ul className="d-flex">
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                  <li>Mar</li>
+                                                                  <li>Apr</li>
+                                                                  <li>May</li>
+                                                                  <li>Jun</li>
+                                                                  <li>Jul</li>
+                                                                  <li>Aug</li>
+                                                                  <li>Sep</li>
+                                                                  <li>Oct</li>
+                                                                  <li>Nov</li>
+                                                                  <li>Dec</li>
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                </ul>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          {/* areas of interest */}
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="item-text">
-                                  <a href="#">
-                                    <span className="partner partner-name color-black">
-                                      Erika Anderson
-                                    </span>
-                                  </a>
-                                  <span className="partner partner-title color-black">
-                                    Sophomore, Economics​
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="item d-flex">
-                                <div className="item-img partner-img position-relative">
-                                  <a href="javascript:void(0);">
-                                    <img src="images/Brittany.png" width="59" />
-                                  </a>
-                                  <div className="toltip3 any-toltip">
-                                    <div className="d-flex">
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-1.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-2.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-3.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="item-text">
-                                  <a href="#">
-                                    <span className="partner partner-name color-black">
-                                      Brittany Simms
-                                    </span>
-                                  </a>
-                                  <span className="partner partner-title color-black">
-                                    Sophomore, Business
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="item d-flex">
-                                <div className="item-img partner-img position-relative">
-                                  <a href="javascript:void(0);">
-                                    <img src="images/Tedd.png" width="59" />
-                                  </a>
-                                  <div className="toltip3 any-toltip">
-                                    <div className="d-flex">
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-1.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-2.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                      <a href="#">
-                                        <img
-                                          src="images/contact-partner-3.png"
-                                          width="50"
-                                        />
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="item-text">
-                                  <a href="#">
-                                    <span className="partner partner-name color-black">
-                                      Tedd Warner
-                                    </span>
-                                  </a>
-                                  <span className="partner partner-title color-black">
-                                    Sophomore, Business
-                                  </span>
-                                </div>
                               </div>
                             </div>
-
-                            <div className="box-bottom text-center font-weight-bold position-relative pt-4">
-                              <a
-                                href="javascript:void();"
-                                className="btn btn-blue btn-w-100"
-                                id="partner-search"
-                              >
-                                View More
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="news box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="fas fa-comments"></i>News
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">More News</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">Inside Higher Ed</span>
-                                <span className="details">
-                                  Study of Student Learning Outcomes
-                                </span>
-                              </a>
-                            </div>
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">AHEA</span>
-                                <span className="details">
-                                  2020 Study Abroad Outlook
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="news box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="fa fa-users"></i>Professional
-                                Events
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">Sort by Newest </a>
-                                  </li>
-                                  <li>
-                                    <a href="#">Sort by Oldest</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">
-                                  NBEA 2020 Annual Convention and Tradeshow
-                                </span>
-                                <span className="color-black">
-                                  2020-04-02 to 2020-04-11 Boston, MA, USA{" "}
-                                </span>
-                              </a>
-                            </div>
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">
-                                  AACSB International Conference and Annual
-                                  Meeting
-                                </span>
-                                <span className="color-black">
-                                  2020-04-26 to 2020-04-28 Denver, CO, USA{" "}
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-bottom text-center">
-                            <a href="#" className="view-more">
-                              View More
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="communicate box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead">
-                                <i className="fas fa-wifi rotate45deg"></i>
-                                Communicate Now
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">View Messages</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle text-center wrap-images d-flex justify-content-between">
-                            <a href="#">
-                              <img src="images/desktop.png" width="62" />
-                            </a>
-                            <a href="#">
-                              <img src="images/sms-circle.png" alt="" />
-                            </a>
-                            <a href="#">
-                              <img src="images/phone-circle.png" alt="" />
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="create-new box box-border-radius box-shadow bg-blue-light">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead color-white">
-                                <i className="fas fa-copy"></i>Create New Course
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog color-white"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle color-white text-center">
-                            Take your course to the classroom with BlendED.
-                          </div>
-                          <div className="box-bottom text-center">
-                            <a href="#" className="btn btn-green">
-                              Start Now
-                            </a>
-                          </div>
+                          </div>{" "}
+                          {/* END COL */}
                         </div>
                       </div>
                     </div>
+                    {/* row */}
                   </section>
                 </div>
               </div>
