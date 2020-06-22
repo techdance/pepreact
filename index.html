@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="robots" content="noindex" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -13,8 +12,12 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+    <meta name="robots" content="noindex" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,7 +25,6 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700,700i,800,800i&display=swap"
       rel="stylesheet"
@@ -30,58 +32,232 @@
     <!-- font-family: 'Merriweather Sans', sans-serif; -->
     <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-    <link rel="stylesheet" type="text/css" href="css/style-profile.css" />
     <link rel="stylesheet" type="text/css" href="css/style-custom-icon.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-resources.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-profile.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
 
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
     <script type="text/javascript" src="js/custom.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
-    <!--<script type="text/javascript" src="js/custom.js"></script>
-	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>-->
 
-    <title>bradley profile #2 screen</title>
+    <script
+      type="text/javascript"
+      src="js/jquery.easy-pie-chart.min.js"
+    ></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script>
+      $(document).ready(function () {
+        Plugins.init();
+      });
+    </script>
+    <title>brittany home screen</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+									<link rel="stylesheet" href="css/owl.theme.default.min.css">
+									<script src="js/owl.carousel.js"></script>
 
-    <script type="text/javascript">
-      jQuery(document).ready(function () {
-        jQuery("a#menu-button-responsive").click(function () {
-          if (jQuery("#sidebar-content-mobile").is(":hidden")) {
-            jQuery("#container").css("margin-top", "0px");
-          } else {
-            jQuery("#container").css("margin-top", "70px");
-          }
+									<script>
+										jQuery(document).ready(function() {
+											jQuery('.owl-carousel').owlCarousel({
+												singleItem:true,
+												autoplay:true,
+												autoplayTimeout:5000,
+												autoplayHoverPause:true,
+												loop: true,
+												margin: 10,
+												navigation: true,
+												responsiveClass: true,
+												responsive: {
+													1000: {
+														items: 1,
+														nav: true,
+														loop: true,
+														margin: 20
+													},
+													300: {
+														items: 1,
+														nav: true,
+														loop: true,
+														margin: 20
+													}
+												}
+											});
 
-          jQuery("#sidebar-content-mobile").slideToggle();
-        });
+											jQuery(".owl-dots").appendTo("#dots-number");
+										});
+                  </script>
+                  
+                  <!-- initialize the calendar on ready -->
+											<script type="text/javascript">
+												$(document).ready(function () {
+													var eventData = [//blue-event, green-event, orange-event, purple-event
+														{
+															"date":"orders.html",
+															"badge":true,
+															"title":"Human Subjects Approval",
+															"description":"<b>William Stinson</b>, <i>Organizer</i>",
+															"hour":"8:00am EST",
+															"link":"http://www.google.com",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"green-event"
+														},
+														{
+															"date":"2020-03-05",
+															"badge":true,
+															"title":"Quiz 1 Discussion",
+															"description":"<b>Bradley Dexter</b>, <i>Instructor</i>",
+															"hour":"8:00am EST",
+															"link":"#",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"green-event"
+														},
 
-        jQuery("#sidebar-content-mobile #nav-mobile li").click(function (e) {
-          jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
-          jQuery(this).find("ul.sub-menu").show();
-        });
-      });
-    </script>
+														{
+															"date":"2020-03-06",
+															"badge":true,
+															"title":"Artificial Intelligence Project Check-In",
+															"description":"<b>Randy Wolff</b>, <i>Organizer</i>",
+															"hour":"3:00pm EST",
+															"link":"#",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"green-event"
+														},
+														{
+															"date":"2020-03-11",
+															"badge":true,
+															"title":"Ethics Luncheon",
+															"description":"<b>Bradley Dexter</b>, <i>Organizer</i>",
+															"hour":"11:30am EST",
+															"link":"",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"blue-event"
+														},
+														{
+															"date":"2020-03-13",
+															"badge":true,
+															"title":"Ethics Luncheon",
+															"description":"<b>Bradley Dexter</b>, <i>Organizer</i>",
+															"hour":"11:30am EST",
+															"link":"",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"blue-light-event"
+														},
+														{
+															"date":"2020-03-19",
+															"badge":true,
+															"title":"Ethics Luncheon",
+															"description":"<b>Bradley Dexter</b>, <i>Organizer</i>",
+															"hour":"11:30am EST",
+															"link":"",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"orange-event"
+														},
+														{
+															"date":"2020-03-26",
+															"badge":true,
+															"title":"Ethics Luncheon",
+															"description":"<b>Bradley Dexter</b>, <i>Organizer</i>",
+															"hour":"11:30am EST",
+															"link":"",
+															"textlink":"View More <i class='fas fa-arrow-alt-circle-right'></i>",
+															"classname":"green-event"
+														}
+													];
 
-    <script src="js/jquery.sortable.js"></script>
-    <script type="text/javascript">
-      jQuery(function () {
-        jQuery(".sortable").sortable({
-          placeholderClass: "col-lg-3",
-        });
-      });
-    </script>
+													$("#my-calendar").zabuto_calendar({
+														year: '2020',
+														month: '03',
+														data: eventData,
+														weekstartson: 0,
+														nav_icon: {
+															prev: '<i class="fa fa-angle-left"></i>',
+															next: '<i class="fa fa-angle-right"></i>'
+														}
+													});
+
+													$('#my-calendar-container').on('click', '.zabuto_calendar .event-styled .day', function(){
+													//$(".zabuto_calendar .event-styled .day").live('click', function(){
+														var myId = $(this).parent(".event-styled").attr("id");
+														var date = myId.substr(-10, 10);
+														var title="";
+														var description="";
+														var hour="";
+														var link="";
+														var textlink="";
+
+														for (var i = 0; i < eventData.length; i++)
+														{
+															if (eventData[i].date == date){
+																title = eventData[i].title;
+																description = eventData[i].description;
+																hour = eventData[i].hour;
+																link = eventData[i].link;
+																textlink = eventData[i].textlink;
+															}
+														}
+
+														if($(this).find(".popup").length === 0)
+															$(this).append("<span class='popup'><span class='event-title'>"+title+"<span class='popup-close'>x</span></span><span class='event-content'>"+description+"<br>"+hour+"</span><span class='event-link'><span onclick=\"location.href='"+link+"'\" style=\"color:black;\">"+textlink+"</span></span></span>");
+
+														if($(this).find(".popup").css("display") == "none"){
+															$(this).find(".popup").css("display","block");
+														}
+
+													});
+
+													$('#my-calendar-container').on('click', '.event-styled .popup-close', function(e){
+														e.stopPropagation();
+														$(this).parents(".popup").css("display","none");
+													});
+												});
+											</script>
+    
+
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+
+
+
+		jQuery("a#menu-button-responsive").click(function(){
+
+			if ( jQuery( "#sidebar-content-mobile" ).is( ":hidden" ) ) {
+				jQuery("#container").css("margin-top","0px");
+			}else{
+				jQuery("#container").css("margin-top","70px");
+			}
+
+			jQuery("#sidebar-content-mobile").slideToggle();
+		});
+
+		jQuery('#sidebar-content-mobile #nav-mobile li').click(function(e){
+			jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
+			jQuery(this).find("ul.sub-menu").show();
+		});
+
+
+	});
+</script>
+
+<script src="js/jquery.sortable.js"></script>
+<script type="text/javascript">
+	jQuery(function() {
+		jQuery('.sortable').sortable({
+			placeholderClass: 'col-lg-3'
+		});
+	});
+</script>
+
+<!-- JAVASCRIPT FOR DONUT CHART -->
+<script type="text/javascript" src="https://cdnjs.cl
 </html>
