@@ -1,15 +1,15 @@
 import React from "react";
 
 {
-  /* Modal Areas of interest - view more 1 */
+  /* Modal Areas of interest - view more 3 */
 }
 
-class areaInterestVm1Modal extends Component {
+class areaInterestVm3Modal extends Component {
   render() {
     return (
       <div
         class="modal fade modalToltip"
-        id="areaInterestVm1Modal"
+        id="areaInterestVm3Modal"
         tabindex="-1"
         role="dialog"
         aria-labelledby="modalLabel"
@@ -30,7 +30,7 @@ class areaInterestVm1Modal extends Component {
                       <div class="col-md-6">
                         <strong>Project</strong>
                         <br />
-                        Course Development
+                        Academic Journal
                       </div>
                     </div>
                     <div class="row  mb-2">
@@ -48,10 +48,11 @@ class areaInterestVm1Modal extends Component {
                     <div class="row mb-2">
                       <div class="col-md-12">
                         <strong>Description</strong>
-                        <br />I would like to co-develop a business ethics class
-                        focused on multinational corporations and how ethics may
-                        or may not conflict with the culture in countries where
-                        MNCs are located.
+                        <br />I am looking for partners to help author an
+                        article on the impact of mobile technology on business
+                        acumen. There is a lot of literature on international
+                        business acumen, but nothing has been updated since the
+                        onset of our 24/7 connectivity with mobile devices.
                       </div>
                     </div>
                     <div class="row mb-2">
@@ -67,13 +68,14 @@ class areaInterestVm1Modal extends Component {
                       </div>
                       <div class="col-md-4">
                         <strong>Program Length</strong>
-                        <br />7 weeks
+                        <br />
+                        Trimester
                       </div>
                     </div>
                     <div class="row mb-2">
                       <div class="col-md-4">
                         <strong>Credits</strong>
-                        <br />3
+                        <br />4
                       </div>
                       <div class="col-md-4">
                         <strong>Preferred Language</strong>
@@ -97,4 +99,4 @@ class areaInterestVm1Modal extends Component {
   }
 }
 
-export default areaInterestVm1Modal;
+export default areaInterestVm3Modal;

@@ -1,35 +1,19 @@
 import React from "react";
-import signOutModal from "./components/signOutModal";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <div id="menu-top-responsive" className="">
-          <div id="wrap-logo" className="d-flex justify-content-between">
-            <a
-              href="#"
-              className="d-flex justify-content-center align-items-center"
-            >
-              <span className="mr-1">
-                <img
-                  src="images/logo-universidade-lisboa.png"
-                  width="60"
-                  height="60"
-                />
-              </span>
-              <span className="group-hide logo-text">
-                UNIVERSIDADE
-                <br />
-                DE LISBOA
-              </span>
+          <div id="wrap-logo">
+            <a href="#" logo="true">
+              <img src="images/logo.png" />
             </a>
             <a href="#" id="menu-button-responsive">
               <i className="fas fa-bars"></i>
             </a>
           </div>
         </div>
-
         <div id="sidebar-content-mobile" className="menu-mobile">
           <ul id="nav-mobile" className="nav">
             <li className="active">
@@ -87,23 +71,10 @@ class App extends React.Component {
         <div id="container">
           <div id="sidebar" className="sidebar-fixed">
             <div id="sidebar-wrap">
-              <div id="wrap-logo" className="logo-lisboa">
-                <a
-                  href="#"
-                  className="d-flex justify-content-center align-items-center"
-                >
-                  <span className="span-logo-lisboa">
-                    <img
-                      src="images/logo-universidade-lisboa.png"
-                      width="75"
-                      height="26"
-                    />
-                  </span>
-                  <span className="group-hide">
-                    UNIVERSIDADE
-                    <br />
-                    DE LISBOA
-                  </span>
+              <div id="wrap-logo">
+                <a href="#" logo="true">
+                  <img src="images/logo-a.png" />
+                  <img className="group-hide" src="images/logo-b.png" />
                 </a>
               </div>
               <div id="sidebar-content" className="aux">
@@ -283,7 +254,7 @@ class App extends React.Component {
                                   <p>
                                     Karthic Koothrappali, Joanne Byrne and
                                     others have matched with you as suggested
-                                    partners
+                                    partners{" "}
                                   </p>
                                 </div>
                               </div>
@@ -300,7 +271,7 @@ class App extends React.Component {
                                 <div className="toltip-text">
                                   <p>
                                     Inez Campos was added to the Ethics in
-                                    Multinational Management project
+                                    Multinational Management project{" "}
                                   </p>
                                 </div>
                               </div>
@@ -582,19 +553,13 @@ class App extends React.Component {
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                       <li className="breadcrumb-item">
-                        <a href="#">Home</a>
-                      </li>
-                      <li className="breadcrumb-item">
-                        <a href="#">Messages</a>
-                      </li>
-                      <li className="breadcrumb-item">
-                        <a href="#">Project Invites</a>
+                        <a href="bradley home screen.html">Home</a>
                       </li>
                       <li
                         className="breadcrumb-item active"
                         aria-current="page"
                       >
-                        Bradley Dexter
+                        Profile
                       </li>
                     </ol>
                   </nav>
@@ -604,7 +569,7 @@ class App extends React.Component {
                         <div className="row row-custom sortable">
                           <div className="col-lg-12 mb-4">
                             {" "}
-                            {/* Personal Information */}
+                            {/*  Personal Information */}
                             <div className="personal box box-border-radius box-shadow bg-white position-relative">
                               <div className="inner-wrap">
                                 <div className="box-top position-relative">
@@ -643,13 +608,6 @@ class App extends React.Component {
                                         </a>
                                       </div>
                                     </div>
-                                    <div className="mt-2 d-flex">
-                                      <a href="#">
-                                        <span className="wrap-fa-comment">
-                                          <i className="far fa-comment-alt-lines"></i>
-                                        </span>
-                                      </a>
-                                    </div>
                                   </div>
                                 </div>
                                 <div className="box-middle">
@@ -663,6 +621,17 @@ class App extends React.Component {
                                   </p>
                                 </div>
                               </div>
+                              <a
+                                href="bradley edit profile screen.html"
+                                className="btn btn-blue position-absolute btn-edit-profile"
+                              >
+                                <span className="position-relative">
+                                  Edit Profile
+                                  <span className="link-toltip">
+                                    Profile 100% Complete
+                                  </span>
+                                </span>
+                              </a>
                             </div>
                           </div>{" "}
                           {/* END COL */}
@@ -718,8 +687,9 @@ class App extends React.Component {
                               </div>
                             </div>
                           </div>{" "}
-                          {/* END COL */}
+                          {/*  END COL */}
                           <div className="col-lg-12 mb-4">
+                            {" "}
                             {/* Professional Bio */}
                             <div className="profesional box box-border-radius box-shadow bg-white">
                               <div className="inner-wrap">
@@ -776,7 +746,7 @@ class App extends React.Component {
                                       <p>
                                         Divides professional time between
                                         teaching undergraduate courses in both
-                                        classNameroom and online settings, and
+                                        classroom and online settings, and
                                         providing private consulting
                                         specializing in the growth and
                                         globalization of small businesses. I
@@ -795,13 +765,14 @@ class App extends React.Component {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div>{" "}
                           {/* END COL */}
                         </div>
                       </div>
                       <div className="col-lg-6">
                         <div className="row row-custom sortable">
                           <div className="col-lg-12 mb-4">
+                            {" "}
                             {/* Institution Profile */}
                             <div className="comunication box box-border-radius box-shadow bg-white">
                               <div className="inner-wrap position-relative">
@@ -813,7 +784,7 @@ class App extends React.Component {
                                 </div>
                                 <div id="profile-map">
                                   <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11922.656204986277!2d-91.534944!3d41.663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1578620721149!5m2!1sen!2sus"
+                                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11922.656204986277!2d-91.534944!3d41.663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1578620786378!5m2!1sen!2sus"
                                     frameBorder="0"
                                     style={{ border: "0" }}
                                     allowFullScreen=""
@@ -854,8 +825,9 @@ class App extends React.Component {
                               </div>
                             </div>
                           </div>{" "}
-                          {/* END COL */}
+                          {/*  END COL */}
                           <div className="col-lg-12 mb-4">
+                            {" "}
                             {/* Credentials */}
                             <div className="credentials box box-border-radius box-shadow bg-white">
                               <div className="inner-wrap">
@@ -905,10 +877,9 @@ class App extends React.Component {
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div>{" "}
                           {/* END COL */}
                           <div className="col-lg-12 mb-4">
-                            {" "}
                             {/* Collaboration Interests */}
                             <div className="collaboration box box-border-radius box-shadow bg-white">
                               <div className="inner-wrap">
@@ -922,11 +893,11 @@ class App extends React.Component {
                                   <div className="row row-custom">
                                     <div className="col-md-12">
                                       <h4 className="mb-3">
-                                        Areas of interest
+                                        Areas of Interest
                                       </h4>
                                       <div className="row">
                                         <div
-                                          className="col-md-6"
+                                          className="col-md-6 mb-2"
                                           id="areas-of-interest-1"
                                         >
                                           <div className="areas-of-interest">
@@ -940,6 +911,15 @@ class App extends React.Component {
                                                   <br />
                                                   <small>Research</small>
                                                 </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Discipline</strong>
+                                                  <br />
+                                                  <small>Economic</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
                                                 <p>
                                                   <strong>
                                                     Preferred Language
@@ -949,11 +929,6 @@ class App extends React.Component {
                                                 </p>
                                               </div>
                                               <div className="col-md-6">
-                                                <p>
-                                                  <strong>Discipline</strong>
-                                                  <br />
-                                                  <small>Economic</small>
-                                                </p>
                                                 <p>
                                                   <strong>Region</strong>
                                                   <br />
@@ -1118,7 +1093,7 @@ class App extends React.Component {
                                                                   type="range"
                                                                   min="1"
                                                                   max="16"
-                                                                  value="12"
+                                                                  defaultValue="12"
                                                                 />
                                                               </div>
                                                               <div className="wrap-range-label width-inherit">
@@ -1152,7 +1127,7 @@ class App extends React.Component {
                                           {/* areas of interest */}
                                         </div>
                                         <div
-                                          className="col-md-6"
+                                          className="col-md-6 mb-2"
                                           id="areas-of-interest-2"
                                         >
                                           <div className="areas-of-interest">
@@ -1168,6 +1143,15 @@ class App extends React.Component {
                                                     Academic Journal
                                                   </small>
                                                 </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Discipline</strong>
+                                                  <br />
+                                                  <small>Business</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
                                                 <p>
                                                   <strong>
                                                     Preferred Language
@@ -1177,11 +1161,6 @@ class App extends React.Component {
                                                 </p>
                                               </div>
                                               <div className="col-md-6">
-                                                <p>
-                                                  <strong>Discipline</strong>
-                                                  <br />
-                                                  <small>Business</small>
-                                                </p>
                                                 <p>
                                                   <strong>Region</strong>
                                                   <br />
@@ -1351,7 +1330,238 @@ class App extends React.Component {
                                                                   type="range"
                                                                   min="1"
                                                                   max="100"
-                                                                  value="90"
+                                                                  defaultValue="90"
+                                                                />
+                                                              </div>
+                                                              <div className="wrap-range-label width-inherit">
+                                                                <ul className="d-flex">
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                  <li>Mar</li>
+                                                                  <li>Apr</li>
+                                                                  <li>May</li>
+                                                                  <li>Jun</li>
+                                                                  <li>Jul</li>
+                                                                  <li>Aug</li>
+                                                                  <li>Sep</li>
+                                                                  <li>Oct</li>
+                                                                  <li>Nov</li>
+                                                                  <li>Dec</li>
+                                                                  <li>Jan</li>
+                                                                  <li>Feb</li>
+                                                                </ul>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>{" "}
+                                          {/* areas of interest */}
+                                        </div>
+                                        <div
+                                          className="col-md-6 mb-2"
+                                          id="areas-of-interest-3"
+                                        >
+                                          <div className="areas-of-interest">
+                                            <div className="row row-custom position-relative">
+                                              <span className="left-corner">
+                                                3
+                                              </span>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Project</strong>
+                                                  <br />
+                                                  <small>
+                                                    Course Development
+                                                  </small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Discipline</strong>
+                                                  <br />
+                                                  <small>Business</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>
+                                                    Preferred Language
+                                                  </strong>
+                                                  <br />
+                                                  <small>English</small>
+                                                </p>
+                                              </div>
+                                              <div className="col-md-6">
+                                                <p>
+                                                  <strong>Region</strong>
+                                                  <br />
+                                                  <small>All</small>
+                                                </p>
+                                              </div>
+                                            </div>
+                                            <div className="row row-custom mt-2">
+                                              <div className="col-md-12 d-flex justify-content-between">
+                                                <div className="text-center">
+                                                  <a
+                                                    href="javascript:void(0);"
+                                                    data-toggle="modal"
+                                                    data-target="#areaInterestVm1Modal-3"
+                                                  >
+                                                    View more
+                                                  </a>
+                                                </div>
+                                                <div className="text-center">
+                                                  <a
+                                                    href="#"
+                                                    data-id="2"
+                                                    className="btn btn-blue btn-w-100"
+                                                  >
+                                                    START PROJECT
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {/* Modal Areas of interest - modalareainterestview more 1 */}
+                                            <div
+                                              className="modal fade modalToltip modalareainterest"
+                                              id="areaInterestVm1Modal-3"
+                                              tabIndex="-1"
+                                              role="dialog"
+                                              aria-labelledby="modalLabel"
+                                              aria-hidden="true"
+                                            >
+                                              <div
+                                                className="modal-dialog"
+                                                role="document"
+                                              >
+                                                <div className="modal-content">
+                                                  <div className="modal-header position-relative">
+                                                    <div className="toltip-close3">
+                                                      <a
+                                                        href="javascript:void(0);"
+                                                        data-dismiss="modal"
+                                                      >
+                                                        <i className="fa fa-times-circle"></i>
+                                                      </a>
+                                                    </div>
+                                                    <div className="text-left font15">
+                                                      <strong>Project</strong>
+                                                      <br />
+                                                      Course Development
+                                                    </div>
+                                                  </div>
+                                                  <div className="modal-body">
+                                                    <div className="interest-modal">
+                                                      <div className="view-more-interest-modal-inner">
+                                                        <div className="view-more-interest-modal-inner-content text-left">
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Description
+                                                              </strong>
+                                                              <br />I would like
+                                                              to co-develop a
+                                                              business ethics
+                                                              className focused
+                                                              on multinational
+                                                              corporations and
+                                                              how ethics may or
+                                                              may not conflict
+                                                              with the culture
+                                                              in countries where
+                                                              MNCs are located.
+                                                            </div>
+                                                          </div>
+                                                          <div className="row  mb-2">
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Discipline
+                                                              </strong>
+                                                              <br />
+                                                              Business
+                                                            </div>
+                                                            <div className="col-md-6">
+                                                              <strong>
+                                                                Delivery Method
+                                                              </strong>
+                                                              <br />
+                                                              Online
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Collaboration
+                                                                Type
+                                                              </strong>
+                                                              <br />
+                                                              Global
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Region
+                                                              </strong>
+                                                              <br />
+                                                              All
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Length
+                                                              </strong>
+                                                              <br />
+                                                              Trimester
+                                                            </div>
+                                                          </div>
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Preferred
+                                                                Language
+                                                              </strong>
+                                                              <br />
+                                                              English
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Credits
+                                                              </strong>
+                                                              <br />3
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                              <strong>
+                                                                Program Level
+                                                              </strong>
+                                                              <br />
+                                                              Undergraduate
+                                                            </div>
+                                                          </div>
+
+                                                          <div className="row mb-2">
+                                                            <div className="col-md-12">
+                                                              <strong>
+                                                                Project Date
+                                                                Range
+                                                              </strong>
+                                                              <div className="top-label-range">
+                                                                <div className="year-init-range">
+                                                                  Today 2020
+                                                                </div>
+                                                                <div className="year-last-range">
+                                                                  2021
+                                                                </div>
+                                                              </div>
+                                                              <div className="wrap-range">
+                                                                <input
+                                                                  type="range"
+                                                                  min="1"
+                                                                  max="100"
+                                                                  defaultValue="25"
                                                                 />
                                                               </div>
                                                               <div className="wrap-range-label width-inherit">
@@ -1390,7 +1600,7 @@ class App extends React.Component {
                                 </div>
                               </div>
                             </div>
-                          </div>{" "}
+                          </div>
                           {/* END COL */}
                         </div>
                       </div>

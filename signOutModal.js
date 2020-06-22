@@ -3,7 +3,8 @@ import React from "react";
 {
   /* Modal */
 }
-class signOutModal extends React.Component {
+
+class signOutModal extends Component {
   render() {
     return (
       <div
