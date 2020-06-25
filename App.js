@@ -32,24 +32,33 @@ class App extends React.Component {
               </a>
             </li>
             <li className="disabled-link">
-              <a href="#" className="icon-fa icon-chart-pie">
-                <span className="group-hide">Program Management</span>
+              <a href="#" className="icon-fa icon-book-reader">
+                <span className="group-hide">My Advisees</span>
               </a>
             </li>
-
+            <li>
+              <a href="#" className="icon-fa icon-book">
+                <span className="group-hide">My Courses</span>
+              </a>
+            </li>
             <li>
               <a href="#" className="icon-fa icon-copy">
-                <span className="group-hide"> My Tiles</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="icon-fa icon-clone">
                 <span className="group-hide"> My Files</span>
               </a>
             </li>
             <li className="disabled-link">
               <a href="#" className="icon-fa icon-th-large">
                 <span className="group-hide">Resources</span>
+              </a>
+            </li>
+            <li className="disabled-link">
+              <a href="#" className="icon-fa icon-sun-haze">
+                <span className="group-hide">Opportunities</span>
+              </a>
+            </li>
+            <li className="disabled-link">
+              <a href="#" className="icon-fa icon-users">
+                <span className="group-hide">Recommended Partners</span>
               </a>
             </li>
             <li>
@@ -94,24 +103,33 @@ class App extends React.Component {
                     </a>
                   </li>
                   <li className="disabled-link">
-                    <a href="#" className="icon-fa icon-chart-pie">
-                      <span className="group-hide">Program Management</span>
+                    <a href="#" className="icon-fa icon-book-reader">
+                      <span className="group-hide">My Advisees</span>
                     </a>
                   </li>
-
+                  <li>
+                    <a href="#" className="icon-fa icon-book">
+                      <span className="group-hide">My Courses</span>
+                    </a>
+                  </li>
                   <li>
                     <a href="#" className="icon-fa icon-copy">
-                      <span className="group-hide"> My Tiles</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="icon-fa icon-clone">
                       <span className="group-hide"> My Files</span>
                     </a>
                   </li>
                   <li className="disabled-link">
                     <a href="#" className="icon-fa icon-th-large">
                       <span className="group-hide">Resources</span>
+                    </a>
+                  </li>
+                  <li className="disabled-link">
+                    <a href="#" className="icon-fa icon-sun-haze">
+                      <span className="group-hide">Opportunities</span>
+                    </a>
+                  </li>
+                  <li className="disabled-link">
+                    <a href="#" className="icon-fa icon-users">
+                      <span className="group-hide">Recommended Partners</span>
                     </a>
                   </li>
                   <li>
@@ -235,7 +253,7 @@ class App extends React.Component {
                                 <div className="toltip-text">
                                   <p>
                                     Karthic Koothrappali, Joanne Byrne and
-                                    others have matched with you as recommended
+                                    others have matched with you as suggested
                                     partners{" "}
                                   </p>
                                 </div>
@@ -472,10 +490,10 @@ class App extends React.Component {
                         >
                           <img
                             className="img-circle img-border-blue"
-                            src="images/Gordon.png"
-                            alt=""
+                            src="images/bradley.png"
+                            alt=" "
                           />
-                          <span className="user-name">Hello, Gordon</span>
+                          <span className="user-name">Hello, Bradley</span>
                         </a>
                         <div className="dropdown-menu">
                           <div id="notification-toltip" className="toltip">
@@ -509,557 +527,156 @@ class App extends React.Component {
                       </div>
                     </div>
                     <div className="wrap-top-search">
-                      <div className="top-search">
-                        <div className="box-search">
-                          <form action="">
-                            <input type="text" placeholder="Search" />
-                            <button type="submit">
-                              <i className="fas fa-search"></i>
-                            </button>
-                          </form>
-                        </div>
-                        <div className="box-question">
-                          <a href="#">
-                            <span className="icon-solid icon-input-search"></span>
-                          </a>
+                      <div className="d-flex">
+                        <div className="top-search">
+                          <div className="box-search">
+                            <form action="" className="d-flex">
+                              <input type="text" placeholder="Search" />
+                              <button type="submit">
+                                <i className="fas fa-search"></i>
+                              </button>
+                            </form>
+                          </div>
+                          <div className="box-question">
+                            <a href="#">
+                              <img src="images/search-icon.png" width="38" />
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </section>
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                      <li className="breadcrumb-item active">Home</li>
+                      <li className="breadcrumb-item">
+                        <a href="bradley home screen.html">Home</a>
+                      </li>
+                      <li
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                      >
+                        Resources
+                      </li>
                     </ol>
                   </nav>
-                  <section className="row row-custom announcements mb-4">
-                    <div className="col-lg-12">
-                      <div className="box box-border-radius box-shadow bg-white w-100">
-                        <h2 className="box-subhead icon-fa-box icon-bullhorn">
-                          {" "}
-                          Announcements
-                        </h2>
-
-                        <div id="wrap-owl-announcement">
-                          <div
-                            id="owl-announcement"
-                            className="owl-carousel owl-theme"
-                          >
-                            <div className="item">
-                              <p>
-                                Fall Term registration is open 2020-04-01 to
-                                2020-05-01. <a href="#">Learn More</a>.{" "}
-                              </p>
+                  <section className="wrap-resources">
+                    <div className="row row-custom sortable">
+                      <div className="col-lg-6 mb-4">
+                        <div className="box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap inner-wrap-flex asset asset-type-a">
+                            <div className="content-left">
+                              <i className="fad fa-rocket-launch color-green-light fa-7x"></i>
                             </div>
-                            <div className="item">
-                              <p>
-                                AHEA Conference Grant Deadline is 2020-08-26.
-                                <br /> <a href="#">Learn More</a>.{" "}
-                              </p>
-                            </div>
-                            <div className="item">
-                              <p>
-                                Help us welcome our newest CollaboratED members:
-                                Georgia International University; Ballsbridge
-                                University, Dominica; and Edinburgh Institute
-                                for Global Affairs.{" "}
-                                <a href="https://en.wikipedia.org/w/index.php?title=Ballsbridge_University,_Dominica&action=edit&redlink=1">
-                                  Learn More
-                                </a>
-                                .{" "}
-                              </p>
+                            <div className="content-right">
+                              <div className="box-top position-relative text-uppercase">
+                                <h2>Getting Started</h2>
+                              </div>
+                              <div className="box-middle">
+                                <p>
+                                  Begin using CollaboratED with these quick tips
+                                  and instructions.⁠
+                                </p>
+                              </div>
+                              <div className="box-bottom font-weight-bold">
+                                <p>
+                                  <a href="#" className="view-more">
+                                    View More
+                                  </a>
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div id="dots-number"></div>
                       </div>
+                      {/* END COL */}
+                      <div className="col-lg-6 mb-4">
+                        <div className="box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap inner-wrap-flex asset asset-type-b">
+                            <div className="content-left">
+                              <i className="fad fa-medal color-blue2 fa-7x"></i>
+                            </div>
+                            <div className="content-right">
+                              <div className="box-top position-relative text-uppercase">
+                                <h2>Best Practices &amp; How-To Guides</h2>
+                              </div>
+                              <div className="box-middle">
+                                <p>
+                                  Find methods and techniques that will help you
+                                  best utilize CollaboratED for networking,
+                                  collaborating, and developing courses.
+                                </p>
+                              </div>
+                              <div className="box-bottom font-weight-bold">
+                                <p>
+                                  <a href="#" className="view-more">
+                                    View More
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END COL */}
+                      <div className="col-lg-6 mb-4">
+                        <div className="box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap inner-wrap-flex asset asset-type-c">
+                            <div className="content-left">
+                              <i className="fad fa-laptop color-red-light fa-7x"></i>
+                            </div>
+                            <div className="content-right">
+                              <div className="box-top position-relative text-uppercase">
+                                <h2>Tutorials</h2>
+                              </div>
+                              <div className="box-middle">
+                                <p>
+                                  View a collection of tutorials designed to
+                                  help you use CollaboratED effectively.
+                                </p>
+                              </div>
+                              <div className="box-bottom font-weight-bold">
+                                <p>
+                                  <a href="#" className="view-more">
+                                    View More
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END COL */}
+                      <div className="col-lg-6 mb-4">
+                        <div className="box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap inner-wrap-flex asset asset-type-d">
+                            <div className="content-left">
+                              <i className="fad fa-clipboard-list-check color-orange fa-7x"></i>
+                            </div>
+                            <div className="content-right">
+                              <div className="box-top position-relative text-uppercase">
+                                <h2>TEMPLATES</h2>
+                              </div>
+                              <div className="box-middle">
+                                <p>
+                                  Design teaching plans, syllabi, and other
+                                  instructional material with AHEA’s
+                                  professionally constructed templates.
+                                </p>
+                              </div>
+                              <div className="box-bottom font-weight-bold">
+                                <p>
+                                  <a href="#" className="view-more">
+                                    View More
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END COL */}
                     </div>
-                  </section>
-                  <section className="three-columns">
-                    <div className="row row-custom mb-4 sortable">
-                      <div className="col-lg-3 mb-4">
-                        <div className="resources box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-chart-pie">
-                                {" "}
-                                <a
-                                  href="#"
-                                  className="hover-underline color-black"
-                                >
-                                  Program Management
-                                </a>
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="box-image text-center">
-                              <i className="fad fa-chart-pie icon-size-50 color-blue-light-2"></i>
-                            </div>
-                          </div>
-                          <div className="box-bottom list-bullet">
-                            <ul>
-                              <li>
-                                <a href="#">Budget vs. Actuals</a>
-                              </li>
-                              <li>
-                                <a href="bradley best practices screen.html">
-                                  Faculty and Course Matrix
-                                </a>
-                              </li>
-                              <li>
-                                <a href="bradley templates screen.html">
-                                  Program and Space Optimization
-                                </a>
-                              </li>
-                            </ul>
-                            <div className="mt-4 text-center">
-                              <a href="#" className="btn btn-blue mt-3">
-                                View More
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="resources box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-clipboard-list-check">
-                                <a
-                                  href="#"
-                                  className="hover-underline color-black"
-                                >
-                                  Tasks &amp; Overrides
-                                </a>
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="box-image text-center">
-                              <i className="fad fa-clipboard-list-check icon-size-50 color-blue-light-2"></i>
-                            </div>
-                          </div>
-                          <div className="box-bottom list-bullet">
-                            <ul>
-                              <li>
-                                <a href="#">Adjunct Contracts Approvals</a>
-                              </li>
-                              <li>
-                                <a href="bradley best practices screen.html">
-                                  Faculty Evaluations
-                                </a>
-                              </li>
-                              <li>
-                                <a href="bradley templates screen.html">
-                                  Expense Report Approvals
-                                </a>
-                              </li>
-                              <li>
-                                <a href="#">
-                                  Approve Fall Term Schedule &amp; Rosters
-                                </a>
-                              </li>
-                            </ul>
-
-                            <div className="mt-4 text-center">
-                              <a href="#" className="btn btn-blue mt-3">
-                                View More
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="resources box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-user-className pl-45">
-                                <a
-                                  href="#"
-                                  className="hover-underline color-black"
-                                >
-                                  Committees &amp; Teams
-                                </a>
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="box-image text-center">
-                              <i className="fad fa-users-className icon-size-50 color-blue-light-2"></i>
-                            </div>
-                          </div>
-                          <div className="box-bottom list-bullet">
-                            <ul>
-                              <li>
-                                <a href="#">Student Success Committee</a>
-                              </li>
-                              <li>
-                                <a href="bradley best practices screen.html">
-                                  Cross-Department Collaboration
-                                </a>
-                              </li>
-                              <li>
-                                <a href="bradley templates screen.html">
-                                  Curriculum Committee
-                                </a>
-                              </li>
-                              <li>
-                                <a href="bradley templates screen.html">
-                                  Accreditation Task Force
-                                </a>
-                              </li>
-                            </ul>
-                            <div className="mt-4 text-center">
-                              <a href="#" className="btn btn-blue mt-3">
-                                View More
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 mb-4">
-                        <div className="calendar box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top2 position-relative">
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog"></i>
-                              </a>
-
-                              <div className="btn-group btn-group-menu">
-                                <h2 className="box-subhead icon-fa-box icon-calendar-regular pl-4">
-                                  My Calendar
-                                </h2>
-                                <a
-                                  className="icon-certificate-bg"
-                                  href="javascript:void(0);"
-                                  data-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                >
-                                  3
-                                </a>
-                                <div className="dropdown-menu">
-                                  <div className="toltip-body">
-                                    <div
-                                      id="toltip-my-calendar"
-                                      className="toltip toltip-1-2"
-                                    >
-                                      <div
-                                        id="toltip-item-1001"
-                                        className="toltip-item toltip-overlay mb-1"
-                                      >
-                                        <a
-                                          href="javascript:void(0)"
-                                          className="close-times"
-                                          data-id="1001"
-                                        >
-                                          <i className="fas fa-times-circle"></i>
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="d-flex align-items-center"
-                                        >
-                                          <div className="toltip-icon toltip-icon2 toltip-icon-brown">
-                                            <i className="far fa-calendar-alt color-white"></i>
-                                          </div>
-                                          <div className="toltip-text color-white">
-                                            <p>College of communications</p>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        id="toltip-item-1002"
-                                        className="toltip-item toltip-overlay mb-1"
-                                      >
-                                        <a
-                                          href="javascript:void(0)"
-                                          className="close-times"
-                                          data-id="1002"
-                                        >
-                                          <i className="fas fa-times-circle"></i>
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="d-flex align-items-center"
-                                        >
-                                          <div className="toltip-icon toltip-icon2 toltip-icon-blue-light">
-                                            <i className="far fa-calendar-alt color-white"></i>
-                                          </div>
-                                          <div className="toltip-text color-white">
-                                            <p>College of Business</p>
-                                          </div>
-                                        </a>
-                                      </div>
-                                      <div
-                                        id="toltip-item-1003"
-                                        className="toltip-item toltip-overlay mb-1"
-                                      >
-                                        <a
-                                          href="javascript:void(0)"
-                                          className="close-times"
-                                          data-id="1003"
-                                        >
-                                          <i className="fas fa-times-circle"></i>
-                                        </a>
-                                        <a
-                                          href="#"
-                                          className="d-flex align-items-center"
-                                        >
-                                          <div className="toltip-icon toltip-icon2 toltip-icon-green">
-                                            <i className="far fa-calendar-alt color-white"></i>
-                                          </div>
-                                          <div className="toltip-text color-white">
-                                            <p>
-                                              College of Science &amp;
-                                              Engineering
-                                            </p>
-                                          </div>
-                                        </a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            {/* define the calendar element */}
-                            <div id="my-calendar-container">
-                              <div id="my-calendar"></div>
-                            </div>
-
-                            <div className="col-md-4 img-resp ac">
-                              <div
-                                id="chartContainer1"
-                                className="resp-mb-4"
-                                style={{ height: "300px; width: 100%" }}
-                              ></div>
-                              <div className="mt-3">
-                                Business Communications - COM201
-                              </div>
-                            </div>
-                            <div className="col-md-4 img-resp ac">
-                              <div
-                                id="chartContainer2"
-                                className="resp-mb-4"
-                                style={{ height: "300px; width: 100%" }}
-                              ></div>
-                              <a href="#" className="btn btn-blue mt-3">
-                                View More
-                              </a>
-                            </div>
-                            <div className="col-md-4 img-resp">
-                              <div
-                                id="chartContainer3"
-                                className="resp-mb-4"
-                                style={{ height: "300px; width: 100%" }}
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 mb-4">
-                        <div className="news box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-signal-stream pl-45">
-                                News
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">More News</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">Inside Higher Ed</span>
-                                <span className="details">
-                                  Study of Student Learning Outcomes
-                                </span>
-                              </a>
-                            </div>
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">AHEA</span>
-                                <span className="details">
-                                  2020 Study Abroad Outlook
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 mb-4">
-                        <div className="news box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-briefcase-light pl-45">
-                                Professional Events
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">Sort by Newest </a>
-                                  </li>
-                                  <li>
-                                    <a href="#">Sort by Oldest</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle">
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">
-                                  NBEA 2020 Annual Convention and Tradeshow
-                                </span>
-                                <span className="color-black">
-                                  2020-04-02 to 2020-04-11 Boston, MA, USA{" "}
-                                </span>
-                              </a>
-                            </div>
-                            <div className="item link-tw">
-                              <a href="#">
-                                <span className="sp-tw">
-                                  AACSB International Conference and Annual
-                                  Meeting
-                                </span>
-                                <span className="color-black">
-                                  2020-04-26 to 2020-04-28 Denver, CO, USA{" "}
-                                </span>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-bottom text-center">
-                            <a href="#" className="btn btn-blue mt-3">
-                              View More
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 mb-4">
-                        <div className="communicate box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap mb-4">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-broadcast-tower-light pl-45">
-                                Communicate Now
-                              </h2>
-                              <a
-                                href="javascript:void(0);"
-                                className="icon-setting icon-box"
-                              >
-                                <i className="fas fa-cog"></i>
-                              </a>
-                              <div className="toltip2 menu-toltip toltip-overlay any-toltip">
-                                <ul>
-                                  <li>
-                                    <a href="#">View Messages</a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="javascript:void(0);"
-                                      className="btn-remove"
-                                    >
-                                      Remove
-                                    </a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="box-middle text-center wrap-images d-flex justify-content-between">
-                            <a href="#">
-                              <i
-                                className="fad fa-desktop icon-size-45"
-                                style={{ color: "#008ffa" }}
-                              ></i>
-                            </a>
-                            <a href="#">
-                              <i
-                                className="fad fa-comments-alt icon-size-45"
-                                style={{ color: "#008ffa" }}
-                              ></i>
-                            </a>
-                            <a href="#">
-                              <i
-                                className="fad fa-phone-volume icon-size-45"
-                                style={{ color: "#008ffa" }}
-                              ></i>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 mb-4">
-                        <div className="create-new box box-border-radius box-shadow bg-green">
-                          <div className="inner-wrap">
-                            <div className="box-top position-relative">
-                              <h2 className="box-subhead icon-fa-box icon-handshake-light pl-45 color-black">
-                                ENGAGE YOUR TEAM?
-                              </h2>
-                              <a href="#" className="icon-setting icon-box">
-                                <i className="fas fa-cog color-white"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div className="box-middle color-black text-center">
-                            Share Interests and Collaborate!
-                          </div>
-                          <div className="box-bottom text-center d-flex justify-content-center">
-                            <a href="#" className="btn btn-blue btn-w-100 mr-4">
-                              Collaborate Now
-                            </a>
-                            <i className="fas fa-handshake icon-size-40 color-white"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    {/* row */}
                   </section>
                 </div>
               </div>
@@ -1070,5 +687,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

@@ -3,19 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="robots" content="noindex" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="robots" content="noindex" />
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -31,583 +29,59 @@
       rel="stylesheet"
     />
     <!-- font-family: 'Merriweather Sans', sans-serif; -->
+
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
     <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
-
-    <script src="js/jquery-ui.js"></script>
-    <link rel="stylesheet" href="css/jquery-ui.min.css" />
-
-    <script
-      type="text/javascript"
-      src="js/jquery.easy-pie-chart.min.js"
-    ></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/plugins.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/style-resources.css" />
     <link rel="stylesheet" type="text/css" href="css/style-custom-icon.css" />
+
     <script type="text/javascript" src="js/custom.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        Plugins.init();
-      });
-    </script>
-
-    <!-- charts -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-
-    <title>gordon blended home screen</title>
+    <title>bradley resources screen</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <script src="js/owl.carousel.js"></script>
-
-    <script>
-      jQuery(document).ready(function () {
-        jQuery(".owl-carousel").owlCarousel({
-          singleItem: true,
-          autoplay: true,
-          autoplayTimeout: 5000,
-          autoplayHoverPause: true,
-          loop: true,
-          margin: 10,
-          navigation: true,
-          responsiveClass: true,
-          responsive: {
-            1000: {
-              items: 1,
-              nav: true,
-              loop: true,
-              margin: 20,
-            },
-            300: {
-              items: 1,
-              nav: true,
-              loop: true,
-              margin: 20,
-            },
-          },
-        });
-
-        jQuery(".owl-dots").appendTo("#dots-number");
-      });
-    </script>
-
-    <!-- include the calendar js and css files -->
-    <script src="js/zabuto_calendar.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css" />
-
-    <!-- initialize the calendar on ready -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        var eventData = [
-          //blue-event, green-event, orange-event, purple-event
-          {
-            date: "2020-03-05",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "http://www.google.com",
-            classname: "green-dark-event",
-          },
-          {
-            date: "2020-03-10",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-light-event",
-          },
-          {
-            date: "2020-03-12",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-dark-event",
-          },
-          {
-            date: "2020-03-16",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "blue-light-event",
-          },
-          {
-            date: "2020-03-18",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-light-event",
-          },
-          {
-            date: "2020-03-19",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-dark-event",
-          },
-          {
-            date: "2020-03-24",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-light-event",
-          },
-          {
-            date: "2020-03-26",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "green-dark-event",
-          },
-          {
-            date: "2020-03-30",
-            badge: true,
-            title: "Human Subjects Approval",
-            description: "<b>William Stinson</b>, <i>Organizer</i>",
-            hour: "8:00am EST",
-            link: "#",
-            textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
-            classname: "blue-light-event",
-          },
-        ];
-
-        $("#my-calendar").zabuto_calendar({
-          year: "2020",
-          month: "03",
-          data: eventData,
-          weekstartson: 0,
-          nav_icon: {
-            prev: '<i class="fa fa-angle-left"></i>',
-            next: '<i class="fa fa-angle-right"></i>',
-          },
-        });
-
-        $("#my-calendar-container").on(
-          "click",
-          ".zabuto_calendar .event-styled .day",
-          function () {
-            //$(".zabuto_calendar .event-styled .day").live('click', function(){
-            var myId = $(this).parent(".event-styled").attr("id");
-            var date = myId.substr(-10, 10);
-            var title = "";
-            var description = "";
-            var hour = "";
-            var link = "";
-            var textlink = "";
-
-            for (var i = 0; i < eventData.length; i++) {
-              if (eventData[i].date == date) {
-                title = eventData[i].title;
-                description = eventData[i].description;
-                hour = eventData[i].hour;
-                link = eventData[i].link;
-                textlink = eventData[i].textlink;
-              }
-            }
-
-            if ($(this).find(".popup").length === 0)
-              $(this).append(
-                "<span class='popup'><span class='event-title'>" +
-                  title +
-                  "<span class='popup-close'>x</span></span><span class='event-content'>" +
-                  description +
-                  "<br>" +
-                  hour +
-                  "</span><span class='event-link'><span onclick=\"location.href='" +
-                  link +
-                  '\'" style="color:black;">' +
-                  textlink +
-                  "</span></span></span>"
-              );
-
-            if ($(this).find(".popup").css("display") == "none") {
-              $(this).find(".popup").css("display", "block");
-            }
-          }
-        );
-
-        $("#my-calendar-container").on(
-          "click",
-          ".event-styled .popup-close",
-          function (e) {
-            e.stopPropagation();
-            $(this).parents(".popup").css("display", "none");
-          }
-        );
-      });
-    </script>
     <script
-      type="text/javascript"
-      src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
     ></script>
-    <script>
-      window.onload = function () {
-        //Better to construct options first and then pass it as a parameter
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-        var options = {
-          animationEnabled: true,
-          title: {
-            text: "COURSE ANALYSIS BY SECTION",
-            fontSize: 14,
-            fontFamily: "Merriweather Sans",
-          },
-          axisY: {
-            suffix: "%",
-          },
-          toolTip: {
-            shared: true,
-            reversed: true,
-          },
-          legend: {
-            reversed: true,
-            verticalAlign: "bottom",
-            horizontalAlign: "center",
-            fontSize: 10,
-          },
-          dataPointWidth: 12,
-          data: [
-            {
-              type: "stackedColumn100",
-              name: "Budget",
-              showInLegend: true,
-              yValueFormatString: '#,##0"%"',
-              fallingColor: "#DD7E86",
-              dataPoints: [
-                { label: "Jan", y: 20 },
-                { label: "Feb", y: 40 },
-                { label: "Mar", y: 10 },
-                { label: "Apr", y: 30 },
-                { label: "May", y: 82 },
-                { label: "Jun", y: 72 },
-                { label: "Jul", y: 51 },
-                { label: "Aug", y: 61 },
-                { label: "Sep", y: 66 },
-                { label: "Oct", y: 22 },
-                { label: "Nov", y: 33 },
-                { label: "Dec", y: 23 },
-              ],
-            },
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("a#menu-button-responsive").click(function () {
+          if (jQuery("#sidebar-content-mobile").is(":hidden")) {
+            jQuery("#container").css("margin-top", "0px");
+          } else {
+            jQuery("#container").css("margin-top", "70px");
+          }
 
-            {
-              type: "stackedColumn100",
-              name: "Actuals",
-              showInLegend: true,
-              yValueFormatString: '#,##0"%"',
-              dataPoints: [
-                { label: "Jan", y: 30 },
-                { label: "Feb", y: 100 },
-                { label: "Mar", y: 7 },
-                { label: "Apr", y: 43 },
-                { label: "Apr", y: 30 },
-                { label: "May", y: 20 },
-                { label: "Jun", y: 25 },
-                { label: "Jul", y: 16 },
-                { label: "Aug", y: 35 },
-                { label: "Sep", y: 44 },
-                { label: "Oct", y: 51 },
-                { label: "Nov", y: 22 },
-                { label: "Dec", y: 55 },
-              ],
-            },
-          ],
-        };
-
-        $("#chartContainer1").CanvasJSChart(options);
-
-        var chart2 = new CanvasJS.Chart("chartContainer2", {
-          animationEnabled: true,
-          title: {
-            text: "RETENTION RATES BY COLLEGE",
-            fontSize: 14,
-            fontFamily: "Merriweather Sans",
-          },
-          subtitles: [
-            {
-              text: "",
-            },
-          ],
-          toolTip: {
-            shared: false,
-          },
-          legend: {
-            cursor: "pointer",
-            itemclick: toggleDataSeries2,
-            fontSize: 10,
-          },
-          dataPointWidth: 20,
-          data: [
-            {
-              type: "column",
-              name: "Communications",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2017", y: 23 },
-                { label: "2018", y: 37 },
-                { label: "2019", y: 50 },
-              ],
-            },
-            {
-              type: "column",
-              name: "Business",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2017", y: 70 },
-                { label: "2018", y: 54 },
-                { label: "2019", y: 20 },
-              ],
-            },
-            {
-              type: "column",
-              name: "Science & Engineering",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2017", y: 84 },
-                { label: "2018", y: 40 },
-                { label: "2019", y: 70 },
-              ],
-            },
-          ],
+          jQuery("#sidebar-content-mobile").slideToggle();
         });
 
-        chart2.render();
-
-        function toggleDataSeries2(e) {
-          if (
-            typeof e.dataSeries.visible === "undefined" ||
-            e.dataSeries.visible
-          ) {
-            e.dataSeries.visible = false;
-          } else {
-            e.dataSeries.visible = true;
-          }
-          e.chart2.render();
-        }
-
-        var chart3 = new CanvasJS.Chart("chartContainer3", {
-          animationEnabled: true,
-          title: {
-            text: "GRADUCATION RATES",
-            fontSize: 14,
-            fontFamily: "Merriweather Sans",
-          },
-          subtitles: [
-            {
-              text: "",
-            },
-          ],
-          toolTip: {
-            shared: false,
-          },
-          legend: {
-            cursor: "pointer",
-            itemclick: toggleDataSeries3,
-            fontSize: 10,
-          },
-          dataPointWidth: 18,
-          data: [
-            {
-              type: "column",
-              name: "4-Years",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2016", y: 63 },
-                { label: "2017", y: 23 },
-                { label: "2018", y: 37 },
-                { label: "2019", y: 50 },
-              ],
-            },
-            {
-              type: "column",
-              name: "5-Years",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2016", y: 20 },
-                { label: "2017", y: 70 },
-                { label: "2018", y: 54 },
-                { label: "2019", y: 20 },
-              ],
-            },
-            {
-              type: "column",
-              name: "6-Years",
-              showInLegend: true,
-              yValueFormatString: "#,##0.# Units",
-              dataPoints: [
-                { label: "2016", y: 44 },
-                { label: "2017", y: 84 },
-                { label: "2018", y: 40 },
-                { label: "2019", y: 70 },
-              ],
-            },
-          ],
+        jQuery("#sidebar-content-mobile #nav-mobile li").click(function (e) {
+          jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
+          jQuery(this).find("ul.sub-menu").show();
         });
-        chart3.render();
+      });
+    </script>
 
-        function toggleDataSeries3(e) {
-          if (
-            typeof e.dataSeries.visible === "undefined" ||
-            e.dataSeries.visible
-          ) {
-            e.dataSeries.visible = false;
-          } else {
-            e.dataSeries.visible = true;
-          }
-          e.chart3.render();
-        }
-      };
+    <script src="js/jquery.sortable.js"></script>
+    <script type="text/javascript">
+      jQuery(function () {
+        jQuery(".sortable").sortable({
+          placeholderClass: "col-lg-3",
+        });
+      });
     </script>
   </body>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-  ></script>
-
-  <script type="text/javascript">
-    jQuery(document).ready(function () {
-      jQuery("a#menu-button-responsive").click(function () {
-        if (jQuery("#sidebar-content-mobile").is(":hidden")) {
-          jQuery("#container").css("margin-top", "0px");
-        } else {
-          jQuery("#container").css("margin-top", "70px");
-        }
-
-        jQuery("#sidebar-content-mobile").slideToggle();
-      });
-
-      jQuery("#sidebar-content-mobile #nav-mobile li").click(function (e) {
-        jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
-        jQuery(this).find("ul.sub-menu").show();
-      });
-    });
-  </script>
-
-  <script src="js/jquery.sortable.js"></script>
-  <script type="text/javascript">
-    jQuery(function () {
-      jQuery(".sortable").sortable({
-        placeholderClass: "col-lg-3",
-      });
-    });
-  </script>
-
-  <!-- JAVASCRIPT FOR DONUT CHART -->
-  <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"
-  ></script>
-  <script type="text/javascript">
-    (function ($) {
-      $.fn.greenify = function (options) {
-        // This is the easiest way to have default options.
-        var settings = $.extend(
-          {
-            // These are the defaults.
-            size: "60",
-            perc: "40",
-          },
-          options
-        );
-
-        var canvas = document.getElementsByClassName("donut")[0];
-        canvas.width = parseInt(settings.size);
-        canvas.height = parseInt(settings.size);
-        var percentage = parseInt(settings.perc);
-        var colorDonut = "#339900";
-        var fontSizeText = parseInt(canvas.width) / 4.5 + "px";
-
-        jQuery(this)
-          .find(".text")
-          .html(percentage + "%")
-          .css("color", colorDonut)
-          .css("font-size", fontSizeText)
-          .css("font-family", "arial");
-
-        var donutEl = canvas.getContext("2d");
-
-        var donut = new Chart(donutEl).Doughnut(
-          // Datas
-          [
-            {
-              value: parseInt(percentage),
-              color: colorDonut, //green
-              highlight: "#FF5A5E",
-              label: "Red",
-            },
-            {
-              value: parseInt(100) - parseInt(percentage),
-              color: "#e6e6e6", //grey
-              highlight: "#5AD3D1",
-              label: "Green",
-            },
-          ],
-          // Options
-          {
-            segmentShowStroke: true,
-            segmentStrokeColor: "#fff",
-            segmentStrokeWidth: 1,
-            percentageInnerCutout: 70,
-            animationSteps: 100,
-            responsive: true,
-            maintainAspectRatio: true,
-          }
-        );
-      };
-    })(jQuery);
-
-    jQuery("#donut1").greenify({
-      perc: "98",
-    });
-
-    jQuery("#donut2").greenify({
-      perc: "15",
-    });
-
-    jQuery("#donut3").greenify({
-      perc: "1",
-    });
-  </script>
 </html>
