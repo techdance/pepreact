@@ -41,6 +41,11 @@ class App extends React.Component {
                 <span className="group-hide">My Courses</span>
               </a>
             </li>
+            <li className="disabled-link">
+              <a href="#" className="icon-fa icon-clone">
+                <span className="group-hide"> My Tiles</span>
+              </a>
+            </li>
             <li>
               <a href="#" className="icon-fa icon-copy">
                 <span className="group-hide"> My Files</span>
@@ -110,6 +115,11 @@ class App extends React.Component {
                   <li>
                     <a href="#" className="icon-fa icon-book">
                       <span className="group-hide">My Courses</span>
+                    </a>
+                  </li>
+                  <li className="disabled-link">
+                    <a href="#" className="icon-fa icon-clone">
+                      <span className="group-hide"> My Tiles</span>
                     </a>
                   </li>
                   <li>
@@ -221,19 +231,53 @@ class App extends React.Component {
                             <div className="toltip-body">
                               <div
                                 id="toltip-item-1"
+                                className="toltip-item toltip-overlay d-flex cursor-pointer"
+                                onClick="location.href='messages 01IN_03003 - 01IN_03004.html'"
+                              >
+                                <a href="#" className="close-times" data-id="1">
+                                  <i className="fa fa-times-circle"></i>
+                                </a>
+                                <div className="toltip-image">
+                                  <img src="images/Inez.png" width="48" />
+                                </div>
+                                <div className="toltip-text">
+                                  <p>Inez Campos accepted your Invitation</p>
+                                </div>
+                              </div>
+                              <div
+                                id="toltip-item-1"
+                                className="toltip-item toltip-overlay d-flex cursor-pointer"
+                                onClick="location.href='messages 01IN_03003 - 01IN_03004.html'"
+                              >
+                                <a href="#" className="close-times" data-id="1">
+                                  <i className="fa fa-times-circle"></i>
+                                </a>
+                                <div className="toltip-image">
+                                  <img
+                                    src="images/karthik-koothrappali.png"
+                                    width="48"
+                                  />
+                                </div>
+                                <div className="toltip-text">
+                                  <p>
+                                    Karthik Koothrappali declined your
+                                    Invitation
+                                  </p>
+                                </div>
+                              </div>
+                              <div
+                                id="toltip-item-1"
                                 className="toltip-item toltip-overlay d-flex"
                               >
                                 <a href="#" className="close-times" data-id="1">
                                   <i className="fa fa-times-circle"></i>
                                 </a>
                                 <div className="toltip-image">
-                                  <img src="images/randy.png" width="48" />
+                                  <img src="images/Inez.png" width="48" />
                                 </div>
                                 <div className="toltip-text">
                                   <p>
-                                    Randy Wolff uploaded a document in What
-                                    Artificial Intelligence Can Do for Small
-                                    Business project{" "}
+                                    Your Invitation to Inez Campos has been sent
                                   </p>
                                 </div>
                               </div>
@@ -246,32 +290,76 @@ class App extends React.Component {
                                 </a>
                                 <div className="toltip-icon toltip-icon-green">
                                   <i
-                                    className="fa fa-users"
+                                    className="fa fa-book"
+                                    aria-hidden="true"
+                                  ></i>
+                                </div>
+                                <div className="toltip-text">
+                                  <p>
+                                    You were assigned a Task in Ethics in
+                                    Multinational Management
+                                  </p>
+                                </div>
+                              </div>
+                              <div
+                                id="toltip-item-2"
+                                className="toltip-item toltip-overlay d-flex"
+                              >
+                                <a href="#" className="close-times" data-id="2">
+                                  <i className="fa fa-times-circle"></i>
+                                </a>
+                                <div className="toltip-icon toltip-icon-green">
+                                  <i
+                                    className="fa fa-book"
+                                    aria-hidden="true"
+                                  ></i>
+                                </div>
+                                <div className="toltip-text">
+                                  <p>
+                                    Inez Campos completed Determine
+                                    <br />
+                                    Credit Hours in Ethics in Multinational
+                                    Management
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div
+                                id="toltip-item-1"
+                                className="toltip-item toltip-overlay d-flex"
+                              >
+                                <a href="#" className="close-times" data-id="1">
+                                  <i className="fa fa-times-circle"></i>
+                                </a>
+                                <div className="toltip-image">
+                                  <img src="images/randy.png" width="48" />
+                                </div>
+                                <div className="toltip-text">
+                                  <p>
+                                    Randy Wolff uploaded a doc in What
+                                    Artificial Intelligence Can Do for Small
+                                    Business Project
+                                  </p>
+                                </div>
+                              </div>
+                              <div
+                                id="toltip-item-2"
+                                className="toltip-item toltip-overlay d-flex"
+                              >
+                                <a href="#" className="close-times" data-id="2">
+                                  <i className="fa fa-times-circle"></i>
+                                </a>
+                                <div className="toltip-icon toltip-icon-orange">
+                                  <i
+                                    className="fa fa-book"
                                     aria-hidden="true"
                                   ></i>
                                 </div>
                                 <div className="toltip-text">
                                   <p>
                                     Karthic Koothrappali, Joanne Byrne and
-                                    others have matched with you as suggested
-                                    partners{" "}
-                                  </p>
-                                </div>
-                              </div>
-                              <div
-                                id="toltip-item-3"
-                                className="toltip-item toltip-overlay d-flex"
-                              >
-                                <a href="#" className="close-times" data-id="3">
-                                  <i className="fa fa-times-circle"></i>
-                                </a>
-                                <div className="toltip-image">
-                                  <img src="images/Inez.png" width="48" />
-                                </div>
-                                <div className="toltip-text">
-                                  <p>
-                                    Inez Campos was added to the Ethics in
-                                    Multinational Management project{" "}
+                                    others have matched with you as recommended
+                                    partners
                                   </p>
                                 </div>
                               </div>
@@ -291,7 +379,7 @@ class App extends React.Component {
                                 <div className="toltip-text">
                                   <p>
                                     Register today for the International
-                                    Conference on Big Data in Business{" "}
+                                    Conference on Big Data in Business
                                   </p>
                                 </div>
                               </div>
@@ -306,7 +394,7 @@ class App extends React.Component {
                                   <img src="images/Li.png" width="48" />
                                 </div>
                                 <div className="toltip-text">
-                                  <p>Missed call from Li Wei </p>
+                                  <p>Missed call from Li Wei</p>
                                 </div>
                               </div>
                             </div>
@@ -491,7 +579,7 @@ class App extends React.Component {
                           <img
                             className="img-circle img-border-blue"
                             src="images/bradley.png"
-                            alt=" "
+                            alt=""
                           />
                           <span className="user-name">Hello, Bradley</span>
                         </a>
@@ -527,21 +615,19 @@ class App extends React.Component {
                       </div>
                     </div>
                     <div className="wrap-top-search">
-                      <div className="d-flex">
-                        <div className="top-search">
-                          <div className="box-search">
-                            <form action="" className="d-flex">
-                              <input type="text" placeholder="Search" />
-                              <button type="submit">
-                                <i className="fas fa-search"></i>
-                              </button>
-                            </form>
-                          </div>
-                          <div className="box-question">
-                            <a href="#">
-                              <img src="images/search-icon.png" width="38" />
-                            </a>
-                          </div>
+                      <div className="top-search">
+                        <div className="box-search">
+                          <form action="">
+                            <input type="text" placeholder="Search" />
+                            <button type="submit">
+                              <i className="fas fa-search"></i>
+                            </button>
+                          </form>
+                        </div>
+                        <div className="box-question">
+                          <a href="#">
+                            <span className="icon-solid icon-input-search"></span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -551,130 +637,92 @@ class App extends React.Component {
                       <li className="breadcrumb-item">
                         <a href="bradley home screen.html">Home</a>
                       </li>
+                      <li className="breadcrumb-item">
+                        <a href="bradley home screen.html">Resources</a>
+                      </li>
                       <li
                         className="breadcrumb-item active"
                         aria-current="page"
                       >
-                        Resources
+                        Templates
                       </li>
                     </ol>
                   </nav>
-                  <section className="wrap-resources">
+                  <section className="wrap-best-practices">
                     <div className="row row-custom sortable">
-                      <div className="col-lg-6 mb-4">
-                        <div className="box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap inner-wrap-flex asset asset-type-a">
-                            <div className="content-left">
-                              <i className="fad fa-rocket-launch color-green-light fa-7x"></i>
-                            </div>
-                            <div className="content-right">
-                              <div className="box-top position-relative text-uppercase">
-                                <h2>Getting Started</h2>
-                              </div>
-                              <div className="box-middle">
-                                <p>
-                                  Begin using CollaboratED with these quick tips
-                                  and instructions.⁠
-                                </p>
-                              </div>
-                              <div className="box-bottom font-weight-bold">
-                                <p>
-                                  <a href="#" className="view-more">
-                                    View More
-                                  </a>
-                                </p>
-                              </div>
+                      <div className="col-lg-4 mb-4">
+                        <div className="resources box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap">
+                            <div className="box-top position-relative">
+                              <h2 className="box-subhead mw-100">
+                                <i className="fas fa-cogs"></i>
+                                <a
+                                  href="#"
+                                  className="color-black hover-underline color-blue-light-hover"
+                                >
+                                  Course Development
+                                </a>
+                              </h2>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      {/* END COL */}
-                      <div className="col-lg-6 mb-4">
-                        <div className="box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap inner-wrap-flex asset asset-type-b">
-                            <div className="content-left">
-                              <i className="fad fa-medal color-blue2 fa-7x"></i>
-                            </div>
-                            <div className="content-right">
-                              <div className="box-top position-relative text-uppercase">
-                                <h2>Best Practices &amp; How-To Guides</h2>
-                              </div>
-                              <div className="box-middle">
-                                <p>
-                                  Find methods and techniques that will help you
-                                  best utilize CollaboratED for networking,
-                                  collaborating, and developing courses.
-                                </p>
-                              </div>
-                              <div className="box-bottom font-weight-bold">
-                                <p>
-                                  <a href="#" className="view-more">
-                                    View More
-                                  </a>
-                                </p>
-                              </div>
-                            </div>
+                          <div className="box-middle list-bullet">
+                            <ul>
+                              <li>
+                                <a href="#">Course Control Document</a>
+                              </li>
+                              <li>
+                                <a href="#">Course Evaluation Sheet</a>
+                              </li>
+                              <li>
+                                <a href="#">Teaching Plan</a>
+                              </li>
+                              <li>
+                                <a href="#">Syllabus</a>
+                              </li>
+                            </ul>
                           </div>
                         </div>
-                      </div>
-                      {/* END COL */}
-                      <div className="col-lg-6 mb-4">
-                        <div className="box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap inner-wrap-flex asset asset-type-c">
-                            <div className="content-left">
-                              <i className="fad fa-laptop color-red-light fa-7x"></i>
-                            </div>
-                            <div className="content-right">
-                              <div className="box-top position-relative text-uppercase">
-                                <h2>Tutorials</h2>
-                              </div>
-                              <div className="box-middle">
-                                <p>
-                                  View a collection of tutorials designed to
-                                  help you use CollaboratED effectively.
-                                </p>
-                              </div>
-                              <div className="box-bottom font-weight-bold">
-                                <p>
-                                  <a href="#" className="view-more">
-                                    View More
-                                  </a>
-                                </p>
-                              </div>
+                      </div>{" "}
+                      {/* col-lg-4 */}
+                      <div className="col-lg-4 mb-4">
+                        <div className="resources box box-border-radius box-shadow bg-white">
+                          <div className="inner-wrap">
+                            <div className="box-top position-relative">
+                              <h2 className="box-subhead">
+                                <i className="fas fa-globe-americas"></i>
+                                <a
+                                  href="#"
+                                  className="color-black hover-underline color-blue-light-hover"
+                                >
+                                  Study Abroad
+                                </a>
+                              </h2>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      {/* END COL */}
-                      <div className="col-lg-6 mb-4">
-                        <div className="box box-border-radius box-shadow bg-white">
-                          <div className="inner-wrap inner-wrap-flex asset asset-type-d">
-                            <div className="content-left">
-                              <i className="fad fa-clipboard-list-check color-orange fa-7x"></i>
-                            </div>
-                            <div className="content-right">
-                              <div className="box-top position-relative text-uppercase">
-                                <h2>TEMPLATES</h2>
-                              </div>
-                              <div className="box-middle">
-                                <p>
-                                  Design teaching plans, syllabi, and other
-                                  instructional material with AHEA’s
-                                  professionally constructed templates.
-                                </p>
-                              </div>
-                              <div className="box-bottom font-weight-bold">
-                                <p>
-                                  <a href="#" className="view-more">
-                                    View More
-                                  </a>
-                                </p>
-                              </div>
-                            </div>
+                          <div className="box-middle list-bullet">
+                            <ul>
+                              <li>
+                                <a href="#">Health Form</a>
+                              </li>
+                              <li>
+                                <a href="#">Parent Guide</a>
+                              </li>
+                              <li>
+                                <a href="#">Program Fact Sheet</a>
+                              </li>
+                              <li>
+                                <a href="#">Study Abroad Packing Checklist</a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  Study Abroad Pre-Departure Checklist
+                                </a>
+                              </li>
+                            </ul>
                           </div>
                         </div>
-                      </div>
-                      {/* END COL */}
+                      </div>{" "}
+                      {/* col-lg-4 */}
                     </div>
                     {/* row */}
                   </section>
@@ -687,4 +735,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;
