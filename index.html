@@ -3,167 +3,83 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-
+    <meta name="robots" content="noindex" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700,700i,800,800i&display=swap" rel="stylesheet"><!-- font-family: 'Merriweather Sans', sans-serif; -->
-	<link rel="stylesheet" type="text/css" href="css/sidebar.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-	<link rel="stylesheet" type="text/css" href="css/style-custom-icon.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-	<script type="text/javascript" src="js/custom.js"></script>
-	<!--<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>-->
-    
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,400i,700,700i,800,800i&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Merriweather Sans', sans-serif; -->
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-custom-icon.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-profile.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
 
-    <title>Bradley Edit Profile Screen</title>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+
+    <title>Bradley viewing Inez's Profile</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-  </div>
-  <script>
-    $(function()
-    {
-      $("#profile-phone").validate(
-      {
-        rules:
-        {
-          phone:
-          {
-            required: true,
-            maxlength: 15
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        jQuery("a#menu-button-responsive").click(function () {
+          if (jQuery("#sidebar-content-mobile").is(":hidden")) {
+            jQuery("#container").css("margin-top", "0px");
+          } else {
+            jQuery("#container").css("margin-top", "70px");
           }
-        }
+
+          jQuery("#sidebar-content-mobile").slideToggle();
+        });
+
+        jQuery("#sidebar-content-mobile #nav-mobile li").click(function (e) {
+          jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
+          jQuery(this).find("ul.sub-menu").show();
+        });
       });
-    });
-  </script>
-<script>
-  $(function()
-  {
-    $("#profile-mobile").validate(
-    {
-      rules:
-      {
-        mobile:
-        {
-          required: true,
-          maxlength: 15
-        }
-      }
-    });
-  });
-</script>
+    </script>
 
-<script type="text/javascript">
-  jQuery("#btn-research-project").click(function(){
-    jQuery("#areaInterestVm1Modal").modal("hide");
-  });
-</script>
-
-<script type="text/javascript">
-  jQuery("#btn-academic-journal-project").click(function(){
-    jQuery("#areaInterestVm1Modal-2").modal("hide");
-  });
-</script>
-
-<script type="text/javascript">
-  jQuery("#btn-course-development-project").click(function(){
-    jQuery("#areaInterestVm1Modal-3").modal("hide");
-  });
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-	jQuery(document).ready(function(){
-
-		jQuery("a#menu-button-responsive").click(function(){
-
-			if ( jQuery( "#sidebar-content-mobile" ).is( ":hidden" ) ) {
-				jQuery("#container").css("margin-top","0px");
-			}else{
-				jQuery("#container").css("margin-top","70px");
-			}
-
-			jQuery("#sidebar-content-mobile").slideToggle();
-		});
-
-		jQuery('#sidebar-content-mobile #nav-mobile li').click(function(e){
-			jQuery("#sidebar-content-mobile #nav-mobile li ul.sub-menu").hide();
-			jQuery(this).find("ul.sub-menu").show();
-		});
-
-	});
-</script>
-
-<script src="js/jquery.sortable.js"></script>
-<script type="text/javascript">
-	jQuery(function() {
-		jQuery('.sortable').sortable({
-			placeholderClass: 'col-lg-3'
-		});
-	});
-
-
-
-
-
-
-
-	var sheet = document.createElement('style'),
-  $rangeInput = $('.range input'),
-  prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
-
-document.body.appendChild(sheet);
-
-var getTrackStyle = function (el) {
-  var curVal = el.value,
-      val = (curVal - 1) * 16.666666667,
-      style = '';
-
-  // Set active label
-  $('.range-labels li').removeClass('active selected');
-
-  var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
-
-  curLabel.addClass('active selected');
-  curLabel.prevAll().addClass('selected');
-
-  // Change background gradient
-  for (var i = 0; i < prefs.length; i++) {
-    style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
-    style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
-  }
-
-  return style;
-}
-
-$rangeInput.on('input', function () {
-  sheet.textContent = getTrackStyle(this);
-});
-
-// Change input value on label click
-$('.range-labels li').on('click', function () {
-  var index = $(this).index();
-
-  $rangeInput.val(index + 1).trigger('input');
-
-});
-</script>
-
-
+    <script src="js/jquery.sortable.js"></script>
+    <script type="text/javascript">
+      jQuery(function () {
+        jQuery(".sortable").sortable({
+          placeholderClass: "col-lg-3",
+        });
+      });
+    </script>
   </body>
 </html>
