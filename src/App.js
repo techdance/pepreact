@@ -9,6 +9,8 @@ import registerImg from "./assets/images/logo-tower-register.png";
 
 import AreaInterestVmModal from "./areaInterestVmModal.js";
 
+import ExampleTriggerModal from "./exampleTriggerModal.js";
+
 const modal_example_1 = {
   projectType: "Research",
   description:
@@ -62,14 +64,14 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/modal1">
-            <AreaInterestVmModal modal={modal_example_1} />
+          <Route exact path="/trigger1">
+            <ExampleTriggerModal modal={modal_example_1} example={"1"} />
           </Route>
-          <Route exact path="/modal2">
-            <AreaInterestVmModal modal={modal_example_2} />
+          <Route exact path="/trigger2">
+            <ExampleTriggerModal modal={modal_example_1} example={"2"} />
           </Route>
-          <Route exact path="/modal3">
-            <AreaInterestVmModal modal={modal_example_3} />
+          <Route exact path="/trigger3">
+            <ExampleTriggerModal modal={modal_example_1} example={"3"} />
           </Route>
           <Route path="/">
             <Login />
