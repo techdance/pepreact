@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../style-register.css';
 import logo from '../assets/images/logo-ahea.png';
 import { Textbox } from 'react-inputs-validation';
 import 'react-inputs-validation/lib/react-inputs-validation.min.css';
+=======
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+// import "../style-register.css";
+import logo from "../assets/images/logo-ahea.png";
+import { Textbox } from "react-inputs-validation";
+import "react-inputs-validation/lib/react-inputs-validation.min.css";
+>>>>>>> Stashed changes
 
 
 function Register(props) {
