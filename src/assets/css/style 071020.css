@@ -165,6 +165,17 @@ div p:last-child {
   padding-right: 11px;
   padding-left: 11px;
 }
+
+.col-md-6 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
 .box {
   height: 100%;
   padding: 12px 20px 6px;
@@ -1624,7 +1635,7 @@ body.bg-grey-popup .toltip-overlay:hover {
   z-index: 10;
 }
 .toltip-bg-black {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 .search-box-header {
   background: #000;
