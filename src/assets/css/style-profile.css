@@ -11,7 +11,10 @@ section.wrap-profile .content-icon{
     height: 210px;
     width: 210px;
     position: relative;
-    margin-right:80px;
+    margin-right:30px;
+}
+.bg-profile.no-bg{
+    background: none;
 }
 .bg-profile img{
     margin:auto;
