@@ -1,50 +1,44 @@
 import React from "react";
 
-<<<<<<< Updated upstream
-class ShowPersonalInformation extends React.Component {
-=======
-import ProgressBar from "progressbar.js"
-
+import ProgressBar from "progressbar.js";
 
 class ShowPersonalInformation extends React.Component {
-
   constructor(props) {
     super(props);
 
     let progress = 0;
 
-    if (this.props.professor.name !== null) progress += .10;
-    if (this.props.professor.title !== null) progress += .10;
-    if (this.props.professor.image !== null) progress += .10;
-    if (this.props.professor.communicationPreferences.length) progress += .10;
-    if (this.props.professor.emailAddress !== null) progress += .10;
-    if (this.props.professor.phoneNumbers.length) progress += .10;
-    if (this.props.professor.introVideo !== null) progress += .10;
-    if (this.props.professor.disciplines.length) progress += .10;
-    if (this.props.professor.areasOfExpertise.length) progress += .10;
-    if (this.props.professor.internationalExperience !== null) progress += .10;
+    if (this.props.professor.name !== null) progress += 0.1;
+    if (this.props.professor.title !== null) progress += 0.1;
+    if (this.props.professor.image !== null) progress += 0.1;
+    if (this.props.professor.communicationPreferences.length) progress += 0.1;
+    if (this.props.professor.emailAddress !== null) progress += 0.1;
+    if (this.props.professor.phoneNumbers.length) progress += 0.1;
+    if (this.props.professor.introVideo !== null) progress += 0.1;
+    if (this.props.professor.disciplines.length) progress += 0.1;
+    if (this.props.professor.areasOfExpertise.length) progress += 0.1;
+    if (this.props.professor.internationalExperience !== null) progress += 0.1;
     // if (this.props.professor.bio !== null) progress += 10;
     // if (this.props.professor.personalMessage !== null) progress += 10;
     // if (this.props.professor.cvLink) progress += 10;
 
-    this.state = {percent: progress};
+    this.state = { percent: progress };
   }
 
   componentDidMount() {
-    let bar = new ProgressBar.Circle('#progress', {
-      strokeWidth:15,
-      easing: 'easeInOut',
+    let bar = new ProgressBar.Circle("#progress", {
+      strokeWidth: 15,
+      easing: "easeInOut",
       duration: 1400,
-      color: '#299EFF',
-      trailColor: '#eee',
+      color: "#299EFF",
+      trailColor: "#eee",
       trailWidth: 1,
-      svgStyle: null
+      svgStyle: null,
     });
 
     bar.animate(this.state.percent);
   }
 
->>>>>>> Stashed changes
   render() {
     return (
       <>
@@ -59,11 +53,7 @@ class ShowPersonalInformation extends React.Component {
               </div>
               <div className="box-middle d-flex align-items-center">
                 <div className="content-left">
-<<<<<<< Updated upstream
-                  <div className="bg-profile no-bg">
-=======
                   <div className="bg-profile no-bg" id="progress">
->>>>>>> Stashed changes
                     <img src={this.props.professor.image} width="141" />
                   </div>
                 </div>
