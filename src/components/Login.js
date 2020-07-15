@@ -1,8 +1,18 @@
+<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
 import logo from '../assets/images/logo-ahea.png';
 import '../style-register.css';
+=======
+import React, { useState } from "react";
+
+// import { Redirect } from "react-router-dom"; TLM: Redirect never used in code.
+
+import axios from "axios";
+import logo from "../assets/images/logo-ahea.png";
+// import "../style-register.css";
+>>>>>>> Stashed changes
 
 function Login() {
 
