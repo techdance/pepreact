@@ -16,16 +16,28 @@ class ShowInstitutionProfle extends React.Component {
                 </h2>
               </div>
               <div id="profile-map">
+<<<<<<< HEAD
                 {/* <Iframe
+=======
+                <iframe
+>>>>>>> dev
                   url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95404.89949183122!2d-91.60940329463153!3d41.64703169177204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87e441c16a208817%3A0x6d711867870582b0!2sIowa%20City%2C%20Iowa%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sbo!4v1593560945665!5m2!1ses-419!2sbo"
                   width="600"
                   height="450"
                   frameborder="0"
+<<<<<<< HEAD
                   style="border:0;"
                   allowfullscreen=""
                   aria-hidden="false"
                   tabindex="0"
                 /> */}
+=======
+                  style={{ border: "0" }}
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                />
+>>>>>>> dev
               </div>
               <div className="box-middle">
                 <div className="content-icon">

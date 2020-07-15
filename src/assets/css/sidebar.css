@@ -7,16 +7,13 @@
 	max-width: 215px;
 	width: 100%;
 	z-index: 700;
-	/*Permalink-usetoeditandsharethisgradient:;
-	https:;
-	//colorzilla.com/gradient-editor/#031C77+0,2A9EFF+100*/background: #031C77;
-	/*Oldbrowsers*/background: -moz-linear-gradient(top,  #031C77 0%, #2A9EFF 100%);
-	/*FF3.6-15*/background: -webkit-linear-gradient(top,  #031C77 0%,#2A9EFF 100%);
-	/*Chrome10-25,Safari5.1-6*/background: linear-gradient(to bottom,  #031C77 0%,#2A9EFF 100%);
-	/*W3C,IE10+,FF16+,Chrome26+,Opera12+,Safari7+*/filter:;
-	progid:DXImageTransform.Microsoft.gradient( startColorstr='#031C77', endColorstr='#2A9EFF',GradientType=0 );
-	 /* IE6-9 */:;
-	-webkit-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#031C77', endColorstr='#2A9EFF',GradientType=0 );
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#011374+1,014fb2+28,008aef+52,0099ff+78,0099ff+100 */
+background: #011374; /* Old browsers */
+background: -moz-linear-gradient(top,  #011374 1%, #014fb2 28%, #008aef 52%, #0099ff 78%, #0099ff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #011374 1%,#014fb2 28%,#008aef 52%,#0099ff 78%,#0099ff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #011374 1%,#014fb2 28%,#008aef 52%,#0099ff 78%,#0099ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011374', endColorstr='#0099ff',GradientType=0 ); /* IE6-9 */
+
 }
 #sidebar * {
     white-space: nowrap;
@@ -33,19 +30,25 @@
 #sidebar a{
     color:#fff;
     display: block;
-    /*height: 48px;*/
+    height: 48px;
     overflow: hidden;
 	text-decoration: none;
     max-width: 100%;
     width: 100%;
 }
 #sidebar.hidden{
-    max-width: 90px;
+    max-width: 60px;
 }
 .sidebar-fixed {
     position: -webkit-sticky;
     position: sticky;
 }
+#sidebar.hidden ul#nav > li > a {
+    
+    padding-left:15px !important;
+}
+
+#sidebar.hidden #wrap-logo-bottom img{width:30px !important;}
 
 #wrap-logo{
     align-self: flex-start;
@@ -79,7 +82,7 @@
     margin: 0;
     border: 0;
     border-left:4px solid transparent;
-    padding: 17px 22px 17px 28px;
+    padding: 17px 22px 17px 45px;
     position: relative;
     font-size: 14px;
     font-weight: 400;
@@ -163,6 +166,11 @@
     margin-top: auto;
     padding:15px;
     width:100%;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    max-width: 215px;
 }
 
 #wrap-logo-bottom a{
