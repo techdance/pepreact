@@ -15,10 +15,12 @@ class ShowProfileIcon extends React.Component {
             >
               <img
                 className="img-circle img-border-blue"
-                src="images/Inez.png"
+                src={this.props.image}
                 alt=""
               />
-              <span className="user-name">Hello, Inez</span>
+              <span className="user-name">
+                {"Hello, " + this.props.firstName}
+              </span>
             </a>
             <div className="dropdown-menu">
               <div id="notification-toltip" className="toltip">
