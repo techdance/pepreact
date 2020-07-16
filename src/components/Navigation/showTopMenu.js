@@ -94,7 +94,10 @@ class ShowTopMenu extends React.Component {
           <ShowBadges badges={badges} />
           <ShowAlerts alerts={alerts} />
           <ShowMessages messages={messages} />
-          <ShowProfileIcon />
+          <ShowProfileIcon
+            firstName={this.props.owner.Person.firstName}
+            image={this.props.owner.Person.iconImage}
+          />
 
           <ShowSearchBox />
         </section>
