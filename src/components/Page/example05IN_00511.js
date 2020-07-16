@@ -1,11 +1,11 @@
 import React from "react";
 
-import ShowCollaborationInterests from "./components/showCollaborationInterests.js";
-import ShowCredentials from "./components/showCredentials.js";
-import ShowInstitutionProfle from "./components/showInstitutionProfile.js";
-import ShowPersonalInformation from "./components/showPersonalInformation.js";
-import ShowCommunicationPreferences from "./components/showCommunicationPreferences.js";
-import ShowProfessionalBio from "./components/showProfessionalBio.js";
+import ShowCollaborationInterests from "./showCollaborationInterests.js";
+import ShowCredentials from "./showCredentials.js";
+import ShowInstitutionProfle from "./showInstitutionProfile.js";
+import ShowPersonalInformation from "./showPersonalInformation.js";
+import ShowCommunicationPreferences from "./showCommunicationPreferences.js";
+import ShowProfessionalBio from "./showProfessionalBio.js";
 
 //  TLM: constants below represent sample DB records.
 
