@@ -48,7 +48,7 @@ class ShowAlerts extends React.Component {
               aria-expanded="false"
             >
               <span className="note">
-                <span className="outer">5</span>
+                <span className="outer">{this.props.alerts.length}</span>
               </span>
             </a>
             <div className="dropdown-menu">

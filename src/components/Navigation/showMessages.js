@@ -14,7 +14,7 @@ class ShowMessages extends React.Component {
               aria-expanded="false"
             >
               <span className="note">
-                <span className="outer">3</span>
+                <span className="outer">{this.props.messages.length}</span>
               </span>
             </a>
             <div className="dropdown-menu">
