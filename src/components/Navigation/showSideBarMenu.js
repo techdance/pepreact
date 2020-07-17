@@ -50,62 +50,13 @@ class ShowSideBarMenu extends React.Component {
                     className="icon-fa icon-arrow-left"
                   ></a>
                 </li>
-
-                <li className="active">
-                  <a href="#" className="icon-fa icon-home">
-                    <span className="group-hide">Home</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-calendar">
-                    <span className="group-hide">My Calendar</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-user-group">
-                    <span className="group-hide">Committees & Teams</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-book-reader icon-solid">
-                    <span className="group-hide">My Advisees</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-book">
-                    <span className="group-hide">My Courses</span>
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="icon-fa icon-book-title">
-                    <span className="group-hide">My Projects</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-copy">
-                    <span className="group-hide"> My Files</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-th-large">
-                    <span className="group-hide">Resources</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-sun-haze">
-                    <span className="group-hide">Opportunities</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-user-friends icon-solid">
-                    <span className="group-hide">Recommended Partners</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="icon-fa icon-settings">
-                    <span className="group-hide">Settings</span>
-                  </a>
-                </li>
+                {this.props.menuItems.map((menuItem, index) => (
+                  <li key={index} className="active">
+                    <a href="#" className={"icon-fa " + menuItem.icon}>
+                      <span className="group-hide">{menuItem.name}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <WrapLogoBottom />
