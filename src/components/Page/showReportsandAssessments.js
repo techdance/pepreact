@@ -19,6 +19,7 @@ class ShowReportsandAssessments extends React.Component {
 
   render() {
     const chart_1 = {
+      height: 300,
       animationEnabled: true,
       title: {
         text: "BUDGET VS. ACTUALS",
@@ -87,6 +88,7 @@ class ShowReportsandAssessments extends React.Component {
     };
 
     const chart_2 = {
+      height: 300,
       animationEnabled: true,
       title: {
         text: "RETENTION RATES BY COLLEGE",
@@ -145,6 +147,7 @@ class ShowReportsandAssessments extends React.Component {
     };
 
     const chart_3 = {
+      height: 300,
       animationEnabled: true,
       title: {
         text: "GRADUCATION RATES",
@@ -278,12 +281,12 @@ class ShowReportsandAssessments extends React.Component {
                   </div>
                 </div>
               </div>
+              <div class="mt-4 text-center">
+                <a href="#" class="btn btn-blue">
+                  View More
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="mt-4 text-center">
-            <a href="#" class="btn btn-blue">
-              View More
-            </a>
           </div>
         </div>
       </>
