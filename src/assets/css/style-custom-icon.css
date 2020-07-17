@@ -187,6 +187,9 @@
 .icon-school::before{
     content: "\f549";
 }
+.icon-share::before{
+    content: "\f1e0";
+}
 .icon-user-friends::before{
     content: "\f500";
 }

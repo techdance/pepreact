@@ -39,7 +39,6 @@ div.asset {
 .asset .box-middle{
     font-size:14px;
     line-height: 24px;
-    margin-bottom: 20px;
 }
 
 .asset .box-bottom a,
@@ -55,19 +54,27 @@ div.asset {
         margin-right: 0px;
         margin-bottom:20px;
         text-align: center;
+        margin-top: 20px;
     }
     div.asset {
         padding: 20px 10px 5px;
     }
 }
-
+@media(max-width:575px){
+    .asset h2,
+    .asset .box-middle,
+    .asset .box-bottom a, .asset .box-bottom{
+        text-align: center;
+    }
+}
 .wrap-collaborated div.asset {
-    padding: 35px 10px 6px;
+    padding: 5px;
 }
 
 .wrap-collaborated .asset h2 {
     color: #000;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+    padding-top: 5px;
 }
