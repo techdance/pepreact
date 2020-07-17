@@ -11,13 +11,14 @@ import "./assets/css/sidebar.css";
 import "./assets/css/style.css";
 import "./assets/css/style-custom-icon.css";
 import "./assets/css/responsive.css";
+import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/fontawesome-all.css";
 
 // import "./assets/css/style-register.css";
 
-import Example05IN_00511 from "./example05IN_00511.js";
 import ExamplePage from "./components/ExamplePage.js";
+import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 
 function App() {
   return (
@@ -27,8 +28,11 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/ExamplePage">
+          <Route exact path="/ExampleInez">
             <ExamplePage />
+          </Route>
+          <Route exact path="/ExampleGordon">
+            <ExampleGordon00300Page />
           </Route>
           <Route path="/">
             <Login />
