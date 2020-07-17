@@ -1,6 +1,6 @@
 import React from "react";
 
-import Example05IN_00511 from "../example05IN_00511.js";
+import Example05IN_00511 from "./Page/example05IN_00511.js";
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
@@ -24,6 +24,24 @@ const owner = {
   Person: { firstName: "Inez", iconImage: "./images/Inez.png" },
 };
 
+const menuItems = [
+  { name: "Home", link: "#", icon: "icon-home" },
+  { name: "My Calendar", link: "#", icon: "icon-calendar" },
+  { name: "Committees & Teams", link: "#", icon: "icon-user-group" },
+  { name: "My Advisees", link: "#", icon: "icon-book-reader icon-solid" },
+  { name: "My Courses", link: "#", icon: "icon-book" },
+  { name: "My Projects", link: "#", icon: "icon-book-title" },
+  { name: "My Files", link: "#", icon: "icon-copy" },
+  { name: "Resources", link: "#", icon: "icon-th-large" },
+  { name: "Opportunities", link: "#", icon: "icon-sun-haze" },
+  {
+    name: "Recommended Partners",
+    link: "#",
+    icon: "icon-user-friends icon-solid",
+  },
+  { name: "Settings", link: "#", icon: "icon-settings" },
+];
+
 class ExamplePage extends React.Component {
   render() {
     return (
@@ -41,15 +59,16 @@ class ExamplePage extends React.Component {
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
-            <ShowSideBarMenu owner={owner} />
+            <ShowSideBarMenu owner={owner} menuItems={menuItems} />
             <div id="content" className="">
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-lg-12">
                     <ShowTopMenu owner={owner} />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
+
+                    <Example05IN_00511 />
                   </div>
-                  <Example05IN_00511 />
                 </div>
               </div>
             </div>
