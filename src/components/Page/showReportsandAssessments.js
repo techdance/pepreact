@@ -210,22 +210,22 @@ class ShowReportsandAssessments extends React.Component {
 
     return (
       <>
-        <div class="col-lg-12 mb-4">
-          <div class="box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead mw-100">
-                  <span class="icon-regular icon-chart-bar"></span>Reports &
+        <div className="col-lg-12 mb-4">
+          <div className="box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead mw-100">
+                  <span className="icon-regular icon-chart-bar"></span>Reports &
                   Assessment
                 </h2>
                 <a
                   href="javascript:void(0);"
-                  class="icon-setting icon-box btn-menu"
+                  className="icon-setting icon-box btn-menu"
                 >
-                  <span class="icon-solid fa-cog"></span>
+                  <span className="icon-solid fa-cog"></span>
                 </a>
 
-                <div class="toltip2 menu-toltip toltip-overlay any-toltip">
+                <div className="toltip2 menu-toltip toltip-overlay any-toltip">
                   <ul>
                     <li>
                       <a href="#">Create New Course</a>
@@ -234,19 +234,19 @@ class ShowReportsandAssessments extends React.Component {
                       <a href="#">Go to My Course</a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" class="btn-remove">
+                      <a href="javascript:void(0);" className="btn-remove">
                         Remove
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="box-middle">
-                <div class="row">
-                  <div class="col-md-4 img-resp">
+              <div className="box-middle">
+                <div className="row">
+                  <div className="col-md-4 img-resp">
                     <div
                       id="chartContainer1"
-                      class="resp-mb-4"
+                      className="resp-mb-4"
                       style={{ height: "300px", width: "100%" }}
                     >
                       <CanvasJSChart
@@ -255,10 +255,10 @@ class ShowReportsandAssessments extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="col-md-4 img-resp">
+                  <div className="col-md-4 img-resp">
                     <div
                       id="chartContainer2"
-                      class="resp-mb-4"
+                      className="resp-mb-4"
                       style={{ height: "300px", width: "100%" }}
                     >
                       <CanvasJSChart
@@ -267,10 +267,10 @@ class ShowReportsandAssessments extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="col-md-4 img-resp">
+                  <div className="col-md-4 img-resp">
                     <div
                       id="chartContainer3"
-                      class="resp-mb-4"
+                      className="resp-mb-4"
                       style={{ height: "300px", width: "100%" }}
                     >
                       <CanvasJSChart
@@ -281,8 +281,8 @@ class ShowReportsandAssessments extends React.Component {
                   </div>
                 </div>
               </div>
-              <div class="mt-4 text-center">
-                <a href="#" class="btn btn-blue">
+              <div className="mt-4 text-center">
+                <a href="#" className="btn btn-blue">
                   View More
                 </a>
               </div>

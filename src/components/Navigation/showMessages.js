@@ -22,6 +22,7 @@ class ShowMessages extends React.Component {
                 <div className="toltip-body">
                   {this.props.messages.map((message, index) => (
                     <div
+                      key={index}
                       id={"toltip-item-" + index}
                       className="toltip-item d-flex position-relative p-0 toltip-overlay border-radius-5"
                     >

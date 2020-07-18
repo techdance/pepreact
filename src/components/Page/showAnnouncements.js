@@ -61,8 +61,8 @@ class ShowAnnouncements extends React.Component {
               <div id="wrap-owl-announcement">
                 <div id="owl-announcement" className="owl-carousel owl-theme">
                   {this.props.announcements.map((announcement, index) => (
-                    <div className="item">
-                      <p key={index}>
+                    <div key={index} className="item">
+                      <p>
                         {announcement.msg}{" "}
                         <a href={announcement.link}>Learn More</a>
                       </p>

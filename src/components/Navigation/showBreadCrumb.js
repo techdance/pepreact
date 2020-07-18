@@ -7,10 +7,8 @@ class ShowBreadCrumb extends React.Component {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             {this.props.breadCrumbList.map((breadCrumb, index) => (
-              <li className="breadcrumb-item">
-                <a key={index} href="#">
-                  {breadCrumb}
-                </a>
+              <li key={index} className="breadcrumb-item">
+                <a href="#">{breadCrumb}</a>
               </li>
             ))}
           </ol>

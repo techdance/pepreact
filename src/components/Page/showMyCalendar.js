@@ -22,7 +22,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-light-event",
       },
       {
@@ -32,7 +32,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-dark-event",
       },
       {
@@ -42,7 +42,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "blue-light-event",
       },
       {
@@ -52,7 +52,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-light-event",
       },
       {
@@ -62,7 +62,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-dark-event",
       },
       {
@@ -72,7 +72,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-light-event",
       },
       {
@@ -82,7 +82,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "green-dark-event",
       },
       {
@@ -92,7 +92,7 @@ class MyCalendar extends React.Component {
         description: "<b>William Stinson</b>, <i>Organizer</i>",
         hour: "8:00am EST",
         link: "#",
-        textlink: "View Event <i class='fas fa-angle-double-right'></i>",
+        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
         classname: "blue-light-event",
       },
     ];
@@ -105,8 +105,8 @@ class MyCalendar extends React.Component {
       data: eventData,
       weekstartson: 0,
       nav_icon: {
-        prev: '<i class="fa fa-angle-left"></i>',
-        next: '<i class="fa fa-angle-right"></i>',
+        prev: '<i className="fa fa-angle-left"></i>',
+        next: '<i className="fa fa-angle-right"></i>',
       },
     });
 
@@ -136,13 +136,13 @@ class MyCalendar extends React.Component {
 
         if ($(this).find(".popup").length === 0) {
           $(this).append(
-            "<span class='popup'><span class='event-title'>" +
+            "<span className='popup'><span className='event-title'>" +
               title +
-              "<span class='popup-close'>x</span></span><span class='event-content'>" +
+              "<span className='popup-close'>x</span></span><span className='event-content'>" +
               description +
               "<br>" +
               hour +
-              "</span><span class='event-link'><span onclick=\"location.href='" +
+              "</span><span className='event-link'><span onclick=\"location.href='" +
               link +
               '\'" style="color:black;">' +
               textlink +
@@ -176,15 +176,15 @@ class ShowMyCalendar extends React.Component {
   render() {
     return (
       <>
-        <div class="col-lg-3 mb-4">
-          <div class="calendar box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top2 position-relative">
-                <h2 class="box-subhead">
-                  <span class="icon-regular fa-calendar-alt"></span>
+        <div className="col-lg-3 mb-4">
+          <div className="calendar box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top2 position-relative">
+                <h2 className="box-subhead">
+                  <span className="icon-regular fa-calendar-alt"></span>
                   My Calendar
                   <a
-                    class="icon-certificate-bg"
+                    className="icon-certificate-bg"
                     href="javascript:void(0);"
                     data-toggle="modal"
                     data-target="#mycalendarModal-2"
@@ -192,49 +192,55 @@ class ShowMyCalendar extends React.Component {
                     3
                   </a>
                 </h2>
-                <a href="#" class="icon-setting icon-box">
-                  <span class="icon-solid fa-cog"></span>
+                <a href="#" className="icon-setting icon-box">
+                  <span className="icon-solid fa-cog"></span>
                 </a>
 
                 {/* <!-- Modal Badges --> */}
                 <div
-                  class="modal fade modalToltip"
+                  className="modal fade modalToltip"
                   id="mycalendarModal-2"
-                  tabindex="-1"
+                  tabIndex="-1"
                   role="dialog"
                   aria-labelledby="modalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog modal-dialog-310" role="document">
-                    <div class="modal-content">
-                      <div class="modal-body">
-                        <div id="toltip-my-calendar" class="toltip toltip-1-2">
-                          <div class="toltip-item toltip-overlay mb-2">
-                            <a href="#" class="d-flex align-items-center">
-                              <div class="toltip-icon toltip-icon2 toltip-icon-brown">
-                                <i class="far fa-calendar-alt color-white"></i>
+                  <div
+                    className="modal-dialog modal-dialog-310"
+                    role="document"
+                  >
+                    <div className="modal-content">
+                      <div className="modal-body">
+                        <div
+                          id="toltip-my-calendar"
+                          className="toltip toltip-1-2"
+                        >
+                          <div className="toltip-item toltip-overlay mb-2">
+                            <a href="#" className="d-flex align-items-center">
+                              <div className="toltip-icon toltip-icon2 toltip-icon-brown">
+                                <i className="far fa-calendar-alt color-white"></i>
                               </div>
-                              <div class="toltip-text color-white">
+                              <div className="toltip-text color-white">
                                 <p>College of communications</p>
                               </div>
                             </a>
                           </div>
-                          <div class="toltip-item toltip-overlay mb-2">
-                            <a href="#" class="d-flex align-items-center">
-                              <div class="toltip-icon toltip-icon2 toltip-icon-blue-light">
-                                <i class="far fa-calendar-alt color-white"></i>
+                          <div className="toltip-item toltip-overlay mb-2">
+                            <a href="#" className="d-flex align-items-center">
+                              <div className="toltip-icon toltip-icon2 toltip-icon-blue-light">
+                                <i className="far fa-calendar-alt color-white"></i>
                               </div>
-                              <div class="toltip-text color-white">
+                              <div className="toltip-text color-white">
                                 <p>College of Business</p>
                               </div>
                             </a>
                           </div>
-                          <div class="toltip-item toltip-overlay mb-2">
-                            <a href="#" class="d-flex align-items-center">
-                              <div class="toltip-icon toltip-icon2 toltip-icon-green">
-                                <i class="far fa-calendar-alt color-white"></i>
+                          <div className="toltip-item toltip-overlay mb-2">
+                            <a href="#" className="d-flex align-items-center">
+                              <div className="toltip-icon toltip-icon2 toltip-icon-green">
+                                <i className="far fa-calendar-alt color-white"></i>
                               </div>
-                              <div class="toltip-text color-white">
+                              <div className="toltip-text color-white">
                                 <p>College of Science & Engineering</p>
                               </div>
                             </a>
@@ -246,7 +252,7 @@ class ShowMyCalendar extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="box-middle">
+            <div className="box-middle">
               {/* <!-- define the calendar element --> */}
               <div id="my-calendar-container">
                 <div id="my-calendar"></div>
