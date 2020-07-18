@@ -2,6 +2,13 @@ import React from "react";
 
 class ShowProfessionalEvents extends React.Component {
   render() {
+    const events = this.props.events;
+
+    const professionalEvents = {
+      title: "Professonal Events",
+      icon: "icon-regular icon-briefcase",
+    };
+
     return (
       <>
         <div className="col-lg-3 mb-4">
@@ -9,8 +16,8 @@ class ShowProfessionalEvents extends React.Component {
             <div className="inner-wrap">
               <div className="box-top position-relative">
                 <h2 className="box-subhead">
-                  <span className="icon-regular icon-briefcase"></span>
-                  Professional Events
+                  <span className={professionalEvents.icon}></span>
+                  {professionalEvents.title}
                 </h2>
                 <a href="javascript:void(0);" className="icon-setting icon-box">
                   <span className="icon-solid fa-cog"></span>
@@ -33,22 +40,16 @@ class ShowProfessionalEvents extends React.Component {
               </div>
             </div>
             <div className="box-middle">
-              <div className="item">
-                <a href="#">
-                  NBEA 2020 Annual Convention and Tradeshow
-                  <span className="color-black">
-                    April 7-11, 2020 Boston, MA, USA{" "}
-                  </span>
-                </a>
-              </div>
-              <div className="item">
-                <a href="https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting">
-                  AACSB International Conference and Annual Meeting
-                  <span className="color-black">
-                    April 26-28, 2020 Denver, CO, USA{" "}
-                  </span>
-                </a>
-              </div>
+              {events.map((event, index) => (
+                <div key={index} className="item">
+                  <a href={event.eventLink}>
+                    {event.eventName}
+                    <span className="color-black">
+                      {event.eventDateLocation}
+                    </span>
+                  </a>
+                </div>
+              ))}
             </div>
             <div className="box-bottom text-center">
               <a href="#" className="icon-regular view-more">

@@ -52,6 +52,29 @@ const committeesandteams = [
   { name: "Accreditation Task Force", link: "#" },
 ];
 
+const news = [
+  {
+    source: "Inside Higher Ed",
+    sourceLink: "#",
+    title: "Study of Student Learning Outcomes",
+  },
+  { source: "AHEA", sourceLink: "#", title: "2020 Study Abroad Outlook" },
+];
+
+const professionalEvents = [
+  {
+    eventName: "NBEA 2020 Annual Convention and Tradeshow",
+    eventLink: "#",
+    eventDateLocation: "April 7-11, 2020 Boston, MA, USA",
+  },
+  {
+    eventName: "AACSB International Conference and Annual Meeting",
+    eventLink:
+      "https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting",
+    eventDateLocation: "April 26-28, 2020 Denver,CO USA",
+  },
+];
+
 class AdministratorHomePageContainer extends React.Component {
   render() {
     return (
@@ -66,8 +89,8 @@ class AdministratorHomePageContainer extends React.Component {
             <ShowMyCalendar />
 
             <ShowReportsandAssessments />
-            <ShowNews />
-            <ShowProfessionalEvents />
+            <ShowNews news={news} />
+            <ShowProfessionalEvents events={professionalEvents} />
             <ShowCommunicateNow />
             <ShowEngageYourTeam />
           </div>
