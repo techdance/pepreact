@@ -2,42 +2,51 @@ import React from "react";
 
 class ShowProgramManagement extends React.Component {
   render() {
+    const programs = this.props.programs;
+
+    const programManagement = {
+      title: "Program Management",
+      titleIcon: "icon-regular icon-chart-pie",
+      icon: "icon-duotone icon-chart-pie icon-size-50",
+    };
+
     return (
       <>
-        <div class="col-lg-3 mb-4">
-          <div class="resources box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead">
-                  <span class="icon-regular icon-chart-pie"></span>
-                  <a href="#" class="hover-underline color-black">
-                    Program Management
+        <div className="col-lg-3 mb-4">
+          <div className="resources box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead">
+                  <span className={programManagement.titleIcon}></span>
+                  <a href="#" className="hover-underline color-black">
+                    {programManagement.title}
                   </a>
                 </h2>
-                <a href="#" class="icon-setting icon-box">
-                  <span class="icon-solid fa-cog"></span>
+                <a href="#" className="icon-setting icon-box">
+                  <span className="icon-solid fa-cog"></span>
                 </a>
               </div>
             </div>
-            <div class="box-middle pt-3">
-              <div class="box-image text-center">
-                <span class="icon-duotone icon-chart-pie icon-size-50 cl-primary-asset-type-f cl-secondary-asset-type-f"></span>
+            <div className="box-middle pt-3">
+              <div className="box-image text-center">
+                <span
+                  className={
+                    programManagement.icon +
+                    " cl-primary-asset-type-f cl-secondary-asset-type-f"
+                  }
+                ></span>
               </div>
             </div>
-            <div class="box-bottom list-bullet list-task mt-5">
+            <div className="box-bottom list-bullet list-task mt-5">
               <ul>
-                <li>
-                  <a href="#">Budget vs. Actuals</a>
-                </li>
-                <li>
-                  <a href="#">Faculty/Course Matrix</a>
-                </li>
-                <li>
-                  <a href="#">Program/Space Optimization</a>
-                </li>
+                {programs.map((program, index) => (
+                  <li key={index}>
+                    <a href={program.link}>{program.name}</a>
+                  </li>
+                ))}
               </ul>
-              <div class="mt-4 text-center">
-                <a href="#" class="btn btn-blue">
+              <div className="mt-4 text-center">
+                <a href="#" className="btn btn-blue">
                   View More
                 </a>
               </div>

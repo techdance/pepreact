@@ -32,17 +32,37 @@ const announcement3 = {
 
 const announcements = [announcement1, announcement2, announcement3];
 
+const programs = [
+  { name: "Budget vs. Actuals", link: "#" },
+  { name: "Faculty/Course Matrix", link: "#" },
+  { name: "Program/Space Optimization", link: "#" },
+];
+
+const tasksandOverrides = [
+  { name: "Adjunct Contracts Approvals", link: "#", count: "22" },
+  { name: "Faculty Evaluations", link: "#", count: "37" },
+  { name: "Expense Report Approvals", link: "#", count: "10" },
+  { name: "Approve Fall Term Schedule & Rosters", link: "#", count: "" },
+];
+
+const committeesandteams = [
+  { name: "Student Success Committee", link: "#" },
+  { name: "Cross-Dept Collaboration", link: "#" },
+  { name: "Curriculum Committee", link: "#" },
+  { name: "Accreditation Task Force", link: "#" },
+];
+
 class AdministratorHomePageContainer extends React.Component {
   render() {
     return (
       <>
         <ShowAnnouncements announcements={announcements} />
 
-        <section class="three-columns">
-          <div class="row row-custom mb-4 sortable">
-            <ShowProgramManagement />
-            <ShowTasksAndOverRides />
-            <ShowCommitteesAndTeams />
+        <section className="three-columns">
+          <div className="row row-custom mb-4 sortable">
+            <ShowProgramManagement programs={programs} />
+            <ShowTasksAndOverRides tasksandOverrides={tasksandOverrides} />
+            <ShowCommitteesAndTeams committeesandteams={committeesandteams} />
             <ShowMyCalendar />
 
             <ShowReportsandAssessments />
