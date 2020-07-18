@@ -98,19 +98,20 @@ class MyCalendar extends React.Component {
     ];
 
     /* global $ */
-    this.$calendar = $(this.props.calendarTag);
-    this.$calendar.zabuto_calendar({
+    this.$elcalendar = $(this.elcalendar);
+    this.$elcalendar.zabuto_calendar({
       year: "2020",
       month: "03",
       data: eventData,
       weekstartson: 0,
       nav_icon: {
-        prev: '<i className="fa fa-angle-left"></i>',
-        next: '<i className="fa fa-angle-right"></i>',
+        prev: '<i class="fa fa-angle-left"></i>',
+        next: '<i class="fa fa-angle-right"></i>',
       },
     });
 
-    this.$calendarContainer = $(this.props.calendarContainer);
+    /* global $ */
+    this.$calendarContainer = $(this.elcontainer);
     this.$calendarContainer.on(
       "click",
       ".zabuto_calendar .event-styled .day",
@@ -136,13 +137,13 @@ class MyCalendar extends React.Component {
 
         if ($(this).find(".popup").length === 0) {
           $(this).append(
-            "<span className='popup'><span className='event-title'>" +
+            "<span class='popup'><span class='event-title'>" +
               title +
-              "<span className='popup-close'>x</span></span><span className='event-content'>" +
+              "<span class='popup-close'>x</span></span><span class='event-content'>" +
               description +
               "<br>" +
               hour +
-              "</span><span className='event-link'><span onclick=\"location.href='" +
+              "</span><span class='event-link'><span onclick=\"location.href='" +
               link +
               '\'" style="color:black;">' +
               textlink +
@@ -168,7 +169,21 @@ class MyCalendar extends React.Component {
   }
 
   render() {
-    return <div ref={(el) => (this.el = el)}></div>;
+    return (
+      // Need to wrap element modified by JQuery in div element because React only sees one child of div
+      <div>
+        {/* define the calendar element use ref so that React leaves element out of its processing */}
+        <div
+          ref={(elcontainer) => (this.elcontainer = elcontainer)}
+          id="my-calendar-container"
+        >
+          <div
+            ref={(elcalendar) => (this.elcalendar = elcalendar)}
+            id="my-calendar"
+          ></div>
+        </div>
+      </div>
+    );
   }
 }
 
@@ -253,15 +268,7 @@ class ShowMyCalendar extends React.Component {
               </div>
             </div>
             <div className="box-middle">
-              {/* <!-- define the calendar element --> */}
-              <div id="my-calendar-container">
-                <div id="my-calendar"></div>
-              </div>
-
-              <MyCalendar
-                calendarTag={"#my-calendar"}
-                calendarContainer={"#my-calendar-container"}
-              />
+              <MyCalendar />
             </div>
           </div>
         </div>
