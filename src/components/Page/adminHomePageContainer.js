@@ -52,6 +52,105 @@ const committeesandteams = [
   { name: "Accreditation Task Force", link: "#" },
 ];
 
+const calendarData = [
+  //blue-event, green-event, orange-event, purple-event
+  {
+    date: "2020-03-05",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "http://www.google.com",
+    classname: "green-dark-event",
+  },
+  {
+    date: "2020-03-10",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-light-event",
+  },
+  {
+    date: "2020-03-12",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-dark-event",
+  },
+  {
+    date: "2020-03-16",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "blue-light-event",
+  },
+  {
+    date: "2020-03-18",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-light-event",
+  },
+  {
+    date: "2020-03-19",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-dark-event",
+  },
+  {
+    date: "2020-03-24",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-light-event",
+  },
+  {
+    date: "2020-03-26",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "green-dark-event",
+  },
+  {
+    date: "2020-03-30",
+    badge: true,
+    title: "Human Subjects Approval",
+    description: "<b>William Stinson</b>, <i>Organizer</i>",
+    hour: "8:00am EST",
+    link: "#",
+    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
+    classname: "blue-light-event",
+  },
+];
+
+const calendar = {
+  month: "03",
+  year: "2020",
+  data: calendarData,
+};
+
 const news = [
   {
     source: "Inside Higher Ed",
@@ -86,7 +185,7 @@ class AdministratorHomePageContainer extends React.Component {
             <ShowProgramManagement programs={programs} />
             <ShowTasksAndOverRides tasksandOverrides={tasksandOverrides} />
             <ShowCommitteesAndTeams committeesandteams={committeesandteams} />
-            <ShowMyCalendar />
+            <ShowMyCalendar calendar={calendar} />
 
             <ShowReportsandAssessments />
             <ShowNews news={news} />

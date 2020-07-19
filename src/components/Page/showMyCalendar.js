@@ -4,104 +4,13 @@ import "../../assets/css/zabuto_calendar.css";
 
 class MyCalendar extends React.Component {
   componentDidMount() {
-    let eventData = [
-      //blue-event, green-event, orange-event, purple-event
-      {
-        date: "2020-03-05",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "http://www.google.com",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-10",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-12",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-16",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-      {
-        date: "2020-03-18",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-19",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-24",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-26",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-30",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-    ];
+    let eventData = this.props.calendar.data;
 
     /* global $ */
     this.$elcalendar = $(this.elcalendar);
     this.$elcalendar.zabuto_calendar({
-      year: "2020",
-      month: "03",
+      year: this.props.calendar.year,
+      month: this.props.calendar.month,
       data: eventData,
       weekstartson: 0,
       nav_icon: {
@@ -268,7 +177,7 @@ class ShowMyCalendar extends React.Component {
               </div>
             </div>
             <div className="box-middle">
-              <MyCalendar />
+              <MyCalendar calendar={this.props.calendar} />
             </div>
           </div>
         </div>
