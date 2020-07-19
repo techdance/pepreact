@@ -43,9 +43,11 @@ class ShowTaskAndOverRides extends React.Component {
                   <li key={index}>
                     <a href={task.link}>
                       {task.name}
-                      <span className="note-list">
-                        <span className="outer">{task.count}</span>
-                      </span>
+                      {task.count && (
+                        <span className="note-list">
+                          <span className="outer">{task.count}</span>
+                        </span>
+                      )}
                     </a>
                   </li>
                 ))}
