@@ -7,8 +7,6 @@ class ShowBreadCrumb extends React.Component {
     let crumbLength = breadCrumbList.length;
     let lastCrumb = breadCrumbList[crumbLength - 1];
 
-    console.log(lastCrumb);
-
     return (
       <>
         <nav aria-label="breadcrumb">
