@@ -51,7 +51,8 @@ class ShowSideBarMenu extends React.Component {
                   ></a>
                 </li>
                 {this.props.menuItems.map((menuItem, index) => (
-                  <li key={index} className="active">
+                  // set class to active if menu name is "Home"
+                  <li key={index}>
                     <a href="#" className={"icon-fa " + menuItem.icon}>
                       <span className="group-hide">{menuItem.name}</span>
                     </a>
