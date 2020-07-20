@@ -47,7 +47,11 @@ class ExampleGordon00300Page extends React.Component {
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
-            <ShowSideBarMenu owner={owner} menuItems={menuItems} />
+            <ShowSideBarMenu
+              owner={owner}
+              menuItems={menuItems}
+              activeMenuItem={"Home"}
+            />
             <div id="content" className="">
               <div className="container-fluid">
                 <div className="row">

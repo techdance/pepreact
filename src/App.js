@@ -19,6 +19,7 @@ import "./assets/css/fontawesome-all.css";
 
 import ExamplePage from "./components/ExamplePage.js";
 import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
+import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 
 function App() {
   return (
@@ -31,8 +32,11 @@ function App() {
           <Route exact path="/ExampleInez">
             <ExamplePage />
           </Route>
-          <Route exact path="/ExampleGordon">
+          <Route exact path="/ExampleGordon-00300">
             <ExampleGordon00300Page />
+          </Route>
+          <Route exact path="/ExampleGordon-01404">
+            <ExampleGordon01404Page />
           </Route>
           <Route path="/">
             <Login />

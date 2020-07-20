@@ -33,6 +33,8 @@ class WrapLogoBottom extends React.Component {
 
 class ShowSideBarMenu extends React.Component {
   render() {
+    let activeMenuItem = this.props.activeMenuItem;
+
     return (
       <>
         <div id="sidebar" className="sidebar-fixed">
@@ -52,7 +54,10 @@ class ShowSideBarMenu extends React.Component {
                 </li>
                 {this.props.menuItems.map((menuItem, index) => (
                   // set class to active if menu name is "Home"
-                  <li key={index}>
+                  <li
+                    key={index}
+                    className={activeMenuItem === menuItem.name && "active"}
+                  >
                     <a href="#" className={"icon-fa " + menuItem.icon}>
                       <span className="group-hide">{menuItem.name}</span>
                     </a>
