@@ -1,6 +1,6 @@
 import React from "react";
 
-import AdministratorHomePageContainer from "./Page/adminHomePageContainer.js";
+import ReportDrillDownContainer from "./Page/reportDrillDownContainer.js";
 
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
@@ -62,6 +62,8 @@ class ExampleGordon01404Page extends React.Component {
                   <div className="col-lg-12">
                     <ShowTopMenu owner={owner} />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
+
+                    <ReportDrillDownContainer />
                   </div>
                 </div>
               </div>
