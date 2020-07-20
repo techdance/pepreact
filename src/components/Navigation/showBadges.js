@@ -7,12 +7,13 @@ class ShowBadges extends React.Component {
         <div className="top-icon top-icon-badges">
           <div className="btn-group btn-group-menu">
             <a
-              href="javascript:void(0);"
+              href="#0"
               type="button"
               className="top-icon-fa top-icon-award"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              onClick={this.handleClick}
             >
               <span className="note">
                 <span className="outer">{this.props.badges.length}</span>

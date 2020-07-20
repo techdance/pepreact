@@ -18,16 +18,16 @@ class ShowNews extends React.Component {
                   <span className={newsTile.icon}></span>
                   {newsTile.title}
                 </h2>
-                <a href="javascript:void(0);" className="icon-setting icon-box">
+                <a href="#0" className="icon-setting icon-box">
                   <span className="icon-solid fa-cog"></span>
                 </a>
                 <div className="toltip2 menu-toltip toltip-overlay any-toltip">
                   <ul>
                     <li>
-                      <a href="#">More Mews</a>
+                      <a href="#0">More Mews</a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" className="btn-remove">
+                      <a href="#0" className="btn-remove">
                         Remove
                       </a>
                     </li>

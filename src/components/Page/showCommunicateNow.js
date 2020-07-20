@@ -12,16 +12,16 @@ class ShowCommunicateNow extends React.Component {
                   <span className="icon-regular icon-broadcast-tower"></span>
                   Communicate Now
                 </h2>
-                <a href="javascript:void(0);" className="icon-setting icon-box">
+                <a href="#0" className="icon-setting icon-box">
                   <span className="icon-solid fa-cog"></span>
                 </a>
                 <div className="toltip2 menu-toltip toltip-overlay any-toltip">
                   <ul>
                     <li>
-                      <a href="#">View Messages</a>
+                      <a href="#0">View Messages</a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" className="btn-remove">
+                      <a href="#0" className="btn-remove">
                         Remove
                       </a>
                     </li>
@@ -30,15 +30,15 @@ class ShowCommunicateNow extends React.Component {
               </div>
             </div>
             <div className="box-middle text-center wrap-images mt-5">
-              <a href="#" className="text-left">
+              <a href="#0" className="text-left">
                 <span className="icon-duotone icon-desktop icon-size-50 cl-primary-asset-type-f cl-secondary-asset-type-f"></span>
               </a>
 
-              <a href="#">
+              <a href="#0">
                 <span className="icon-duotone icon-comments-alt icon-size-50 cl-primary-asset-type-f cl-secondary-asset-type-f"></span>
               </a>
 
-              <a href="#" className="text-right">
+              <a href="#0" className="text-right">
                 <span className="icon-duotone icon-phone-volume icon-size-50 cl-primary-asset-type-f cl-secondary-asset-type-f"></span>
               </a>
             </div>

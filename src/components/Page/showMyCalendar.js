@@ -109,7 +109,7 @@ class ShowMyCalendar extends React.Component {
                   My Calendar
                   <a
                     className="icon-certificate-bg"
-                    href="javascript:void(0);"
+                    href="#0"
                     data-toggle="modal"
                     data-target="#mycalendarModal-2"
                   >

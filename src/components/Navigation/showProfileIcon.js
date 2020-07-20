@@ -7,7 +7,7 @@ class ShowProfileIcon extends React.Component {
         <div className="top-icon top-icon-user hello">
           <div className="btn-group btn-group-menu">
             <a
-              href="javascript:void(0);"
+              href="#0"
               className="btn-menu"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -38,7 +38,7 @@ class ShowProfileIcon extends React.Component {
                     <li>
                       <a
                         id="btn-sign-out"
-                        href="javascript:void(0);"
+                        href="#0"
                         data-toggle="modal"
                         data-target="#signOutModal"
                       >

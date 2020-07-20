@@ -7,7 +7,7 @@ class ShowMessages extends React.Component {
         <div className="top-icon top-icon-message">
           <div className="btn-group btn-group-menu">
             <a
-              href="javascript:void(0);"
+              href="#0"
               className="top-icon-fa top-icon-comment"
               data-toggle="dropdown"
               aria-haspopup="true"

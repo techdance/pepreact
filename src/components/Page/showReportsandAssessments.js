@@ -218,23 +218,20 @@ class ShowReportsandAssessments extends React.Component {
                   <span className="icon-regular icon-chart-bar"></span>Reports &
                   Assessment
                 </h2>
-                <a
-                  href="javascript:void(0);"
-                  className="icon-setting icon-box btn-menu"
-                >
+                <a href="#0" className="icon-setting icon-box btn-menu">
                   <span className="icon-solid fa-cog"></span>
                 </a>
 
                 <div className="toltip2 menu-toltip toltip-overlay any-toltip">
                   <ul>
                     <li>
-                      <a href="#">Create New Course</a>
+                      <a href="#0">Create New Course</a>
                     </li>
                     <li>
-                      <a href="#">Go to My Course</a>
+                      <a href="#0">Go to My Course</a>
                     </li>
                     <li>
-                      <a href="javascript:void(0);" className="btn-remove">
+                      <a href="#0" className="btn-remove">
                         Remove
                       </a>
                     </li>

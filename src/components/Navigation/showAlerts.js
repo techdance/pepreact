@@ -41,7 +41,7 @@ class ShowAlerts extends React.Component {
         <div className="top-icon ">
           <div className="btn-group btn-group-menu">
             <a
-              href="javascript:void(0);"
+              href="#0"
               className="top-icon-fa top-icon-bell"
               data-toggle="dropdown"
               aria-haspopup="true"
