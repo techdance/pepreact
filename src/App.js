@@ -20,6 +20,7 @@ import "./assets/css/fontawesome-all.css";
 import ExamplePage from "./components/ExamplePage.js";
 import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
+import ExampleInez00701Page from "./components/ExampleInez00701Page.js";
 
 function App() {
   return (
@@ -29,8 +30,11 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-          <Route exact path="/ExampleInez">
+          <Route exact path="/ExampleInez-00501">
             <ExamplePage />
+          </Route>
+          <Route exact path="/ExampleInez-00701">
+            <ExampleInez00701Page />
           </Route>
           <Route exact path="/ExampleGordon-00300">
             <ExampleGordon00300Page />
