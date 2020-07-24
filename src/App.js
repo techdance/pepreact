@@ -21,6 +21,7 @@ import ExamplePage from "./components/ExamplePage.js";
 import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 import ExampleInez00701Page from "./components/ExampleInez00701Page.js";
+import ExamplePamela03601Page from "./components/ExamplePamela03601Page.js";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/ExampleInez-00701">
             <ExampleInez00701Page />
+          </Route>
+          <Route exact path="/ExamplePamela-03601">
+            <ExamplePamela03601Page />
           </Route>
           <Route exact path="/ExampleGordon-00300">
             <ExampleGordon00300Page />
