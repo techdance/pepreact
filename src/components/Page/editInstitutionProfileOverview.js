@@ -1,5 +1,7 @@
 import React from "react";
 
+import EditInstitutionChangeImage from "./editInstitutionProfileChangeImage.js";
+
 class EditInstitutionOverview extends React.Component {
   constructor(props) {
     super(props);
@@ -168,10 +170,8 @@ class EditInstitutionOverview extends React.Component {
                         </div>
                       </div>
                       <div className="col-md-3 img-resp">
-                        <img
-                          src="images/EditChangePhoto.png"
-                          className="img-responsive"
-                        />
+                        <img src={image} className="img-responsive" />
+                        <EditInstitutionChangeImage image={image} />
                       </div>
                     </div>
                   </div>
