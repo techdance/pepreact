@@ -7,9 +7,6 @@ import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
 import EditInstitutionProfileForm from "./Page/editInstitutionProfilePageContainer.js";
 
-import towerEdLogoA from "../assets/images/logo-tower-education-a.png";
-import towerEdLogoB from "../assets/images/logo-tower-education-b.png";
-
 const breadCrumbList = [
   "Home",
   "Instituion Profiles",
@@ -50,10 +47,10 @@ class ExamplePamela03601Page extends React.Component {
         <div className="bg-grey-popup">
           <div id="menu-top-responsive" className="">
             <div id="wrap-logo">
-              <a href="#">
-                <img src="images/logo.png" />
+              <a href="#0">
+                <img src="images/logo.png" alt="AHEA University" />
               </a>
-              <a href="#" id="menu-button-responsive">
+              <a href="#0" id="menu-button-responsive">
                 <i className="fas fa-bars"></i>
               </a>
             </div>
