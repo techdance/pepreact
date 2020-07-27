@@ -187,10 +187,7 @@ class EditInstitutionOverview extends React.Component {
                         <div className="form-group mb-2">
                           <label>Facebook</label>
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-minus-circle"></i>
                             </a>
                             <input
@@ -205,10 +202,7 @@ class EditInstitutionOverview extends React.Component {
                         <div className="form-group mb-2">
                           <label>Twitter</label>
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-minus-circle"></i>
                             </a>
                             <input
@@ -223,10 +217,7 @@ class EditInstitutionOverview extends React.Component {
                         <div className="form-group mb-2">
                           <label>Instagram</label>
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-minus-circle"></i>
                             </a>
                             <input
@@ -243,10 +234,7 @@ class EditInstitutionOverview extends React.Component {
                         <div className="form-group mb-2">
                           <label>LinkedIn</label>
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-minus-circle"></i>
                             </a>
                             <input
@@ -261,10 +249,7 @@ class EditInstitutionOverview extends React.Component {
                         <div className="form-group mb-2">
                           <label>YouTube</label>
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-minus-circle"></i>
                             </a>
                             <input
@@ -278,10 +263,7 @@ class EditInstitutionOverview extends React.Component {
                         </div>
                         <div className="form-group mb-2 mt-4">
                           <div className="d-flex align-items-center">
-                            <a
-                              href="javascript::void(0);"
-                              className="color-orange font20 mr-1"
-                            >
+                            <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-plus-circle"></i>
                             </a>
                           </div>
