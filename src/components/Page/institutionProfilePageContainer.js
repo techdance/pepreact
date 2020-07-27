@@ -63,6 +63,11 @@ const institution = {
       number: "10",
       percent: "0.3",
     },
+    fullTime: "5911",
+    partTime: "882",
+    inState: "2873",
+    outofState: "3100",
+    international: "820",
   },
   FacultyInfo: {
     asof: "Fall 2020",

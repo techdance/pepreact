@@ -62,6 +62,11 @@ var institution = {
       number: "10",
       percent: "0.3",
     },
+    fullTime: "5911",
+    partTime: "882",
+    inState: "2873",
+    outofState: "3100",
+    international: "820",
   },
   FacultyInfo: {
     asof: "Fall 2020",
@@ -176,6 +181,7 @@ class EditInstitutionProfileForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.handleSubmit = this.handleSubmit(this);
   }
 
   handleChange = (event) => {
@@ -204,9 +210,13 @@ class EditInstitutionProfileForm extends React.Component {
     this.setState({ institution });
   };
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  // }
+  handleSubmit = (event) => {
+    // event.preventDefault();
+
+    console.log("Submit current state");
+
+    // this.state contains the current revised version of the institution object so should store to institution data.
+  };
 
   render() {
     const {
@@ -242,9 +252,12 @@ class EditInstitutionProfileForm extends React.Component {
                 onChange={this.passChangeUp}
               />
 
+              {/* Passing onSubmit function here because "Save" button is buried in this last section.
+      When button is clicked it will call back to the parent component onSubmit here  */}
               <EditInstitutionAcademic
                 Academic={Academic}
                 onChange={this.passChangeUp}
+                onSubmit={this.handleSubmit}
               />
             </div>
           </div>

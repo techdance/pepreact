@@ -41,8 +41,8 @@ class ShowInstitutionStudentBodyInfo extends React.Component {
           toolTipContent: "{name}: <strong>{y}</strong>",
           indexLabel: "{y}",
           dataPoints: [
-            { y: 5911, name: "Full-Time" },
-            { y: 882, name: "Part-Time" },
+            { y: this.props.studentBodyInfo.fullTime, name: "Full-Time" },
+            { y: this.props.studentBodyInfo.partTime, name: "Part-Time" },
           ],
           indexLabelPlacement: "inside",
           indexLabelFontColor: "#fff",
@@ -66,9 +66,12 @@ class ShowInstitutionStudentBodyInfo extends React.Component {
           toolTipContent: "{name}: <strong>{y}</strong>",
           indexLabel: "{y}",
           dataPoints: [
-            { y: 2873, name: "In-State" },
-            { y: 3100, name: "Out of State" },
-            { y: 820, name: "International" },
+            { y: this.props.studentBodyInfo.inState, name: "In-State" },
+            { y: this.props.studentBodyInfo.outofState, name: "Out of State" },
+            {
+              y: this.props.studentBodyInfo.international,
+              name: "International",
+            },
           ],
           indexLabelPlacement: "inside",
           indexLabelFontColor: "#fff",

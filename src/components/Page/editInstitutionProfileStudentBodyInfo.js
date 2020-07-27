@@ -214,6 +214,11 @@ class EditInstitutionStudentBodyInfo extends React.Component {
       female,
       male,
       other,
+      fullTime,
+      partTime,
+      inState,
+      outofState,
+      international,
     } = this.state;
 
     return (
@@ -318,8 +323,9 @@ class EditInstitutionStudentBodyInfo extends React.Component {
                             <label>Full-Time</label>
                             <input
                               type="text"
-                              name=""
-                              value="6,793"
+                              name="fullTime"
+                              value={fullTime}
+                              onChange={this.handleChange}
                               className="input"
                             />
                           </div>
@@ -327,8 +333,9 @@ class EditInstitutionStudentBodyInfo extends React.Component {
                             <label>Part-Time</label>
                             <input
                               type="text"
-                              name=""
-                              value="4,912"
+                              name="partTime"
+                              value={partTime}
+                              onChange={this.handleChange}
                               className="input"
                             />
                           </div>
@@ -338,8 +345,9 @@ class EditInstitutionStudentBodyInfo extends React.Component {
                             <label>In-State</label>
                             <input
                               type="text"
-                              name=""
-                              value="1,881"
+                              name="inState"
+                              value={inState}
+                              onChange={this.handleChange}
                               className="input"
                             />
                           </div>
@@ -347,8 +355,9 @@ class EditInstitutionStudentBodyInfo extends React.Component {
                             <label>Out of State</label>
                             <input
                               type="text"
-                              name=""
-                              value="3,610"
+                              name="outofState"
+                              value={outofState}
+                              onChange={this.handleChange}
                               className="input"
                             />
                           </div>
@@ -356,8 +365,9 @@ class EditInstitutionStudentBodyInfo extends React.Component {
                             <label>International</label>
                             <input
                               type="text"
-                              name=""
-                              value="3,173"
+                              name="international"
+                              value={international}
+                              onChange={this.handleChange}
                               className="input"
                             />
                           </div>
