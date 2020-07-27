@@ -213,6 +213,180 @@ class EditInstitutionAcademicAccreditation extends React.Component {
   }
 }
 
+class EditInstitutionAcademicDegreesGranted extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleArrayChange = this.handleArrayChange.bind(this);
+    this.passChangeUp = this.passChangeUp.bind(this);
+  }
+
+  handleArrayChange = (event) => {
+    // handles field form changes at this level of nested form components and then passes changes up to parent component
+    //  sets local state first and then passes current stateful object up to parent to propogate changes
+
+    // get user input change from the synthetic event;
+    const { name, value } = event.target;
+
+    //  Not setting state since state needs to point to an object and we are working on an array.
+    let degreesGranted = this.props.degreesGranted;
+    degreesGranted[name] = value;
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("degreesGranted", degreesGranted);
+  };
+
+  passChangeUp = (field, value) => {
+    // receives from child component any state changes at their level.
+    //  updates the local state and then passes current state up to parent component
+
+    //  update local state wth changes from child component
+    let degreesGranted = this.state;
+    degreesGranted[field] = value;
+    // you could pass the event here but also null if it is not necessary nor useful
+    this.props.onChange("degreesGranted", degreesGranted);
+  };
+
+  render() {
+    const {
+      Year,
+      Associate,
+      Bachelor,
+      Master,
+      Doctorate,
+    } = this.props.degreesGranted;
+
+    return (
+      <>
+        <div className="col-md-4 mb-4">
+          <div className="box-color border-grey h-100">
+            <h4 className="mb-3">Degrees Granted During</h4>
+            <div className="form-group mb-2">
+              <label>Academic Year</label>
+              <input
+                type="text"
+                name="Year"
+                value={Year}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label>Associate Degrees</label>
+              <input
+                type="text"
+                name="Associate"
+                value={Associate}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label>Bachelor's Degrees</label>
+              <input
+                type="text"
+                name="Bachelor"
+                value={Bachelor}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label>Master's Degrees</label>
+              <input
+                type="text"
+                name="Master"
+                value={Master}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label>Doctorate Degrees</label>
+              <input
+                type="text"
+                name="Doctorate"
+                value={Doctorate}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+class EditInstitutionAcademicDegreePrograms extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleArrayChange = this.handleArrayChange.bind(this);
+    this.passChangeUp = this.passChangeUp.bind(this);
+  }
+
+  handleArrayChange = (event) => {
+    // handles field form changes at this level of nested form components and then passes changes up to parent component
+    //  sets local state first and then passes current stateful object up to parent to propogate changes
+
+    // get user input change from the synthetic event;
+    const { name, value } = event.target;
+
+    //  Not setting state since state needs to point to an object and we are working on an array.
+    let degreePrograms = this.props.degreePrograms;
+    degreePrograms[name] = value;
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("degreePrograms", degreePrograms);
+  };
+
+  passChangeUp = (field, value) => {
+    // receives from child component any state changes at their level.
+    //  updates the local state and then passes current state up to parent component
+
+    //  update local state wth changes from child component
+    let degreePrograms = this.state;
+    degreePrograms[field] = value;
+    // you could pass the event here but also null if it is not necessary nor useful
+    this.props.onChange("degreePrograms", degreePrograms);
+  };
+
+  render() {
+    const { undergraduate, graduate } = this.props.degreePrograms;
+
+    return (
+      <>
+        <div className="col-md-4 mb-4">
+          <div className="box-color border-grey h-100">
+            <h4 className="mb-3">Degree Programs</h4>
+            <div className="form-group mb-2">
+              <label>Undergraduate</label>
+              <input
+                type="text"
+                name="undergraduate"
+                value={undergraduate}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+            <div className="form-group mb-2">
+              <label>Graduate</label>
+              <input
+                type="text"
+                name="graduate"
+                value={graduate}
+                onChange={this.handleArrayChange}
+                className="input"
+              />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
 class EditInstitutionAcademicCollegesandSchools extends React.Component {
   constructor(props) {
     super(props);
@@ -319,6 +493,7 @@ class EditInstitutionAcademic extends React.Component {
       asof,
       updated,
       collegesAndSchools,
+      degreePrograms,
       degreesGranted,
       accreditations,
       recognitions,
@@ -380,79 +555,15 @@ class EditInstitutionAcademic extends React.Component {
                       </div>
                     </div>
 
-                    <div className="col-md-4 mb-4">
-                      <div className="box-color border-grey h-100">
-                        <h4 className="mb-3">Degree Programs</h4>
-                        <div className="form-group mb-2">
-                          <label>Undergraduate</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="55"
-                            className="input"
-                          />
-                        </div>
-                        <div className="form-group mb-2">
-                          <label>Graduate</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="33"
-                            className="input"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4 mb-4">
-                      <div className="box-color border-grey h-100">
-                        <h4 className="mb-3">Degrees Granted During</h4>
-                        <div className="form-group mb-2">
-                          <label>Academic Year</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="2018-2019"
-                            className="input"
-                          />
-                        </div>
-                        <div className="form-group mb-2">
-                          <label>Associate Degrees</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="38"
-                            className="input"
-                          />
-                        </div>
-                        <div className="form-group mb-2">
-                          <label>Bachelor's Degrees</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="1,189"
-                            className="input"
-                          />
-                        </div>
-                        <div className="form-group mb-2">
-                          <label>Master's Degrees</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="731"
-                            className="input"
-                          />
-                        </div>
-                        <div className="form-group mb-2">
-                          <label>Doctorate Degrees</label>
-                          <input
-                            type="text"
-                            name=""
-                            value="13"
-                            className="input"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    <EditInstitutionAcademicDegreePrograms
+                      degreePrograms={degreePrograms}
+                      onChange={this.passChangeUp}
+                    />
+
+                    <EditInstitutionAcademicDegreesGranted
+                      degreesGranted={degreesGranted}
+                      onChange={this.passChangeUp}
+                    />
 
                     <EditInstitutionAcademicAccreditation
                       accreditations={accreditations}
@@ -470,11 +581,18 @@ class EditInstitutionAcademic extends React.Component {
                     />
                   </div>
                   <div className="row">
-                    <div className="col-md-12">
-                      <a href="#" className="btn btn-blue">
-                        Save
-                      </a>
-                    </div>
+                    {/* Not sure why this save button is buried at the bottom of this tile. */}
+                    <form onSubmit={this.props.onSubmit}>
+                      <div className="col-md-12">
+                        <button
+                          href="#0"
+                          className="btn btn-blue"
+                          type="submit"
+                        >
+                          Save
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>

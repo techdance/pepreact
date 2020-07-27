@@ -91,68 +91,19 @@ const institution = {
       "School of Health Sciences",
       "Tagliatela College of Engineering",
     ],
-    degreeProgramsChart: {
-      animationEnabled: true,
-      height: 300,
-      colorSet: "customColorSet",
-      title: {
-        dockInsidePlotArea: true,
-        fontSize: 75,
-        fontWeight: "normal",
-        horizontalAlign: "center",
-        verticalAlign: "center",
-        text: "88",
-      },
-      legend: {
-        cursor: "pointer",
-      },
-      data: [
-        {
-          type: "doughnut",
-          showInLegend: true,
-          startAngle: 60,
-          //innerRadius: 60,
-          indexLabelFontSize: 17,
-          indexLabel: "{y}",
-          toolTipContent: "{y} (#percent%)",
-          dataPoints: [
-            { y: 33, name: "Undergraduate" },
-            { y: 55, name: "Graduate" },
-          ],
-        },
-      ],
-      indexLabelPlacement: "inside",
-      indexLabelFontColor: "#fff",
-      indexLabelFontSize: 11,
-      indexLabelFontWeight: "bolder",
+    degreePrograms: {
+      undergraduate: "33",
+      graduate: "55",
     },
 
     degreesGranted: {
       Year: "2018-2019",
-      Associate: "38",
-      Bachelor: "1,189",
-      Master: "731",
-      Doctorate: "13",
+      Associate: 38,
+      Bachelor: 1189,
+      Master: 731,
+      Doctorate: 13,
     },
 
-    degreesGrantedChart: {
-      animationEnabled: true,
-      height: 170,
-      data: [
-        {
-          type: "bar",
-          name: "companies",
-          axisYType: "secondary",
-          color: "#0a4366",
-          dataPoints: [
-            { y: 38, label: "Doctorate Degrees" },
-            { y: 1189, label: "Master's Degrees" },
-            { y: 731, label: "Bachelor's Degrees" },
-            { y: 13, label: "Associate Degrees" },
-          ],
-        },
-      ],
-    },
     accreditations: [
       "Counsel for the Accreditation of Educator Preparation",
       "Accreditation Board for Engineering and Technology (ABET)",

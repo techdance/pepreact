@@ -171,6 +171,79 @@ const ShowDegreesOffered = (props) => {
 
 class ShowInstitutionAcademicInfo extends React.Component {
   render() {
+    const degreeProgramsChart = {
+      animationEnabled: true,
+      height: 300,
+      colorSet: "customColorSet",
+      title: {
+        dockInsidePlotArea: true,
+        fontSize: 75,
+        fontWeight: "normal",
+        horizontalAlign: "center",
+        verticalAlign: "center",
+        text: "88",
+      },
+      legend: {
+        cursor: "pointer",
+      },
+      data: [
+        {
+          type: "doughnut",
+          showInLegend: true,
+          startAngle: 60,
+          //innerRadius: 60,
+          indexLabelFontSize: 17,
+          indexLabel: "{y}",
+          toolTipContent: "{y} (#percent%)",
+          dataPoints: [
+            {
+              y: this.props.academic.degreePrograms.undergraduate,
+              name: "Undergraduate",
+            },
+            {
+              y: this.props.academic.degreePrograms.graduate,
+              name: "Graduate",
+            },
+          ],
+        },
+      ],
+      indexLabelPlacement: "inside",
+      indexLabelFontColor: "#fff",
+      indexLabelFontSize: 11,
+      indexLabelFontWeight: "bolder",
+    };
+
+    const degreesGrantedChart = {
+      animationEnabled: true,
+      height: 170,
+      data: [
+        {
+          type: "bar",
+          name: "companies",
+          axisYType: "secondary",
+          color: "#0a4366",
+          dataPoints: [
+            {
+              y: this.props.academic.degreesGranted.Doctorate,
+              label: "Doctorate Degrees",
+            },
+            {
+              y: this.props.academic.degreesGranted.Master,
+              label: "Master's Degrees",
+            },
+            {
+              y: this.props.academic.degreesGranted.Bachelor,
+              label: "Bachelor's Degrees",
+            },
+            {
+              y: this.props.academic.degreesGranted.Associate,
+              label: "Associate Degrees",
+            },
+          ],
+        },
+      ],
+    };
+
     return (
       <>
         <div className="row row-custom section-academics mb-3">
@@ -194,12 +267,10 @@ class ShowInstitutionAcademicInfo extends React.Component {
                         this.props.academic.collegesAndSchools
                       }
                     />
-                    <ShowDegreePrograms
-                      chart={this.props.academic.degreeProgramsChart}
-                    />
+                    <ShowDegreePrograms chart={degreeProgramsChart} />
 
                     <ShowDegreesGranted
-                      chart={this.props.academic.degreesGrantedChart}
+                      chart={degreesGrantedChart}
                       granted={this.props.academic.degreesGranted}
                     />
 
