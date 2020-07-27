@@ -38,10 +38,7 @@ class EditInstitutionAcademicDegreesOffered extends React.Component {
 
             {degreesOffered.map((degreesOffered, index) => (
               <div key={index} className="form-group d-flex align-items-center">
-                <a
-                  href="javascript::void(0);"
-                  className="color-orange font20 mr-1"
-                >
+                <a href="#0" className="color-orange font20 mr-1">
                   <i className="fas fa-minus-circle"></i>
                 </a>
                 <textarea
@@ -57,10 +54,7 @@ class EditInstitutionAcademicDegreesOffered extends React.Component {
             ))}
 
             <div className="form-group d-flex align-items-center">
-              <a
-                href="javascript::void(0);"
-                className="color-orange font20 mr-1"
-              >
+              <a href="#0" className="color-orange font20 mr-1">
                 <i className="fas fa-plus-circle"></i>
               </a>
             </div>
@@ -109,10 +103,7 @@ class EditInstitutionAcademicRecognition extends React.Component {
 
             {recognitions.map((recognition, index) => (
               <div key={index} className="form-group d-flex align-items-center">
-                <a
-                  href="javascript::void(0);"
-                  className="color-orange font20 mr-1"
-                >
+                <a href="#0" className="color-orange font20 mr-1">
                   <i className="fas fa-minus-circle"></i>
                 </a>
                 <textarea
@@ -128,10 +119,7 @@ class EditInstitutionAcademicRecognition extends React.Component {
             ))}
 
             <div className="form-group d-flex align-items-center">
-              <a
-                href="javascript::void(0);"
-                className="color-orange font20 mr-1"
-              >
+              <a href="#0" className="color-orange font20 mr-1">
                 <i className="fas fa-plus-circle"></i>
               </a>
             </div>
@@ -180,10 +168,7 @@ class EditInstitutionAcademicAccreditation extends React.Component {
 
             {accreditations.map((accreditation, index) => (
               <div key={index} className="form-group d-flex align-items-center">
-                <a
-                  href="javascript::void(0);"
-                  className="color-orange font20 mr-1"
-                >
+                <a href="#0" className="color-orange font20 mr-1">
                   <i className="fas fa-minus-circle"></i>
                 </a>
                 <textarea
@@ -199,10 +184,7 @@ class EditInstitutionAcademicAccreditation extends React.Component {
             ))}
 
             <div className="form-group d-flex align-items-center">
-              <a
-                href="javascript::void(0);"
-                className="color-orange font20 mr-1"
-              >
+              <a href="#0" className="color-orange font20 mr-1">
                 <i className="fas fa-plus-circle"></i>
               </a>
             </div>
@@ -423,10 +405,7 @@ class EditInstitutionAcademicCollegesandSchools extends React.Component {
           <h4 className="mb-3">Colleges &amp; Schools</h4>
           {collegesAndSchools.map((school, index) => (
             <div key={index} className="form-group d-flex align-items-center">
-              <a
-                href="javascript::void(0);"
-                className="color-orange font20 mr-1"
-              >
+              <a href="#0" className="color-orange font20 mr-1">
                 <i className="fas fa-minus-circle"></i>
               </a>
               <textarea
@@ -442,7 +421,7 @@ class EditInstitutionAcademicCollegesandSchools extends React.Component {
           ))}
 
           <div className="form-group d-flex align-items-center">
-            <a href="javascript::void(0);" className="color-orange font20 mr-1">
+            <a href="#0" className="color-orange font20 mr-1">
               <i className="fas fa-plus-circle"></i>
             </a>
           </div>
