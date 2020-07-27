@@ -132,7 +132,7 @@ class EditInstitutionProfileForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
-    this.handleSubmit = this.handleSubmit(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (event) => {
@@ -162,8 +162,7 @@ class EditInstitutionProfileForm extends React.Component {
   };
 
   handleSubmit = (event) => {
-    // event.preventDefault();
-
+    event.preventDefault();
     console.log("Submit current state");
 
     // this.state contains the current revised version of the institution object so should store to institution data.
@@ -180,39 +179,39 @@ class EditInstitutionProfileForm extends React.Component {
 
     return (
       <>
-        <EditInstitutionOverview
-          Overview={Overview}
-          onChange={this.passChangeUp}
-        />
+        <form onSubmit={this.handleSubmit}>
+          <EditInstitutionOverview
+            Overview={Overview}
+            onChange={this.passChangeUp}
+          />
 
-        <section class="wrap-profile">
-          <div class="row row-custom ">
-            <div class="col-lg-12">
-              <div class="row row-custom sortable">
-                <EditInstitutionContactInfo
-                  ContactInfo={ContactInfo}
+          <section class="wrap-profile">
+            <div class="row row-custom ">
+              <div class="col-lg-12">
+                <div class="row row-custom sortable">
+                  <EditInstitutionContactInfo
+                    ContactInfo={ContactInfo}
+                    onChange={this.passChangeUp}
+                  />
+                </div>
+                <EditInstitutionStudentBodyInfo
+                  StudentBodyInfo={StudentBodyInfo}
+                  onChange={this.passChangeUp}
+                />
+                <EditInstitutionFacultyInfo
+                  FacultyInfo={FacultyInfo}
+                  onChange={this.passChangeUp}
+                />
+
+                {/* "Save" button is buried in this last section. Not sure why. */}
+                <EditInstitutionAcademic
+                  Academic={Academic}
                   onChange={this.passChangeUp}
                 />
               </div>
-              <EditInstitutionStudentBodyInfo
-                StudentBodyInfo={StudentBodyInfo}
-                onChange={this.passChangeUp}
-              />
-              <EditInstitutionFacultyInfo
-                FacultyInfo={FacultyInfo}
-                onChange={this.passChangeUp}
-              />
-
-              {/* Passing onSubmit function here because "Save" button is buried in this last section.
-      When button is clicked it will call back to the parent component onSubmit here  */}
-              <EditInstitutionAcademic
-                Academic={Academic}
-                onChange={this.passChangeUp}
-                onSubmit={this.handleSubmit}
-              />
             </div>
-          </div>
-        </section>
+          </section>
+        </form>
       </>
     );
   }

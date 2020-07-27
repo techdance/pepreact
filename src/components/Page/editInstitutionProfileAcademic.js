@@ -582,17 +582,12 @@ class EditInstitutionAcademic extends React.Component {
                   </div>
                   <div className="row">
                     {/* Not sure why this save button is buried at the bottom of this tile. */}
-                    <form onSubmit={this.props.onSubmit}>
-                      <div className="col-md-12">
-                        <button
-                          href="#0"
-                          className="btn btn-blue"
-                          type="submit"
-                        >
-                          Save
-                        </button>
-                      </div>
-                    </form>
+
+                    <div className="col-md-12">
+                      <button href="#0" className="btn btn-blue" type="submit">
+                        Save
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
