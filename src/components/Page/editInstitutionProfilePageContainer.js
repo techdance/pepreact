@@ -185,10 +185,10 @@ class EditInstitutionProfileForm extends React.Component {
             onChange={this.passChangeUp}
           />
 
-          <section class="wrap-profile">
-            <div class="row row-custom ">
-              <div class="col-lg-12">
-                <div class="row row-custom sortable">
+          <section className="wrap-profile">
+            <div className="row row-custom ">
+              <div className="col-lg-12">
+                <div className="row row-custom sortable">
                   <EditInstitutionContactInfo
                     ContactInfo={ContactInfo}
                     onChange={this.passChangeUp}
