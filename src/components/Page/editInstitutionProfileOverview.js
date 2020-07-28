@@ -195,7 +195,7 @@ class EditInstitutionOverview extends React.Component {
     if (iconValue === "plus") {
       this.setState({ [iconName]: "minus" });
     } else {
-      this.setState({ [linkName]: "" });
+      // this.setState({ [linkName]: "" });
       this.setState({ [iconName]: "plus" });
     }
   };
