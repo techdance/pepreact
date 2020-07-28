@@ -1,6 +1,6 @@
 import React from "react";
 
-import InsitutionProfilePageContainer from "./Page/institutionProfilePageContainer.js";
+import InsitutionProfilePageContainer from "./Page/showInstitutionProfilePageContainer.js";
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
