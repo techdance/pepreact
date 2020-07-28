@@ -1,6 +1,129 @@
 import React from "react";
+import Select from "react-select";
 
 import EditInstitutionChangeImage from "./editInstitutionProfileChangeImage.js";
+
+import { languageList, institutionTypes } from "../../data/institution.js";
+
+class Edit_InstitutionOverview_Type extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.Overview;
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = (typeSelected) => {
+    // handles field form changes at this level of nested form components and then passes changes up to parent component
+    //  sets local state first and then passes current stateful object up to parent to propogate changes
+    //  this function is called by the Select component. the argument is an array of objects in the format value: label:
+
+    // get user input change and convert to format used in institution data object
+    let typeList = [];
+    typeSelected.map((institutionType, index) =>
+      typeList.push(institutionType.value)
+    );
+
+    // set local state
+    this.setState({ ["type"]: typeList });
+
+    // pass current state up to parent to propogate changes
+    let Overview = this.state;
+    Overview["type"] = typeList;
+    this.props.onChange("Overview", Overview);
+  };
+
+  render() {
+    const { type } = this.state;
+
+    // object format needed for Select component in react-select is an array of objects using value: label:
+    let typeSelected = [];
+    type.map((institutionType, index) =>
+      typeSelected.push({
+        value: institutionType,
+        label: institutionType,
+      })
+    );
+
+    return (
+      <>
+        <div className="col-md-3">
+          <div className="form-group mb-2">
+            <label>Type</label>
+            <Select
+              isMulti
+              name="type"
+              options={institutionTypes}
+              className="basic-multi-select"
+              classNamePrefix="select"
+              onChange={this.handleChange}
+              value={typeSelected}
+            />
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+class Edit_InstitutionOverview_OtherLanguages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.Overview;
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = (otherLanguagesSelected) => {
+    // handles field form changes at this level of nested form components and then passes changes up to parent component
+    //  sets local state first and then passes current stateful object up to parent to propogate changes
+    //  this function is called by the Select component. the argument is an array of objects in the format value: label:
+
+    // get user input change and convert to format used in institution data object
+    let otherLanguages = [];
+    otherLanguagesSelected.map((otherLanguageSelected, index) =>
+      otherLanguages.push(otherLanguageSelected.value)
+    );
+
+    // set local state
+    this.setState({ ["otherLanguages"]: otherLanguages });
+
+    // pass current state up to parent to propogate changes
+    let Overview = this.state;
+    Overview["otherLanguages"] = otherLanguages;
+    this.props.onChange("Overview", Overview);
+  };
+
+  render() {
+    const { otherLanguages } = this.state;
+
+    // object format needed for Select component in react-select is an array of objects using value: label:
+    let otherLanguagesSelected = [];
+    otherLanguages.map((otherLanguage, index) =>
+      otherLanguagesSelected.push({
+        value: otherLanguage,
+        label: otherLanguage,
+      })
+    );
+
+    return (
+      <>
+        <div className="form-group mb-2">
+          <label>Other Languages</label>
+          <Select
+            isMulti
+            name="otherLanguages"
+            options={languageList}
+            className="basic-multi-select"
+            classNamePrefix="select"
+            onChange={this.handleChange}
+            value={otherLanguagesSelected}
+          />
+        </div>
+      </>
+    );
+  }
+}
 
 class EditInstitutionOverview extends React.Component {
   constructor(props) {
@@ -185,16 +308,12 @@ class EditInstitutionOverview extends React.Component {
                               />
                             </div>
                           </div>
-                          <div className="col-md-3">
-                            <div className="form-group mb-2">
-                              <label>Type</label>
-                              <select className="input select">
-                                <option>Not-for-Profit</option>
-                                <option>Private</option>
-                                <option>Coed</option>
-                              </select>
-                            </div>
-                          </div>
+
+                          <Edit_InstitutionOverview_Type
+                            Overview={this.state}
+                            onChange={this.props.onChange}
+                          />
+
                           <div className="col-md-3">
                             <div className="form-group mb-2">
                               <label>Language</label>
@@ -206,14 +325,11 @@ class EditInstitutionOverview extends React.Component {
                                 className="input"
                               />
                             </div>
-                            <div className="form-group mb-2">
-                              <label>Other Languages</label>
-                              <select className="input select">
-                                <option>Spanish</option>
-                                <option>Mandarin</option>
-                                <option>French</option>
-                              </select>
-                            </div>
+
+                            <Edit_InstitutionOverview_OtherLanguages
+                              Overview={this.state}
+                              onChange={this.props.onChange}
+                            />
                           </div>
                           <div className="col-md-3">
                             <div className="form-group mb-2">

@@ -9,17 +9,18 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "availity-reactstrap-validation": "^2.6.1",
     "axios": "^0.19.2",
-    "font-awesome": "^4.7.0",
-    "progressbar.js": "^1.1.0",
     "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "progressbar.js": "^1.1.0",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.11.0",
     "react-inputs-validation": "^4.2.3",
     "react-router": "^4.3.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.3.0",
+    "react-select": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
