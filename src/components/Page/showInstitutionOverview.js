@@ -87,21 +87,36 @@ class ShowInstitutionOverview extends React.Component {
                           className="img-responsive"
                         />
                         <div className="ahea-icons">
-                          <a href={this.props.overview.facebookLink}>
-                            <i className="fab fa-facebook-square"></i>
-                          </a>
-                          <a href={this.props.overview.twitterLink}>
-                            <i className="fab fa-twitter-square"></i>
-                          </a>
-                          <a href={this.props.overview.instagramLink}>
-                            <i className="fab fa-instagram-square"></i>
-                          </a>
-                          <a href={this.props.overview.linkeinLink}>
-                            <i className="fab fa-linkedin"></i>
-                          </a>
-                          <a href={this.props.overview.youtubeLink}>
-                            <i className="fab fa-youtube-square"></i>
-                          </a>
+                          {/* if the link is an empty string "", then don't show the social media icon */}
+                          {this.props.overview.facebookLink && (
+                            <a href={this.props.overview.facebookLink}>
+                              <i className="fab fa-facebook-square"></i>
+                            </a>
+                          )}
+
+                          {this.props.overview.twitterLink && (
+                            <a href={this.props.overview.twitterLink}>
+                              <i className="fab fa-twitter-square"></i>
+                            </a>
+                          )}
+
+                          {this.props.overview.instagramLink && (
+                            <a href={this.props.overview.instagramLink}>
+                              <i className="fab fa-instagram-square"></i>
+                            </a>
+                          )}
+
+                          {this.props.overview.linkedinLink && (
+                            <a href={this.props.overview.linkeinLink}>
+                              <i className="fab fa-linkedin"></i>
+                            </a>
+                          )}
+
+                          {this.props.overview.youtubeLink && (
+                            <a href={this.props.overview.youtubeLink}>
+                              <i className="fab fa-youtube-square"></i>
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>

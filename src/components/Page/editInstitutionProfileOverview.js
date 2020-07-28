@@ -7,8 +7,32 @@ class EditInstitutionOverview extends React.Component {
     super(props);
     this.state = this.props.Overview;
 
+    // initialize icon states to match current values of links in the "Overview" data object.
+    //  if the link is an empty string "", then icon is plus otherwise is minus.
+    this.state.facebookLink
+      ? (this.state.fbLinkIcon = "minus")
+      : (this.state.fbLinkIcon = "plus");
+
+    this.state.twitterLink
+      ? (this.state.twLinkIcon = "minus")
+      : (this.state.twLinkIcon = "plus");
+
+    this.state.instagramLink
+      ? (this.state.igLinkIcon = "minus")
+      : (this.state.igLinkIcon = "plus");
+
+    this.state.linkedinLink
+      ? (this.state.liLinkIcon = "minus")
+      : (this.state.liLinkIcon = "plus");
+
+    this.state.youtubeLink
+      ? (this.state.ytLinkIcon = "minus")
+      : (this.state.ytLinkIcon = "plus");
+
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.editSocialMediaLinks = this.editSocialMediaLinks.bind(this);
   }
 
   handleChange = (event) => {
@@ -36,6 +60,62 @@ class EditInstitutionOverview extends React.Component {
     Overview[field] = value;
     // you could pass the event here but also null if it is not necessary nor useful
     this.props.onChange("Overview", Overview);
+  };
+
+  handleClick = (linkName, iconName, iconValue, event) => {
+    // function that handles clicks on the social media icons
+
+    event.preventDefault();
+
+    //  if the current icon in a plus - make it minus (and then show text input field where this anchor is setup)
+    //  if the current icon is a minus - set link to a null string (so it won't show in ShowProfle) and set icon to plus
+    if (iconValue === "plus") {
+      this.setState({ [iconName]: "minus" });
+    } else {
+      this.setState({ [linkName]: "" });
+      this.setState({ [iconName]: "plus" });
+    }
+  };
+
+  editSocialMediaLinks = (props) => {
+    // handles the orange "plus/minus" icon behavior in front of social media links.
+    //  this.state contains a reference to the data object "institution" which contains the values for the social media links in the "Overview" object.
+    //  if the link value is an empty string "", then the link icon does not show in the ShowInstitutionProfile component.
+    //  this.state also contains the current state of the icon for each social media link.
+    //  if the icon shows "minus" and is clicked, then it is switched to plus, the link set to an empty string and the text input is removed.
+    //  if the icon shows "plus" and is clicked then it is switched to minus and the text input box is shown.
+
+    const { linkName, iconName, linkValue, iconValue } = props;
+
+    return (
+      <div className="d-flex align-items-center">
+        <a
+          href="#0"
+          className="color-orange font20 mr-1"
+          // handle different outcomes based on whether current icon is a plus or minus - see handleClick function definition.
+          onClick={(e) => this.handleClick(linkName, iconName, iconValue, e)}
+        >
+          {/* show icon based on current state */}
+          {iconValue === "minus" ? (
+            <i className="fas fa-minus-circle"> </i>
+          ) : (
+            <i className="fas fa-plus-circle"> </i>
+          )}
+        </a>
+        {/* if icon is a minus, then show input field otherwise don't */}
+        {iconValue === "minus" ? (
+          <input
+            type="text"
+            name={linkName}
+            value={linkValue}
+            onChange={this.handleChange}
+            className="input"
+          />
+        ) : (
+          <></>
+        )}
+      </div>
+    );
   };
 
   render() {
@@ -186,88 +266,63 @@ class EditInstitutionOverview extends React.Component {
                       <div className="col-md-4">
                         <div className="form-group mb-2">
                           <label>Facebook</label>
-                          <div className="d-flex align-items-center">
-                            <a href="#0" className="color-orange font20 mr-1">
-                              <i className="fas fa-minus-circle"></i>
-                            </a>
-                            <input
-                              type="text"
-                              name="facebookLink"
-                              value={facebookLink}
-                              onChange={this.handleChange}
-                              className="input"
-                            />
-                          </div>
+                          <this.editSocialMediaLinks
+                            linkName="facebookLink"
+                            iconName="fbLinkIcon"
+                            linkValue={facebookLink}
+                            iconValue={this.state.fbLinkIcon}
+                          />
                         </div>
                         <div className="form-group mb-2">
                           <label>Twitter</label>
-                          <div className="d-flex align-items-center">
-                            <a href="#0" className="color-orange font20 mr-1">
-                              <i className="fas fa-minus-circle"></i>
-                            </a>
-                            <input
-                              type="text"
-                              name="twitterLink"
-                              value={twitterLink}
-                              onChange={this.handleChange}
-                              className="input"
-                            />
-                          </div>
+                          <this.editSocialMediaLinks
+                            linkName="twitterLink"
+                            iconName="twLinkIcon"
+                            linkValue={twitterLink}
+                            iconValue={this.state.twLinkIcon}
+                          />
                         </div>
                         <div className="form-group mb-2">
                           <label>Instagram</label>
-                          <div className="d-flex align-items-center">
-                            <a href="#0" className="color-orange font20 mr-1">
-                              <i className="fas fa-minus-circle"></i>
-                            </a>
-                            <input
-                              type="text"
-                              name="instagramLink"
-                              value={instagramLink}
-                              onChange={this.handleChange}
-                              className="input"
-                            />
-                          </div>
+
+                          <this.editSocialMediaLinks
+                            linkName="instagramLink"
+                            iconName="igLinkIcon"
+                            linkValue={instagramLink}
+                            iconValue={this.state.igLinkIcon}
+                          />
                         </div>
                       </div>
                       <div className="col-md-4">
                         <div className="form-group mb-2">
                           <label>LinkedIn</label>
-                          <div className="d-flex align-items-center">
-                            <a href="#0" className="color-orange font20 mr-1">
-                              <i className="fas fa-minus-circle"></i>
-                            </a>
-                            <input
-                              type="text"
-                              name="linkedinLink"
-                              value={linkedinLink}
-                              onChange={this.handleChange}
-                              className="input"
-                            />
-                          </div>
+
+                          <this.editSocialMediaLinks
+                            linkName="linkedinLink"
+                            iconName="liLinkIcon"
+                            linkValue={linkedinLink}
+                            iconValue={this.state.liLinkIcon}
+                          />
                         </div>
                         <div className="form-group mb-2">
                           <label>YouTube</label>
-                          <div className="d-flex align-items-center">
-                            <a href="#0" className="color-orange font20 mr-1">
-                              <i className="fas fa-minus-circle"></i>
-                            </a>
-                            <input
-                              type="text"
-                              name="youtubeLink"
-                              value={youtubeLink}
-                              onChange={this.handleChange}
-                              className="input"
-                            />
-                          </div>
+
+                          <this.editSocialMediaLinks
+                            linkName="youtubeLink"
+                            iconName="ytLinkIcon"
+                            linkValue={youtubeLink}
+                            iconValue={this.state.ytLinkIcon}
+                          />
                         </div>
-                        <div className="form-group mb-2 mt-4">
+
+                        {/* not sure the purpose of the blank social media link or how it works */}
+                        {/* <div className="form-group mb-2 mt-4">
                           <div className="d-flex align-items-center">
                             <a href="#0" className="color-orange font20 mr-1">
                               <i className="fas fa-plus-circle"></i>
                             </a>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>

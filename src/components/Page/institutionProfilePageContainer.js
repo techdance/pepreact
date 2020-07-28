@@ -22,7 +22,7 @@ const institution = {
     employees: "86",
     alumni: "20,783",
     image: "images/AHEA.png",
-    facebookLink: "#0",
+    facebookLink: "",
     twitterLink: "#0",
     instagramLink: "#0",
     linkedinLink: "#0",
