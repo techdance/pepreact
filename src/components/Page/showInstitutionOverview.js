@@ -40,7 +40,7 @@ class ShowInstitutionOverview extends React.Component {
                               {this.props.overview.type.map(
                                 (institutionType, index) => (
                                   <>
-                                    <br /> {institutionType}{" "}
+                                    <br key={index} /> {institutionType}{" "}
                                   </>
                                 )
                               )}
@@ -59,7 +59,7 @@ class ShowInstitutionOverview extends React.Component {
                                 (language, index) => (
                                   <>
                                     {" "}
-                                    <br /> {language}{" "}
+                                    <br key={index} /> {language}{" "}
                                   </>
                                 )
                               )}

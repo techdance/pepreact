@@ -5,7 +5,7 @@ class ShowInstitutionFacultyInfo extends React.Component {
     return (
       <>
         <div className="row row-custom section-faculty mb-3">
-          <div class="col-lg-12">
+          <div className="col-lg-12">
             <div className="box box-border-radius box-shadow bg-white">
               <div className="inner-wrap">
                 <div className="box-top d-flex justify-content-between">
