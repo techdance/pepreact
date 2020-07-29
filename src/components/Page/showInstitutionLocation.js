@@ -55,11 +55,11 @@ class ShowInstitutionLocation extends React.Component {
               <div id="profile-map">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.223709997125!2d-80.08920788445147!3d26.35162538337247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d8e21b52df2431%3A0x287ee0d28d668b01!2s101%20N%20Federal%20Hwy%2C%20Boca%20Raton%2C%20FL%2033432%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sbo!4v1594939087559!5m2!1ses-419!2sbo"
-                  frameborder="0"
+                  frameBorder="0"
                   style={{ border: 0 }}
-                  allowfullscreen=""
+                  allowFullScreen=""
                   aria-hidden="false"
-                  tabindex="0"
+                  tabIndex="0"
                 ></iframe>
               </div>
               <div className="box-middle">
