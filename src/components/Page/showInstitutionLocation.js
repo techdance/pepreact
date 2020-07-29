@@ -1,7 +1,32 @@
 import React from "react";
 
 class ShowInstitutionLocation extends React.Component {
+  constructor(props) {
+    // state contains the currently selected location name. Default to the first location.
+    super(props);
+    this.state = { locationSelected: 0 };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = (event) => {
+    // set state to the selected location
+
+    // get user input change from the synthetic event; value contains the index in locations which is currently selected.
+    const { value } = event.target;
+
+    //  set local state
+    this.setState({ ["locationSelected"]: value });
+  };
+
   render() {
+    //   locations contains all locations for this institution
+    //  state contains the index in locations for the current selected location
+    //  location contains details to display for the current selected location.
+    const { locations } = this.props;
+    const locationSelected = this.state.locationSelected;
+    const location = locations[locationSelected];
+
     return (
       <>
         <div className="col-lg-6 mb-4">
@@ -13,8 +38,17 @@ class ShowInstitutionLocation extends React.Component {
                   Location
                 </h2>
                 <div className="form-group">
-                  <select className="select border-grey">
-                    <option>Main Campus</option>
+                  {/* Select drop down showing all locations with the currently selected location as the default value */}
+                  <select
+                    value={locationSelected}
+                    className="select border-grey"
+                    onChange={this.handleChange}
+                  >
+                    {locations.map((location, index) => (
+                      <option key={index} name={index} value={index}>
+                        {location.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -31,20 +65,20 @@ class ShowInstitutionLocation extends React.Component {
               <div className="box-middle">
                 <div className="content-icon line-height-15">
                   <i className="fas fa-map"></i>{" "}
-                  <strong>{this.props.location.name1}</strong> <br />
-                  {this.props.location.address1} <br />
-                  {this.props.location.city +
+                  <strong>{location.institution}</strong> <br />
+                  {location.address1} <br />
+                  {location.city +
                     ", " +
-                    this.props.location.state +
+                    location.state +
                     " " +
-                    this.props.location.country +
+                    location.country +
                     " " +
-                    this.props.location.zipcode}{" "}
+                    location.zipcode}{" "}
                   <br />
                 </div>
                 <div className="content-icon line-height-15">
                   <i className="fas fa-map-marker-alt"></i>{" "}
-                  <strong>{this.props.location.continent}</strong>
+                  <strong>{location.continent}</strong>
                 </div>
               </div>
             </div>

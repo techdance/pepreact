@@ -20,7 +20,7 @@ class InsitutionProfilePageContainer extends React.Component {
               <div className="row row-custom sortable">
                 <ShowInstitutionContactInfo info={institution.ContactInfo} />
                 <ShowInstitutionLocation
-                  location={institution.ContactInfo.address}
+                  locations={institution.ContactInfo.Locations}
                 />
               </div>
             </div>
