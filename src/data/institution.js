@@ -69,7 +69,8 @@ export const institution = {
     ],
   },
   StudentBodyInfo: {
-    asof: "Fall 2020",
+    asofTerm: "Fall",
+    asofYear: "2020",
     updated: "2020-03-16",
     total: "6,793",
     undergraduate: "4,912",
@@ -93,7 +94,8 @@ export const institution = {
     international: "820",
   },
   FacultyInfo: {
-    asof: "Fall 2020",
+    asofTerm: "Fall",
+    asofYear: "2020",
     updated: "2020-03-16",
     fullTime: "364",
     studentFacultyRatio: "24:1",
@@ -105,7 +107,8 @@ export const institution = {
   },
 
   Academic: {
-    asof: "Fall 2020",
+    asofTerm: "Fall",
+    asofYear: "2020",
     updated: "2020-03-16",
     collegesAndSchools: [
       "College of Arts and Sciences",

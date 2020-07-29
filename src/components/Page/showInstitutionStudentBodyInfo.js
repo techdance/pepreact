@@ -92,7 +92,11 @@ class ShowInstitutionStudentBodyInfo extends React.Component {
                     <i className="far fa-user-graduate"></i> Student Body
                   </h2>
                   <div>
-                    <h3 className="ar">{this.props.studentBodyInfo.asof}</h3>
+                    <h3 className="ar">
+                      {this.props.studentBodyInfo.asofTerm +
+                        " " +
+                        this.props.studentBodyInfo.asofYear}
+                    </h3>
                     <em>{"Updated " + this.props.studentBodyInfo.updated}</em>
                   </div>
                 </div>

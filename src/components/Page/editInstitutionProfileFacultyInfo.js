@@ -96,7 +96,8 @@ class EditInstitutuionFacultyInfo extends React.Component {
 
   render() {
     const {
-      asof,
+      asofTerm,
+      asofYear,
       updated,
       fullTime,
       studentFacultyRatio,
@@ -124,8 +125,8 @@ class EditInstitutuionFacultyInfo extends React.Component {
                           <label>Term</label>
                           <input
                             type="text"
-                            name="asof"
-                            value={asof}
+                            name="asofTerm"
+                            value={asofTerm}
                             onChange={this.handleChange}
                             className="input"
                           />
@@ -136,8 +137,8 @@ class EditInstitutuionFacultyInfo extends React.Component {
                           <label>Year</label>
                           <input
                             type="text"
-                            name="updated"
-                            value={updated}
+                            name="asofYear"
+                            value={asofYear}
                             onChange={this.handleChange}
                             className="input"
                           />

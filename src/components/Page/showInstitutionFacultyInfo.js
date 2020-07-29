@@ -13,7 +13,11 @@ class ShowInstitutionFacultyInfo extends React.Component {
                     <span className="icon-regular icon-user-tie"></span> Faculty
                   </h2>
                   <div>
-                    <h3 className="ar">{this.props.facultyInfo.asof}</h3>
+                    <h3 className="ar">
+                      {this.props.facultyInfo.asofTerm +
+                        " " +
+                        this.props.facultyInfo.asofYear}
+                    </h3>
                     <em>{this.props.facultyInfo.updated}</em>
                   </div>
                 </div>

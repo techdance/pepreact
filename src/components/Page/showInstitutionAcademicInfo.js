@@ -256,7 +256,11 @@ class ShowInstitutionAcademicInfo extends React.Component {
                     Academic
                   </h2>
                   <div>
-                    <h3 className="ar">{this.props.academic.asof}</h3>
+                    <h3 className="ar">
+                      {this.props.academic.asofTerm +
+                        " " +
+                        this.props.academic.asofYear}
+                    </h3>
                     <em>{this.props.academic.updated}</em>
                   </div>
                 </div>
