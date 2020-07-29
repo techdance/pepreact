@@ -1,12 +1,11 @@
 import React from "react";
 
-class EditInstitutionContactInfoMailingAddress extends React.Component {
+class EditInstitution_ContactInfo_MailingAddress extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.address;
 
     this.handleChange = this.handleChange.bind(this);
-    this.passChangeUp = this.passChangeUp.bind(this);
   }
 
   handleChange = (event) => {
@@ -28,12 +27,7 @@ class EditInstitutionContactInfoMailingAddress extends React.Component {
   passChangeUp = (field, value) => {
     // receives from child component any state changes at their level.
     //  updates the local state and then passes current state up to parent component
-
-    //  update local state wth changes from child component
-    let address = this.state;
-    address[field] = value;
-    // you could pass the event here but also null if it is not necessary nor useful
-    this.props.onChange("address", address);
+    //  this function is not used.
   };
 
   render() {
@@ -81,12 +75,23 @@ class EditInstitutionContactInfoMailingAddress extends React.Component {
             className="input"
           />
         </div>
+
         <div className="form-group mb-2">
           <label>Address 2</label>
           <input
             type="text"
             name="address2"
             value={address2}
+            onChange={this.handleChange}
+            className="input"
+          />
+        </div>
+        <div className="form-group mb-2">
+          <label>Region</label>
+          <input
+            type="text"
+            name="continent"
+            value={continent}
             onChange={this.handleChange}
             className="input"
           />
@@ -128,16 +133,17 @@ class EditInstitutionContactInfoMailingAddress extends React.Component {
   }
 }
 
-class EditInstitutionContactInfoLocation extends React.Component {
+class EditInstitution_ContactInfo_Location extends React.Component {
   constructor(props) {
+    //  state contains array of all locations of the institution and the index of the current viewed (selected) location
     super(props);
-    this.state = this.props.address;
+    this.state = { locations: this.props.locations, locationSelected: 0 };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.passChangeUp = this.passChangeUp.bind(this);
+    this.handleFieldChange = this.handleFieldChange.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
-  handleChange = (event) => {
+  handleFieldChange = (event) => {
     // handles field form changes at this level of nested form components and then passes changes up to parent component
     //  sets local state first and then passes current stateful object up to parent to propogate changes
 
@@ -145,29 +151,46 @@ class EditInstitutionContactInfoLocation extends React.Component {
     const { name, value } = event.target;
 
     //  set local state
-    let address = this.state;
-    address[name] = value;
-    this.setState({ [name]: value });
+    //  first get current state
+    let locations = this.state.locations;
+    let locationSelected = this.state.locationSelected;
+
+    // get location currently selected, update the field and then update state
+    let location = locations[locationSelected];
+    location[name] = value;
+    this.setState({ ["locations"]: locations });
 
     /// pass current state up to parent to propogate changes
-    this.props.onChange("address", address);
+    this.props.onChange("locations", locations);
   };
 
   passChangeUp = (field, value) => {
     // receives from child component any state changes at their level.
     //  updates the local state and then passes current state up to parent component
+    // This function is not used because there are no child objects to the locations data object.
+  };
 
-    //  update local state wth changes from child component
-    let address = this.state;
-    address[field] = value;
-    // you could pass the event here but also null if it is not necessary nor useful
-    this.props.onChange("address", address);
+  handleSelectChange = (event) => {
+    // set state to the selected location
+
+    // get user input change from the synthetic event; value contains the index in locations which is currently selected.
+    const { value } = event.target;
+
+    //  set local state
+    this.setState({ ["locationSelected"]: value });
   };
 
   render() {
+    //  locations contains all locations for this institution
+    //  locationSelected contains the index in locations for the current selected location
+    //  location contains details to display for the current selected location.
+    const locations = this.state.locations;
+    const locationSelected = this.state.locationSelected;
+    const location = locations[locationSelected];
+
     const {
-      name1,
-      name2,
+      name,
+      institution,
       address1,
       address2,
       city,
@@ -175,7 +198,7 @@ class EditInstitutionContactInfoLocation extends React.Component {
       country,
       zipcode,
       continent,
-    } = this.state;
+    } = location;
 
     return (
       <div className="col-lg-6 mb-4">
@@ -187,26 +210,30 @@ class EditInstitutionContactInfoLocation extends React.Component {
                 Location
               </h2>
             </div>
+
             <div className="box-middle">
               <div className="row row-custom">
                 <div className="col-md-6">
                   <div className="form-group mb-2">
-                    <label>Campus Name</label>
-                    <input
-                      type="text"
-                      name="name2"
-                      value={name2}
-                      onChange={this.handleChange}
-                      className="input"
-                    />
+                    <select
+                      value={locationSelected}
+                      className="select border-grey"
+                      onChange={this.handleSelectChange}
+                    >
+                      {locations.map((location, index) => (
+                        <option key={index} name={index} value={index}>
+                          {location.name}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                   <div className="form-group mb-2">
                     <label>Institution Name</label>
                     <input
                       type="text"
-                      name="name1"
-                      value={name1}
-                      onChange={this.handleChange}
+                      name="institution"
+                      value={institution}
+                      onChange={this.handleFieldChange}
                       className="input"
                     />
                   </div>
@@ -216,17 +243,7 @@ class EditInstitutionContactInfoLocation extends React.Component {
                       type="text"
                       name="address1"
                       value={address1}
-                      onChange={this.handleChange}
-                      className="input"
-                    />
-                  </div>
-                  <div className="form-group mb-2">
-                    <label>AHEA University</label>
-                    <input
-                      type="text"
-                      name="address2"
-                      value={address2}
-                      onChange={this.handleChange}
+                      onChange={this.handleFieldChange}
                       className="input"
                     />
                   </div>
@@ -247,6 +264,32 @@ class EditInstitutionContactInfoLocation extends React.Component {
               </div>
               <div className="row row-custom">
                 <div className="col-md-6">
+                  <div className="form-group mb-2">
+                    <label>Address 2</label>
+                    <input
+                      type="text"
+                      name="address2"
+                      value={address2}
+                      onChange={this.handleFieldChange}
+                      className="input"
+                    />
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="form-group mb-2">
+                    <label>Region</label>
+                    <input
+                      type="text"
+                      name="continent"
+                      value={continent}
+                      onChange={this.handleFieldChange}
+                      className="input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row row-custom">
+                <div className="col-md-6">
                   <div className="form-group d-flex">
                     <div className="pr-2">
                       <label>City</label>
@@ -254,7 +297,7 @@ class EditInstitutionContactInfoLocation extends React.Component {
                         type="text"
                         name="city"
                         value={city}
-                        onChange={this.handleChange}
+                        onChange={this.handleFieldChange}
                         className="input"
                       />
                     </div>
@@ -264,7 +307,7 @@ class EditInstitutionContactInfoLocation extends React.Component {
                         type="text"
                         name="state"
                         value={state}
-                        onChange={this.handleChange}
+                        onChange={this.handleFieldChange}
                         className="input"
                       />
                     </div>
@@ -274,7 +317,7 @@ class EditInstitutionContactInfoLocation extends React.Component {
                         type="text"
                         name="zipcode"
                         value={zipcode}
-                        onChange={this.handleChange}
+                        onChange={this.handleFieldChange}
                         className="input"
                       />
                     </div>
@@ -282,12 +325,12 @@ class EditInstitutionContactInfoLocation extends React.Component {
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
-                    <label>Region</label>
+                    <label>Country</label>
                     <input
                       type="text"
-                      name="continent"
-                      value={continent}
-                      onChange={this.handleChange}
+                      name="country"
+                      value={country}
+                      onChange={this.handleFieldChange}
                       className="input"
                     />
                   </div>
@@ -338,7 +381,7 @@ class EditInstitutionContactInfo extends React.Component {
   };
 
   render() {
-    const { phone, fax, url, email, address } = this.state;
+    const { phone, fax, url, email, address, Locations } = this.state;
 
     return (
       <>
@@ -395,7 +438,7 @@ class EditInstitutionContactInfo extends React.Component {
                       />
                     </div>
                   </div>
-                  <EditInstitutionContactInfoMailingAddress
+                  <EditInstitution_ContactInfo_MailingAddress
                     address={address}
                     onChange={this.passChangeUp}
                   />
@@ -404,8 +447,8 @@ class EditInstitutionContactInfo extends React.Component {
             </div>
           </div>
         </div>
-        <EditInstitutionContactInfoLocation
-          address={address}
+        <EditInstitution_ContactInfo_Location
+          locations={Locations}
           onChange={this.passChangeUp}
         />
       </>
