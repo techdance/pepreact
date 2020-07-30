@@ -1,13 +1,11 @@
 import React from "react";
 
-import InsitutionProfilePageContainer from "./Page/showInstitutionProfilePageContainer.js";
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-import towerEdLogoA from "../assets/images/logo-tower-education-a.png";
-import towerEdLogoB from "../assets/images/logo-tower-education-b.png";
+import InsitutionProfilePageContainer from "./Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
 
 const breadCrumbList = ["Home", "Instituion Profiles", "AHEA University"];
 

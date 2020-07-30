@@ -7,7 +7,7 @@ import ShowInstitutionStudentBody from "./showInstitutionStudentBodyInfo.js";
 import ShowInstituionFacultyInfo from "./showInstitutionFacultyInfo.js";
 import ShowInstitutionAcademicInfo from "./showInstitutionAcademicInfo";
 
-import { institution } from "../../data/institution.js";
+import { institution } from "../../../data/institution.js";
 
 class InsitutionProfilePageContainer extends React.Component {
   render() {
