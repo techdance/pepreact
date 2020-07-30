@@ -1,6 +1,6 @@
 import React from "react";
 
-import AdministratorHomePageContainer from "./Page/adminHomePageContainer.js";
+import AdministratorHomePageContainer from "./Page/00300_showAdminHomePage/adminHomePageContainer.js";
 
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";

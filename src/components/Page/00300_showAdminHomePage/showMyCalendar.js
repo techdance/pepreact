@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../assets/css/zabuto_calendar.css";
+import "../../../assets/css/zabuto_calendar.css";
 
 class MyCalendar extends React.Component {
   componentDidMount() {

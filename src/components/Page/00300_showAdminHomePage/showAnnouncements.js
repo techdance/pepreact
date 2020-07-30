@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../../assets/css/owl.carousel.css";
-import "../../assets/css/owl.theme.default.min.css";
+import "../../../assets/css/owl.carousel.css";
+import "../../../assets/css/owl.theme.default.min.css";
 
 class OwlCarousel extends React.Component {
   componentDidMount() {
