@@ -103,7 +103,7 @@ const areaofinterest_list = [
   areaofinterest_3,
 ];
 
-class ExampleTriggerModal extends React.Component {
+class ViewProfileOtherUserContainer extends React.Component {
   render() {
     return (
       <>
@@ -138,4 +138,4 @@ class ExampleTriggerModal extends React.Component {
   }
 }
 
-export default ExampleTriggerModal;
+export default ViewProfileOtherUserContainer;

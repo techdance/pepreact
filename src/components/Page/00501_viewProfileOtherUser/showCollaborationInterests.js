@@ -1,7 +1,7 @@
 import React from "react";
 
 //  Used for the modal triggered on clicking "View More" link
-import AreaInterestModal from "../areaInterestModal.js";
+import AreaInterestModal from "./areaInterestModal.js";
 
 //  Window to show collaboration interests
 

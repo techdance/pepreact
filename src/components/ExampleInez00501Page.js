@@ -1,13 +1,11 @@
 import React from "react";
 
-import Example05IN_00511 from "./Page/example05IN_00511.js";
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-import towerEdLogoA from "../assets/images/logo-tower-education-a.png";
-import towerEdLogoB from "../assets/images/logo-tower-education-b.png";
+import ViewProfileOtherUserContainer from "./Page/00501_viewProfileOtherUser/viewProfileOtherUserContainer.js";
 
 const breadCrumbList = [
   "Home",
@@ -42,7 +40,7 @@ const menuItems = [
   { name: "Settings", link: "#", icon: "icon-settings" },
 ];
 
-class ExamplePage extends React.Component {
+class ExampleInez00501Page extends React.Component {
   render() {
     return (
       <>
@@ -71,7 +69,7 @@ class ExamplePage extends React.Component {
                     <ShowTopMenu owner={owner} />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <Example05IN_00511 />
+                    <ViewProfileOtherUserContainer />
                   </div>
                 </div>
               </div>
@@ -83,4 +81,4 @@ class ExamplePage extends React.Component {
   }
 }
 
-export default ExamplePage;
+export default ExampleInez00501Page;

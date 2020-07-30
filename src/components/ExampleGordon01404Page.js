@@ -1,6 +1,6 @@
 import React from "react";
 
-import ReportDrillDownContainer from "./Page/reportDrillDownContainer.js";
+import ReportDrillDownContainer from "./Page/01404_reportDrillDown/reportDrillDownContainer.js";
 
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";

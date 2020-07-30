@@ -1,7 +1,7 @@
 import React from "react";
 
 import ShowRetentionRateDimensions from "./showRetentionRateDimensions.js";
-import CanvasJSReact from "../../assets/js/canvasjs.react.js";
+import CanvasJSReact from "../../../assets/js/canvasjs.react.js";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const retentionRateDimensions = [
