@@ -5,7 +5,7 @@ import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-import EditInstitutionProfileForm from "./Page/editInstitutionProfilePageContainer.js";
+import EditInstitutionProfileForm from "./Page/03601_editInstitutionProfilePage/editInstitutionProfilePageContainer.js";
 
 const breadCrumbList = [
   "Home",

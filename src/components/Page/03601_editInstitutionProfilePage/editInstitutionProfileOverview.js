@@ -3,7 +3,7 @@ import Select from "react-select";
 
 import EditInstitutionChangeImage from "./editInstitutionProfileChangeImage.js";
 
-import { languageList, institutionTypes } from "../../data/institution.js";
+import { languageList, institutionTypes } from "../../../data/institution.js";
 
 class Edit_InstitutionOverview_Type extends React.Component {
   constructor(props) {
