@@ -6,7 +6,7 @@ import ShowMessages from "./showMessages.js";
 import ShowProfileIcon from "./showProfileIcon.js";
 import ShowSearchBox from "./showSearchBox.js";
 
-const badges = ["Networking"];
+let badges = ["Networking"];
 
 const alert1 = {
   type: "message",
@@ -42,7 +42,7 @@ const alert5 = {
   text: "Missed call from Li Wei",
 };
 
-const alerts = [alert1, alert2, alert3, alert4, alert5];
+let alerts = [alert1, alert2, alert3, alert4, alert5];
 
 const message1 = {
   from: "Clinton Harris",
@@ -84,10 +84,18 @@ const message5 = {
     "Hello Bradley. Looking forward to consolidating our review questions into a central area.",
 };
 
-const messages = [message1, message2, message3, message4, message5];
+let messages = [message1, message2, message3, message4, message5];
 
 class ShowTopMenu extends React.Component {
   render() {
+    // backward compatibility.
+    // Prior version set messages, alerts and badge within this file.
+    // This version allows those to be passed in as arguments. Need to address prior Example pages to remove the code below.
+
+    messages = this.props.messages ? this.props.messages : this.messages;
+    alerts = this.props.alerts ? this.props.alerts : this.alerts;
+    badges = this.props.badges ? this.props.badges : this.badges;
+
     return (
       <>
         <section className="top">
