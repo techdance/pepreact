@@ -8,6 +8,7 @@ import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
 import { student, menuItems } from "../data/student.js";
+import { towerLogo } from "../assets/images/logo.png";
 
 const breadCrumbList = ["Home"];
 
@@ -21,7 +22,7 @@ class ExampleBrittany00300Page extends React.Component {
           <div id="menu-top-responsive" className="">
             <div id="wrap-logo">
               <a href="#0">
-                <img src="images/logo.png" />
+                <img src={towerLogo} alt="Tower Education Technologies" />
               </a>
               <a href="#0" id="menu-button-responsive">
                 <i className="fas fa-bars"></i>
