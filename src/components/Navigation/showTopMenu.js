@@ -94,7 +94,16 @@ class ShowTopMenu extends React.Component {
       "alerts" in this.props
         ? this.props.alerts
         : [alert1, alert2, alert3, alert4, alert5];
-    let badges = "badges" in this.props ? this.props.badges : ["Networking"];
+    let badges =
+      "badges" in this.props
+        ? this.props.badges
+        : [
+            {
+              name: "Networking",
+              icon: "fa-chart-network",
+              iconColor: "#6C38",
+            },
+          ];
 
     return (
       <>

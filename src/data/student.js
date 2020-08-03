@@ -7,7 +7,15 @@ export const student = {
     Person: { firstName: "Brittany", iconImage: "./images/Brittany.png" },
   },
 
-  badges: ["Networking"],
+  badges: [
+    { name: "Tour Guide", icon: "fa-route", iconColor: "toltip-icon-green" },
+    { name: "3.5 GPA", icon: "fa-award", iconColor: "toltip-icon-blue" },
+    {
+      name: "Scholar-Athlete",
+      icon: "fa-medal",
+      iconColor: "toltip-icon-brown",
+    },
+  ],
 
   alerts: [
     {
