@@ -19,7 +19,6 @@ class MyCalendar extends React.Component {
       },
     });
 
-    /* global $ */
     this.$calendarContainer = $(this.elcontainer);
     this.$calendarContainer.on(
       "click",
@@ -35,7 +34,7 @@ class MyCalendar extends React.Component {
         var textlink = "";
 
         for (var i = 0; i < eventData.length; i++) {
-          if (eventData[i].date == date) {
+          if (eventData[i].date === date) {
             title = eventData[i].title;
             description = eventData[i].description;
             hour = eventData[i].hour;
@@ -59,7 +58,7 @@ class MyCalendar extends React.Component {
               "</span></span></span>"
           );
         }
-        if ($(this).find(".popup").css("display") == "none") {
+        if ($(this).find(".popup").css("display") === "none") {
           $(this).find(".popup").css("display", "block");
         }
       }
