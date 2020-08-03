@@ -18,6 +18,7 @@ import "./assets/css/fontawesome-all.css";
 // import "./assets/css/style-register.css";
 
 import ExampleInez00501Page from "./components/ExampleInez00501Page.js";
+import ExampleInez00108Page from "./components/ExampleInez00108Page.js";
 import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
@@ -31,6 +32,9 @@ function App() {
         <Switch>
           <Route exact path="/register">
             <Register />
+          </Route>
+          <Route exact path="/ExampleInez-00108">
+            <ExampleInez00108Page />
           </Route>
           <Route exact path="/ExampleInez-00501">
             <ExampleInez00501Page />
