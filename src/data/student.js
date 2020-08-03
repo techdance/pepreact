@@ -7,7 +7,7 @@ export const student = {
     Person: { firstName: "Brittany", iconImage: "./images/Brittany.png" },
   },
 
-  badges: ["Tour Guide", "3.5 GPA", "Scholar-Athlete"],
+  badges: ["Networking"],
 
   alerts: [
     {
@@ -127,6 +127,197 @@ export const student = {
     { name: "Request Transcript", link: "#0" },
     { name: "Apply for Graduation", link: "#0" },
   ],
+
+  courses: [
+    {
+      name: "CHEMISTRY",
+      code: "CHE 200-01",
+      days: ["M", "W", "F"],
+      start: "2:30",
+      end: "3:30 PM",
+      location: {
+        link: "#0",
+        type: "backpack",
+      },
+      instructor: {
+        name: "Shaina Berube",
+        image: "images/Chem.png",
+      },
+
+      syllabusLink: "#0",
+      classmatesLink: "#0",
+      assignmentsExams: [],
+      progress: "61%",
+    },
+    {
+      name: "ETHICS IN MULTINATIONAL MGMT",
+      code: "BUS 131-02",
+      days: ["M", "W", "F"],
+      start: "1:00",
+      end: "2:00 PM",
+      location: {
+        link: "#0",
+        type: "browser",
+      },
+      instructor: {
+        name: "Bradley Dexter",
+        image: "images/bradley.png",
+      },
+
+      syllabusLink: "#0",
+      classmatesLink: "#0",
+      assignmentsExams: [
+        {
+          name:
+            "Just Business: Multinational Corporation and Human Rights, Chapter 4",
+          due: "Due 2020-03-13",
+        },
+        { name: "Unit 1, Quiz #2, 2020-03-13", due: "3-13-2020" },
+      ],
+      progress: "39%",
+    },
+    {
+      name: "WESTERN LITERATURE",
+      code: "WEST LIT 201-01",
+      days: ["T", "TH"],
+      start: "9:30",
+      end: "10:30 AM",
+      location: {
+        link: "#0",
+        type: "browser",
+      },
+      instructor: {
+        name: "Daniel Kearney",
+        image: "images/Daniel.png",
+      },
+
+      syllabusLink: "#0",
+      classmatesLink: "#0",
+      assignmentsExams: [],
+      progress: "70%",
+    },
+
+    {
+      name: "CHEMISTRY LAB",
+      code: "CHE 200L-03",
+      days: ["T", "TH"],
+      start: "11:30",
+      end: "1:00 PM",
+      location: {
+        link: "#0",
+        type: "backpack",
+      },
+      instructor: {
+        name: "Sam Cushman",
+        image: "images/Sam.png",
+      },
+
+      syllabusLink: "#0",
+      classmatesLink: "#0",
+      assignmentsExams: [],
+      progress: "67%",
+    },
+
+    {
+      name: "CALCULUS 201",
+      code: "CAL201-04",
+      days: ["T", "TH"],
+      start: "3:00",
+      end: "4:30 PM",
+      location: {
+        link: "#0",
+        type: "backpack",
+      },
+      instructor: {
+        name: "Li Kwak",
+        image: "images/Li.png",
+      },
+
+      syllabusLink: "#0",
+      classmatesLink: "#0",
+      assignmentsExams: [],
+      progress: "67%",
+    },
+  ],
+  calendar: {
+    month: "03",
+    year: "2020",
+    colorKeys: [],
+    data: [
+      //blue-event, green-event, orange-event, purple-event
+      {
+        date: "orders.html",
+        badge: true,
+        title: "Human Subjects Approval",
+        description: "<b>William Stinson</b>, <i>Organizer</i>",
+        hour: "8:00am EST",
+        link: "http://www.google.com",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "green-event",
+      },
+      {
+        date: "2020-03-05",
+        badge: true,
+        title: "Quiz 1 Discussion",
+        description: "<b>Bradley Dexter</b>, <i>Instructor</i>",
+        hour: "8:00am EST",
+        link: "#",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "green-event",
+      },
+
+      {
+        date: "2020-03-06",
+        badge: true,
+        title: "Artificial Intelligence Project Check-In",
+        description: "<b>Randy Wolff</b>, <i>Organizer</i>",
+        hour: "3:00pm EST",
+        link: "#",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "green-event",
+      },
+      {
+        date: "2020-03-11",
+        badge: true,
+        title: "Ethics Luncheon",
+        description: "<b>Bradley Dexter</b>, <i>Organizer</i>",
+        hour: "11:30am EST",
+        link: "",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "blue-event",
+      },
+      {
+        date: "2020-03-13",
+        badge: true,
+        title: "Ethics Luncheon",
+        description: "<b>Bradley Dexter</b>, <i>Organizer</i>",
+        hour: "11:30am EST",
+        link: "",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "blue-light-event",
+      },
+      {
+        date: "2020-03-19",
+        badge: true,
+        title: "Ethics Luncheon",
+        description: "<b>Bradley Dexter</b>, <i>Organizer</i>",
+        hour: "11:30am EST",
+        link: "",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "orange-event",
+      },
+      {
+        date: "2020-03-26",
+        badge: true,
+        title: "Ethics Luncheon",
+        description: "<b>Bradley Dexter</b>, <i>Organizer</i>",
+        hour: "11:30am EST",
+        link: "",
+        textlink: "View More <i class='fas fa-arrow-alt-circle-right'></i>",
+        classname: "green-event",
+      },
+    ],
+  },
 };
 
 export const menuItems = [

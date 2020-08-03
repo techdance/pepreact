@@ -1,110 +1,19 @@
 import React from "react";
 
-import ShowAnnouncements from "../00300_showAdminHomePage/showAnnouncements.js";
+//  both below controls need to be put in folder shared by different page containers.
+import ShowAnnouncements from "../Shared/showAnnouncements.js";
+import ShowMyCalendar from "../Shared/showMyCalendar.js";
+import ShowDownloadSherpaApp from "../Shared/showDownloadSherpaApp.js";
+
 import ShowStudentHomePageGroups from "./showStudentHomePageGroups.js";
 import ShowStudentHomePageHolds from "./showStudentHomePageHolds.js";
 import ShowStudentHomePageFinancial from "./showStudentHomePageFinancial.js";
 import ShowStudentHomePageAcademic from "./showStudentHomePageAcademics.js";
 import ShowStudentHomePageCourses from "./showStudentHomePageCourses.js";
-
-const calendarData = [
-  //blue-event, green-event, orange-event, purple-event
-  {
-    date: "2020-03-05",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "http://www.google.com",
-    classname: "green-dark-event",
-  },
-  {
-    date: "2020-03-10",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-light-event",
-  },
-  {
-    date: "2020-03-12",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-dark-event",
-  },
-  {
-    date: "2020-03-16",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "blue-light-event",
-  },
-  {
-    date: "2020-03-18",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-light-event",
-  },
-  {
-    date: "2020-03-19",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-dark-event",
-  },
-  {
-    date: "2020-03-24",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-light-event",
-  },
-  {
-    date: "2020-03-26",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "green-dark-event",
-  },
-  {
-    date: "2020-03-30",
-    badge: true,
-    title: "Human Subjects Approval",
-    description: "<b>William Stinson</b>, <i>Organizer</i>",
-    hour: "8:00am EST",
-    link: "#",
-    textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-    classname: "blue-light-event",
-  },
-];
-
-const calendar = {
-  month: "03",
-  year: "2020",
-  data: calendarData,
-};
+import ShowStudentHomePageCourseRegistration from "./showStudentHomePageCourseRegistration.js";
+import ShowStudentHomePageOpportunities from "./showStudentHomePageOpportunities.js";
+import ShowStudentHomePageCampusServices from "./showStudentHomePageCampusServices.js";
+import ShowStudentHomePageCampusFeeds from "./showStudentHomePageCampusFeeds.js";
 
 class StudentHomePageContainer extends React.Component {
   render() {
@@ -115,6 +24,8 @@ class StudentHomePageContainer extends React.Component {
       financials,
       advisor,
       academics,
+      courses,
+      calendar,
     } = this.props.student;
     return (
       <>
@@ -129,7 +40,36 @@ class StudentHomePageContainer extends React.Component {
               advisor={advisor}
               academics={academics}
             />
-            <ShowStudentHomePageCourses />
+            <ShowStudentHomePageCourses courses={courses} />
+
+            {/* calendar tile and course registration tile appear in the same column on this page. Height is set to auto*/}
+            <div className="col-lg-3 mb-4">
+              <div className="calendar box box-border-radius box-shadow bg-white height-auto">
+                <ShowMyCalendar calendar={calendar} />
+              </div>
+              <ShowStudentHomePageCourseRegistration />
+            </div>
+
+            <div className="col-lg-3 mb-4">
+              <div className="box box-border-radius box-shadow bg-white">
+                <ShowStudentHomePageOpportunities />
+              </div>
+            </div>
+            <div className="col-lg-3 mb-4">
+              <div className="box box-border-radius box-shadow bg-white">
+                <ShowStudentHomePageCampusServices />
+              </div>
+            </div>
+            <div className="col-lg-3 mb-4">
+              <div className="box box-border-radius box-shadow bg-white">
+                <ShowStudentHomePageCampusFeeds />
+              </div>
+            </div>
+            <div class="col-lg-3 mb-4">
+              <div class="create-new box box-border-radius box-shadow bg-brown-light">
+                <ShowDownloadSherpaApp />
+              </div>
+            </div>
           </div>
         </section>
       </>
