@@ -1,10 +1,11 @@
 import React from "react";
 
-import ShowAnnouncements from "./showAnnouncements.js";
+import ShowMyCalendar from "../Shared/showMyCalendar.js";
+
+import ShowAnnouncements from "../Shared/showAnnouncements.js";
 import ShowProgramManagement from "./showProgramManagement.js";
 import ShowTasksAndOverRides from "./showTasksAndOverrides.js";
 import ShowCommitteesAndTeams from "./showCommitteesAndTeams.js";
-import ShowMyCalendar from "./showMyCalendar.js";
 import ShowReportsandAssessments from "./showReportsandAssessments.js";
 import ShowNews from "./showNews.js";
 import ShowProfessionalEvents from "./showProfessionalEvents.js";
@@ -145,9 +146,25 @@ const calendarData = [
   },
 ];
 
+const colorKeyData = [
+  {
+    name: "College of communications",
+    iconColor: "toltip-icon-brown",
+  },
+  {
+    name: "College of Business",
+    iconColor: "toltip-icon-blue-light",
+  },
+  {
+    name: "College of Science & Engineering",
+    iconColor: "toltip-icon-green",
+  },
+];
+
 const calendar = {
   month: "03",
   year: "2020",
+  colorKeys: colorKeyData,
   data: calendarData,
 };
 
@@ -185,7 +202,13 @@ class AdministratorHomePageContainer extends React.Component {
             <ShowProgramManagement programs={programs} />
             <ShowTasksAndOverRides tasksandOverrides={tasksandOverrides} />
             <ShowCommitteesAndTeams committeesandteams={committeesandteams} />
-            <ShowMyCalendar calendar={calendar} />
+
+            {/* calendar tile on Admin Home page is only tile in the column. This is not true for other occurrences of calendar tile  Height is not set to auto*/}
+            <div className="col-lg-3 mb-4">
+              <div className="calendar box box-border-radius box-shadow bg-white">
+                <ShowMyCalendar calendar={calendar} />
+              </div>
+            </div>
 
             <ShowReportsandAssessments />
             <ShowNews news={news} />
