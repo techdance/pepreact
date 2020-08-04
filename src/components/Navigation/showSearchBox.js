@@ -15,7 +15,7 @@ class ShowSearchBox extends React.Component {
               </form>
             </div>
             <div className="box-question">
-              <a href="#">
+              <a href="#0">
                 <span className="icon-solid icon-input-search"></span>
               </a>
             </div>

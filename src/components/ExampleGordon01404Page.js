@@ -22,16 +22,16 @@ const owner = {
 };
 
 const menuItems = [
-  { name: "Home", link: "#", icon: "icon-home" },
-  { name: "Calendar", link: "#", icon: "icon-calendar" },
-  { name: "Tasks & Overrides", link: "#", icon: "icon-clipboard-list" },
-  { name: "Committees & Teams", link: "#", icon: "icon-users-class" },
-  { name: "Reports & Assessments", link: "#", icon: "icon-chart-bar" },
-  { name: "Program Management", link: "#", icon: "icon-chart-pie" },
-  { name: "My Tiles", link: "#", icon: "icon-clone" },
-  { name: "My Files", link: "#", icon: "icon-copy" },
-  { name: "Resources", link: "#", icon: "icon-th-large" },
-  { name: "Settings", link: "#", icon: "icon-settings" },
+  { name: "Home", link: "#0", icon: "icon-home" },
+  { name: "Calendar", link: "#0", icon: "icon-calendar" },
+  { name: "Tasks & Overrides", link: "#0", icon: "icon-clipboard-list" },
+  { name: "Committees & Teams", link: "#0", icon: "icon-users-class" },
+  { name: "Reports & Assessments", link: "#0", icon: "icon-chart-bar" },
+  { name: "Program Management", link: "#0", icon: "icon-chart-pie" },
+  { name: "My Tiles", link: "#0", icon: "icon-clone" },
+  { name: "My Files", link: "#0", icon: "icon-copy" },
+  { name: "Resources", link: "#0", icon: "icon-th-large" },
+  { name: "Settings", link: "#0", icon: "icon-settings" },
 ];
 
 class ExampleGordon01404Page extends React.Component {
@@ -41,10 +41,10 @@ class ExampleGordon01404Page extends React.Component {
         <body className="bg-grey-popup">
           <div id="menu-top-responsive" className="">
             <div id="wrap-logo">
-              <a href="#">
-                <img src="images/logo.png" />
+              <a href="#0">
+                <img src="images/logo.png" alt="" />
               </a>
-              <a href="#" id="menu-button-responsive">
+              <a href="#0" id="menu-button-responsive">
                 <i className="fas fa-bars"></i>
               </a>
             </div>

@@ -5,7 +5,6 @@ import "./App.css";
 // import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import registerImg from "./assets/images/logo-tower-register.png";
 
 import "./assets/css/sidebar.css";
 import "./assets/css/style.css";
@@ -14,8 +13,6 @@ import "./assets/css/responsive.css";
 import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/fontawesome-all.css";
-
-// import "./assets/css/style-register.css";
 
 import ExampleInez00501Page from "./components/ExampleInez00501Page.js";
 import ExampleInez00108Page from "./components/ExampleInez00108Page.js";
@@ -58,13 +55,6 @@ function App() {
             <Login />
           </Route>
         </Switch>
-        {/* <footer className="wrap-logo-bottom">
-          <img
-            src={registerImg}
-            alt="Tower Education Technologies"
-            className="block"
-          />
-        </footer> */}
       </div>
     </Router>
   );

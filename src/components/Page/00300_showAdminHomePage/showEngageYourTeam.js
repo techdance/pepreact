@@ -11,7 +11,7 @@ class ShowEngageYourTeam extends React.Component {
                 <h2 className="box-subhead icon-fa-box icon-handshake-light pl-45 color-black">
                   ENGAGE YOUR TEAM?
                 </h2>
-                <a href="#" className="icon-setting icon-box">
+                <a href="#0" className="icon-setting icon-box">
                   <span className="icon-solid fa-cog color-black"></span>
                 </a>
               </div>
@@ -20,7 +20,7 @@ class ShowEngageYourTeam extends React.Component {
               <strong>Share Interests and Collaborate!</strong>
             </div>
             <div className="box-bottom text-center d-flex justify-content-center">
-              <a href="#" className="btn btn-blue btn-w-100 mr-5">
+              <a href="#0" className="btn btn-blue btn-w-100 mr-5">
                 Collaborate Now
               </a>
               <span className="icon-solid fa-handshake icon-size-40 color-white"></span>

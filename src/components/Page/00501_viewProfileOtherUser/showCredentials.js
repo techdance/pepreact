@@ -53,7 +53,7 @@ class ShowCredentials extends React.Component {
                 </div>
               </div>
               <div className="box-bottom text-center">
-                <a href="#" className="icon-solid icon-more">
+                <a href="#0" className="icon-solid icon-more">
                   View More
                 </a>
               </div>

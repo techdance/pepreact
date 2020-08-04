@@ -23,7 +23,7 @@ class ShowProfessionalBio extends React.Component {
                   </div>
                   <div className="col-md-6">
                     <div className="wrap-video img-resp mb-2">
-                      <img src={this.props.professor.introVideo} />
+                      <img src={this.props.professor.introVideo} alt="" />
                     </div>
                   </div>
                 </div>
@@ -34,7 +34,7 @@ class ShowProfessionalBio extends React.Component {
                   </div>
                   {this.props.professor.disciplines.map((discipline, index) => (
                     <p className="blue-color pl-4">
-                      <a key={index} href="#">
+                      <a key={index} href="#0">
                         {discipline}
                       </a>
                     </p>
@@ -49,7 +49,7 @@ class ShowProfessionalBio extends React.Component {
                     {this.props.professor.areasOfExpertise.map(
                       (expertise, index) => (
                         <>
-                          <a key={index} href="#">
+                          <a key={index} href="#0">
                             {expertise}
                           </a>
                           <br />

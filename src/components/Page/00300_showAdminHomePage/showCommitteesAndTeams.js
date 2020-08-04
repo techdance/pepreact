@@ -18,11 +18,11 @@ class ShowCommitteesAndTeams extends React.Component {
               <div className="box-top position-relative">
                 <h2 className="box-subhead">
                   <span className={committeesAndTeams.titleicon}></span>
-                  <a href="#" className="hover-underline color-black">
+                  <a href="#0" className="hover-underline color-black">
                     {committeesAndTeams.title}
                   </a>
                 </h2>
-                <a href="#" className="icon-setting icon-box">
+                <a href="#0" className="icon-setting icon-box">
                   <i className="icon-solid fa-cog"></i>
                 </a>
               </div>
@@ -46,7 +46,7 @@ class ShowCommitteesAndTeams extends React.Component {
                 ))}
               </ul>
               <div className="mt-4 text-center">
-                <a href="#" className="btn btn-blue">
+                <a href="#0" className="btn btn-blue">
                   View More
                 </a>
               </div>

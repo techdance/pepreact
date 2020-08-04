@@ -54,7 +54,7 @@ class ShowStudentHomePageOpportunities extends React.Component {
               </div>
             </div>
             <div>
-              <img src={Britt} width="60" />
+              <img src={Britt} width="60" alt="" />
             </div>
           </div>
         </div>

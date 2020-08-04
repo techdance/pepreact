@@ -107,7 +107,7 @@ class ReportDrillDownContainer extends React.Component {
                     <div className="toltip2 menu-toltip toltip-overlay any-toltip">
                       <ul>
                         <li>
-                          <a href="#">Create New</a>
+                          <a href="#0">Create New</a>
                         </li>
                         <li>
                           <a href="#0" className="btn-remove">

@@ -119,7 +119,11 @@ class ShowStudentHomePageAcademics extends React.Component {
                             </td>
                             <td className="align-center">
                               <span className="wrap-image">
-                                <img src={course.instructor.image} width="34" />
+                                <img
+                                  src={course.instructor.image}
+                                  width="34"
+                                  alt=""
+                                />
                               </span>
                               <span className="org-name">
                                 {course.instructor.name}

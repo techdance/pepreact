@@ -74,7 +74,7 @@ class ShowCollaborationInterests extends React.Component {
                                 <div className="col-md-12 d-flex justify-content-between">
                                   <div className="text-center">
                                     <a
-                                      href="javascript:void(0);"
+                                      href="#0"
                                       data-toggle="modal"
                                       // data target is the same as ID used to create modal in AreaInterestModal class component.
 

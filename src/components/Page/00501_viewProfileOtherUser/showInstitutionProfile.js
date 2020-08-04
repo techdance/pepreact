@@ -30,7 +30,7 @@ class ShowInstitutionProfle extends React.Component {
               <div className="box-middle">
                 <div className="content-icon">
                   <span className="icon-regular icon-user-shield"></span>{" "}
-                  <a href="">{this.props.institutionProfile.name}</a>
+                  <a href="#0">{this.props.institutionProfile.name}</a>
                 </div>
                 <div className="content-icon">
                   <span className="icon-regular icon-calendar-check"></span>{" "}
@@ -40,6 +40,7 @@ class ShowInstitutionProfle extends React.Component {
                   <span className="icon-regular icon-globe"></span>{" "}
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.google.com/maps/place/Iowa+City,+Iowa,+EE.+UU./@41.6470317,-91.6094033,12z/data=!3m1!4b1!4m5!3m4!1s0x87e441c16a208817:0x6d711867870582b0!8m2!3d41.6611277!4d-91.5301683"
                   >
                     {this.props.institutionProfile.location}
@@ -49,6 +50,7 @@ class ShowInstitutionProfle extends React.Component {
                   <span className="icon-regular icon-globe-americas"></span>{" "}
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.google.com/maps/place/Iowa+City,+IA/@41.6470317,-91.6094032,12z/data=!3m1!4b1!4m5!3m4!1s0x87e441c16a208817:0x6d711867870582b0!8m2!3d41.6611277!4d-91.5301683"
                   >
                     {this.props.institutionProfile.continent}

@@ -10,7 +10,6 @@ class CompareAlertTypes extends React.Component {
             <i className="fa fa-users" aria-hidden="true"></i>
           </div>
         );
-        break;
 
       case "bullhorn":
         return (
@@ -18,7 +17,6 @@ class CompareAlertTypes extends React.Component {
             <i className="fas fa-bullhorn" aria-hidden="true"></i>
           </div>
         );
-        break;
 
       default:
         return (
@@ -27,6 +25,7 @@ class CompareAlertTypes extends React.Component {
               key={this.props.index}
               src={this.props.alert.image}
               width="48"
+              alt=""
             />
           </div>
         );
@@ -60,7 +59,7 @@ class ShowAlerts extends React.Component {
                       id={"toltip-item-" + index}
                       className="toltip-item toltip-overlay d-flex"
                     >
-                      <a href="#" className="close-times" data-id={index}>
+                      <a href="#0" className="close-times" data-id={index}>
                         <i className="fa fa-times-circle"></i>
                       </a>
                       <CompareAlertTypes alert={alert} index={index} />

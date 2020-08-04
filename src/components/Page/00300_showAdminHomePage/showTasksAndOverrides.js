@@ -18,11 +18,11 @@ class ShowTaskAndOverRides extends React.Component {
               <div className="box-top position-relative">
                 <h2 className="box-subhead">
                   <span className={tasksandOverrides.titleIcon}></span>
-                  <a href="#" className="hover-underline color-black">
+                  <a href="#0" className="hover-underline color-black">
                     {tasksandOverrides.title}
                   </a>
                 </h2>
-                <a href="#" className="icon-setting icon-box">
+                <a href="#0" className="icon-setting icon-box">
                   <i className="icon-solid fa-cog"></i>
                 </a>
               </div>
@@ -53,7 +53,7 @@ class ShowTaskAndOverRides extends React.Component {
                 ))}
               </ul>
               <div className="mt-4 text-center">
-                <a href="#" className="btn btn-blue">
+                <a href="#0" className="btn btn-blue">
                   View More
                 </a>
               </div>

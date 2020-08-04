@@ -17,7 +17,7 @@ class AreaInterestModal extends React.Component {
           <div className="modal-content">
             <div className="modal-header position-relative">
               <div className="toltip-close3">
-                <a href="#" data-dismiss="modal">
+                <a href="#0" data-dismiss="modal">
                   <i className="fa fa-times-circle"></i>
                 </a>
               </div>
@@ -122,7 +122,7 @@ class AreaInterestModal extends React.Component {
                     </div>
                     <div className="row text-center pt-2 mt-3">
                       <div className="col-md-12 ac">
-                        <a href="#" className="btn btn-blue btn-w-100 m-auto">
+                        <a href="#0" className="btn btn-blue btn-w-100 m-auto">
                           Find Matches
                         </a>
                       </div>

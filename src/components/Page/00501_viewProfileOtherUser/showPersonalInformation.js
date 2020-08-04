@@ -54,7 +54,7 @@ class ShowPersonalInformation extends React.Component {
               <div className="box-middle d-flex align-items-center">
                 <div className="content-left">
                   <div className="bg-profile no-bg" id="progress">
-                    <img src={this.props.professor.image} width="141" />
+                    <img src={this.props.professor.image} width="141" alt="" />
                   </div>
                 </div>
                 <div className="content-right" style={{ width: "50%" }}>
@@ -63,7 +63,7 @@ class ShowPersonalInformation extends React.Component {
                       <span className="icon-regular icon-user-alt"></span> Name
                     </div>
                     <div className="text">
-                      <a href="#" className="cl-gray">
+                      <a href="#0" className="cl-gray">
                         {this.props.professor.name}
                       </a>
                     </div>
@@ -73,16 +73,17 @@ class ShowPersonalInformation extends React.Component {
                       <span className="icon-regular icon-user-tie"></span> Title
                     </div>
                     <div className="text">
-                      <a href="#" className="cl-gray">
+                      <a href="#0" className="cl-gray">
                         {this.props.professor.title}
                       </a>
                     </div>
                   </div>
                   <div className="profile-info profile-title mt-2">
-                    <a href="#">
+                    <a href="#0">
                       <img
                         className="message-info mr-3"
                         src="./images/message-info.png"
+                        alt=""
                       />
                     </a>
                   </div>

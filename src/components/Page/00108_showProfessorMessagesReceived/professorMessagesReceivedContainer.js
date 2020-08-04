@@ -61,7 +61,11 @@ class ProfessorMessagesReceivedContainer extends React.Component {
                               <tr id={"Project_Invites_" + index + 1}>
                                 <td className="border-bottom-none">
                                   <div className="person-img">
-                                    <img src={message.from.image} width="95" />
+                                    <img
+                                      src={message.from.image}
+                                      width="95"
+                                      alt=""
+                                    />
                                   </div>
                                 </td>
                                 <td>
@@ -149,7 +153,11 @@ class ProfessorMessagesReceivedContainer extends React.Component {
                               <tr id={"Project_Invites_" + index + 1}>
                                 <td className="border-bottom-none">
                                   <div className="person-img">
-                                    <img src={message.from.image} width="95" />
+                                    <img
+                                      src={message.from.image}
+                                      width="95"
+                                      alt=""
+                                    />
                                   </div>
                                 </td>
                                 <td>

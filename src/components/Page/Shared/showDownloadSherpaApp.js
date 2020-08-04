@@ -21,7 +21,7 @@ class ShowDownloadSherpaApp extends React.Component {
               <em>Elevate Global Engagement with Sherpa</em>
             </div>
             <div className="ac ml-3">
-              <img src={sherpaImage} className="mb-3" />
+              <img src={sherpaImage} className="mb-3" alt="" />
               <br />
               <a style={{ color: "black" }} href="#0">
                 Download Now

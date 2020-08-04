@@ -20,7 +20,7 @@ class ExampleInez00108Page extends React.Component {
           <div id="menu-top-responsive" className="">
             <div id="wrap-logo">
               <a href="#0">
-                <img src="images/logo.png" />
+                <img src="images/logo.png" alt="" />
               </a>
               <a href="#0" id="menu-button-responsive">
                 <i className="fas fa-bars"></i>

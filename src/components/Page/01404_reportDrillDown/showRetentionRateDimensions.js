@@ -16,7 +16,7 @@ class ShowRetentionRateDimensions extends React.Component {
                   {this.props.retentionRateDimensions.map(
                     (dimension, index) => (
                       <li>
-                        <a href="#">{dimension}</a>
+                        <a href="#0">{dimension}</a>
                       </li>
                     )
                   )}

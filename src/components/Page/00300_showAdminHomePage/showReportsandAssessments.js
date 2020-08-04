@@ -279,7 +279,7 @@ class ShowReportsandAssessments extends React.Component {
                 </div>
               </div>
               <div className="mt-4 text-center">
-                <a href="#" className="btn btn-blue">
+                <a href="#0" className="btn btn-blue">
                   View More
                 </a>
               </div>

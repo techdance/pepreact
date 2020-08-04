@@ -7,9 +7,9 @@ class WrapLogo extends React.Component {
   render() {
     return (
       <div id="wrap-logo">
-        <a href="#">
-          <img src={this.props.logoA2} />
-          <img className="group-hide ml-1" src={this.props.logoB2} />
+        <a href="#0">
+          <img src={this.props.logoA2} alt="" />
+          <img className="group-hide ml-1" src={this.props.logoB2} alt="" />
         </a>
       </div>
     );
@@ -21,9 +21,9 @@ class WrapLogoBottom extends React.Component {
     return (
       <>
         <div id="wrap-logo-bottom" className="text-center">
-          <a href="#">
-            <img src={towerEdLogoA} width="50" />
-            <img className="group-hide" src={towerEdLogoB} width="100" />
+          <a href="#0">
+            <img src={towerEdLogoA} width="50" alt="" />
+            <img className="group-hide" src={towerEdLogoB} width="100" alt="" />
           </a>
         </div>
       </>
@@ -47,7 +47,7 @@ class ShowSideBarMenu extends React.Component {
               <ul id="nav" className="nav">
                 <li className="wrap-menu-button">
                   <a
-                    href="#"
+                    href="#0"
                     id="menu-button-hide-show"
                     className="icon-fa icon-arrow-left"
                   ></a>
@@ -58,7 +58,7 @@ class ShowSideBarMenu extends React.Component {
                     key={index}
                     className={activeMenuItem === menuItem.name ? "active" : ""}
                   >
-                    <a href="#" className={"icon-fa " + menuItem.icon}>
+                    <a href="#0" className={"icon-fa " + menuItem.icon}>
                       <span className="group-hide">{menuItem.name}</span>
                     </a>
                   </li>

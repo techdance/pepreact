@@ -23,21 +23,21 @@ const owner = {
 };
 
 const menuItems = [
-  { name: "Home", link: "#", icon: "icon-home" },
-  { name: "My Calendar", link: "#", icon: "icon-calendar" },
-  { name: "Committees & Teams", link: "#", icon: "icon-user-group" },
-  { name: "My Advisees", link: "#", icon: "icon-book-reader icon-solid" },
-  { name: "My Courses", link: "#", icon: "icon-book" },
-  { name: "My Projects", link: "#", icon: "icon-book-title" },
-  { name: "My Files", link: "#", icon: "icon-copy" },
-  { name: "Resources", link: "#", icon: "icon-th-large" },
-  { name: "Opportunities", link: "#", icon: "icon-sun-haze" },
+  { name: "Home", link: "#0", icon: "icon-home" },
+  { name: "My Calendar", link: "#0", icon: "icon-calendar" },
+  { name: "Committees & Teams", link: "#0", icon: "icon-user-group" },
+  { name: "My Advisees", link: "#0", icon: "icon-book-reader icon-solid" },
+  { name: "My Courses", link: "#0", icon: "icon-book" },
+  { name: "My Projects", link: "#0", icon: "icon-book-title" },
+  { name: "My Files", link: "#0", icon: "icon-copy" },
+  { name: "Resources", link: "#0", icon: "icon-th-large" },
+  { name: "Opportunities", link: "#0", icon: "icon-sun-haze" },
   {
     name: "Recommended Partners",
-    link: "#",
+    link: "#0",
     icon: "icon-user-friends icon-solid",
   },
-  { name: "Settings", link: "#", icon: "icon-settings" },
+  { name: "Settings", link: "#0", icon: "icon-settings" },
 ];
 
 class ExampleInez00501Page extends React.Component {
@@ -47,10 +47,10 @@ class ExampleInez00501Page extends React.Component {
         <div className="bg-grey-popup">
           <div id="menu-top-responsive" className="">
             <div id="wrap-logo">
-              <a href="#">
-                <img src="images/logo.png" />
+              <a href="#0">
+                <img src="images/logo.png" alt="" />
               </a>
-              <a href="#" id="menu-button-responsive">
+              <a href="#0" id="menu-button-responsive">
                 <i className="fas fa-bars"></i>
               </a>
             </div>
