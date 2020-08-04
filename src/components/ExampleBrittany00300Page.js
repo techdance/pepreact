@@ -6,9 +6,9 @@ import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
+import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
 import { student, menuItems } from "../data/student.js";
-import { towerLogo } from "../assets/images/logo.png";
 
 const breadCrumbList = ["Home"];
 
@@ -20,14 +20,7 @@ class ExampleBrittany00300Page extends React.Component {
       <>
         <body className="bg-grey-popup">
           <div id="menu-top-responsive" className="">
-            <div id="wrap-logo">
-              <a href="#0">
-                <img src={towerLogo} alt="Tower Education Technologies" />
-              </a>
-              <a href="#0" id="menu-button-responsive">
-                <i className="fas fa-bars"></i>
-              </a>
-            </div>
+            <ShowTowerLogo />
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
