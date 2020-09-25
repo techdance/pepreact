@@ -66,7 +66,7 @@ class ShowBadges extends React.Component {
 
     return (
       <>
-        <div className="top-icon top-icon-badges">
+        <div className="top-icon top-icon-badges icon-1">
           <div className="btn-group btn-group-menu">
             <a
               href="#0"
@@ -77,16 +77,17 @@ class ShowBadges extends React.Component {
               aria-expanded="false"
               onClick={this.handleClick}
             >
-              <span className="note">
+              {badges.length ? (<span className="note">
                 <span className="outer">{badges.length}</span>
-              </span>
+              </span>) : ''}
+
             </a>
             <div className="dropdown-menu">
               {badges.length === 1 ? (
                 <RenderCongratsMessage badge={badges[0]} />
               ) : (
-                <RenderBadgeList badges={badges} />
-              )}
+                  <RenderBadgeList badges={badges} />
+                )}
             </div>
           </div>
         </div>
