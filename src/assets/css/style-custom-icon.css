@@ -1,6 +1,6 @@
-
 /*Custom Icon Due Tone*/
 /* Step 1: Common Duotone Properties: All required to make icons render reliably */
+
 .icon-duotone {
     position: relative;
     padding-left: 1.25em; /* make space for the width of the absolutely positioned icon */
@@ -88,7 +88,7 @@
     content: "\10f92f";
 }
 .icon-duotone.icon-alarm-clock::after{
-    content: "\10f34e";
+    content: "\10f843";
 }
 .icon-duotone.icon-usd-square::after{
     content: "\10f2e9";
@@ -130,6 +130,7 @@
 .icon-comment-alt-smile::before{
     content: "\f4aa";
 }
+
 .icon-user-shield::before{
     content: "\f505";
 }
@@ -157,6 +158,16 @@
 .icon-comment-dots::before{
     content: "\f4ad";
 }
+.icon-external-link::before{
+    content: "\f08e";
+}
+.icon-rss-square::before{
+    content: "\f143";
+}
+.icon-calculator-alt::before{
+    content: "\f64c";
+}
+
 .icon-file-certificate::before{
     content: "\f5f3";
 }
@@ -208,11 +219,41 @@
 .icon-book-user::before{
     content: "\f7e7";
 }
+.icon-filter::before{
+    content: "\f0b0";
+}
+.icon-server::before{
+    content: "\f233";
+}
+.icon-backspace::before{
+    content: "\f55a";
+}
+.icon-trash-undo-alt::before{
+    content: "\f896";
+}
+.icon-share-square::before{
+    content: "\f14d";
+}
+.icon-file-import::before{
+    content: "\f56f";
+}
+.icon-list-ol::before{
+    content: "\f0cb";
+}
+.icon-plus-square::before{
+    content: "\f0fe";
+}
+.icon-database::before{
+    content: "\f1c0";
+}
 .icon-phone-alt::before{
     content: "\f879";
 }
 .icon-book-reader:before{
     content: "\f5da";
+}
+.icon-book:before{
+    content: "\f02d";
 }
 .icon-comment-smile::before{
     content: "\f4b4";
@@ -269,13 +310,19 @@
     content: "\f2a0";
 }
 .icon-alarm-clock::before{
-    content: "\f34e";
+    content: "\f843";
 }
 .icon-usd-square::before{
     content: "\f2e9";
 }
 .icon-user-chart::before{
     content: "\f6a3";
+}
+.icon-user-check::before{
+    content: "\f4fc";
+}
+.icon-user-lock::before{
+    content: "\f502";
 }
 .icon-book-medical::before{
     content: "\f7e6";
@@ -368,6 +415,12 @@
 .icon-globe::before{
     content: "\f0ac";
 }
+.icon-blender::before{
+     content: "\f517";
+ }
+.icon-university::before{
+    content: "\f19c";
+}
 /*End Custom Icons Ligth*/
 
 /*Custom Icons Solid*/
@@ -389,7 +442,9 @@
     font-family: 'Font Awesome 5 Solid';
 
 }
-
+.icon-comment::before{
+    content: "\f075";
+}
 .icon-more::after{
     content: "\f0a9";
     font-size: 16px;
@@ -397,6 +452,9 @@
     position: absolute;
     top: -2px;
     width: 16px;
+}
+.icon-input-search2::before {
+    content: "\f059";
 }
 .icon-input-search::before {
     content: "\f059";
@@ -415,9 +473,77 @@
 .icon-edit::before{
     content: "\f044";
 }
+.icon-cog::before{
+    content: "\f013";
+}
+.icon-clipboard-check::before{
+    content: "\f46c";
+}
+.icon-anglebotton::before{
+    content: "\f13a";
+
+}
 .icon-plus-circle::before{
     content: "\f055";
 }
+.icon-poll::before{
+    content: "\f681";
+}
+.icon-file-invoice::before{
+    content: "\f570";
+}
+.icon-check-square::before{
+    content: "\f14a";
+}
+.icon-comments::before{
+    content: "\f086";
+}
+.icon-arrows-alt::before{
+    content: "\f0b2";
+}
+.icon-box-full::before{
+    content: "\f49c";
+}
+.icon-newspaper::before{
+    content: "\f1ea";
+}
+.icon-atlas::before{
+    content: "\f558";
+}
+.icon-file::before{
+    content: "\f15b";
+}
+.icon-folder::before{
+    content: "\f07b";
+}
+.icon-box-open::before{
+    content: "\f49e";
+}
+.icon-file-exclamation::before{
+    content: "\f31a";
+}
+.icon-file-alt::before{
+    content: "\f15c";
+}
+.icon-browser::before{
+    content: "\f37e";
+}
+.icon-stream::before{
+    content: "\f550";
+}
+.icon-users-cog::before{
+    content: "\f509";
+}
+.icon-clipboard-user::before{
+    content: "\f7f3";
+}
+.icon-hospital-user::before{
+    content: "\f80d";
+}
+.icon-file-word::before{
+    content: "\f1c2";
+}
+
 /*Custom Icon Sizes*/
 .icon-size-1{
     font-size: 1rem !important;
@@ -559,4 +685,23 @@
 .btn-find{
     padding: 12px 9px !important;
     font-size: 12px !important;
+}
+
+.icon-custom{
+    font-size: 16px !important;
+    margin-left: 5px !important;
+    position: relative !important;
+    top:0 !important;
+}
+
+.icon-custom-move{
+    color:black !important;
+    font-size: 24px !important;
+    margin-left: 0px !important;
+    left: 0px;
+    position: absolute;
+    top:45px !important;
+}
+.sortable .box-week{
+    padding-left: 40px;
 }

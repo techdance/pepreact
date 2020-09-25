@@ -4,7 +4,7 @@
 	height: 100%;
 	left: 0;
 	padding:0px;
-	max-width: 215px;
+	max-width: 235px;
 	width: 100%;
 	z-index: 700;
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#011374+1,014fb2+28,008aef+52,0099ff+78,0099ff+100 */
@@ -170,7 +170,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011374', end
     position: sticky;
     bottom: 0;
     left: 0;
-    max-width: 215px;
+    max-width: 235px;
 }
 
 #wrap-logo-bottom a{

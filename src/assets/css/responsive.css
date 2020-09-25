@@ -232,10 +232,10 @@
     #tabs .nav-item {
         max-width: 135px !important;
     }
-    .wrap-top-search{
+   /* .wrap-top-search{
         float: none;
         display: block;
-    }
+    }*/
     .wrap-top-search .top-text{
         line-height: 1.5;
         text-align: left;
@@ -282,9 +282,10 @@
     .top-icon {
         margin-bottom: 10px;
     }
-    .top-search{
+   /* .top-search{
         display:none;
-    }
+    }*/
+
     #btn-send-message{
         top:inherit;
         right: inherit;
@@ -358,6 +359,72 @@
         margin: auto
     }
 }
+@media(max-width:575.75px) {
+    .wrap-top-search {
+        float: none;
+        display: block;
+    }
+    .top-search {
+        width: 100%;
+    }
+
+    .box-search {
+        width: 100%;
+    }
+
+    .top-search form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .box-search input {
+        border: 0px;
+        background: none;
+        width: 90%;
+    }
+
+    .top-search form button {
+        margin-right: 0;
+    }
+
+    .top-icon.hello {
+        display: block;
+        text-align: center;
+        width: 100% !important;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .top-icon-user .btn-group-menu .dropdown-menu {
+        top: 135px !important;
+    }
+
+    .top-icon {
+        margin-bottom: 10px;
+        width: 31.33%;
+        text-align: center;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .top-icon-fa::before{
+        font-size: 50px;
+        left: 2px;
+    }
+    .top-icon-message span.note {
+        right: -10px !important;
+        top: 4px !important;
+    }
+    .icon-2 span.note {
+        right: -13px;
+        top: 4px;
+    }
+    .top-icon img{
+        width: 53px !important;
+    }
+    .top-icon.hello a{
+        font-size: 14px;
+    }
+}
+
 @media(max-width:480px){
     .wrap-step {
         display: block;
@@ -396,4 +463,11 @@
         margin-bottom: 20px;
     }
 
+}
+@media(max-width:400px) {
+    .box-search input {
+        border: 0px;
+        background: none;
+        width: 84%;
+    }
 }

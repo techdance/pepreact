@@ -8,11 +8,11 @@ export const administrator = {
   },
 
   badges: [
-    {
-      name: "Networking",
-      icon: "fa-chart-network",
-      iconColor: "#6C38",
-    },
+    // {
+    //   name: "Networking",
+    //   icon: "fa-chart-network",
+    //   iconColor: "#6C38",
+    // },
   ],
 
   alerts: [
@@ -266,11 +266,12 @@ export const administrator = {
 
 export const menuItems = [
   { name: "Home", link: "#", icon: "icon-home" },
-  { name: "Calendar", link: "#", icon: "icon-calendar" },
-  { name: "Tasks & Overrides", link: "#", icon: "icon-clipboard-list" },
-  { name: "Committees & Teams", link: "#", icon: "icon-users-class" },
-  { name: "Reports & Assessments", link: "#", icon: "icon-chart-bar" },
+  { name: "My Calendar", link: "#", icon: "icon-calendar" },
+  { name: "Tasks", link: "#", icon: "icon-clipboard-list" },
+  { name: "Committees", link: "#", icon: "icon-users-class" },
+  { name: "Reports", link: "#", icon: "icon-chart-bar" },
   { name: "Program Management", link: "#", icon: "icon-chart-pie" },
+  { name: "My Projects", link: "#", icon: "icon-book-title" },
   { name: "My Tiles", link: "#", icon: "icon-clone" },
   { name: "My Files", link: "#", icon: "icon-copy" },
   { name: "Resources", link: "#", icon: "icon-th-large" },

@@ -37,7 +37,7 @@ class ShowAlerts extends React.Component {
   render() {
     return (
       <>
-        <div className="top-icon ">
+        <div className="top-icon icon-2">
           <div className="btn-group btn-group-menu">
             <a
               href="#0"
