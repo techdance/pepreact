@@ -9,7 +9,7 @@ class WrapLogo extends React.Component {
       <div id="wrap-logo">
         <a href="#0">
           <img src={this.props.logoA2} alt="" />
-          <img className="group-hide ml-1" src={this.props.logoB2} alt="" />
+          <img className="group-hide" src={this.props.logoB2} alt="" />
         </a>
       </div>
     );

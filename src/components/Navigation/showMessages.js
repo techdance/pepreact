@@ -4,7 +4,7 @@ class ShowMessages extends React.Component {
   render() {
     return (
       <>
-        <div className="top-icon top-icon-message">
+        <div className="top-icon top-icon-message icon-3">
           <div className="btn-group btn-group-menu">
             <a
               href="#0"
