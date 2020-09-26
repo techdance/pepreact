@@ -4,7 +4,7 @@ class ShowCredentials extends React.Component {
   render() {
     return (
       <>
-        <div className="col-lg-12 mb-4">
+        <div className="col-lg-6 mb-4" draggable="true">
           <div className="credentials box box-border-radius box-shadow bg-white">
             <div className="inner-wrap">
               <div className="box-top position-relative">
@@ -53,7 +53,7 @@ class ShowCredentials extends React.Component {
                 </div>
               </div>
               <div className="box-bottom text-center">
-                <a href="#0" className="icon-solid icon-more">
+                <a href="#0" className="btn btn-blue">
                   View More
                 </a>
               </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
-import ShowCollaborationInterests from "../Shared/showCollaborationInterests.js";
+import ShowCollaborationInterests from "../Shared//showCollaborationInterests.js";
+
 import ShowCredentials from "../Shared/showCredentials.js";
 import ShowInstitutionProfle from "../Shared/showInstitutionProfile.js";
 import ShowPersonalInformation from "../Shared/showPersonalInformation.js";
@@ -9,28 +10,29 @@ import ShowProfessionalBio from "../Shared/showProfessionalBio.js";
 
 //  TLM: constants below represent sample DB records.
 
+
 const professor = {
-  name: "Dr. Bradley Dexter",
-  title: "Professor",
-  image: "./images/bradley.png",
-  communicationPreferences: ["English", "Spanish"],
-  emailAddress: "bdexter@ahea.edu",
-  phoneNumbers: ["+1 555 432 1100", "+1 555 432 1122"],
-  url: "https://www.ahea.edu/about-ahea/college-of-business/bdexter",
-  introVideo: "./images/Bradley-video.png",
+  name: "Dr. Gordon Stanley",
+  title: "Senior Director of Administrative Systems",
+  image: "./images/Gordon.png",
+  communicationPreferences: ["English", "NA"],
+  emailAddress: "gstanley@ahea.edu",
+  phoneNumbers: ["+1 555-432-7788", "+1 555-432-1100"],
+  url: "https://www.ahea.edu/about-ahea/provost-office/provost",
+  introVideo: "./images/Gordon-video.png",
   disciplines: ["Business"],
   areasOfExpertise: [
-    "Business Analytics & Intelligence",
-    "Business Ethics",
-    "International​ Operations Research & Management",
+    "Institutional Research",
+    "Graduate Research Funding",
+    "Accrediting Standards Planning and Execution",
   ],
-  internationalExperience: "1-2 Years of International Experience",
+  internationalExperience: "",
   bio:
-    "Divides professional time between teaching undergraduate courses in both classroom and online settings, and providing private consulting specializing in the growt and globalization of small businesses. I also serve on the editorial board of  <em>The Academy of Management Journal</em>.",
+    "Dr. Stanley began his tenure as AHEA University's provost on July 1, 2012, following a 24-plus year career at Center State University, where he served as the George and Sadye Joy Raye Professor of Economics and editor of the Journal of Small Public Universities. From 2000-2005 Dr. Stanley served as dean of the College of Business and Entrepreneurialship, Central State's largest academic unit with more than 400 faculty and 5,500 students. He also chaired the economics department from 1995 to 1999 and directed the honors program from 1999 to 2005. An honors graduate in economics from the University of North Dakota, Dr. Stanley received his Ph.D. from the same institution, specializing in Global Affairs.",
   personalMessage:
-    '"Success in business requires training and discipline and hard work." David Rockefeller',
+    '"The goal of education is the advancement of knowledge and the dissemination of truth." -John Fitzgerald Kennedy',
   cvLink: "#",
-  school: "College of Business",
+  school: "Enterprise Information Technology Services",
 };
 
 const institutionProfile = {
@@ -44,11 +46,12 @@ const institutionProfile = {
 const credentials = {
   educationLevel: "Phd",
   professionalMemberships: [
-    { name: "Academy of International Business", link: "#" },
-    { name: "American Management Association", link: "#" },
+    { name: "Association of College Administration Professionals (ACAP)", link: "#" },
+    { name: "Council for the Advancement of Standards in Higher Education (CAS)", link: "#" },
+    { name: "NAFSA: Association of International Educators", link: "#" },
   ],
   links: ["#", "#"],
-  certificates: ["Business Data Analytics"],
+  certificates: ["Internationalization of Higher Education"],
 };
 
 const areaofinterest_1 = {
@@ -64,7 +67,7 @@ const areaofinterest_1 = {
   credits: "4",
   programLevel: "Undergraduate",
   dateRange: "Today 2020",
-  created: false,
+  created: true,
 };
 
 const areaofinterest_2 = {
@@ -80,7 +83,7 @@ const areaofinterest_2 = {
   credits: "4",
   programLevel: "Undergraduate",
   dateRange: "Today 2020",
-  created: false,
+  created: true,
 };
 
 const areaofinterest_3 = {
@@ -96,7 +99,7 @@ const areaofinterest_3 = {
   credits: "3",
   programLevel: "Undergraduate",
   dateRange: "Today 2020",
-  created: false,
+  created: true,
 };
 
 // array of db records passed to ShowCollaborationInterests class component
@@ -106,27 +109,30 @@ const areaofinterest_list = [
   areaofinterest_3,
 ];
 
-class ViewProfileOtherUserContainer extends React.Component {
+// sameUser flag is used to distinguish when those component are viewed by the page owner or not.
+//  sameUser = "true" when page owner and profile owner are the same person. Otherwise, sameUser = "false"
+//  for example, in page 00501, page owner and profile owner are two different people.
+
+class ViewProfileContainer extends React.Component {
   render() {
     return (
       <>
         <section class="wrap-profile">
           <div class="row row-custom sortable">
-            <ShowPersonalInformation professor={professor} sameUser="false" />
+            <ShowPersonalInformation professor={professor} sameUser="true" />
             <ShowInstitutionProfle
               institutionProfile={institutionProfile}
             />
             <ShowCommunicationPreferences professor={professor} />
             <ShowCredentials credentials={credentials} />
             <ShowProfessionalBio professor={professor} />
-            <ShowCollaborationInterests
-              areaofinterest_list={areaofinterest_list}
-            />
+            <ShowCollaborationInterests areaofinterest_list={areaofinterest_list} />
           </div>
+
         </section>
       </>
     );
   }
 }
 
-export default ViewProfileOtherUserContainer;
+export default ViewProfileContainer;

@@ -1,4 +1,4 @@
-export const administrator = {
+export const administratorGordon = {
   pageOwner: {
     Institution: {
       logoA2: "./images/logo-a.png",

@@ -4,7 +4,7 @@ class ShowProfessionalBio extends React.Component {
   render() {
     return (
       <>
-        <div className="col-lg-12 mb-4">
+        <div className="col-lg-6 mb-4" draggable="true">
           <div className="profesional box box-border-radius box-shadow bg-white">
             <div className="inner-wrap">
               <div className="box-top position-relative">
@@ -59,12 +59,13 @@ class ShowProfessionalBio extends React.Component {
                   </p>
                 </div>
                 <div className="content-icon plane">
-                  <p>
+                  {this.props.professor.internationalExperience ? (<p>
                     <span className="icon-regular icon-globe-stand"></span>{" "}
                     <strong>
-                      {this.props.professor.internationalExerience}
+                      {this.props.professor.internationalExperience}
                     </strong>
-                  </p>
+                  </p>) : ""}
+
                 </div>
                 <div className="content-icon">
                   <div>

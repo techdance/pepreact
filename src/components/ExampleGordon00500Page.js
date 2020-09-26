@@ -1,18 +1,22 @@
 import React from "react";
 
-import AdministratorHomePageContainer from "./Page/00300_showAdminHomePage/adminHomePageContainer.js";
-
 import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
+import ViewProfileContainer from "./Page/00500_viewProfile/viewProfileContainer.js";
 import { administratorGordon, menuItems } from "../data/administrator.js";
 
-const breadCrumbList = ["Home"];
+const breadCrumbList = [
+  "Home",
+  "Profile",
+];
 
-class ExampleGordon00300Page extends React.Component {
+
+class ExampleGordon00500Page extends React.Component {
+
   render() {
     const { pageOwner, alerts, messages, badges } = administratorGordon;
 
@@ -41,9 +45,7 @@ class ExampleGordon00300Page extends React.Component {
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <AdministratorHomePageContainer
-                      administrator={administratorGordon}
-                    />
+                    <ViewProfileContainer />
                   </div>
                 </div>
               </div>
@@ -55,4 +57,4 @@ class ExampleGordon00300Page extends React.Component {
   }
 }
 
-export default ExampleGordon00300Page;
+export default ExampleGordon00500Page;

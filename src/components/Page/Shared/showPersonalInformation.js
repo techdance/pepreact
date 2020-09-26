@@ -42,7 +42,7 @@ class ShowPersonalInformation extends React.Component {
   render() {
     return (
       <>
-        <div className="col-lg-12 mb-4">
+        <div className="col-lg-6 mb-4" draggable="true">
           <div className="personal box box-border-radius box-shadow bg-white position-relative">
             <div className="inner-wrap">
               <div className="box-top position-relative">
@@ -57,7 +57,7 @@ class ShowPersonalInformation extends React.Component {
                     <img src={this.props.professor.image} width="141" alt="" />
                   </div>
                 </div>
-                <div className="content-right" style={{ width: "50%" }}>
+                <div className="content-right">
                   <div className="profile-info profile-name">
                     <div className="title">
                       <span className="icon-regular icon-user-alt"></span> Name
@@ -68,7 +68,7 @@ class ShowPersonalInformation extends React.Component {
                       </a>
                     </div>
                   </div>
-                  <div className="profile-info profile-title">
+                  <div className="profile-info profile-name">
                     <div className="title">
                       <span className="icon-regular icon-user-tie"></span> Title
                     </div>
@@ -78,15 +78,22 @@ class ShowPersonalInformation extends React.Component {
                       </a>
                     </div>
                   </div>
-                  <div className="profile-info profile-title mt-2">
-                    <a href="#0">
-                      <img
-                        className="message-info mr-3"
-                        src="./images/message-info.png"
-                        alt=""
-                      />
-                    </a>
+                  <div class="profile-info profile-name">
+                    <div class="title"><span class="icon-regular icon-business-time"></span> Department</div>
+                    <div class="text"><a href="#0" class="cl-gray">{this.props.professor.school}</a></div>
                   </div>
+                  {this.props.sameUser === "true" ? "" :
+                    (<div className="profile-info profile-title mt-2">
+                      <a href="#0">
+                        <img
+                          className="message-info mr-3"
+                          src="./images/message-info.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>)
+                  }
+
                 </div>
               </div>
               <div className="box-middle">
