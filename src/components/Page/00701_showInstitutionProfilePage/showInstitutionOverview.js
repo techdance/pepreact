@@ -85,6 +85,7 @@ class ShowInstitutionOverview extends React.Component {
                         <img
                           src={this.props.overview.image}
                           className="img-responsive"
+                          alt=""
                         />
                         <div className="ahea-icons">
                           {/* if the link is an empty string "", then don't show the social media icon */}

@@ -272,7 +272,6 @@ export const menuItems = [
   { name: "Reports", link: "#", icon: "icon-chart-bar" },
   { name: "Program Management", link: "#", icon: "icon-chart-pie" },
   { name: "My Projects", link: "#", icon: "icon-book-title" },
-  { name: "My Tiles", link: "#", icon: "icon-clone" },
   { name: "My Files", link: "#", icon: "icon-copy" },
   { name: "Resources", link: "#", icon: "icon-th-large" },
   { name: "Settings", link: "#", icon: "icon-settings" },

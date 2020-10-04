@@ -50,7 +50,10 @@ class ShowSideBarMenu extends React.Component {
                     href="#0"
                     id="menu-button-hide-show"
                     className="icon-fa icon-arrow-left"
-                  ></a>
+                  >
+                    {""}
+                    {/* this is here to remove eslint warning for screen readers */}
+                  </a>
                 </li>
                 {this.props.menuItems.map((menuItem, index) => (
                   // set class to active if menu name is "Home"

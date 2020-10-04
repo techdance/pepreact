@@ -10,104 +10,7 @@ import ShowProfessionalBio from "../Shared/showProfessionalBio.js";
 
 //  TLM: constants below represent sample DB records.
 
-
-const professor = {
-  name: "Dr. Gordon Stanley",
-  title: "Senior Director of Administrative Systems",
-  image: "./images/Gordon.png",
-  communicationPreferences: ["English", "NA"],
-  emailAddress: "gstanley@ahea.edu",
-  phoneNumbers: ["+1 555-432-7788", "+1 555-432-1100"],
-  url: "https://www.ahea.edu/about-ahea/provost-office/provost",
-  introVideo: "./images/Gordon-video.png",
-  disciplines: ["Business"],
-  areasOfExpertise: [
-    "Institutional Research",
-    "Graduate Research Funding",
-    "Accrediting Standards Planning and Execution",
-  ],
-  internationalExperience: "",
-  bio:
-    "Dr. Stanley began his tenure as AHEA University's provost on July 1, 2012, following a 24-plus year career at Center State University, where he served as the George and Sadye Joy Raye Professor of Economics and editor of the Journal of Small Public Universities. From 2000-2005 Dr. Stanley served as dean of the College of Business and Entrepreneurialship, Central State's largest academic unit with more than 400 faculty and 5,500 students. He also chaired the economics department from 1995 to 1999 and directed the honors program from 1999 to 2005. An honors graduate in economics from the University of North Dakota, Dr. Stanley received his Ph.D. from the same institution, specializing in Global Affairs.",
-  personalMessage:
-    '"The goal of education is the advancement of knowledge and the dissemination of truth." -John Fitzgerald Kennedy',
-  cvLink: "#",
-  school: "Enterprise Information Technology Services",
-};
-
-const institutionProfile = {
-  name: "AHEA University, Iowa City Campus",
-  type: "4-year Institution",
-  location: "Iowa City, IA USA",
-  continent: "North America",
-  calendar: "Semester",
-};
-
-const credentials = {
-  educationLevel: "Phd",
-  professionalMemberships: [
-    { name: "Association of College Administration Professionals (ACAP)", link: "#" },
-    { name: "Council for the Advancement of Standards in Higher Education (CAS)", link: "#" },
-    { name: "NAFSA: Association of International Educators", link: "#" },
-  ],
-  links: ["#", "#"],
-  certificates: ["Internationalization of Higher Education"],
-};
-
-const areaofinterest_1 = {
-  projectType: "Research",
-  description:
-    "I am interested in finding one or two partners to conduct a longitudinal study on the impact of Brexit of the EU and what changes will take place in the economy as a result.",
-  discipline: "Economic",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "Europe",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "4",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: true,
-};
-
-const areaofinterest_2 = {
-  projectType: "Academic Journal",
-  description:
-    "I am looking for partners to help author an article on the impact of mobile technology on business acumen. There is a lot of literature on international business acumen, but nothing has been updated since the onset of our 24/7 connectivity with mobile devices.",
-  discipline: "Business",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "All",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "4",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: true,
-};
-
-const areaofinterest_3 = {
-  projectType: "Course Development",
-  description:
-    "I would like to co-develop a business ethics class focused on multinational corporations and how ethics may or may not conflict with the culture in countries where MNCs are located.",
-  discipline: "Business",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "All",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "3",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: true,
-};
-
-// array of db records passed to ShowCollaborationInterests class component
-const areaofinterest_list = [
-  areaofinterest_1,
-  areaofinterest_2,
-  areaofinterest_3,
-];
+import { gordonProfessor } from "../../../data/professor.js";
 
 // sameUser flag is used to distinguish when those component are viewed by the page owner or not.
 //  sameUser = "true" when page owner and profile owner are the same person. Otherwise, sameUser = "false"
@@ -115,20 +18,52 @@ const areaofinterest_list = [
 
 class ViewProfileContainer extends React.Component {
   render() {
+    let progress = 0;
+
+    if (gordonProfessor.personalInformation.name !== null) progress += 0.1;
+    if (gordonProfessor.personalInformation.title !== null) progress += 0.1;
+    if (gordonProfessor.personalInformation.image !== null) progress += 0.1;
+    if (gordonProfessor.communicationPreferences.languages.length)
+      progress += 0.1;
+    if (gordonProfessor.communicationPreferences.emailAddress !== null)
+      progress += 0.1;
+    if (gordonProfessor.communicationPreferences.phoneNumbers.length)
+      progress += 0.1;
+    if (gordonProfessor.professionalBio.introVideo !== null) progress += 0.1;
+    if (gordonProfessor.professionalBio.discipline) progress += 0.1;
+    if (gordonProfessor.professionalBio.areasOfExpertise.length)
+      progress += 0.1;
+    if (gordonProfessor.professionalBio.internationalExperience !== null)
+      progress += 0.1;
+    // if (gordonProfessor.bio !== null) progress += 10;
+    // if (gordonProfessor.personalMessage !== null) progress += 10;
+    // if (gordonProfessor.cvLink) progress += 10;
+
     return (
       <>
         <section class="wrap-profile">
           <div class="row row-custom sortable">
-            <ShowPersonalInformation professor={professor} sameUser="true" />
-            <ShowInstitutionProfle
-              institutionProfile={institutionProfile}
+            <ShowPersonalInformation
+              personalInformation={gordonProfessor.personalInformation}
+              sameUser="true"
+              progress={progress}
             />
-            <ShowCommunicationPreferences professor={professor} />
-            <ShowCredentials credentials={credentials} />
-            <ShowProfessionalBio professor={professor} />
-            <ShowCollaborationInterests areaofinterest_list={areaofinterest_list} />
+            <ShowInstitutionProfle
+              institutionProfile={gordonProfessor.institutionProfile}
+            />
+            <ShowCommunicationPreferences
+              communicationPreferences={
+                gordonProfessor.communicationPreferences
+              }
+            />
+            <ShowCredentials credentials={gordonProfessor.credentials} />
+            <ShowProfessionalBio
+              professionalBio={gordonProfessor.professionalBio}
+            />
+            <ShowCollaborationInterests
+              areaofinterest_list={gordonProfessor.areaofinterest_list}
+            />
           </div>
-
         </section>
       </>
     );

@@ -2,6 +2,11 @@ import React from "react";
 
 class ShowCommunicationPreferences extends React.Component {
   render() {
+
+    const {
+      communicationPreferences,
+    } = this.props;
+
     return (
       <>
         <div className="col-lg-6 mb-4" draggable="true">
@@ -15,7 +20,7 @@ class ShowCommunicationPreferences extends React.Component {
               </div>
               <div className="box-middle">
                 <div className="content-icon">
-                  {this.props.professor.communicationPreferences.map(
+                  {communicationPreferences.languages.map(
                     (language, index) => (
                       <p className="mb-1">
                         <span className="icon-regular icon-comment-check"></span>{" "}
@@ -34,12 +39,12 @@ class ShowCommunicationPreferences extends React.Component {
                       href="mailto:bdexter@ahea.edu"
                       className="dont-break-out"
                     >
-                      {this.props.professor.emailAddress}
+                      {communicationPreferences.emailAddress}
                     </a>
                   </p>
                 </div>
 
-                {this.props.professor.phoneNumbers.map((phoneNumber, index) => (
+                {communicationPreferences.phoneNumbers.map((phoneNumber, index) => (
                   <div className="content-icon">
                     <p className="mb-1">
                       <span className="icon-regular icon-phone-office"></span>{" "}
@@ -54,10 +59,10 @@ class ShowCommunicationPreferences extends React.Component {
                   <p className="mb-1">
                     <span className="icon-regular icon-desktop-alt"></span>{" "}
                     <a
-                      href={this.props.professor.url}
+                      href={communicationPreferences.url}
                       className="dont-break-out"
                     >
-                      {this.props.professor.url}
+                      {communicationPreferences.url}
                     </a>
                   </p>
                 </div>

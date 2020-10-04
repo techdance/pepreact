@@ -1,0 +1,12 @@
+.form-group .input .rs__input {
+  background: #ececec !important;
+  border: 1px solid #d4d4d4;
+  padding: 6px;
+}
+
+#react-select-2-input {
+  background: #ececec !important;
+  border: 1px solid #d4d4d4;
+  padding: 6px;
+  opacity: 0;
+}

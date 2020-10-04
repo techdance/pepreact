@@ -1,13 +1,29 @@
 import React from "react";
 
-//  Modal Areas of interest - view more 1
-
 class AreaInterestModal extends React.Component {
   render() {
+    const {
+      projectType,
+      description,
+      discipline,
+      deliveryMethod,
+      collaborationType,
+      region,
+      programLength,
+      preferredLanguage,
+      credits,
+      programLevel,
+      dateRange,
+      created,
+    } = this.props.modal;
+
+    const editMode = this.props.editMode;
+    const id = this.props.id;
+
     return (
       <div
         className="modal fade modalToltip modalareainterest"
-        id={"areaInterestModal" + this.props.id}
+        id={"areaInterestModal" + id}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="modalLabel"
@@ -24,7 +40,7 @@ class AreaInterestModal extends React.Component {
               <div className="text-left font15">
                 <strong>Project</strong>
                 <br />
-                {this.props.modal.projectType}
+                {projectType}
               </div>
             </div>
             <div className="modal-body">
@@ -35,53 +51,53 @@ class AreaInterestModal extends React.Component {
                       <div className="col-md-12">
                         <strong>Description</strong>
                         <br />
-                        {this.props.modal.description}
+                        {description}
                       </div>
                     </div>
                     <div className="row  mb-2">
                       <div className="col-md-6">
                         <strong>Discipline</strong>
                         <br />
-                        {this.props.modal.discipline}
+                        {discipline}
                       </div>
                       <div className="col-md-6">
                         <strong>Delivery Method</strong>
                         <br />
-                        {this.props.modal.deliveryMethod}
+                        {deliveryMethod}
                       </div>
                     </div>
                     <div className="row mb-2">
                       <div className="col-md-4">
                         <strong>Collaboration Type</strong>
                         <br />
-                        {this.props.modal.collaborationType}
+                        {collaborationType}
                       </div>
                       <div className="col-md-4">
                         <strong>Region</strong>
                         <br />
-                        {this.props.modal.region}
+                        {region}
                       </div>
                       <div className="col-md-4">
                         <strong>Program Length</strong>
                         <br />
-                        {this.props.modal.programLength}
+                        {programLength}
                       </div>
                     </div>
                     <div className="row mb-2">
                       <div className="col-md-4">
                         <strong>Preferred Language</strong>
                         <br />
-                        {this.props.modal.preferredLanguage}
+                        {preferredLanguage}
                       </div>
                       <div className="col-md-4">
                         <strong>Credits</strong>
                         <br />
-                        {this.props.modal.credits}
+                        {credits}
                       </div>
                       <div className="col-md-4">
                         <strong>Program Level</strong>
                         <br />
-                        {this.props.modal.programLevel}
+                        {programLevel}
                       </div>
                     </div>
 
@@ -121,15 +137,40 @@ class AreaInterestModal extends React.Component {
                       </div>
                     </div>
                     <div className="row text-center pt-2 mt-3">
-                      <div className="col-md-12 ac">
-                        <a href="#0" className="btn btn-blue btn-w-100 m-auto">
-                          Find Matches
-                        </a>
-                      </div>
+                      {editMode === "true" ? (
+                        <>
+                          {" "}
+                          <div class="col-md-6 ac">
+                            <a
+                              href="#0"
+                              id="btn-research-project"
+                              data-toggle="modal"
+                              data-target={"#areaInterestModalEdit" + id}
+                              class="btn btn-blue btn-w-100 m-auto"
+                            >
+                              Edit
+                            </a>
+                          </div>
+                          <div class="col-md-6 ac">
+                            <a href="#0" class="btn btn-blue btn-w-100 m-auto">
+                              Find Matches
+                            </a>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="col-md-12 ac">
+                          <a
+                            href="#0"
+                            className="btn btn-blue btn-w-100 m-auto"
+                          >
+                            Find Matches
+                          </a>
+                        </div>
+                      )}
                     </div>
                     <div className="row text-center">
                       <div className="col-md-12 ac mt-3">
-                        <strong>Create: 2019-07-15</strong>
+                        <strong>Created: 2019-07-15</strong>
                       </div>
                     </div>
                   </div>

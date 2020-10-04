@@ -6,23 +6,7 @@ class ShowPersonalInformation extends React.Component {
   constructor(props) {
     super(props);
 
-    let progress = 0;
-
-    if (this.props.professor.name !== null) progress += 0.1;
-    if (this.props.professor.title !== null) progress += 0.1;
-    if (this.props.professor.image !== null) progress += 0.1;
-    if (this.props.professor.communicationPreferences.length) progress += 0.1;
-    if (this.props.professor.emailAddress !== null) progress += 0.1;
-    if (this.props.professor.phoneNumbers.length) progress += 0.1;
-    if (this.props.professor.introVideo !== null) progress += 0.1;
-    if (this.props.professor.disciplines.length) progress += 0.1;
-    if (this.props.professor.areasOfExpertise.length) progress += 0.1;
-    if (this.props.professor.internationalExperience !== null) progress += 0.1;
-    // if (this.props.professor.bio !== null) progress += 10;
-    // if (this.props.professor.personalMessage !== null) progress += 10;
-    // if (this.props.professor.cvLink) progress += 10;
-
-    this.state = { percent: progress };
+    this.state = { percent: this.props.progress };
   }
 
   componentDidMount() {
@@ -40,6 +24,12 @@ class ShowPersonalInformation extends React.Component {
   }
 
   render() {
+
+    const {
+      personalInformation,
+      sameUser
+    } = this.props;
+
     return (
       <>
         <div className="col-lg-6 mb-4" draggable="true">
@@ -54,7 +44,7 @@ class ShowPersonalInformation extends React.Component {
               <div className="box-middle d-flex align-items-center">
                 <div className="content-left">
                   <div className="bg-profile no-bg" id="progress">
-                    <img src={this.props.professor.image} width="141" alt="" />
+                    <img src={personalInformation.image} width="141" alt="" />
                   </div>
                 </div>
                 <div className="content-right">
@@ -64,25 +54,25 @@ class ShowPersonalInformation extends React.Component {
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
-                        {this.props.professor.name}
+                        {personalInformation.name}
                       </a>
                     </div>
                   </div>
                   <div className="profile-info profile-name">
                     <div className="title">
-                      <span className="icon-regular icon-user-tie"></span> Title
+                      <span className="icon-regular icon-user-tie"></span> Position
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
-                        {this.props.professor.title}
+                        {personalInformation.title}
                       </a>
                     </div>
                   </div>
                   <div class="profile-info profile-name">
                     <div class="title"><span class="icon-regular icon-business-time"></span> Department</div>
-                    <div class="text"><a href="#0" class="cl-gray">{this.props.professor.school}</a></div>
+                    <div class="text"><a href="#0" class="cl-gray">{personalInformation.department}</a></div>
                   </div>
-                  {this.props.sameUser === "true" ? "" :
+                  {sameUser === "true" ? "" :
                     (<div className="profile-info profile-title mt-2">
                       <a href="#0">
                         <img
@@ -101,7 +91,7 @@ class ShowPersonalInformation extends React.Component {
                   <span className="icon-regular icon-user-cog"></span> My
                   Thoughts
                 </h4>
-                <p>{this.props.professor.personalMessage}</p>
+                <p>{personalInformation.personalMessage}</p>
               </div>
             </div>
           </div>

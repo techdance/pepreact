@@ -1,9 +1,10 @@
 import React from "react";
 import Select from "react-select";
 
-import EditInstitutionChangeImage from "./editInstitutionProfileChangeImage.js";
+import ChangeImage from "../Shared/changeImage.js";
 
-import { languageList, institutionTypes } from "../../../data/institution.js";
+import { institutionTypes } from "../../../data/institution.js";
+import { languageList } from "../../../data/languages.js";
 
 class Edit_InstitutionOverview_Type extends React.Component {
   constructor(props) {
@@ -366,8 +367,8 @@ class EditInstitutionOverview extends React.Component {
                         </div>
                       </div>
                       <div className="col-md-3 img-resp">
-                        <img src={image} className="img-responsive" />
-                        <EditInstitutionChangeImage image={image} />
+                        {/* <img src={image} className="img-responsive" /> */}
+                        <ChangeImage image={image} />
                       </div>
                     </div>
                   </div>

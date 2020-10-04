@@ -23,6 +23,7 @@ import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 import ExampleInez00701Page from "./components/ExampleInez00701Page.js";
 import ExamplePamela03601Page from "./components/ExamplePamela03601Page.js";
 import ExampleGordon00500Page from "./components/ExampleGordon00500Page.js";
+import ExampleGordon00600Page from "./components/ExampleGordon00600Page.js";
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route exact path="/ExampleGordon-00500">
             <ExampleGordon00500Page />
+          </Route>
+          <Route exact path="/ExampleGordon-00600">
+            <ExampleGordon00600Page />
           </Route>
           <Route exact path="/ExampleBrittany-00300">
             <ExampleBrittany00300Page />

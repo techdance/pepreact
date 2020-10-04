@@ -9,118 +9,54 @@ import ShowProfessionalBio from "../Shared/showProfessionalBio.js";
 
 //  TLM: constants below represent sample DB records.
 
-const professor = {
-  name: "Dr. Bradley Dexter",
-  title: "Professor",
-  image: "./images/bradley.png",
-  communicationPreferences: ["English", "Spanish"],
-  emailAddress: "bdexter@ahea.edu",
-  phoneNumbers: ["+1 555 432 1100", "+1 555 432 1122"],
-  url: "https://www.ahea.edu/about-ahea/college-of-business/bdexter",
-  introVideo: "./images/Bradley-video.png",
-  disciplines: ["Business"],
-  areasOfExpertise: [
-    "Business Analytics & Intelligence",
-    "Business Ethics",
-    "International​ Operations Research & Management",
-  ],
-  internationalExperience: "1-2 Years of International Experience",
-  bio:
-    "Divides professional time between teaching undergraduate courses in both classroom and online settings, and providing private consulting specializing in the growt and globalization of small businesses. I also serve on the editorial board of  <em>The Academy of Management Journal</em>.",
-  personalMessage:
-    '"Success in business requires training and discipline and hard work." David Rockefeller',
-  cvLink: "#",
-  school: "College of Business",
-};
-
-const institutionProfile = {
-  name: "AHEA University, Iowa City Campus",
-  type: "4-year Institution",
-  location: "Iowa City, IA USA",
-  continent: "North America",
-  calendar: "Semester",
-};
-
-const credentials = {
-  educationLevel: "Phd",
-  professionalMemberships: [
-    { name: "Academy of International Business", link: "#" },
-    { name: "American Management Association", link: "#" },
-  ],
-  links: ["#", "#"],
-  certificates: ["Business Data Analytics"],
-};
-
-const areaofinterest_1 = {
-  projectType: "Research",
-  description:
-    "I am interested in finding one or two partners to conduct a longitudinal study on the impact of Brexit of the EU and what changes will take place in the economy as a result.",
-  discipline: "Economic",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "Europe",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "4",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: false,
-};
-
-const areaofinterest_2 = {
-  projectType: "Academic Journal",
-  description:
-    "I am looking for partners to help author an article on the impact of mobile technology on business acumen. There is a lot of literature on international business acumen, but nothing has been updated since the onset of our 24/7 connectivity with mobile devices.",
-  discipline: "Business",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "All",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "4",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: false,
-};
-
-const areaofinterest_3 = {
-  projectType: "Course Development",
-  description:
-    "I would like to co-develop a business ethics class focused on multinational corporations and how ethics may or may not conflict with the culture in countries where MNCs are located.",
-  discipline: "Business",
-  deliveryMethod: "Online",
-  collaborationType: "Global",
-  region: "All",
-  programLength: "Semester",
-  preferredLanguage: "English",
-  credits: "3",
-  programLevel: "Undergraduate",
-  dateRange: "Today 2020",
-  created: false,
-};
-
-// array of db records passed to ShowCollaborationInterests class component
-const areaofinterest_list = [
-  areaofinterest_1,
-  areaofinterest_2,
-  areaofinterest_3,
-];
+import { bradleyProfessor } from "../../../data/professor.js";
 
 class ViewProfileOtherUserContainer extends React.Component {
   render() {
+    let progress = 0;
+
+    if (bradleyProfessor.personalInformation.name !== null) progress += 0.1;
+    if (bradleyProfessor.personalInformation.title !== null) progress += 0.1;
+    if (bradleyProfessor.personalInformation.image !== null) progress += 0.1;
+    if (bradleyProfessor.communicationPreferences.languages.length)
+      progress += 0.1;
+    if (bradleyProfessor.communicationPreferences.emailAddress !== null)
+      progress += 0.1;
+    if (bradleyProfessor.communicationPreferences.phoneNumbers.length)
+      progress += 0.1;
+    if (bradleyProfessor.professionalBio.introVideo !== null) progress += 0.1;
+    if (bradleyProfessor.professionalBio.discipline) progress += 0.1;
+    if (bradleyProfessor.professionalBio.areasOfExpertise.length)
+      progress += 0.1;
+    if (bradleyProfessor.professionalBio.internationalExperience !== null)
+      progress += 0.1;
+    // if (bradleyProfessor.bio !== null) progress += 10;
+    // if (bradleyProfessor.personalMessage !== null) progress += 10;
+    // if (bradleyProfessor.cvLink) progress += 10;
+
     return (
       <>
         <section class="wrap-profile">
           <div class="row row-custom sortable">
-            <ShowPersonalInformation professor={professor} sameUser="false" />
-            <ShowInstitutionProfle
-              institutionProfile={institutionProfile}
+            <ShowPersonalInformation
+              personalInformation={bradleyProfessor.personalInformation}
+              sameUser="false"
+              progress={progress}
             />
-            <ShowCommunicationPreferences professor={professor} />
-            <ShowCredentials credentials={credentials} />
-            <ShowProfessionalBio professor={professor} />
+            <ShowInstitutionProfle
+              institutionProfile={bradleyProfessor.institutionProfile}
+            />
+            <ShowCommunicationPreferences
+              communicationPreferences={
+                bradleyProfessor.communicationPreferences
+              }
+            />
+            <ShowCredentials credentials={bradleyProfessor.credentials} />
+            <ShowProfessionalBio
+              professionalBio={bradleyProfessor.professionalBio}
+            />
             <ShowCollaborationInterests
-              areaofinterest_list={areaofinterest_list}
+              areaofinterest_list={bradleyProfessor.areaofinterest_list}
             />
           </div>
         </section>
