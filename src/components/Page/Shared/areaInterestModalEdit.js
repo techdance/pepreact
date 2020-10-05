@@ -132,8 +132,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Project</label>
                           <Select
                             options={projectTypeList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("projectType", e)
                             }
@@ -168,8 +168,8 @@ class AreaInterestModalEdit extends React.Component {
 
                           <Select
                             options={disciplineList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("discipline", e)
                             }
@@ -186,8 +186,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Delivery Method</label>
                           <Select
                             options={deliveryMethodList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("deliveryMethod", e)
                             }
@@ -204,8 +204,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Collaboration Type</label>
                           <Select
                             options={collaborationTypeList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect(
                                 "collaborationType",
@@ -225,8 +225,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Region:</label>
                           <Select
                             options={regionList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("region", e)
                             }
@@ -243,8 +243,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Preferred Language</label>
                           <Select
                             options={languageList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect(
                                 "preferredLanguage",
@@ -264,8 +264,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Program Length</label>
                           <Select
                             options={programLengthList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("programLength", e)
                             }
@@ -282,8 +282,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Credit</label>
                           <Select
                             options={creditList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("credits", e)
                             }
@@ -300,8 +300,8 @@ class AreaInterestModalEdit extends React.Component {
                           <label>Program Level</label>
                           <Select
                             options={programLevelList}
-                            className="input select"
-                            classNamePrefix="select"
+                            className="inputSelectModal"
+                            classNamePrefix="rsModal"
                             onChange={(e) =>
                               this.handleChangeSingleSelect("programLevel", e)
                             }

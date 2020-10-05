@@ -207,8 +207,8 @@ class EditProfileProfessionalBio extends React.Component {
                       <div class="form-group ml-4">
                         <Select
                           options={disciplineList}
-                          className="basic-single"
-                          classNamePrefix="select"
+                          className="inputSelect"
+                          classNamePrefix="rs"
                           onChange={(e) =>
                             this.handleChangeSingleSelect("discipline", e)
                           }

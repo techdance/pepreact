@@ -1,12 +1,23 @@
-.form-group .input .rs__input {
+.rs__control {
   background: #ececec !important;
-  border: 1px solid #d4d4d4;
-  padding: 6px;
+  padding: 0px;
 }
 
-#react-select-2-input {
+.rsModal__control {
   background: #ececec !important;
-  border: 1px solid #d4d4d4;
-  padding: 6px;
-  opacity: 0;
+  padding: 0px;
+}
+
+.inputSelect {
+  padding: 0px;
+  line-height: 18px;
+}
+
+.inputSelectModal {
+  color: #505050;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  width: 100%;
 }

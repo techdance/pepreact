@@ -94,7 +94,7 @@ class EditProfilePersonalInformation extends React.Component {
                       <label>Prefix</label>
                       <Select
                         options={prefixList}
-                        className="input select"
+                        className="inputSelect"
                         classNamePrefix="rs"
                         onChange={(e) =>
                           this.handleChangeSingleSelect("namePrefix", e)

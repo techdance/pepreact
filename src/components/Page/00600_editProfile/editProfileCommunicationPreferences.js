@@ -118,8 +118,8 @@ class EditProfileCommunicationPreferences extends React.Component {
                       <label>Primary Language</label>
                       <Select
                         options={languageList}
-                        className="basic-single"
-                        classNamePrefix="select"
+                        className="inputSelect"
+                        classNamePrefix="rs"
                         onChange={(e) =>
                           this.handleChangeSingleSelect("primaryLanguage", e)
                         }
@@ -152,8 +152,8 @@ class EditProfileCommunicationPreferences extends React.Component {
                       <label>Secondary Language</label>
                       <Select
                         options={languageList}
-                        className="basic-single"
-                        classNamePrefix="select"
+                        className="inputSelect"
+                        classNamePrefix="rs"
                         onChange={(e) =>
                           this.handleChangeSingleSelect("secondaryLanguage", e)
                         }
@@ -186,8 +186,8 @@ class EditProfileCommunicationPreferences extends React.Component {
                       <label>Tertiary Language</label>
                       <Select
                         options={languageList}
-                        className="basic-single"
-                        classNamePrefix="select"
+                        className="inputSelect"
+                        classNamePrefix="rs"
                         onChange={(e) =>
                           this.handleChangeSingleSelect("tertiaryLanguage", e)
                         }

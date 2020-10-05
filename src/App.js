@@ -6,6 +6,7 @@ import "./App.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
 
+import "./assets/css/react-select.css";
 import "./assets/css/sidebar.css";
 import "./assets/css/style.css";
 import "./assets/css/style-custom-icon.css";
