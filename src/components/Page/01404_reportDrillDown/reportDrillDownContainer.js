@@ -2,18 +2,10 @@ import React from "react";
 
 import ShowRetentionRateDimensions from "./showRetentionRateDimensions.js";
 import CanvasJSReact from "../../../assets/js/canvasjs.react.js";
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const retentionRateDimensions = [
-  "College",
-  "Academic Delivery Method",
-  "Class Year",
-  "Gender",
-  "Age Group",
-  "Resident/Commuter",
-  "Campus Location",
-  "Nationality",
-];
+import { retentionRateDimensions } from "../../../data/retentionRateDimensions.js";
+
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class ReportDrillDownContainer extends React.Component {
   constructor() {
@@ -42,6 +34,11 @@ class ReportDrillDownContainer extends React.Component {
         },
       ],
       height: 300,
+      axisY: {
+        interval: 20,
+        minimum: 0,
+        //   maximum: 90
+      },
       toolTip: {
         shared: false,
       },

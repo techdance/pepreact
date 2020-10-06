@@ -7,35 +7,18 @@ import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
+import { administratorGordon, menuItems } from "../data/administrator.js";
+
 const breadCrumbList = [
   "Home",
   "Reports & Assessment",
   "Retention Rates by College",
 ];
 
-const owner = {
-  Institution: {
-    logoA2: "./images/logo-a.png",
-    logoB2: "./images/logo-b.png",
-  },
-  Person: { firstName: "Gordon", iconImage: "./images/Gordon.png" },
-};
-
-const menuItems = [
-  { name: "Home", link: "#0", icon: "icon-home" },
-  { name: "Calendar", link: "#0", icon: "icon-calendar" },
-  { name: "Tasks & Overrides", link: "#0", icon: "icon-clipboard-list" },
-  { name: "Committees & Teams", link: "#0", icon: "icon-users-class" },
-  { name: "Reports & Assessments", link: "#0", icon: "icon-chart-bar" },
-  { name: "Program Management", link: "#0", icon: "icon-chart-pie" },
-  { name: "My Tiles", link: "#0", icon: "icon-clone" },
-  { name: "My Files", link: "#0", icon: "icon-copy" },
-  { name: "Resources", link: "#0", icon: "icon-th-large" },
-  { name: "Settings", link: "#0", icon: "icon-settings" },
-];
-
 class ExampleGordon01404Page extends React.Component {
   render() {
+    const { pageOwner, alerts, messages, badges } = administratorGordon;
+
     return (
       <>
         <body className="bg-grey-popup">
@@ -52,15 +35,20 @@ class ExampleGordon01404Page extends React.Component {
           <ShowMobileSideBarMenu />
           <div id="container">
             <ShowSideBarMenu
-              owner={owner}
+              owner={pageOwner}
               menuItems={menuItems}
-              activeMenuItem={"Reports & Assessments"}
+              activeMenuItem={"Reports"}
             />
             <div id="content" className="">
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-lg-12">
-                    <ShowTopMenu owner={owner} />
+                    <ShowTopMenu
+                      owner={pageOwner}
+                      alerts={alerts}
+                      messages={messages}
+                      badges={badges}
+                    />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
                     <ReportDrillDownContainer />
