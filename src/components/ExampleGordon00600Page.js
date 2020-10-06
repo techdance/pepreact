@@ -9,15 +9,9 @@ import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 import EditProfileContainer from "./Page/00600_editProfile/editProfileContainer.js";
 import { administratorGordon, menuItems } from "../data/administrator.js";
 
-const breadCrumbList = [
-  "Home",
-  "Profile",
-  "Edit Profile",
-];
-
+const breadCrumbList = ["Home", "Profile", "Edit Profile"];
 
 class ExampleGordon00600Page extends React.Component {
-
   render() {
     const { pageOwner, alerts, messages, badges } = administratorGordon;
 
@@ -43,6 +37,7 @@ class ExampleGordon00600Page extends React.Component {
                       alerts={alerts}
                       messages={messages}
                       badges={badges}
+                      edit="true"
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 

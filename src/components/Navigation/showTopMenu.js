@@ -105,6 +105,8 @@ class ShowTopMenu extends React.Component {
             },
           ];
 
+    let edit = "edit" in this.props ? this.props.edit : "false"; // new versions pass "edit=true" if the "Save Profile" button needs to show
+
     return (
       <>
         <section className="top">
@@ -116,7 +118,7 @@ class ShowTopMenu extends React.Component {
             image={this.props.owner.Person.iconImage}
           />
 
-          <ShowSearchBox />
+          <ShowSearchBox edit={edit} />
         </section>
       </>
     );
