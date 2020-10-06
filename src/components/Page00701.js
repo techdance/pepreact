@@ -5,22 +5,9 @@ import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-import ViewProfileOtherUserContainer from "./Page/00501_viewProfileOtherUser/viewProfileOtherUserContainer.js";
+import InsitutionProfilePageContainer from "./Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
 
-const breadCrumbList = [
-  "Home",
-  "Messages",
-  "Project Invites",
-  "Bradley Dexter",
-];
-
-const owner = {
-  Institution: {
-    logoA2: "./images/logo-a2.png",
-    logoB2: "./images/logo-b2.png",
-  },
-  Person: { firstName: "Inez", iconImage: "./images/Inez.png" },
-};
+const breadCrumbList = ["Home", "Instituion Profiles", "AHEA University"];
 
 const menuItems = [
   { name: "Home", link: "#0", icon: "icon-home" },
@@ -40,8 +27,11 @@ const menuItems = [
   { name: "Settings", link: "#0", icon: "icon-settings" },
 ];
 
-class ExampleInez00501Page extends React.Component {
+class Page00701 extends React.Component {
   render() {
+    const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
+    let institution = this.props.institution;
+
     return (
       <>
         <div className="bg-grey-popup">
@@ -58,7 +48,7 @@ class ExampleInez00501Page extends React.Component {
           <ShowMobileSideBarMenu />
           <div id="container">
             <ShowSideBarMenu
-              owner={owner}
+              owner={pageOwner}
               menuItems={menuItems}
               activeMenuItem={"Home"}
             />
@@ -66,10 +56,15 @@ class ExampleInez00501Page extends React.Component {
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-lg-12">
-                    <ShowTopMenu owner={owner} />
+                    <ShowTopMenu
+                      owner={pageOwner}
+                      alerts={alerts}
+                      messages={messages}
+                      badges={badges}
+                    />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <ViewProfileOtherUserContainer />
+                    <InsitutionProfilePageContainer institution={institution} />
                   </div>
                 </div>
               </div>
@@ -81,4 +76,4 @@ class ExampleInez00501Page extends React.Component {
   }
 }
 
-export default ExampleInez00501Page;
+export default Page00701;

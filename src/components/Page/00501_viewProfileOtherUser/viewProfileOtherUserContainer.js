@@ -9,54 +9,46 @@ import ShowProfessionalBio from "../Shared/showProfessionalBio.js";
 
 //  TLM: constants below represent sample DB records.
 
-import { bradleyProfessor } from "../../../data/professor.js";
-
 class ViewProfileOtherUserContainer extends React.Component {
   render() {
     let progress = 0;
 
-    if (bradleyProfessor.personalInformation.name !== null) progress += 0.1;
-    if (bradleyProfessor.personalInformation.title !== null) progress += 0.1;
-    if (bradleyProfessor.personalInformation.image !== null) progress += 0.1;
-    if (bradleyProfessor.communicationPreferences.languages.length)
+    let profile = this.props.profile;
+
+    if (profile.personalInformation.name !== null) progress += 0.1;
+    if (profile.personalInformation.title !== null) progress += 0.1;
+    if (profile.personalInformation.image !== null) progress += 0.1;
+    if (profile.communicationPreferences.languages.length) progress += 0.1;
+    if (profile.communicationPreferences.emailAddress !== null) progress += 0.1;
+    if (profile.communicationPreferences.phoneNumbers.length) progress += 0.1;
+    if (profile.professionalBio.introVideo !== null) progress += 0.1;
+    if (profile.professionalBio.discipline) progress += 0.1;
+    if (profile.professionalBio.areasOfExpertise.length) progress += 0.1;
+    if (profile.professionalBio.internationalExperience !== null)
       progress += 0.1;
-    if (bradleyProfessor.communicationPreferences.emailAddress !== null)
-      progress += 0.1;
-    if (bradleyProfessor.communicationPreferences.phoneNumbers.length)
-      progress += 0.1;
-    if (bradleyProfessor.professionalBio.introVideo !== null) progress += 0.1;
-    if (bradleyProfessor.professionalBio.discipline) progress += 0.1;
-    if (bradleyProfessor.professionalBio.areasOfExpertise.length)
-      progress += 0.1;
-    if (bradleyProfessor.professionalBio.internationalExperience !== null)
-      progress += 0.1;
-    // if (bradleyProfessor.bio !== null) progress += 10;
-    // if (bradleyProfessor.personalMessage !== null) progress += 10;
-    // if (bradleyProfessor.cvLink) progress += 10;
+    // if (profile.bio !== null) progress += 10;
+    // if (profile.personalMessage !== null) progress += 10;
+    // if (profile.cvLink) progress += 10;
 
     return (
       <>
         <section class="wrap-profile">
           <div class="row row-custom sortable">
             <ShowPersonalInformation
-              personalInformation={bradleyProfessor.personalInformation}
+              personalInformation={profile.personalInformation}
               sameUser="false"
               progress={progress}
             />
             <ShowInstitutionProfle
-              institutionProfile={bradleyProfessor.institutionProfile}
+              institutionProfile={profile.institutionProfile}
             />
             <ShowCommunicationPreferences
-              communicationPreferences={
-                bradleyProfessor.communicationPreferences
-              }
+              communicationPreferences={profile.communicationPreferences}
             />
-            <ShowCredentials credentials={bradleyProfessor.credentials} />
-            <ShowProfessionalBio
-              professionalBio={bradleyProfessor.professionalBio}
-            />
+            <ShowCredentials credentials={profile.credentials} />
+            <ShowProfessionalBio professionalBio={profile.professionalBio} />
             <ShowCollaborationInterests
-              areaofinterest_list={bradleyProfessor.areaofinterest_list}
+              areaofinterest_list={profile.areaofinterest_list}
             />
           </div>
         </section>

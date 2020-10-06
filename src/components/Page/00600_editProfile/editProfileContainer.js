@@ -9,8 +9,6 @@ import EditProfileCollaborationInterests from "./editProfileCollaborationInteres
 
 //  TLM: constants below represent sample DB records.
 
-import { gordonProfessor } from "../../../data/professor.js";
-
 // sameUser flag is used to distinguish when those component are viewed by the page owner or not.
 //  sameUser = "true" when page owner and profile owner are the same person. Otherwise, sameUser = "false"
 //  for example, in page 00501, page owner and profile owner are two different people.
@@ -18,7 +16,7 @@ import { gordonProfessor } from "../../../data/professor.js";
 class EditProfileContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = gordonProfessor;
+    this.state = this.props.profile;
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
@@ -33,12 +31,12 @@ class EditProfileContainer extends React.Component {
     const { name, value } = event.target;
 
     //  set local state
-    let gordonProfessor = this.state;
-    gordonProfessor[name] = value;
-    this.setState({ gordonProfessor });
+    let profile = this.state;
+    profile[name] = value;
+    this.setState({ profile });
 
     // This is the parent component so instead of passing change up just update the parent object state.
-    this.passChangeUp("gordonProfessor", gordonProfessor);
+    this.passChangeUp("profile", profile);
   };
 
   passChangeUp = (field, value) => {
@@ -46,16 +44,16 @@ class EditProfileContainer extends React.Component {
     //  updates the local state. Since this is the parent component, we're done.
 
     //  update local state wth changes from child component
-    let gordonProfessor = this.state;
-    gordonProfessor[field] = value;
-    this.setState({ gordonProfessor });
+    let profile = this.state;
+    profile[field] = value;
+    this.setState({ profile });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log("Submit current state");
 
-    // this.state contains the current revised version of the institution object so should store to institution data.
+    // this.state contains the current revised version of the professor object so should store to database.
   };
 
   render() {

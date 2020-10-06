@@ -15,16 +15,26 @@ import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/fontawesome-all.css";
 
-import ExampleInez00501Page from "./components/ExampleInez00501Page.js";
-import ExampleInez00108Page from "./components/ExampleInez00108Page.js";
 import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
 import ExampleBrittany0120XPage from "./components/ExampleBrittany0120XPage.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
-import ExampleInez00701Page from "./components/ExampleInez00701Page.js";
+import Page00701 from "./components/Page00701.js";
 import ExamplePamela03601Page from "./components/ExamplePamela03601Page.js";
-import ExampleGordon00500Page from "./components/ExampleGordon00500Page.js";
-import ExampleGordon00600Page from "./components/ExampleGordon00600Page.js";
+
+import Page00500 from "./components/page00500.js";
+import Page00501 from "./components/Page00501.js";
+import Page00108 from "./components/Page00108.js";
+import Page00600 from "./components/Page00600.js";
+
+import {
+  gordonPageOwner,
+  inezPageOwner,
+  bradleyPageOwner,
+  pamelaPageOwner,
+} from "./data/pageOwner.js";
+import { gordonProfessor, bradleyProfessor } from "./data/professor";
+import { institution } from "./data/institution.js";
 
 function App() {
   return (
@@ -35,13 +45,16 @@ function App() {
             <Register />
           </Route>
           <Route exact path="/ExampleInez-00108">
-            <ExampleInez00108Page />
+            <Page00108 pageOwner={inezPageOwner} />
           </Route>
           <Route exact path="/ExampleInez-00501">
-            <ExampleInez00501Page />
+            <Page00501 pageOwner={inezPageOwner} profile={bradleyProfessor} />
           </Route>
           <Route exact path="/ExampleInez-00701">
-            <ExampleInez00701Page />
+            <Page00701 pageOwner={inezPageOwner} institution={institution} />
+          </Route>
+          <Route exact path="/ExamplePamela-00701">
+            <Page00701 pageOwner={pamelaPageOwner} institution={institution} />
           </Route>
           <Route exact path="/ExamplePamela-03601">
             <ExamplePamela03601Page />
@@ -50,10 +63,22 @@ function App() {
             <ExampleGordon00300Page />
           </Route>
           <Route exact path="/ExampleGordon-00500">
-            <ExampleGordon00500Page />
+            <Page00500 pageOwner={gordonPageOwner} profile={gordonProfessor} />
+          </Route>
+          <Route exact path="/ExampleBradley-00500">
+            <Page00500
+              pageOwner={bradleyPageOwner}
+              profile={bradleyProfessor}
+            />
           </Route>
           <Route exact path="/ExampleGordon-00600">
-            <ExampleGordon00600Page />
+            <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} />
+          </Route>
+          <Route exact path="/ExampleBradley-00600">
+            <Page00600
+              pageOwner={bradleyPageOwner}
+              profile={bradleyProfessor}
+            />
           </Route>
           <Route exact path="/ExampleBrittany-00300">
             <ExampleBrittany00300Page />

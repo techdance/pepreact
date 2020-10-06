@@ -7,19 +7,15 @@ import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
 import ViewProfileContainer from "./Page/00500_viewProfile/viewProfileContainer.js";
-import { administratorGordon, menuItems } from "../data/administrator.js";
+import { menuItems } from "../data/administrator.js";
 
-const breadCrumbList = [
-  "Home",
-  "Profile",
-];
+const breadCrumbList = ["Home", "Profile"];
 
-
-class ExampleGordon00500Page extends React.Component {
-
+class Page00500 extends React.Component {
   render() {
-    const { pageOwner, alerts, messages, badges } = administratorGordon;
+    const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
 
+    let profile = this.props.profile;
     return (
       <>
         <body className="bg-grey-popup">
@@ -45,7 +41,7 @@ class ExampleGordon00500Page extends React.Component {
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <ViewProfileContainer />
+                    <ViewProfileContainer profile={profile} />
                   </div>
                 </div>
               </div>
@@ -57,4 +53,4 @@ class ExampleGordon00500Page extends React.Component {
   }
 }
 
-export default ExampleGordon00500Page;
+export default Page00500;

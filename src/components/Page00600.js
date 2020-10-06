@@ -7,13 +7,14 @@ import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
 import EditProfileContainer from "./Page/00600_editProfile/editProfileContainer.js";
-import { administratorGordon, menuItems } from "../data/administrator.js";
+import { menuItems } from "../data/administrator.js";
 
 const breadCrumbList = ["Home", "Profile", "Edit Profile"];
 
-class ExampleGordon00600Page extends React.Component {
+class Page00600 extends React.Component {
   render() {
-    const { pageOwner, alerts, messages, badges } = administratorGordon;
+    const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
+    let profile = this.props.profile;
 
     return (
       <>
@@ -41,7 +42,7 @@ class ExampleGordon00600Page extends React.Component {
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <EditProfileContainer />
+                    <EditProfileContainer profile={profile} />
                   </div>
                 </div>
               </div>
@@ -53,4 +54,4 @@ class ExampleGordon00600Page extends React.Component {
   }
 }
 
-export default ExampleGordon00600Page;
+export default Page00600;
