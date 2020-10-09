@@ -15,6 +15,8 @@ class Page00500 extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
 
+    const IT = this.props.IT;
+
     let profile = this.props.profile;
     return (
       <>
@@ -41,7 +43,7 @@ class Page00500 extends React.Component {
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <ViewProfileContainer profile={profile} />
+                    <ViewProfileContainer profile={profile} IT={IT} />
                   </div>
                 </div>
               </div>

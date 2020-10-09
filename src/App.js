@@ -33,7 +33,7 @@ import {
   bradleyPageOwner,
   pamelaPageOwner,
 } from "./data/pageOwner.js";
-import { gordonProfessor, bradleyProfessor } from "./data/professor";
+import { gordonProfessor, bradleyProfessor, pamelaIT } from "./data/professor";
 import { institution } from "./data/institution.js";
 
 function App() {
@@ -63,12 +63,24 @@ function App() {
             <ExampleGordon00300Page />
           </Route>
           <Route exact path="/ExampleGordon-00500">
-            <Page00500 pageOwner={gordonPageOwner} profile={gordonProfessor} />
+            <Page00500
+              pageOwner={gordonPageOwner}
+              profile={gordonProfessor}
+              IT="false"
+            />
           </Route>
           <Route exact path="/ExampleBradley-00500">
             <Page00500
               pageOwner={bradleyPageOwner}
               profile={bradleyProfessor}
+              IT="false"
+            />
+          </Route>
+          <Route exact path="/ExamplePamela-00500">
+            <Page00500
+              pageOwner={pamelaPageOwner}
+              profile={pamelaIT}
+              IT="true"
             />
           </Route>
           <Route exact path="/ExampleGordon-00600">

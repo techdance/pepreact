@@ -219,6 +219,61 @@ export const bradleyProfessor = {
   ],
 };
 
+export const pamelaIT = {
+  personalInformation: {
+    namePrefix: "Mrs",
+    firstName: "Pamela",
+    lastName: "Morris",
+    name: "Mrs. Pamela Morris",
+    title: "Senior Director of Administration Systems",
+    image: "./images/pamela.png",
+    department: "Enterprise Information Technology Serivces",
+    personalMessage:
+      "\"It's not a faith in technology. It's a faith in people.\" Steve Jobs",
+  },
+
+  communicationPreferences: {
+    languages: ["English", "NA"],
+    emailAddress: "pmorris@ahea.edu",
+    phoneNumbers: ["+1 555 432-5150", "+1 555 432 7666"],
+    url: "https://www.ahea.edu/about-ahea/information-technology/pmorris",
+  },
+
+  professionalBio: {
+    introVideo: "./images/pamela-video.png",
+    discipline: "",
+    areasOfExpertise: ["Data Analytics", "System Networking"],
+    areaOfExpertise1: "Data Analytics",
+    areaOfExpertise2: "System Networking",
+    internationalExperience: "",
+    bio:
+      "Pamela Morris has been the Sr. Director of Administrative Applications at AHEA University since 2018. Prior to that, she led the infrastructure and research computing groups within AHEA University’s central IT department for four years. During her time at AHEA, Ms. Morris has led several initiatives to improve the research computing services available on campus and has overseen the adoption of new technologies across the institution.",
+    cvLink: "#",
+  },
+
+  institutionProfile: {
+    name: "AHEA University, Iowa City Campus",
+    type: "4-year Institution",
+    location: "Iowa City, IA USA",
+    continent: "North America",
+    calendar: "Semester",
+  },
+
+  credentials: {
+    educationLevel: "Master's",
+    professionalMemberships: [
+      { name: "EDUCAUSE", link: "#" },
+      { name: "Society for College and University Planning", link: "#" },
+      { name: "National Center for Higher Ed Management Systems", link: "#" },
+    ],
+    links: ["#", "#"],
+    certificates: ["Certified Analytics Professional"],
+    certificates: ["Certified Big Data Professional"],
+  },
+
+  areaofinterest_list: [],
+};
+
 // this is really the page owner not the professor data
 
 export const menuItems = [

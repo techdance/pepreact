@@ -7,6 +7,7 @@ import ShowInstitutionProfle from "../Shared/showInstitutionProfile.js";
 import ShowPersonalInformation from "../Shared/showPersonalInformation.js";
 import ShowCommunicationPreferences from "../Shared/showCommunicationPreferences.js";
 import ShowProfessionalBio from "../Shared/showProfessionalBio.js";
+import ShowProfessionalBioIT from "../Shared/showProfessionalBioIT.js";
 
 //  TLM: constants below represent sample DB records.
 
@@ -19,6 +20,7 @@ class ViewProfileContainer extends React.Component {
     let progress = 0;
 
     let profile = this.props.profile;
+    const IT = this.props.IT;
 
     if (profile.personalInformation.name !== null) progress += 0.1;
     if (profile.personalInformation.title !== null) progress += 0.1;
@@ -51,10 +53,20 @@ class ViewProfileContainer extends React.Component {
               communicationPreferences={profile.communicationPreferences}
             />
             <ShowCredentials credentials={profile.credentials} />
-            <ShowProfessionalBio professionalBio={profile.professionalBio} />
-            <ShowCollaborationInterests
-              areaofinterest_list={profile.areaofinterest_list}
-            />
+            {IT === "false" ? (
+              <>
+                <ShowProfessionalBio
+                  professionalBio={profile.professionalBio}
+                />
+                <ShowCollaborationInterests
+                  areaofinterest_list={profile.areaofinterest_list}
+                />
+              </>
+            ) : (
+              <ShowProfessionalBioIT
+                professionalBio={profile.professionalBio}
+              />
+            )}
           </div>
         </section>
       </>

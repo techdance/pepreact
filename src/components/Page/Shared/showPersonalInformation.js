@@ -24,11 +24,7 @@ class ShowPersonalInformation extends React.Component {
   }
 
   render() {
-
-    const {
-      personalInformation,
-      sameUser
-    } = this.props;
+    const { personalInformation, sameUser } = this.props;
 
     return (
       <>
@@ -60,7 +56,8 @@ class ShowPersonalInformation extends React.Component {
                   </div>
                   <div className="profile-info profile-name">
                     <div className="title">
-                      <span className="icon-regular icon-user-tie"></span> Position
+                      <span className="icon-regular icon-user-tie"></span>{" "}
+                      Position
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
@@ -69,11 +66,20 @@ class ShowPersonalInformation extends React.Component {
                     </div>
                   </div>
                   <div class="profile-info profile-name">
-                    <div class="title"><span class="icon-regular icon-business-time"></span> Department</div>
-                    <div class="text"><a href="#0" class="cl-gray">{personalInformation.department}</a></div>
+                    <div class="title">
+                      <span class="icon-regular icon-business-time"></span>{" "}
+                      Department
+                    </div>
+                    <div class="text">
+                      <a href="#0" class="cl-gray">
+                        {personalInformation.department}
+                      </a>
+                    </div>
                   </div>
-                  {sameUser === "true" ? "" :
-                    (<div className="profile-info profile-title mt-2">
+                  {sameUser === "true" ? (
+                    ""
+                  ) : (
+                    <div className="profile-info profile-title mt-2">
                       <a href="#0">
                         <img
                           className="message-info mr-3"
@@ -81,9 +87,8 @@ class ShowPersonalInformation extends React.Component {
                           alt=""
                         />
                       </a>
-                    </div>)
-                  }
-
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="box-middle">
@@ -94,6 +99,12 @@ class ShowPersonalInformation extends React.Component {
                 <p>{personalInformation.personalMessage}</p>
               </div>
             </div>
+            <a href="#" class="btn btn-blue position-absolute btn-edit-profile">
+              <span class="position-relative">
+                Edit Profile
+                <span class="link-toltip">Profile 100% Complete</span>
+              </span>
+            </a>
           </div>
         </div>
       </>
