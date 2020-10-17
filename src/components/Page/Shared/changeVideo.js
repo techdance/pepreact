@@ -4,7 +4,23 @@ import React from "react";
 //     but not sure how often the app will need uploading of videos.
 //     if merging, add new prop for fileType (images for images and videos for vidoes)
 
-class ChangeVideo extends React.Component {
+export class ChangeVideoImage extends React.Component {
+  render() {
+    let introVideo = this.props.introVideo;
+
+    return (
+      <>
+        <div class="col-md-6">
+          <div class="wrap-video img-resp mb-2">
+            <img src={introVideo} alt="" />
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+export class ChangeVideoButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedVideo: null };
@@ -28,41 +44,30 @@ class ChangeVideo extends React.Component {
   };
 
   render() {
-    let { introVideo } = this.props;
     return (
       <>
-        <div class="col-md-6">
-          <div class="wrap-video img-resp mb-2">
-            <img src={introVideo} alt="" />
-          </div>
-        </div>
-        <div class="col-md-6">
-          <p>
-            <a
-              href="#0"
-              class="btn btn-blue btn-w-100"
-              onClick={this.handleClick}
-            >
-              Upload Video
-            </a>
-          </p>
-
-          <input
-            id="videoUpload"
-            ref="videoUpload"
-            accept="video/*" // this would be a new prop if merged with changeImage.js
-            type="file"
-            style={{
-              visibility: "hidden",
-              width: 0,
-              height: 0,
-            }}
-            onChange={this.onFileChange}
-          />
-        </div>
+        <p>
+          <a
+            href="#0"
+            class="btn btn-blue btn-w-100"
+            onClick={this.handleClick}
+          >
+            Upload Video
+          </a>
+        </p>
+        <input
+          id="videoUpload"
+          ref="videoUpload"
+          accept="video/*" // this would be a new prop if merged with changeImage.js
+          type="file"
+          style={{
+            visibility: "hidden",
+            width: 0,
+            height: 0,
+          }}
+          onChange={this.onFileChange}
+        />
       </>
     );
   }
 }
-
-export default ChangeVideo;

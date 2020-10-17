@@ -4,6 +4,52 @@ import ChangeImage from "../Shared/changeImage.js";
 
 import { prefixList } from "../../../data/prefixList.js";
 
+class EditProfilePersonalInformationOnlineStatus extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props;
+    this.onChangeValue = this.onChangeValue.bind(this);
+  }
+
+  onChangeValue(event) {
+    const { value } = event.target;
+
+    //  set local state
+    let onlineStatus = this.state;
+    onlineStatus = value;
+    this.setState({ onlineStatus: onlineStatus });
+
+    /// pass current state up to parent to propogate changes
+    this.props.onChange("onlineStatus", onlineStatus);
+  }
+
+  render() {
+    return (
+      <>
+        <div className="form-group" onChange={this.onChangeValue}>
+          <label className="d-inline mr-2">Online Status</label>
+          <input
+            type="radio"
+            name="onlineStatus"
+            value="public"
+            checked={this.state.onlineStatus === "public" ? true : false}
+            // checked={true}
+          />
+          Public
+          <input
+            type="radio"
+            name="onlineStatus"
+            value="private"
+            className="ml-2"
+            checked={this.state.onlineStatus === "private" ? true : false}
+          />
+          Private
+        </div>
+      </>
+    );
+  }
+}
+
 class EditProfilePersonalInformation extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +115,7 @@ class EditProfilePersonalInformation extends React.Component {
       image,
       personalMessage,
       department,
+      onlineStatus,
     } = this.state;
 
     return (
@@ -162,11 +209,11 @@ class EditProfilePersonalInformation extends React.Component {
                     value={personalMessage}
                     onChange={this.handleChange}
                   ></textarea>
-                  {/* <div className="form-group">
-														<label className="d-inline mr-2">Online Status</label>
-														<input type="radio" name="online-status" checked> Public <input type="radio" name="online-status" className="ml-2"> Private
-													</div> */}
                 </div>
+                <EditProfilePersonalInformationOnlineStatus
+                  onlineStatus={onlineStatus}
+                  onChange={this.passChangeUp}
+                />
               </div>
             </div>
           </div>

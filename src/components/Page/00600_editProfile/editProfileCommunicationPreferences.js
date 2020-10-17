@@ -3,6 +3,56 @@ import Select from "react-select";
 
 import { languageList } from "../../../data/languages.js";
 
+class EditProfileCommunicationPreferencesReceiveSMS extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props;
+    this.onChangeValue = this.onChangeValue.bind(this);
+  }
+
+  onChangeValue(event) {
+    // toggle if true then false and if false then true
+    if (this.state.receiveSMS) {
+      this.setState({ receiveSMS: false });
+      this.props.onChange("receiveSMS", false);
+    } else {
+      this.setState({ receiveSMS: true });
+      this.props.onChange("receiveSMS", true);
+    }
+  }
+
+  render() {
+    let receiveSMS = this.state;
+
+    return (
+      <>
+        <div className="col-md-6">
+          <div className="form-group">
+            <label>&nbsp;</label>
+
+            <input
+              name="receiveSMS"
+              type="checkbox"
+              value={receiveSMS.receiveSMS}
+              checked={receiveSMS.receiveSMS}
+              onChange={this.onChangeValue}
+            />
+
+            <span className="font-weight-bold">Receive SMS Notifications</span>
+            <i
+              className="fa fa-info-circle icon-info cl-blue"
+              aria-hidden="true"
+            ></i>
+            <span className="info-toltip">
+              Standard messaging rates may apply.
+            </span>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
 class EditProfileCommunicationPreferences extends React.Component {
   constructor(props) {
     super(props);
@@ -199,29 +249,11 @@ class EditProfileCommunicationPreferences extends React.Component {
                       />
                     </div>
                   </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <label>&nbsp;</label>
 
-                      <input
-                        name="receiveSMS"
-                        type="checkbox"
-                        checked={receiveSMS}
-                        onChange={this.handleChange}
-                      />
-
-                      <span className="font-weight-bold">
-                        Receive SMS Notifications
-                      </span>
-                      <i
-                        className="fa fa-info-circle icon-info cl-blue"
-                        aria-hidden="true"
-                      ></i>
-                      <span className="info-toltip">
-                        Standard messaging rates may apply.
-                      </span>
-                    </div>
-                  </div>
+                  <EditProfileCommunicationPreferencesReceiveSMS
+                    receiveSMS={receiveSMS}
+                    onChange={this.passChangeUp}
+                  />
                   <div className="col-md-12">
                     <div className="form-group">
                       <label>Website</label>

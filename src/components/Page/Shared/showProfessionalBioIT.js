@@ -29,7 +29,10 @@ class ShowProfessionalBio extends React.Component {
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="content-icon position-relative">
+                        <div
+                          class="content-icon position-relative"
+                          style={{ height: 38.1 }}
+                        >
                           <a
                             href={professionalBio.cvLink}
                             className="btn btn-blue view-cv"

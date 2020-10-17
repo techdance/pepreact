@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
-// import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
-import Register from "./components/Register";
+import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+// import Register from "./components/Register";
 import Login from "./components/Login";
 
 import "./assets/css/react-select.css";
@@ -19,13 +19,14 @@ import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
 import ExampleBrittany0120XPage from "./components/ExampleBrittany0120XPage.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
-import Page00701 from "./components/Page00701.js";
+
 import ExamplePamela03601Page from "./components/ExamplePamela03601Page.js";
 
 import Page00500 from "./components/page00500.js";
 import Page00501 from "./components/Page00501.js";
 import Page00108 from "./components/Page00108.js";
 import Page00600 from "./components/Page00600.js";
+import Page00701 from "./components/Page00701.js";
 
 import {
   gordonPageOwner,
@@ -41,9 +42,9 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/register">
+          {/* <Route exact path="/register">
             <Register />
-          </Route>
+          </Route> */}
           <Route exact path="/ExampleInez-00108">
             <Page00108 pageOwner={inezPageOwner} />
           </Route>
@@ -90,6 +91,13 @@ function App() {
             <Page00600
               pageOwner={bradleyPageOwner}
               profile={bradleyProfessor}
+            />
+          </Route>
+          <Route exact path="/ExamplePamela-00600">
+            <Page00600
+              pageOwner={pamelaPageOwner}
+              profile={pamelaIT}
+              IT="true"
             />
           </Route>
           <Route exact path="/ExampleBrittany-00300">

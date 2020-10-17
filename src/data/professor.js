@@ -10,6 +10,7 @@ export const gordonProfessor = {
     department: "Academic Affairs",
     personalMessage:
       '"The goal of education is the advancement of knowledge and the dissemination of truth." -John Fitzgerald Kennedy',
+    onlineStatus: "private",
   },
   communicationPreferences: {
     languages: ["English", "NA"],
@@ -126,6 +127,7 @@ export const bradleyProfessor = {
     department: "College of Business",
     personalMessage:
       '"Success in business requires training and discipline and hard work." David Rockefeller',
+    onlineStatus: "public",
   },
 
   communicationPreferences: {
@@ -133,6 +135,7 @@ export const bradleyProfessor = {
     emailAddress: "bdexter@ahea.edu",
     phoneNumbers: ["+1 555 432 1100", "+1 555 432 1122"],
     url: "https://www.ahea.edu/about-ahea/college-of-business/bdexter",
+    receiveSMS: false,
   },
 
   professionalBio: {
@@ -230,13 +233,20 @@ export const pamelaIT = {
     department: "Enterprise Information Technology Serivces",
     personalMessage:
       "\"It's not a faith in technology. It's a faith in people.\" Steve Jobs",
+    onlineStatus: "public",
   },
 
   communicationPreferences: {
     languages: ["English", "NA"],
+    primaryLanguage: "English",
+    secondaryLanguage: "",
+    tertiaryLanguage: "",
     emailAddress: "pmorris@ahea.edu",
     phoneNumbers: ["+1 555 432-5150", "+1 555 432 7666"],
+    officePhone: "+1 555-432-5150",
+    mobilePhone: "+1 555-432-7666",
     url: "https://www.ahea.edu/about-ahea/information-technology/pmorris",
+    receiveSMS: false,
   },
 
   professionalBio: {
@@ -248,7 +258,7 @@ export const pamelaIT = {
     internationalExperience: "",
     bio:
       "Pamela Morris has been the Sr. Director of Administrative Applications at AHEA University since 2018. Prior to that, she led the infrastructure and research computing groups within AHEA University’s central IT department for four years. During her time at AHEA, Ms. Morris has led several initiatives to improve the research computing services available on campus and has overseen the adoption of new technologies across the institution.",
-    cvLink: "#",
+    cvLink: "http://www.higheredresume.com/pmorris",
   },
 
   institutionProfile: {

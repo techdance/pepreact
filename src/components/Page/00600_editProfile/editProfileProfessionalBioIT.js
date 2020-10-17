@@ -1,9 +1,6 @@
 import React from "react";
-import Select from "react-select";
-import { ChangeVideoImage, ChangeVideoButton } from "../Shared/changeVideo.js";
-import InternationalExperience from "./editProfileProfessionalBioIntlExperience.js";
 
-import { disciplineList } from "../../../data/disciplines.js";
+import { ChangeVideoImage, ChangeVideoButton } from "../Shared/changeVideo.js";
 
 class EditProfessionalBioAreaofExpertise extends React.Component {
   constructor(props) {
@@ -109,7 +106,7 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
   }
 }
 
-class EditProfileProfessionalBio extends React.Component {
+class EditProfileProfessionalBioIT extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.professionalBio;
@@ -177,7 +174,7 @@ class EditProfileProfessionalBio extends React.Component {
 
     return (
       <>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-12 mb-4">
           <div class="profesional box box-border-radius box-shadow bg-white">
             <div class="inner-wrap">
               <div class="box-top position-relative">
@@ -186,126 +183,83 @@ class EditProfileProfessionalBio extends React.Component {
                   Professional Bio
                 </h2>
               </div>
-              <div class="box-middle">
-                <div class="row row-custom mb-4">
-                  <div class="col-md-12">
-                    <h3 class="mb-3">
-                      <span class="icon-regular icon-camcorder pr-3"></span>{" "}
-                      Introduction Video
-                    </h3>
-                  </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="box-middle">
+                    <div class="row row-custom mb-4">
+                      <div class="col-md-12">
+                        <h3 class="mb-3">
+                          <span class="icon-regular icon-camcorder pr-3"></span>{" "}
+                          Introduction Video
+                        </h3>
+                      </div>
+                      <ChangeVideoImage introVideo={introVideo} />
+                      <div class="col-md-6">
+                        <ChangeVideoButton />
 
-                  <ChangeVideoImage introVideo={introVideo} />
-                  <div class="col-md-6">
-                    <ChangeVideoButton />
-                  </div>
-                </div>
-                <div class="row row-custom mb-4">
-                  <div class="col-md-12">
-                    <div class="content-icon position-relative mb-4">
-                      <div>
-                        <span class="icon-regular icon-shield-check"></span>{" "}
-                        <strong>Discipline</strong>
-                      </div>
-                      <div class="form-group ml-4">
-                        <Select
-                          options={disciplineList}
-                          className="inputSelect"
-                          classNamePrefix="rs"
-                          onChange={(e) =>
-                            this.handleChangeSingleSelect("discipline", e)
-                          }
-                          value={{
-                            value: discipline,
-                            label: discipline,
-                          }}
-                          isSearchable="true"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="mb-4">
-                      <h4 class="mb-3">
-                        <span class="icon-regular icon-user-ninja"></span> Areas
-                        Of Expertise
-                      </h4>
-                      <div id="area-1" class="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 1</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise1}
-                          fieldName="areaOfExpertise1"
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                      <div id="area-2" class="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 2</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise2}
-                          fieldName="areaOfExpertise2"
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                      <div id="area-3" class="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 3</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise3}
-                          fieldName="areaOfExpertise3"
-                          onChange={this.passChangeUp}
-                        />
+                        <div class="form-group w-100 mt-3">
+                          <label>Link Your CV</label>
+                          <input
+                            type="url"
+                            name="cLink"
+                            value={cvLink}
+                            class="input"
+                            onChange={this.handleChange}
+                          />
+                        </div>
+                        <div class="mb-4 mt-3">
+                          <h4 class="mb-3">
+                            <span class="icon-regular icon-user-ninja"></span>{" "}
+                            Areas Of Expertise
+                          </h4>
+                          <div id="area-1" class="form-group area pl-4">
+                            <label>Area of Expertise &ndash; 1</label>
+                            <EditProfessionalBioAreaofExpertise
+                              areaOfExpertise={areaOfExpertise1}
+                              fieldName="areaOfExpertise1"
+                              onChange={this.passChangeUp}
+                            />
+                          </div>
+                          <div id="area-2" class="form-group area pl-4">
+                            <label>Area of Expertise &ndash; 2</label>
+                            <EditProfessionalBioAreaofExpertise
+                              areaOfExpertise={areaOfExpertise2}
+                              fieldName="areaOfExpertise2"
+                              onChange={this.passChangeUp}
+                            />
+                          </div>
+                          <div id="area-3" class="form-group area pl-4">
+                            <label>Area of Expertise &ndash; 3</label>
+                            <EditProfessionalBioAreaofExpertise
+                              areaOfExpertise={areaOfExpertise3}
+                              fieldName="areaOfExpertise3"
+                              onChange={this.passChangeUp}
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row row-custom">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="position-relative">
-                        <span class="icon-regular icon-globe-stand"></span>{" "}
-                        International Experience
-                        <i
-                          class="fa fa-info-circle cl-blue icon-info"
-                          aria-hidden="true"
-                        >
-                          <span class="info-toltip">
-                            Please select the range that most accurately matches
-                            your international skills, experience, and studies.
-                          </span>
-                        </i>
-                      </label>
-                      <InternationalExperience
-                        inernationalExperience={internationalExperience}
-                        onChange={this.passChangeUp}
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group w-100">
-                      <label>Link Your CV</label>
-                      <input
-                        type="url"
-                        name="cLink"
-                        value={cvLink}
-                        class="input"
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="row row-custom">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label>
-                        <span class="icon-regular icon-book-user"></span> Bio
-                      </label>
-                      <textarea
-                        className="input textarea"
-                        style={{ minHeight: "100px" }}
-                        rows="6"
-                        name="bio"
-                        value={bio}
-                        onChange={this.handleChange}
-                      ></textarea>
+                <div class="col-lg-6">
+                  <div class="box-middle">
+                    <div class="row row-custom">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>
+                            <span class="icon-regular icon-book-user"></span>{" "}
+                            Bio
+                          </label>
+                          <textarea
+                            className="input textarea"
+                            style={{ minHeight: "100px" }}
+                            rows="6"
+                            name="bio"
+                            value={bio}
+                            onChange={this.handleChange}
+                          ></textarea>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -318,4 +272,4 @@ class EditProfileProfessionalBio extends React.Component {
   }
 }
 
-export default EditProfileProfessionalBio;
+export default EditProfileProfessionalBioIT;

@@ -5,6 +5,7 @@ import EditProfileInstitutionProfile from "./editProfileInstitutionProfile.js";
 import EditProfileCommunicationPreferences from "./editProfileCommunicationPreferences.js";
 import EditProfileCredentials from "./editProfileCredentials.js";
 import EditProfileProfessionalBio from "./editProfileProfessionalBio.js";
+import EditProfileProfessionalBioIT from "./editProfileProfessionalBioIT.js";
 import EditProfileCollaborationInterests from "./editProfileCollaborationInterests.js";
 
 //  TLM: constants below represent sample DB records.
@@ -66,6 +67,8 @@ class EditProfileContainer extends React.Component {
       areaofinterest_list,
     } = this.state;
 
+    const IT = this.props.IT;
+
     return (
       <>
         <section class="wrap-profile">
@@ -88,14 +91,23 @@ class EditProfileContainer extends React.Component {
                 credentials={credentials}
                 onChange={this.passChangeUp}
               />
-              <EditProfileProfessionalBio
-                professionalBio={professionalBio}
-                onChange={this.passChangeUp}
-              />
-              <EditProfileCollaborationInterests
-                areaofinterest_list={areaofinterest_list}
-                onChange={this.passChangeUp}
-              />
+              {IT === "true" ? (
+                <EditProfileProfessionalBioIT
+                  professionalBio={professionalBio}
+                  onChange={this.passChangeUp}
+                />
+              ) : (
+                <>
+                  <EditProfileProfessionalBio
+                    professionalBio={professionalBio}
+                    onChange={this.passChangeUp}
+                  />
+                  <EditProfileCollaborationInterests
+                    areaofinterest_list={areaofinterest_list}
+                    onChange={this.passChangeUp}
+                  />
+                </>
+              )}
             </div>
             <div class="row row-custom ">
               <div class="col-lg-12 mb-4 text-right">
