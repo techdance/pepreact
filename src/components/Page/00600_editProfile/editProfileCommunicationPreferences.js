@@ -38,14 +38,15 @@ class EditProfileCommunicationPreferencesReceiveSMS extends React.Component {
               onChange={this.onChangeValue}
             />
 
-            <span className="font-weight-bold">Receive SMS Notifications</span>
+            <span className="font-weight-bold"> Receive SMS Notifications</span>
             <i
               className="fa fa-info-circle icon-info cl-blue"
               aria-hidden="true"
-            ></i>
-            <span className="info-toltip">
-              Standard messaging rates may apply.
-            </span>
+            >
+              <span className="info-toltip">
+                Standard messaging rates may apply.
+              </span>
+            </i>
           </div>
         </div>
       </>

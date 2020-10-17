@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 
-import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+// import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 // import Register from "./components/Register";
 import Login from "./components/Login";
 
