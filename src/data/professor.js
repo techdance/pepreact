@@ -222,6 +222,114 @@ export const bradleyProfessor = {
   ],
 };
 
+export const inezProfessor = {
+  personalInformation: {
+    namePrefix: "Dr",
+    firstName: "Inez",
+    lastName: "Campos",
+    name: "Dr. Inez Campos",
+    title: "Professor",
+    image: "./images/inez.png",
+    department: "Higher Institute of Economics and Management",
+    personalMessage:
+      '"Education is not the filling of a pail, but the lighting of a fire." -- W.B. Yeats',
+    onlineStatus: "public",
+  },
+
+  communicationPreferences: {
+    languages: ["Portuguese", "English", "Spanish"],
+    emailAddress: "ICampos@ULisboa.pt",
+    phoneNumbers: ["+1 351-21-12345", ""],
+    url: "www.ulisboa.pt",
+    receiveSMS: false,
+  },
+
+  professionalBio: {
+    introVideo: "./images/Inez-video.png",
+    discipline: "Business",
+    areasOfExpertise: [
+      "Entreprenuership",
+      "Organizational Management",
+      "Quantitative Methods",
+    ],
+    areaOfExpertise1: "Entrepreneurship",
+    areaOfExpertise2: "Organizational Management",
+    areaOfExpertise3: "Quantitative Methods",
+    internationalExperience: "7+ Years of International Experience",
+    bio:
+      "I have been with Universidade de Lisboa's Higher Institute of Economics and Management for the past 7 years as a full professor. I have authored over a dozen reviewed publications.",
+    cvLink: "#",
+  },
+
+  institutionProfile: {
+    name: "Universidade de Lisboa",
+    type: "4-year Institution",
+    location: "Lisbon, PRT",
+    continent: "Europe",
+    calendar: "Semester",
+  },
+
+  credentials: {
+    educationLevel: "Phd",
+    professionalMemberships: [
+      { name: "European University Association", link: "#" },
+      { name: "Leage of European Research Universities", link: "#" },
+    ],
+    links: ["#", "#"],
+    certificates: [""],
+  },
+
+  areaofinterest_list: [
+    {
+      projectType: "Course Development",
+      description:
+        "I am interested in finding one or two partners to conduct a longitudinal study on the impact of Brexit on the EU and what changes will take place in the economy as a result.",
+      discipline: "Business",
+      deliveryMethod: "Online",
+      collaborationType: "Global",
+      region: "North America",
+      programLength: "Trimester",
+      preferredLanguage: "Portuguese",
+      credits: "4",
+      programLevel: "Undergraduate",
+      dateRange: "Today 2020",
+      created: false,
+    },
+
+    {
+      projectType: "General Publication",
+      description:
+        "I am looking for partners to help author an article on the impact of mobile technology on business acumen. There is a lot of literature on international business acumen, but nothing has been updated since the onset of our 24/7 connectivity with mobile devices.",
+      discipline: "Business",
+      deliveryMethod: "Online",
+      collaborationType: "Global",
+      region: "All",
+      programLength: "Trimester",
+      preferredLanguage: "Portuguese",
+      credits: "4",
+      programLevel: "Undergraduate",
+      dateRange: "Today 2020",
+      created: false,
+    },
+
+    {
+      projectType: "Peer Review",
+      description:
+        "I am looking for partners to help author an article on the impact of mobile technology on business acumen. There is a lot of literature on international business acumen, but nothing has been updated since the onset of our 24/7 connectivity with mobile devices.",
+      discipline: "Business",
+      deliveryMethod: "Online",
+      collaborationType: "Global",
+      region: "All",
+      programLength: "Trimester",
+      preferredLanguage: "Portuguese",
+      credits: "3",
+      programLevel: "Undergraduate",
+      dateRange: "Today 2020",
+      created: false,
+    },
+  ],
+};
+
 export const pamelaIT = {
   personalInformation: {
     namePrefix: "Mrs",

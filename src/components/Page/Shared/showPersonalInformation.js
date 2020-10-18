@@ -10,17 +10,21 @@ class ShowPersonalInformation extends React.Component {
   }
 
   componentDidMount() {
-    let bar = new ProgressBar.Circle("#progress", {
-      strokeWidth: 15,
-      easing: "easeInOut",
-      duration: 1400,
-      color: "#299EFF",
-      trailColor: "#eee",
-      trailWidth: 1,
-      svgStyle: null,
-    });
+    const { sameUser } = this.props;
 
-    bar.animate(this.state.percent);
+    if (sameUser === "true") {
+      let bar = new ProgressBar.Circle("#progress", {
+        strokeWidth: 15,
+        easing: "easeInOut",
+        duration: 1400,
+        color: "#299EFF",
+        trailColor: "#eee",
+        trailWidth: 1,
+        svgStyle: null,
+      });
+
+      bar.animate(this.state.percent);
+    }
   }
 
   render() {
@@ -99,12 +103,19 @@ class ShowPersonalInformation extends React.Component {
                 <p>{personalInformation.personalMessage}</p>
               </div>
             </div>
-            <a href="#" class="btn btn-blue position-absolute btn-edit-profile">
-              <span class="position-relative">
-                Edit Profile
-                <span class="link-toltip">Profile 100% Complete</span>
-              </span>
-            </a>
+            {sameUser === "true" ? (
+              <a
+                href="#"
+                class="btn btn-blue position-absolute btn-edit-profile"
+              >
+                <span class="position-relative">
+                  Edit Profile
+                  <span class="link-toltip">Profile 100% Complete</span>
+                </span>
+              </a>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </>

@@ -23,7 +23,7 @@ import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 import Page03601 from "./components/Page03601.js";
 
 import Page00500 from "./components/page00500.js";
-import Page00501 from "./components/Page00501.js";
+import Page00511 from "./components/Page00511.js";
 import Page00108 from "./components/Page00108.js";
 import Page00600 from "./components/Page00600.js";
 import Page00701 from "./components/Page00701.js";
@@ -34,7 +34,12 @@ import {
   bradleyPageOwner,
   pamelaPageOwner,
 } from "./data/pageOwner.js";
-import { gordonProfessor, bradleyProfessor, pamelaIT } from "./data/professor";
+import {
+  gordonProfessor,
+  bradleyProfessor,
+  pamelaIT,
+  inezProfessor,
+} from "./data/professor";
 import { institution } from "./data/institution.js";
 
 function App() {
@@ -50,8 +55,8 @@ function App() {
           <Route exact path="/ExampleInez-00108">
             <Page00108 pageOwner={inezPageOwner} />
           </Route>
-          <Route exact path="/ExampleInez-00501">
-            <Page00501 pageOwner={inezPageOwner} profile={bradleyProfessor} />
+          <Route exact path="/ExampleInez-00511">
+            <Page00511 pageOwner={inezPageOwner} profile={bradleyProfessor} />
           </Route>
           <Route exact path="/ExampleInez-00701">
             <Page00701 pageOwner={inezPageOwner} institution={institution} />
@@ -111,6 +116,9 @@ function App() {
               profile={bradleyProfessor}
               IT="false"
             />
+          </Route>
+          <Route exact path="/ExampleBradley-00511">
+            <Page00511 pageOwner={bradleyPageOwner} profile={inezProfessor} />
           </Route>
           <Route exact path="/ExampleBradley-00600">
             <Page00600

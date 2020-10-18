@@ -14,14 +14,6 @@ const breadCrumbList = [
   "Bradley Dexter",
 ];
 
-const owner = {
-  Institution: {
-    logoA2: "./images/logo-a2.png",
-    logoB2: "./images/logo-b2.png",
-  },
-  Person: { firstName: "Inez", iconImage: "./images/Inez.png" },
-};
-
 const menuItems = [
   { name: "Home", link: "#0", icon: "icon-home" },
   { name: "My Calendar", link: "#0", icon: "icon-calendar" },
@@ -40,7 +32,7 @@ const menuItems = [
   { name: "Settings", link: "#0", icon: "icon-settings" },
 ];
 
-class Page00501 extends React.Component {
+class Page00511 extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
     let profile = this.props.profile;
@@ -89,4 +81,4 @@ class Page00501 extends React.Component {
   }
 }
 
-export default Page00501;
+export default Page00511;
