@@ -6,30 +6,13 @@ import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
 import EditInstitutionProfileForm from "./Page/03601_editInstitutionProfilePage/editInstitutionProfilePageContainer.js";
+import { menuItems } from "../data/institution.js";
 
 const breadCrumbList = [
   "Home",
   "Instituion Profiles",
   "AHEA University",
   "Edit Profile",
-];
-
-const menuItems = [
-  { name: "Home", link: "#", icon: "icon-home" },
-  { name: "My Calendar", link: "#", icon: "icon-calendar" },
-  { name: "Committees & Teams", link: "#", icon: "icon-user-group" },
-  { name: "My Advisees", link: "#", icon: "icon-book-reader icon-solid" },
-  { name: "My Courses", link: "#", icon: "icon-book" },
-  { name: "My Projects", link: "#", icon: "icon-book-title" },
-  { name: "My Files", link: "#", icon: "icon-copy" },
-  { name: "Resources", link: "#", icon: "icon-th-large" },
-  { name: "Opportunities", link: "#", icon: "icon-sun-haze" },
-  {
-    name: "Recommended Partners",
-    link: "#",
-    icon: "icon-user-friends icon-solid",
-  },
-  { name: "Settings", link: "#", icon: "icon-settings" },
 ];
 
 class ExamplePamela03601Page extends React.Component {
