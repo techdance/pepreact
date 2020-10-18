@@ -6,12 +6,10 @@ import EditInstitutionStudentBodyInfo from "./editInstitutionProfileStudentBodyI
 import EditInstitutionFacultyInfo from "./editInstitutionProfileFacultyInfo.js";
 import EditInstitutionAcademic from "./editInstitutionProfileAcademic.js";
 
-import { institution } from "../../../data/institution.js";
-
 class EditInstitutionProfileForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = institution;
+    this.state = this.props.institution;
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);

@@ -20,7 +20,7 @@ import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
 import ExampleBrittany0120XPage from "./components/ExampleBrittany0120XPage.js";
 import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 
-import ExamplePamela03601Page from "./components/ExamplePamela03601Page.js";
+import Page03601 from "./components/Page03601.js";
 
 import Page00500 from "./components/page00500.js";
 import Page00501 from "./components/Page00501.js";
@@ -45,6 +45,8 @@ function App() {
           {/* <Route exact path="/register">
             <Register />
           </Route> */}
+
+          {/* Inez Pages */}
           <Route exact path="/ExampleInez-00108">
             <Page00108 pageOwner={inezPageOwner} />
           </Route>
@@ -54,11 +56,36 @@ function App() {
           <Route exact path="/ExampleInez-00701">
             <Page00701 pageOwner={inezPageOwner} institution={institution} />
           </Route>
+
+          {/* Pamela Pages */}
+          <Route exact path="/ExamplePamela-00500">
+            <Page00500
+              pageOwner={pamelaPageOwner}
+              profile={pamelaIT}
+              IT="true"
+            />
+          </Route>
+          <Route exact path="/ExamplePamela-00600">
+            <Page00600
+              pageOwner={pamelaPageOwner}
+              profile={pamelaIT}
+              IT="true"
+            />
+          </Route>
           <Route exact path="/ExamplePamela-00701">
             <Page00701 pageOwner={pamelaPageOwner} institution={institution} />
           </Route>
           <Route exact path="/ExamplePamela-03601">
-            <ExamplePamela03601Page />
+            <Page03601
+              pageOwner={pamelaPageOwner}
+              institution={institution}
+              IT="true"
+            />
+          </Route>
+
+          {/* Gordon Pages */}
+          <Route exact path="/ExampleGordon-01404">
+            <ExampleGordon01404Page />
           </Route>
           <Route exact path="/ExampleGordon-00300">
             <ExampleGordon00300Page />
@@ -70,6 +97,14 @@ function App() {
               IT="false"
             />
           </Route>
+          <Route exact path="/ExampleGordon-00600">
+            <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} />
+          </Route>
+          <Route exact path="/ExampleGordon-01404">
+            <ExampleGordon01404Page />
+          </Route>
+
+          {/* Bradley Pages */}
           <Route exact path="/ExampleBradley-00500">
             <Page00500
               pageOwner={bradleyPageOwner}
@@ -77,38 +112,21 @@ function App() {
               IT="false"
             />
           </Route>
-          <Route exact path="/ExamplePamela-00500">
-            <Page00500
-              pageOwner={pamelaPageOwner}
-              profile={pamelaIT}
-              IT="true"
-            />
-          </Route>
-          <Route exact path="/ExampleGordon-00600">
-            <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} />
-          </Route>
           <Route exact path="/ExampleBradley-00600">
             <Page00600
               pageOwner={bradleyPageOwner}
               profile={bradleyProfessor}
             />
           </Route>
-          <Route exact path="/ExamplePamela-00600">
-            <Page00600
-              pageOwner={pamelaPageOwner}
-              profile={pamelaIT}
-              IT="true"
-            />
-          </Route>
+
+          {/* Brittany Pages */}
           <Route exact path="/ExampleBrittany-00300">
             <ExampleBrittany00300Page />
           </Route>
           <Route exact path="/ExampleBrittany-0120X">
             <ExampleBrittany0120XPage />
           </Route>
-          <Route exact path="/ExampleGordon-01404">
-            <ExampleGordon01404Page />
-          </Route>
+
           <Route path="/">
             <Login />
           </Route>

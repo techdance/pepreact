@@ -14,14 +14,6 @@ const breadCrumbList = [
   "Edit Profile",
 ];
 
-const owner = {
-  Institution: {
-    logoA2: "./images/logo-a.png",
-    logoB2: "./images/logo-b.png",
-  },
-  Person: { firstName: "Pamela", iconImage: "./images/Pamela.png" },
-};
-
 const menuItems = [
   { name: "Home", link: "#", icon: "icon-home" },
   { name: "My Calendar", link: "#", icon: "icon-calendar" },
@@ -42,6 +34,9 @@ const menuItems = [
 
 class ExamplePamela03601Page extends React.Component {
   render() {
+    const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
+    let institution = this.props.institution;
+
     return (
       <>
         <div className="bg-grey-popup">
@@ -58,7 +53,7 @@ class ExamplePamela03601Page extends React.Component {
           <ShowMobileSideBarMenu />
           <div id="container">
             <ShowSideBarMenu
-              owner={owner}
+              owner={pageOwner}
               menuItems={menuItems}
               activeMenuItem={"Home"}
             />
@@ -66,10 +61,16 @@ class ExamplePamela03601Page extends React.Component {
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-lg-12">
-                    <ShowTopMenu owner={owner} />
+                    <ShowTopMenu
+                      owner={pageOwner}
+                      alerts={alerts}
+                      messages={messages}
+                      badges={badges}
+                      edit="true"
+                    />
                     <ShowBreadCrumb breadCrumbList={breadCrumbList} />
 
-                    <EditInstitutionProfileForm />
+                    <EditInstitutionProfileForm institution={institution} />
                   </div>
                 </div>
               </div>
