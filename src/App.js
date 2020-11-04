@@ -126,6 +126,9 @@ function App() {
               profile={bradleyProfessor}
             />
           </Route>
+          <Route exact path="/ExampleBradley-00701">
+            <Page00701 pageOwner={bradleyPageOwner} institution={institution} />
+          </Route>
 
           {/* Brittany Pages */}
           <Route exact path="/ExampleBrittany-00300">
