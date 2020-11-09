@@ -171,6 +171,9 @@ const ShowDegreesOffered = (props) => {
 
 class ShowInstitutionAcademicInfo extends React.Component {
   render() {
+    const totalDegrees =
+      Number(this.props.academic.degreePrograms.undergraduate) +
+      Number(this.props.academic.degreePrograms.graduate);
     const degreeProgramsChart = {
       animationEnabled: true,
       height: 300,
@@ -181,7 +184,7 @@ class ShowInstitutionAcademicInfo extends React.Component {
         fontWeight: "normal",
         horizontalAlign: "center",
         verticalAlign: "center",
-        text: "88",
+        text: totalDegrees,
       },
       legend: {
         cursor: "pointer",

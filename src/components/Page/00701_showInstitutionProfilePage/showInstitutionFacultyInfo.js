@@ -33,7 +33,7 @@ class ShowInstitutionFacultyInfo extends React.Component {
                     </div>
                     <div className="col-md-3 mb-2">
                       <div className="box-color box-color-blue mb-2 h-100">
-                        <h4 className="color-white">Student-Facutly Ratio</h4>
+                        <h4 className="color-white">Student-Faculty Ratio</h4>
                         <div className="box-number font-100 text-center">
                           {this.props.facultyInfo.studentFacultyRatio}
                         </div>
@@ -49,7 +49,7 @@ class ShowInstitutionFacultyInfo extends React.Component {
                         </div>
                         <div className="text-center font20">
                           <strong>
-                            {this.props.facultyInfo.highestDegreeField.number +
+                            {this.props.facultyInfo.highestDegreeField.percent +
                               "%"}
                           </strong>
                         </div>

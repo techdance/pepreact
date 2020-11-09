@@ -10,6 +10,7 @@ import ShowInstitutionAcademicInfo from "./showInstitutionAcademicInfo";
 class InsitutionProfilePageContainer extends React.Component {
   render() {
     let institution = this.props.institution;
+
     return (
       <>
         <ShowInstitutionOverview overview={institution.Overview} />
