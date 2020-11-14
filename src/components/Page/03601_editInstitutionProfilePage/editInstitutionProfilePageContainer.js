@@ -83,6 +83,11 @@ class EditInstitutionProfileForm extends React.Component {
         new URLSearchParams({
           id: B64Encode("1"),
           academicCalendar: B64Encode(institution.Overview.academicCalendar),
+          foundedYear: B64Encode(institution.Overview.foundedYear),
+          description: B64Encode(institution.Overview.description1),
+          president: B64Encode(institution.Overview.president),
+          employees: B64Encode(institution.Overview.employees),
+          alumni: B64Encode(institution.Overview.alumni),
         })
     ).then((data) => {
       console.log(data); // JSON data parsed by `data.json()` call

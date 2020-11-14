@@ -20,6 +20,7 @@ class Page00701 extends React.Component {
     };
   }
 
+  // This needs to be generalized - right now this API call is hard-coded to call Id=1
   componentDidMount() {
     fetch("http://localhost:8000/api/institution-profile")
       .then((res) => res.json())
