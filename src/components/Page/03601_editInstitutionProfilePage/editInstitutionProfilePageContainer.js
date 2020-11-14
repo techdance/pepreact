@@ -6,6 +6,38 @@ import EditInstitutionStudentBodyInfo from "./editInstitutionProfileStudentBodyI
 import EditInstitutionFacultyInfo from "./editInstitutionProfileFacultyInfo.js";
 import EditInstitutionAcademic from "./editInstitutionProfileAcademic.js";
 
+async function postData(url = "", data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
+  console.log(response);
+  console.log("Status : " + response.status);
+  console.log("Content Type: " + response.headers.get("Content-Type"));
+  console.log("Date: " + response.headers.get("Date"));
+
+  console.log("Status Text : " + response.statusText);
+  console.log("Type : " + response.type);
+  console.log("URL : " + response.url);
+
+  // return response.json(); // parses JSON response into native JavaScript objects
+  return response.json();
+}
+
+function B64Encode($string) {
+  return Buffer.from($string).toString("base64");
+}
+
 class EditInstitutionProfileForm extends React.Component {
   constructor(props) {
     super(props);
@@ -43,8 +75,18 @@ class EditInstitutionProfileForm extends React.Component {
   };
 
   handleSubmit = (event) => {
+    let institution = this.state;
+
     event.preventDefault();
-    console.log("Submit current state");
+    postData(
+      "http://localhost:8000/api/institution-profile?" +
+        new URLSearchParams({
+          id: B64Encode("1"),
+          academicCalendar: B64Encode(institution.Overview.academicCalendar),
+        })
+    ).then((data) => {
+      console.log(data); // JSON data parsed by `data.json()` call
+    });
 
     // this.state contains the current revised version of the institution object so should store to institution data.
   };
