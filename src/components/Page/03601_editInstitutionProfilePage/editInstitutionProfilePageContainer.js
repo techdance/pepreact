@@ -30,8 +30,7 @@ async function postData(url = "", data = {}) {
   console.log("Type : " + response.type);
   console.log("URL : " + response.url);
 
-  // return response.json(); // parses JSON response into native JavaScript objects
-  return response.json();
+  return response.json(); // parses JSON response into native JavaScript objects
 }
 
 function B64Encode($string) {
@@ -88,7 +87,10 @@ class EditInstitutionProfileForm extends React.Component {
           president: B64Encode(institution.Overview.president),
           employees: B64Encode(institution.Overview.employees),
           alumni: B64Encode(institution.Overview.alumni),
-        })
+          phone: B64Encode(institution.ContactInfo.phone),
+          name1: B64Encode(institution.ContactInfo.address.name1),
+        }),
+      institution // send entire object encoded as JSON in body of the request
     ).then((data) => {
       console.log(data); // JSON data parsed by `data.json()` call
     });

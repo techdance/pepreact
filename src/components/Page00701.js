@@ -119,7 +119,7 @@ class Page00701 extends React.Component {
 
       //  updated fields for student body, faculty information and academic information.
       institution.StudentBodyInfo.asofTerm = studentDetails.term;
-      institution.StudentBodyInfo.asofYear = studentDetails.term;
+      institution.StudentBodyInfo.asofYear = studentDetails.year;
       institution.StudentBodyInfo.fullTime = studentDetails.fullTimeStudents;
       institution.StudentBodyInfo.graduate = studentDetails.gradStudents;
       institution.StudentBodyInfo.inState = studentDetails.inStateStudents;
