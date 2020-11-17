@@ -21,6 +21,8 @@ async function postData(url = "", data = {}) {
     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
+
+  // debug response information. can get from chrome developer tools
   console.log(response);
   console.log("Status : " + response.status);
   console.log("Content Type: " + response.headers.get("Content-Type"));
