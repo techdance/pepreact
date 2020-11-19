@@ -1,0 +1,164 @@
+section.wrap-profile .box-subhead{
+    margin-bottom: 21px;
+    max-width: 100%;
+}
+section.wrap-profile .content-icon{
+    color:black;
+}
+.bg-profile{
+    background: url(../images/bg-user.png) no-repeat;
+    background-size:100% 100%;
+    height: 210px;
+    width: 210px;
+    position: relative;
+    margin-right:30px;
+}
+.bg-profile.no-bg{
+    background: none;
+}
+.bg-profile img{
+    margin:auto;
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left: 0px;
+    right: 0px;
+}
+.profile-info{
+    color:black;
+    font-size: 16px;
+    line-height: 24px;
+}
+.profile-info i{
+    font-size:22px;
+    width:35px;
+}
+.profile-info .title{
+    font-weight: bold;
+}
+.profile-info .text{
+    font-weight: 300;
+}
+
+.personal .box-middle h4{
+    color:#000;
+    font-weight:bold;
+    font-size:16px;
+    line-height:22px;
+}
+
+.personal .box-middle{
+    color:#4c4c4c;
+    line-height:18px;
+}
+
+.content-icon{
+    font-size:16px;
+    line-height: 36px;
+}
+.content-icon i{
+    color:#000000;
+    display: inline-block;
+    font-size:22px;
+    width: 38px;
+}
+.content-icon i.text{
+    font-weight: 800;
+    font-style: normal;
+}
+.content-icon h4{
+    color:black;
+    font-weight:bold;
+    font-size: 16px;
+}
+.content-icon.with-title{
+    margin-top:23px;
+}
+
+div.credentials .content-icon{
+    color:black;
+    margin-bottom: 15px;
+}
+div.credentials .content-icon:last-child {
+    margin-bottom: 0;
+}
+div.credentials p,
+div.profesional p,
+div.collaboration p{
+    margin:0px;
+    line-height: 25px;
+}
+div.credentials p:first-child{
+    margin-bottom:0px;
+}
+.blue-color{
+    color:#0099ff !important;
+}
+.ml20
+{
+    margin-left:38px !important;
+}
+div.credentials .box-middle {
+    margin-bottom: 10px;
+}
+div.credentials div.text{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+div.profesional .content-icon{
+    color:black;
+    margin-bottom: 15px;
+}
+
+div.profesional .content-icon .text{
+    color:black;
+    font-size: 14px;
+}
+
+div.profesional .content-icon.plane{
+    margin-top: 25px;
+}
+div.collaboration .content-icon{
+    margin-bottom: 10px;
+}
+#view-cv{
+    right: 40px;
+    position: absolute;
+    top:3px;
+}
+
+.collaboration.profile .content-link{
+    margin-top: 10px;
+}
+
+@media(max-width:767px){
+    #profile-map{
+        margin-bottom:30px;
+        position: relative;
+        top:inherit;
+        right:inherit;
+        width:100%;
+    }
+
+    #profile-map {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+    #profile-map iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #view-cv{
+        position:relative;
+        top:inherit;
+        right: inherit;
+        margin-top:20px;
+        margin-bottom:10px;
+    }
+}

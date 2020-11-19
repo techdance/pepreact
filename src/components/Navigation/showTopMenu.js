@@ -6,8 +6,6 @@ import ShowMessages from "./showMessages.js";
 import ShowProfileIcon from "./showProfileIcon.js";
 import ShowSearchBox from "./showSearchBox.js";
 
-const badges = ["Networking"];
-
 const alert1 = {
   type: "message",
   image: "images/randy.png",
@@ -41,8 +39,6 @@ const alert5 = {
   image: "images/Li.png",
   text: "Missed call from Li Wei",
 };
-
-const alerts = [alert1, alert2, alert3, alert4, alert5];
 
 const message1 = {
   from: "Clinton Harris",
@@ -84,10 +80,33 @@ const message5 = {
     "Hello Bradley. Looking forward to consolidating our review questions into a central area.",
 };
 
-const messages = [message1, message2, message3, message4, message5];
-
 class ShowTopMenu extends React.Component {
   render() {
+    // backward compatibility.
+    // Prior version set messages, alerts and badge within this file.
+    // This version allows those to be passed in as arguments. Need to address prior Example pages to remove the code below.
+
+    let messages =
+      "messages" in this.props
+        ? this.props.messages
+        : [message1, message2, message3, message4, message5];
+    let alerts =
+      "alerts" in this.props
+        ? this.props.alerts
+        : [alert1, alert2, alert3, alert4, alert5];
+    let badges =
+      "badges" in this.props
+        ? this.props.badges
+        : [
+            {
+              name: "Networking",
+              icon: "fa-chart-network",
+              iconColor: "#6C38",
+            },
+          ];
+
+    let edit = "edit" in this.props ? this.props.edit : "false"; // new versions pass "edit=true" if the "Save Profile" button needs to show
+
     return (
       <>
         <section className="top">
@@ -99,7 +118,7 @@ class ShowTopMenu extends React.Component {
             image={this.props.owner.Person.iconImage}
           />
 
-          <ShowSearchBox />
+          <ShowSearchBox edit={edit} />
         </section>
       </>
     );

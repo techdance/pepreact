@@ -33,7 +33,7 @@ class ShowProfileIcon extends React.Component {
                       <a href="bradley profile 1 screen.html">My Profile</a>
                     </li>
                     <li>
-                      <a href="#">Settings & Privacy</a>
+                      <a href="#0">Settings & Privacy</a>
                     </li>
                     <li>
                       <a

@@ -4,7 +4,7 @@ class ShowMessages extends React.Component {
   render() {
     return (
       <>
-        <div className="top-icon top-icon-message">
+        <div className="top-icon top-icon-message icon-3">
           <div className="btn-group btn-group-menu">
             <a
               href="#0"
@@ -26,7 +26,7 @@ class ShowMessages extends React.Component {
                       id={"toltip-item-" + index}
                       className="toltip-item d-flex position-relative p-0 toltip-overlay border-radius-5"
                     >
-                      <a href="#" className="close-times" data-id={index}>
+                      <a href="#0" className="close-times" data-id={index}>
                         <i className="fas fa-times-circle"></i>
                       </a>
                       <div className="status-email"></div>
