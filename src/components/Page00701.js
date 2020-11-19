@@ -28,7 +28,7 @@ class Page00701 extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            institution: result.data,
+            institution: result.profile,
           });
         },
 
@@ -60,6 +60,8 @@ class Page00701 extends React.Component {
         institutionLocation,
         recognitions,
         studentDetails,
+        institutionProfileInstitutionTypes,
+        institutionProfileOtherLanguages,
       } = this.state.institution;
 
       // where does institutionName from db map to? it shows in the breadcrumb
@@ -67,10 +69,19 @@ class Page00701 extends React.Component {
       institution.Overview.academicCalendar = apiInstitution.academicCalendar;
       institution.Overview.foundedYear = apiInstitution.founded;
       institution.Overview.alumni = apiInstitution.alumini;
+
+      // Need to remove the "Primary:" from the db field.
       institution.Overview.primaryLanguage = apiInstitution.language;
-      // comes in json as single string entry but need an array of strings. Need to remove the "Primary:" from the db field.
+
+      //   institutionProfileOtherLanguages contains an array of objects.
+      //      Each object contains an id and an otherLanguage object.
+      //      Each otherLanguage object contains an id and a name (string).
+      //   Each institution_profile can have several otherLanguages contained within the institution_profile_other_language table
+      //      These otherLanguage' names are stored int the language table.
       institution.Overview.otherLanguages = [];
-      institution.Overview.otherLanguages.push(apiInstitution.otherLanguages);
+      institutionProfileOtherLanguages.map((language) =>
+        institution.Overview.otherLanguages.push(language.otherLanguage.name)
+      );
 
       // need to fix overview text so that it's not split across two fields.
       institution.Overview.description1 = apiInstitution.overview;
@@ -79,9 +90,15 @@ class Page00701 extends React.Component {
       institution.Overview.president = apiInstitution.president;
       institution.Overview.employees = apiInstitution.totalEmployees;
 
-      //  only 1 db field but should be able to store more.
+      //   institutionProfileInstitutionType contains an array of objects.
+      //      Each object contains an id and an institution_type object.
+      //      Each institution_type object contains an id and a name (string).
+      //   Each institution_profile can have several institution_types contained within the institution_profile_institution_type table
+      //      These institution_types' names are stored int the institution_type table.
       institution.Overview.type = [];
-      institution.Overview.type.push(apiInstitution.insType);
+      institutionProfileInstitutionTypes.map((type) =>
+        institution.Overview.type.push(type.institution_type.name)
+      );
 
       institution.ContactInfo.Locations[0].name = apiInstitution.campusName;
 

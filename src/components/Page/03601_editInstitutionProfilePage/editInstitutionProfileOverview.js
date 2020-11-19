@@ -3,8 +3,8 @@ import Select from "react-select";
 
 import ChangeImage from "../Shared/changeImage.js";
 
-import { institutionTypes } from "../../../data/institution.js";
-import { languageList } from "../../../data/languages.js";
+import { institutionTypes } from "../../../data/institution.js"; // TODO read this object from backend API to close the loop
+import { languageList } from "../../../data/languages.js"; // TODO read this object from backend API to close the loop
 
 class Edit_InstitutionOverview_Type extends React.Component {
   constructor(props) {

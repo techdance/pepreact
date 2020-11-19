@@ -155,6 +155,8 @@ export const institution = {
   },
 };
 
+// TODO - read this from backend API so that the loop is closed.
+
 export const institutionTypes = [
   { value: "Private", label: "Private" },
   { value: "Public", label: "Public" },
