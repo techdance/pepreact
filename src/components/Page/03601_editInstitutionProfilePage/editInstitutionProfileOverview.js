@@ -131,24 +131,32 @@ class EditInstitutionOverview extends React.Component {
     super(props);
     this.state = this.props.Overview;
 
+    // maintain a parallell set of values for the social media links to work with the "plus/minus" user interface
+    // *tmpLinkName contains the current values of the social media link passed to the component
+    // *tmpLinkName is updated in the handleClick() method
     // initialize icon states to match current values of links in the "Overview" data object.
     //  if the link is an empty string "", then icon is plus otherwise is minus.
+    this.state.tmpfacebookLink = this.state.facebookLink;
     this.state.facebookLink
       ? (this.state.fbLinkIcon = "minus")
       : (this.state.fbLinkIcon = "plus");
 
+    this.state.tmptwitterLink = this.state.twitterLink;
     this.state.twitterLink
       ? (this.state.twLinkIcon = "minus")
       : (this.state.twLinkIcon = "plus");
 
+    this.state.tmpinstagramLink = this.state.instagramLink;
     this.state.instagramLink
       ? (this.state.igLinkIcon = "minus")
       : (this.state.igLinkIcon = "plus");
 
+    this.state.tmplinkedinLink = this.state.linkedinLink;
     this.state.linkedinLink
       ? (this.state.liLinkIcon = "minus")
       : (this.state.liLinkIcon = "plus");
 
+    this.state.tmpyoutubeLink = this.state.youtubeLink;
     this.state.youtubeLink
       ? (this.state.ytLinkIcon = "minus")
       : (this.state.ytLinkIcon = "plus");
@@ -189,16 +197,35 @@ class EditInstitutionOverview extends React.Component {
   handleClick = (linkName, iconName, iconValue, event) => {
     // function that handles clicks on the social media icons
 
+    // setup.
+    //  tmpLinkName is the location in the state object that "holds" the social media link while the "plus" icon is shown.
+    //  get the current values in the state object of the temporary and the real social media link.
+    let tmpLinkName = "tmp" + linkName;
+    let Overview = this.state;
+    let linkValue = Overview[linkName];
+    let tmpLinkValue = Overview[tmpLinkName];
     event.preventDefault();
 
-    //  if the current icon in a plus - make it minus (and then show text input field where this anchor is setup)
-    //  if the current icon is a minus - set link to a null string (so it won't show in ShowProfle) and set icon to plus
+    // manage the temporary values of the social media links and the "plus/minus" state of the icon.
+    //  if the current icon in a plus:
+    //      make icon minus. this will later force the link value text input field to show in the main body of this component
+    //      update the Overview object and the state object with the "held" value
+    //  if the current icon is a minus:
+    //      set icon to plus. this will later force the link value text input field to not show in the main body of this component.
+    //      update the Overview object and the state object. Hold the existing value in tmpLinkName and set the value of linkName to null;
     if (iconValue === "plus") {
+      Overview[linkName] = tmpLinkValue;
+      this.setState({ [linkName]: tmpLinkValue });
       this.setState({ [iconName]: "minus" });
     } else {
-      // this.setState({ [linkName]: "" });
+      Overview[linkName] = "";
+      this.setState({ [tmpLinkName]: linkValue });
+      this.setState({ [linkName]: "" });
       this.setState({ [iconName]: "plus" });
     }
+
+    // propogate the changes up so that the components reflect the change.
+    this.props.onChange("Overview", Overview);
   };
 
   editSocialMediaLinks = (props) => {

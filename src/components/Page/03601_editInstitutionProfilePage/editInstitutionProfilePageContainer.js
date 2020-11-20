@@ -78,6 +78,27 @@ class EditInstitutionProfileForm extends React.Component {
   handleSubmit = (event) => {
     let institution = this.state;
 
+    // special handling of social media links when <Save> button is clicked
+    // there are two relevant fields in the Overview object referenced
+    //    social media link such as "facebookLink" or "twitterLink" that contain the institution's url
+    //    social media icon which refers to the "plus/minus" control in the user interface.
+    // if the social media icon is "plus", then the social media link needs to be set to null at this point.
+    //    social media link is kept before <Save> is submitted so that it can show if user clicks "plus" again.
+    // if the social media icon is "minus", then the social media link is left as set by the user
+    //    this could mean that social media icon is "minus" and the social media link is null
+    if (institution.Overview.fbLinkIcon === "plus")
+      institution.Overview.facebookLink = null;
+    if (institution.Overview.twLinkIcon === "plus")
+      institution.Overview.twitterLink = null;
+    if (institution.Overview.igLinkIcon === "plus")
+      institution.Overview.instagramLink = null;
+    if (institution.Overview.liLinkIcon === "plus")
+      institution.Overview.linkedinLink = null;
+    if (institution.Overview.ytLinkIcon === "plus")
+      institution.Overview.youtubeLink = null;
+
+    this.setState({ institution: institution });
+
     event.preventDefault();
     postData(
       "http://localhost:8000/api/institution-profile?" +

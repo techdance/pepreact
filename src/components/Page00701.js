@@ -62,6 +62,7 @@ class Page00701 extends React.Component {
         studentDetails,
         institutionProfileInstitutionTypes,
         institutionProfileOtherLanguages,
+        socialMedias,
       } = this.state.institution;
 
       // where does institutionName from db map to? it shows in the breadcrumb
@@ -99,6 +100,39 @@ class Page00701 extends React.Component {
       institutionProfileInstitutionTypes.map((type) =>
         institution.Overview.type.push(type.institution_type.name)
       );
+
+      // comes in json as an array of objects with two relevant fields
+      //  "socialMedia" contains which social media is referenced current values supported are
+      //        facebook, twitter, instagram, linkedin, youtube
+      //  "url" contains the url to the institution's social media account
+      institution.Overview.facebookLink = null;
+      institution.Overview.twitterLink = null;
+      institution.Overview.instagramLink = null;
+      institution.Overview.linkedinLink = null;
+      institution.Overview.youtubeLink = null;
+      socialMedias.map((socialMedia) => {
+        let sm = socialMedia.socialMedia;
+        let url = socialMedia.url;
+        switch (sm) {
+          case "facebook":
+            institution.Overview.facebookLink = url;
+            break;
+          case "twitter":
+            institution.Overview.twitterLink = url;
+            break;
+          case "instagram":
+            institution.Overview.instagramLink = url;
+            break;
+          case "linkedin":
+            institution.Overview.linkedinLink = url;
+            break;
+          case "youtube":
+            institution.Overview.youtubeLink = url;
+            break;
+          default:
+            break;
+        }
+      });
 
       institution.ContactInfo.Locations[0].name = apiInstitution.campusName;
 
