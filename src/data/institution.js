@@ -43,7 +43,7 @@ export const institution = {
         address2: "Suite 600",
         city: "Boca Raton",
         state: "FL",
-        country: "United States of America",
+        country: "US",
         zipcode: "33432",
         continent: "North America",
       },

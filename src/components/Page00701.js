@@ -57,13 +57,26 @@ class Page00701 extends React.Component {
         degrees,
         facultyDetails,
         institutionContact,
-        institutionLocation,
+        institutionLocationInfos,
         recognitions,
         studentDetails,
         institutionProfileInstitutionTypes,
         institutionProfileOtherLanguages,
         socialMedias,
       } = this.state.institution;
+
+      // object used to add locations to the ContactInfo.Locations array
+      let institutionLocation = {
+        name: "",
+        institution: "",
+        address1: "",
+        address2: "",
+        city: "",
+        state: "",
+        country: "",
+        zipcode: "",
+        continent: "",
+      };
 
       // where does institutionName from db map to? it shows in the breadcrumb
 
@@ -134,9 +147,6 @@ class Page00701 extends React.Component {
         }
       });
 
-      institution.ContactInfo.Locations[0].name = apiInstitution.campusName;
-
-      // missing country and continent
       institution.ContactInfo.address.name1 = institutionContact.mailingName;
       institution.ContactInfo.address.name2 = institutionContact.department;
       institution.ContactInfo.address.address1 = institutionContact.address1;
@@ -144,29 +154,29 @@ class Page00701 extends React.Component {
       institution.ContactInfo.address.city = institutionContact.city;
       institution.ContactInfo.address.zipcode = institutionContact.postalCode;
       institution.ContactInfo.address.state = institutionContact.state;
+      institution.ContactInfo.address.country = institutionContact.country;
+      institution.ContactInfo.address.continent = institutionContact.continent;
       institution.ContactInfo.email = institutionContact.email;
       institution.ContactInfo.phone = institutionContact.officeNumber;
       institution.ContactInfo.fax = institutionContact.faxNumber;
       institution.ContactInfo.url = institutionContact.website;
 
-      // prototype shows multiple location addresses but db only has one.
-      //  database record contains timezone field but nothing on prototype
-      institution.ContactInfo.Locations[0].name =
-        institutionLocation.mailingName;
-      institution.ContactInfo.Locations[0].institution =
-        institutionLocation.department;
-      institution.ContactInfo.Locations[0].address1 =
-        institutionLocation.address1;
-      institution.ContactInfo.Locations[0].address2 =
-        institutionLocation.address2;
-      institution.ContactInfo.Locations[0].city = institutionLocation.city;
-      institution.ContactInfo.Locations[0].zipcode =
-        institutionLocation.postalCode;
-      institution.ContactInfo.Locations[0].state = institutionLocation.state;
-      institution.ContactInfo.Locations[0].country =
-        institutionLocation.country;
-      institution.ContactInfo.Locations[0].continent =
-        institutionLocation.region;
+      // each institution can have multiple locations. A location is different from the contact information above.
+      // database contains timezone field but HTML does not support this as of now.
+      institution.ContactInfo.Locations = [];
+      institutionLocationInfos.map((location, index) => {
+        institution.ContactInfo.Locations[index] = {
+          name: location.name,
+          institution: location.institution,
+          address1: location.address1,
+          address2: location.address2,
+          city: location.city,
+          state: location.state,
+          country: location.country,
+          zipcode: location.postalCode,
+          continent: location.region,
+        };
+      });
 
       //  updated fields for student body, faculty information and academic information.
       institution.StudentBodyInfo.asofTerm = studentDetails.term;
