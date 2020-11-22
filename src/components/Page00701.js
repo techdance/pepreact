@@ -38,7 +38,7 @@ class Page00701 extends React.Component {
         (error) => {
           this.setState({
             isLoaded: true,
-            error,
+            error: error,
           });
         }
       );
@@ -49,7 +49,7 @@ class Page00701 extends React.Component {
     let institution = this.props.institution;
     let apiInstitution = this.state.institution;
 
-    if (this.state.isLoaded) {
+    if (this.state.isLoaded && !this.state.error) {
       const {
         academicDetails,
         accrediations,
@@ -64,19 +64,6 @@ class Page00701 extends React.Component {
         institutionProfileOtherLanguages,
         socialMedias,
       } = this.state.institution;
-
-      // object used to add locations to the ContactInfo.Locations array
-      let institutionLocation = {
-        name: "",
-        institution: "",
-        address1: "",
-        address2: "",
-        city: "",
-        state: "",
-        country: "",
-        zipcode: "",
-        continent: "",
-      };
 
       // where does institutionName from db map to? it shows in the breadcrumb
 
@@ -268,6 +255,8 @@ class Page00701 extends React.Component {
       recognitions.map((recognition) =>
         institution.Academic.recognitions.push(recognition.recognition)
       );
+    } else if (this.state.error) {
+      // error condition in url request
     }
 
     return (
