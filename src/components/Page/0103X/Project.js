@@ -3,7 +3,9 @@ import { disciplineList } from "../../../data/disciplines.js";
 
 class Project {
   projectType = "";
-  discipline = "";
+  discipline1 = "";
+  discipline2 = "";
+  discipline3 = "";
   description = "";
   name = "";
   programLength = ""; // this is different from area of interest - can contain either "fixed" or "ongoing"
@@ -14,8 +16,8 @@ class Project {
   constructor() {
     let current = new Date();
 
-    this.projectType = projectTypeList[1].value; // initial value from list
-    this.discipline = disciplineList[1].value; // initial value from list
+    // this.projectType = projectTypeList[1].value; // initial value from list
+    // this.discipline1 = disciplineList[1].value; // initial value from list
     this.programLength = "ongoing";
     this.startDate =
       current.getFullYear() +
@@ -55,7 +57,9 @@ class Project {
     // call get method in API to retrieve a project by id
     //  Below is a simulation of filling the returned data
     this.projectType = projectTypeList[1].value; // initial value from list
-    this.discipline = disciplineList[1].value; // initial value from list
+    this.discipline1 = disciplineList[1].value; // initial value from list
+    this.discipline2 = disciplineList[2].value; // initial value from list
+    this.discipline3 = disciplineList[3].value; // initial value from list
     this.description = "This is a dummy description";
     this.name = "This is a dummy project name";
     this.programLength = "ongoing";

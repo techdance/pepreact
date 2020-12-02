@@ -55,7 +55,9 @@ class ProjectPageContainer extends React.Component {
     const {
       projectType,
       description,
-      discipline,
+      discipline1,
+      discipline2,
+      discipline3,
       name,
       programLength,
       startDate,
@@ -106,36 +108,46 @@ class ProjectPageContainer extends React.Component {
           </div>
 
           <div className="form-group">
-            <label>Discipline:</label>
+            <label>Discipline 1:</label>
 
             <Select
               options={disciplineList}
               className="inputSelectModal"
               classNamePrefix="rsModal"
-              onChange={(e) => this.handleChangeSingleSelect("discipline", e)}
+              onChange={(e) => this.handleChangeSingleSelect("discipline1", e)}
               value={{
-                value: discipline,
-                label: discipline,
+                value: discipline1,
+                label: discipline1,
               }}
               isSearchable="true"
             />
           </div>
           <div className="form-group">
             <label htmlFor="discipline2">Discipline 2</label>
-            <input
-              type="text"
-              id="discipline2"
-              className="form-control"
-              value=""
+            <Select
+              options={disciplineList}
+              className="inputSelectModal"
+              classNamePrefix="rsModal"
+              onChange={(e) => this.handleChangeSingleSelect("discipline2", e)}
+              value={{
+                value: discipline2,
+                label: discipline2,
+              }}
+              isSearchable="true"
             />
           </div>
           <div className="form-group">
             <label htmlFor="discipline3">Discipline 3</label>
-            <input
-              type="text"
-              id="discipline3"
-              className="form-control"
-              value=""
+            <Select
+              options={disciplineList}
+              className="inputSelectModal"
+              classNamePrefix="rsModal"
+              onChange={(e) => this.handleChangeSingleSelect("discipline3", e)}
+              value={{
+                value: discipline3,
+                label: discipline3,
+              }}
+              isSearchable="true"
             />
           </div>
 

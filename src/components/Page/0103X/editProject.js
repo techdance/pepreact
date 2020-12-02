@@ -15,7 +15,9 @@ class EditProject extends React.Component {
     this.state = {
       id: id,
       projectType: project.projectType,
-      discipline: project.discipline,
+      discipline1: project.discipline1,
+      discipline2: project.discipline2,
+      discipline3: project.discipline3,
       description: project.description,
       name: project.name,
       programLength: project.programLength,
