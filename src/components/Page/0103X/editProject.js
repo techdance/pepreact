@@ -1,38 +1,27 @@
 import React from "react";
 
-import ProjectPageContainer from "./ProjectPageContainer.js";
-import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
-import { disciplineList } from "../../../data/disciplines.js";
+import ProjectFormPage from "./ProjectFormPage.js";
+import Project from "./Project.js";
 
 class EditProject extends React.Component {
   constructor(props) {
-    // state holds the current state of array element from areaofinterest_list and the index in the array.
-    //  so, state.areaOfInterest = areaofinterest_list[index]
-
-    let current = new Date();
+    let project = new Project();
+    let id = "1"; // dummy id to use to retrive project from db
 
     super(props);
 
     //  project data object to be edited
+    project.getProject(id);
     this.state = {
-      projectType: projectTypeList[1].value, // initial value from list
-      discipline: disciplineList[1].value, // initial value from list
-      description: "This is a dummy description",
-      name: "This is a dummy project name",
-      programLength: "ongoing", // this is different from area of interest - can contain either "fixed" or "ongoing"
-      startDate:
-        current.getFullYear() +
-        "-" +
-        (current.getMonth() + 1) +
-        "-" +
-        current.getDay(), // this is different from area of interest. but area of interest was halted because modal was re-designed
-      endDate:
-        current.getFullYear() +
-        "-" +
-        (current.getMonth() + 1) +
-        "-" +
-        current.getDay(), // this is different from area of interest.
-      created: false, // shows in the modal for area of interest
+      id: id,
+      projectType: project.projectType,
+      discipline: project.discipline,
+      description: project.description,
+      name: project.name,
+      programLength: project.programLength,
+      startDate: project.startDate,
+      endDate: project.endDate,
+      created: project.created,
     };
 
     this.passChangeUp = this.passChangeUp.bind(this);
@@ -40,9 +29,13 @@ class EditProject extends React.Component {
   }
 
   handleSubmit = (event) => {
-    let project = this.state;
+    let project = new Project();
+    // preventing the url called again with query string parameters which also reloads the components
+    event.preventDefault();
 
-    // call Project Post API to save the current state of the project.
+    // set current state to Project object and then call Project Post API to update project object in the db.
+    project.setProject(this.state);
+    project.updateProject(this.state.id);
   };
 
   passChangeUp = (field, value) => {
@@ -72,7 +65,7 @@ class EditProject extends React.Component {
                     </h2>
                   </div>
                   <form onSubmit={this.handleSubmit}>
-                    <ProjectPageContainer
+                    <ProjectFormPage
                       project={project}
                       onChange={this.passChangeUp}
                     />

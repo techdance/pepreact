@@ -1,49 +1,32 @@
 import React from "react";
 
-import ProjectPageContainer from "./ProjectPageContainer.js";
-
-import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
-import { disciplineList } from "../../../data/disciplines.js";
+import Project from "./Project.js";
+import ProjectFormPage from "./ProjectFormPage.js";
 
 class CreateProject extends React.Component {
   constructor(props) {
     // state holds the current state of array element from areaofinterest_list and the index in the array.
     //  so, state.areaOfInterest = areaofinterest_list[index]
 
-    let current = new Date();
+    let project = new Project();
 
     super(props);
 
     //  project data object to be added
-    this.state = {
-      projectType: projectTypeList[1].value, // initial value from list
-      discipline: disciplineList[1].value, // initial value from list
-      description: "",
-      name: "",
-      programLength: "ongoing", // this is different from area of interest - can contain either "fixed" or "ongoing"
-      startDate:
-        current.getFullYear() +
-        "-" +
-        (current.getMonth() + 1) +
-        "-" +
-        current.getDay(), // this is different from area of interest. but area of interest was halted because modal was re-designed
-      endDate:
-        current.getFullYear() +
-        "-" +
-        (current.getMonth() + 1) +
-        "-" +
-        current.getDay(), // this is different from area of interest.
-      created: false, // shows in the modal for area of interest
-    };
+    this.state = project;
 
     this.passChangeUp = this.passChangeUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = (event) => {
-    let project = this.state;
+    let project = new Project();
+    // preventing the url called again with query string parameters which also reloads the components
+    event.preventDefault();
 
-    // call Project Post API to save the current state of the project.
+    // set current state to Project object and then call Project Post API to save project object to the db.
+    project.setProject(this.state);
+    project.addProject(); // returns the id of the save object
   };
 
   passChangeUp = (field, value) => {
@@ -72,7 +55,7 @@ class CreateProject extends React.Component {
                     </h2>
                   </div>
                   <form onSubmit={this.handleSubmit}>
-                    <ProjectPageContainer
+                    <ProjectFormPage
                       project={project}
                       onChange={this.passChangeUp}
                     />

@@ -63,8 +63,6 @@ class ProjectPageContainer extends React.Component {
       created,
     } = this.state;
 
-    console.log("project type: " + projectType);
-
     return (
       <>
         <div className="box-middle">
