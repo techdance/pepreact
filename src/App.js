@@ -27,6 +27,8 @@ import Page00511 from "./components/Page00511.js";
 import Page00108 from "./components/Page00108.js";
 import Page00600 from "./components/Page00600.js";
 import Page00701 from "./components/Page00701.js";
+import Page01033 from "./components/Page01033.js";
+import Page01034 from "./components/Page01034.js";
 
 import {
   gordonPageOwner,
@@ -128,6 +130,14 @@ function App() {
           </Route>
           <Route exact path="/ExampleBradley-00701">
             <Page00701 pageOwner={bradleyPageOwner} institution={institution} />
+          </Route>
+
+          {/* Bradley CollaboratED pages */}
+          <Route exact path="/01CL_01033">
+            <Page01033 pageOwner={bradleyPageOwner} />
+          </Route>
+          <Route exact path="/01CL_01034">
+            <Page01034 pageOwner={bradleyPageOwner} />
           </Route>
 
           {/* Brittany Pages */}
