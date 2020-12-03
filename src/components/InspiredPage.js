@@ -4,29 +4,25 @@ import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
+import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
-import EditProject from "./Page/0103X/editProject.js";
-import { menuItems } from "../data/institution.js";
+import { menuItems } from "../data/administrator.js";
 
-const breadCrumbList = ["Home", "My Projects", "Edit Project"];
+const breadCrumbList = ["Home", "Profile", "Edit Profile"];
 
-class Page01034 extends React.Component {
+class Page00600 extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
-    // let institution = this.props.institution;
+    let profile = this.props.profile;
+    const IT = this.props.IT;
+    const breadCrumb = this.props.breadcrumb;
+    const menuItems = this.props.menuItems;
 
     return (
       <>
-        <div className="bg-grey-popup">
+        <body className="bg-grey-popup">
           <div id="menu-top-responsive" className="">
-            <div id="wrap-logo">
-              <a href="#0">
-                <img src="images/logo.png" alt="" />
-              </a>
-              <a href="#0" id="menu-button-responsive">
-                <i className="fas fa-bars"></i>
-              </a>
-            </div>
+            <ShowTowerLogo />
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
@@ -44,19 +40,20 @@ class Page01034 extends React.Component {
                       alerts={alerts}
                       messages={messages}
                       badges={badges}
+                      edit="true"
                     />
-                    <ShowBreadCrumb breadCrumbList={breadCrumbList} />
+                    <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
-                    <EditProject />
+                    {this.props.render(profile, IT)}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </body>
       </>
     );
   }
 }
 
-export default Page01034;
+export default Page00600;

@@ -5,15 +5,13 @@ import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-import CreateProject from "./Page/0103X/createProject.js";
-import { menuItems } from "../data/institution.js";
-
 const breadCrumbList = ["Home", "My Projects", "New Project"];
 
-class Page01033 extends React.Component {
+class Page extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
-    // let institution = this.props.institution;
+    const breadCrumb = this.props.breadcrumb;
+    const menuItems = this.props.menuItems;
 
     return (
       <>
@@ -45,9 +43,9 @@ class Page01033 extends React.Component {
                       messages={messages}
                       badges={badges}
                     />
-                    <ShowBreadCrumb breadCrumbList={breadCrumbList} />
+                    <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
-                    <CreateProject />
+                    {this.props.render()}
                   </div>
                 </div>
               </div>
@@ -59,4 +57,4 @@ class Page01033 extends React.Component {
   }
 }
 
-export default Page01033;
+export default Page;
