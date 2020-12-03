@@ -22,11 +22,18 @@ import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 
 import Page03601 from "./components/Page03601.js";
 
-import Page00500 from "./components/page00500.js";
 import Page00511 from "./components/Page00511.js";
 import Page00108 from "./components/Page00108.js";
-import Page00600 from "./components/Page00600.js";
+
 import Page00701 from "./components/Page00701.js";
+// CollaboratedPage shows the left menu, top menu and breadcrumb; Then it renders the page body (old name container) using a render prop component
+import CollaboratedPage from "./components/CollaboratedPage.js";
+import CreateProject from "./components/Page/0103X/createProject.js";
+import EditProject from "./components/Page/0103X/editProject.js";
+
+import InspiredPage from "./components/InspiredPage.js";
+import EditProfileContainer from "./components/Page/00600_editProfile/editProfileContainer.js";
+import ViewProfileContainer from "./components/Page/00500_viewProfile/viewProfileContainer.js";
 
 import {
   gordonPageOwner,
@@ -41,6 +48,8 @@ import {
   inezProfessor,
 } from "./data/professor";
 import { institution } from "./data/institution.js";
+
+import { menuItems } from "./data/institution.js";
 
 function App() {
   return (
@@ -63,18 +72,34 @@ function App() {
           </Route>
 
           {/* Pamela Pages */}
-          <Route exact path="/ExamplePamela-00500">
-            <Page00500
+          <Route exact path="/18IN_00500">
+            {/* <Page00500
               pageOwner={pamelaPageOwner}
               profile={pamelaIT}
               IT="true"
+            /> */}
+            <InspiredPage
+              render={(profile, IT) => (
+                <ViewProfileContainer profile={pamelaIT} IT="true" />
+              )}
+              breadcrumb={["Home", "Profile"]}
+              menuItems={menuItems}
+              pageOwner={pamelaPageOwner}
             />
           </Route>
-          <Route exact path="/ExamplePamela-00600">
-            <Page00600
+          <Route exact path="/18IN_00600">
+            {/* <Page00600
               pageOwner={pamelaPageOwner}
               profile={pamelaIT}
               IT="true"
+            /> */}
+            <InspiredPage
+              render={(profile, IT) => (
+                <EditProfileContainer profile={pamelaIT} IT="true" />
+              )}
+              breadcrumb={["Home", "Profile", "Edit Profile"]}
+              menuItems={menuItems}
+              pageOwner={pamelaPageOwner}
             />
           </Route>
           <Route exact path="/ExamplePamela-00701">
@@ -95,39 +120,85 @@ function App() {
           <Route exact path="/ExampleGordon-00300">
             <ExampleGordon00300Page />
           </Route>
-          <Route exact path="/ExampleGordon-00500">
-            <Page00500
+          <Route exact path="/02IN_00500">
+            {/* <Page00500
               pageOwner={gordonPageOwner}
               profile={gordonProfessor}
               IT="false"
+            /> */}
+            <InspiredPage
+              render={(profile, IT) => (
+                <ViewProfileContainer profile={gordonProfessor} IT="false" />
+              )}
+              breadcrumb={["Home", "Profile"]}
+              menuItems={menuItems}
+              pageOwner={gordonPageOwner}
             />
           </Route>
-          <Route exact path="/ExampleGordon-00600">
-            <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} />
+          <Route exact path="/02IN_00600">
+            {/* <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} /> */}
+            <InspiredPage
+              render={(profile, IT) => (
+                <EditProfileContainer profile={gordonProfessor} IT="false" />
+              )}
+              breadcrumb={["Home", "Profile", "Edit Profile"]}
+              menuItems={menuItems}
+              pageOwner={gordonPageOwner}
+            />
           </Route>
           <Route exact path="/ExampleGordon-01404">
             <ExampleGordon01404Page />
           </Route>
 
           {/* Bradley Pages */}
-          <Route exact path="/ExampleBradley-00500">
-            <Page00500
+          <Route exact path="/01IN_00500">
+            {/* <Page00500
               pageOwner={bradleyPageOwner}
               profile={bradleyProfessor}
               IT="false"
+            /> */}
+            <InspiredPage
+              render={(profile, IT) => (
+                <ViewProfileContainer profile={bradleyProfessor} IT="false" />
+              )}
+              breadcrumb={["Home", "Profile"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
             />
           </Route>
           <Route exact path="/ExampleBradley-00511">
             <Page00511 pageOwner={bradleyPageOwner} profile={inezProfessor} />
           </Route>
-          <Route exact path="/ExampleBradley-00600">
-            <Page00600
+          <Route exact path="/01IN_00600">
+            <InspiredPage
+              render={(profile, IT) => (
+                <EditProfileContainer profile={bradleyProfessor} IT={IT} />
+              )}
+              breadcrumb={["Home", "Profile", "Edit Profile"]}
+              menuItems={menuItems}
               pageOwner={bradleyPageOwner}
-              profile={bradleyProfessor}
             />
           </Route>
           <Route exact path="/ExampleBradley-00701">
             <Page00701 pageOwner={bradleyPageOwner} institution={institution} />
+          </Route>
+
+          {/* Bradley CollaboratED pages */}
+          <Route exact path="/01CL_01033">
+            <CollaboratedPage
+              render={() => <CreateProject />}
+              breadcrumb={["Home", "My Projects", "New Project"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
+          </Route>
+          <Route exact path="/01CL_01034">
+            <CollaboratedPage
+              render={() => <EditProject />}
+              breadcrumb={["Home", "My Projects", "Edit Project"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
           </Route>
 
           {/* Brittany Pages */}

@@ -1,5 +1,5 @@
 export const projectTypeList = [
-  { value: "Select a Project", labeel: "Research" },
+  { value: "Select a Project", label: "Research" },
   { value: "Academic Journal", label: "Academic Journal" },
   { value: "Best Practices", label: "Best Practices" },
   { value: "Course Development", label: "Course Development" },

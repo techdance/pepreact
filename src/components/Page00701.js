@@ -28,7 +28,7 @@ class Page00701 extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            institution: result.data,
+            institution: result.profile,
           });
         },
 
@@ -38,7 +38,7 @@ class Page00701 extends React.Component {
         (error) => {
           this.setState({
             isLoaded: true,
-            error,
+            error: error,
           });
         }
       );
@@ -49,7 +49,7 @@ class Page00701 extends React.Component {
     let institution = this.props.institution;
     let apiInstitution = this.state.institution;
 
-    if (this.state.isLoaded) {
+    if (this.state.isLoaded && !this.state.error) {
       const {
         academicDetails,
         accrediations,
@@ -57,9 +57,12 @@ class Page00701 extends React.Component {
         degrees,
         facultyDetails,
         institutionContact,
-        institutionLocation,
+        institutionLocationInfos,
         recognitions,
         studentDetails,
+        institutionProfileInstitutionTypes,
+        institutionProfileOtherLanguages,
+        socialMedias,
       } = this.state.institution;
 
       // where does institutionName from db map to? it shows in the breadcrumb
@@ -67,10 +70,19 @@ class Page00701 extends React.Component {
       institution.Overview.academicCalendar = apiInstitution.academicCalendar;
       institution.Overview.foundedYear = apiInstitution.founded;
       institution.Overview.alumni = apiInstitution.alumini;
+
+      // Need to remove the "Primary:" from the db field.
       institution.Overview.primaryLanguage = apiInstitution.language;
-      // comes in json as single string entry but need an array of strings. Need to remove the "Primary:" from the db field.
+
+      //   institutionProfileOtherLanguages contains an array of objects.
+      //      Each object contains an id and an otherLanguage object.
+      //      Each otherLanguage object contains an id and a name (string).
+      //   Each institution_profile can have several otherLanguages contained within the institution_profile_other_language table
+      //      These otherLanguage' names are stored int the language table.
       institution.Overview.otherLanguages = [];
-      institution.Overview.otherLanguages.push(apiInstitution.otherLanguages);
+      institutionProfileOtherLanguages.map((language) =>
+        institution.Overview.otherLanguages.push(language.otherLanguage.name)
+      );
 
       // need to fix overview text so that it's not split across two fields.
       institution.Overview.description1 = apiInstitution.overview;
@@ -79,13 +91,49 @@ class Page00701 extends React.Component {
       institution.Overview.president = apiInstitution.president;
       institution.Overview.employees = apiInstitution.totalEmployees;
 
-      //  only 1 db field but should be able to store more.
+      //   institutionProfileInstitutionType contains an array of objects.
+      //      Each object contains an id and an institution_type object.
+      //      Each institution_type object contains an id and a name (string).
+      //   Each institution_profile can have several institution_types contained within the institution_profile_institution_type table
+      //      These institution_types' names are stored int the institution_type table.
       institution.Overview.type = [];
-      institution.Overview.type.push(apiInstitution.insType);
+      institutionProfileInstitutionTypes.map((type) =>
+        institution.Overview.type.push(type.institution_type.name)
+      );
 
-      institution.ContactInfo.Locations[0].name = apiInstitution.campusName;
+      // comes in json as an array of objects with two relevant fields
+      //  "socialMedia" contains which social media is referenced current values supported are
+      //        facebook, twitter, instagram, linkedin, youtube
+      //  "url" contains the url to the institution's social media account
+      institution.Overview.facebookLink = null;
+      institution.Overview.twitterLink = null;
+      institution.Overview.instagramLink = null;
+      institution.Overview.linkedinLink = null;
+      institution.Overview.youtubeLink = null;
+      socialMedias.map((socialMedia) => {
+        let sm = socialMedia.socialMedia;
+        let url = socialMedia.url;
+        switch (sm) {
+          case "facebook":
+            institution.Overview.facebookLink = url;
+            break;
+          case "twitter":
+            institution.Overview.twitterLink = url;
+            break;
+          case "instagram":
+            institution.Overview.instagramLink = url;
+            break;
+          case "linkedin":
+            institution.Overview.linkedinLink = url;
+            break;
+          case "youtube":
+            institution.Overview.youtubeLink = url;
+            break;
+          default:
+            break;
+        }
+      });
 
-      // missing country and continent
       institution.ContactInfo.address.name1 = institutionContact.mailingName;
       institution.ContactInfo.address.name2 = institutionContact.department;
       institution.ContactInfo.address.address1 = institutionContact.address1;
@@ -93,29 +141,29 @@ class Page00701 extends React.Component {
       institution.ContactInfo.address.city = institutionContact.city;
       institution.ContactInfo.address.zipcode = institutionContact.postalCode;
       institution.ContactInfo.address.state = institutionContact.state;
+      institution.ContactInfo.address.country = institutionContact.country;
+      institution.ContactInfo.address.continent = institutionContact.continent;
       institution.ContactInfo.email = institutionContact.email;
       institution.ContactInfo.phone = institutionContact.officeNumber;
       institution.ContactInfo.fax = institutionContact.faxNumber;
       institution.ContactInfo.url = institutionContact.website;
 
-      // prototype shows multiple location addresses but db only has one.
-      //  database record contains timezone field but nothing on prototype
-      institution.ContactInfo.Locations[0].name =
-        institutionLocation.mailingName;
-      institution.ContactInfo.Locations[0].institution =
-        institutionLocation.department;
-      institution.ContactInfo.Locations[0].address1 =
-        institutionLocation.address1;
-      institution.ContactInfo.Locations[0].address2 =
-        institutionLocation.address2;
-      institution.ContactInfo.Locations[0].city = institutionLocation.city;
-      institution.ContactInfo.Locations[0].zipcode =
-        institutionLocation.postalCode;
-      institution.ContactInfo.Locations[0].state = institutionLocation.state;
-      institution.ContactInfo.Locations[0].country =
-        institutionLocation.country;
-      institution.ContactInfo.Locations[0].continent =
-        institutionLocation.region;
+      // each institution can have multiple locations. A location is different from the contact information above.
+      // database contains timezone field but HTML does not support this as of now.
+      institution.ContactInfo.Locations = [];
+      institutionLocationInfos.map((location, index) => {
+        institution.ContactInfo.Locations[index] = {
+          name: location.name,
+          institution: location.institution,
+          address1: location.address1,
+          address2: location.address2,
+          city: location.city,
+          state: location.state,
+          country: location.country,
+          zipcode: location.postalCode,
+          continent: location.region,
+        };
+      });
 
       //  updated fields for student body, faculty information and academic information.
       institution.StudentBodyInfo.asofTerm = studentDetails.term;
@@ -207,6 +255,8 @@ class Page00701 extends React.Component {
       recognitions.map((recognition) =>
         institution.Academic.recognitions.push(recognition.recognition)
       );
+    } else if (this.state.error) {
+      // error condition in url request
     }
 
     return (
