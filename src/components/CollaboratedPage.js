@@ -5,8 +5,6 @@ import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
-const breadCrumbList = ["Home", "My Projects", "New Project"];
-
 class Page extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;

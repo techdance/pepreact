@@ -183,7 +183,7 @@ class CourseDiscussionContainer extends React.Component {
     return (
       <>
         <RenderHeader course={course} location={location} term={term} />
-        if ({screen} === 1) {<this.renderListofDiscussions course={course} />}
+        {screen === 1 && this.renderListofDiscussions(course)}
       </>
     );
   }

@@ -15,18 +15,13 @@ import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/fontawesome-all.css";
 
-import ExampleGordon00300Page from "./components/ExampleGordon00300Page.js";
 import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
-import ExampleBrittany0120XPage from "./components/ExampleBrittany0120XPage.js";
-import ExampleGordon01404Page from "./components/ExampleGordon01404Page.js";
 
+// these two pages use backend API so don't change yet.
 import Page03601 from "./components/Page03601.js";
-
-import Page00511 from "./components/Page00511.js";
-import Page00108 from "./components/Page00108.js";
-
 import Page00701 from "./components/Page00701.js";
-// CollaboratedPage shows the left menu, top menu and breadcrumb; Then it renders the page body (old name container) using a render prop component
+
+// CollaboratedPage and InspiredPage shows the left menu, top menu and breadcrumb; Then it renders the page body (old name container) using a render prop component
 import CollaboratedPage from "./components/CollaboratedPage.js";
 import CreateProject from "./components/Page/0103X/createProject.js";
 import EditProject from "./components/Page/0103X/editProject.js";
@@ -34,12 +29,18 @@ import EditProject from "./components/Page/0103X/editProject.js";
 import InspiredPage from "./components/InspiredPage.js";
 import EditProfileContainer from "./components/Page/00600_editProfile/editProfileContainer.js";
 import ViewProfileContainer from "./components/Page/00500_viewProfile/viewProfileContainer.js";
+import ViewProfileOtherUserContainer from "./components/Page/00501_viewProfileOtherUser/viewProfileOtherUserContainer.js";
+import ProfessorMessagesReceivedContainer from "./components/Page/00108_showProfessorMessagesReceived/professorMessagesReceivedContainer.js";
+import AdministratorHomePageContainer from "./components/Page/00300_showAdminHomePage/adminHomePageContainer.js";
+import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/reportDrillDownContainer.js";
+import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion.js/courseDiscussionContainer.js";
 
 import {
   gordonPageOwner,
   inezPageOwner,
   bradleyPageOwner,
   pamelaPageOwner,
+  brittanyPageOwner,
 } from "./data/pageOwner.js";
 import {
   gordonProfessor,
@@ -47,6 +48,8 @@ import {
   pamelaIT,
   inezProfessor,
 } from "./data/professor";
+import { administratorGordon } from "./data/administrator.js";
+import { student } from "./data/student.js";
 import { institution } from "./data/institution.js";
 
 import { menuItems } from "./data/institution.js";
@@ -61,11 +64,34 @@ function App() {
           </Route> */}
 
           {/* Inez Pages */}
-          <Route exact path="/ExampleInez-00108">
-            <Page00108 pageOwner={inezPageOwner} />
+          <Route exact path="/05IN_00108">
+            {/* <Page00108 pageOwner={inezPageOwner} /> */}
+
+            <InspiredPage
+              render={(professor) => (
+                <ProfessorMessagesReceivedContainer professor={inezPageOwner} />
+              )}
+              breadcrumb={["Home", "Messages", "Received"]}
+              menuItems={menuItems}
+              pageOwner={inezPageOwner}
+            />
           </Route>
-          <Route exact path="/ExampleInez-00511">
-            <Page00511 pageOwner={inezPageOwner} profile={bradleyProfessor} />
+          <Route exact path="/05IN_00511">
+            {/* <Page00511 pageOwner={inezPageOwner} profile={bradleyProfessor} /> */}
+
+            <InspiredPage
+              render={(profile) => (
+                <ViewProfileOtherUserContainer profile={bradleyProfessor} />
+              )}
+              breadcrumb={[
+                "Home",
+                "Messages",
+                "Project Invites",
+                "Bradley Dexter",
+              ]}
+              menuItems={menuItems}
+              pageOwner={inezPageOwner}
+            />
           </Route>
           <Route exact path="/ExampleInez-00701">
             <Page00701 pageOwner={inezPageOwner} institution={institution} />
@@ -114,11 +140,33 @@ function App() {
           </Route>
 
           {/* Gordon Pages */}
-          <Route exact path="/ExampleGordon-01404">
-            <ExampleGordon01404Page />
+          <Route exact path="/02IN_01404">
+            {/* <ExampleGordon01404Page /> */}
+
+            <InspiredPage
+              render={() => <ReportDrillDownContainer />}
+              breadcrumb={[
+                "Home",
+                "Reports & Assessment",
+                "Retention Rates by College",
+              ]}
+              menuItems={menuItems}
+              pageOwner={gordonPageOwner}
+            />
           </Route>
-          <Route exact path="/ExampleGordon-00300">
-            <ExampleGordon00300Page />
+          <Route exact path="/02IN_00300">
+            {/* <ExampleGordon00300Page /> */}
+
+            <InspiredPage
+              render={(administrator) => (
+                <AdministratorHomePageContainer
+                  administrator={administratorGordon}
+                />
+              )}
+              breadcrumb={["Home"]}
+              menuItems={menuItems}
+              pageOwner={gordonPageOwner}
+            />
           </Route>
           <Route exact path="/02IN_00500">
             {/* <Page00500
@@ -146,9 +194,6 @@ function App() {
               pageOwner={gordonPageOwner}
             />
           </Route>
-          <Route exact path="/ExampleGordon-01404">
-            <ExampleGordon01404Page />
-          </Route>
 
           {/* Bradley Pages */}
           <Route exact path="/01IN_00500">
@@ -166,8 +211,21 @@ function App() {
               pageOwner={bradleyPageOwner}
             />
           </Route>
-          <Route exact path="/ExampleBradley-00511">
-            <Page00511 pageOwner={bradleyPageOwner} profile={inezProfessor} />
+          <Route exact path="/01IN_00511">
+            {/* <Page00511 pageOwner={bradleyPageOwner} profile={inezProfessor} /> */}
+            <InspiredPage
+              render={(profile) => (
+                <ViewProfileOtherUserContainer profile={inezProfessor} />
+              )}
+              breadcrumb={[
+                "Home",
+                "Messages",
+                "Project Invites",
+                "Inez Campos",
+              ]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
           </Route>
           <Route exact path="/01IN_00600">
             <InspiredPage
@@ -183,7 +241,34 @@ function App() {
             <Page00701 pageOwner={bradleyPageOwner} institution={institution} />
           </Route>
 
-          {/* Bradley CollaboratED pages */}
+          {/* Brittany Pages */}
+          <Route exact path="/ExampleBrittany-00300">
+            <ExampleBrittany00300Page />
+          </Route>
+          <Route exact path="/03IN_01206">
+            {/* <ExampleBrittany0120XPage /> */}
+            <InspiredPage
+              render={(course, location, term, screen) => (
+                <CourseDiscussionContainer
+                  course={student.courses[1]}
+                  location={"Online"}
+                  term={"Spring 2020"}
+                  screen={1}
+                />
+              )}
+              breadcrumb={[
+                "Home",
+                "My Courses",
+                "Ethics in Multinational Management",
+                "Discussion",
+              ]}
+              menuItems={menuItems}
+              pageOwner={brittanyPageOwner}
+            />
+          </Route>
+
+          {/* CollaboratED pages */}
+          {/* Bradley */}
           <Route exact path="/01CL_01033">
             <CollaboratedPage
               render={() => <CreateProject />}
@@ -200,13 +285,13 @@ function App() {
               pageOwner={bradleyPageOwner}
             />
           </Route>
-
-          {/* Brittany Pages */}
-          <Route exact path="/ExampleBrittany-00300">
-            <ExampleBrittany00300Page />
-          </Route>
-          <Route exact path="/ExampleBrittany-0120X">
-            <ExampleBrittany0120XPage />
+          <Route exact path="/01CL_01300">
+            <CollaboratedPage
+              render={() => <></>}
+              breadcrumb={["Home", "Profile", "Matches"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
           </Route>
 
           <Route path="/">

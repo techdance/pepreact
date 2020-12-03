@@ -6,11 +6,7 @@ import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 
-import { menuItems } from "../data/administrator.js";
-
-const breadCrumbList = ["Home", "Profile", "Edit Profile"];
-
-class Page00600 extends React.Component {
+class InspiredPage extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
     let profile = this.props.profile;
@@ -56,4 +52,4 @@ class Page00600 extends React.Component {
   }
 }
 
-export default Page00600;
+export default InspiredPage;
