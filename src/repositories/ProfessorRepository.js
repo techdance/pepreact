@@ -26,6 +26,106 @@ export const getProfessorMatches = function (professor) {
       institutionName: "Universidad de Lisboa",
       institutionLocation: "Lisbon, PRT",
     },
+    {
+      image: "images/Joanna.png",
+      firstName: "Joanna",
+      lastName: "Byrne",
+      prefix: "Ph.D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Vice Dean",
+      department: "Business Management",
+      institutionName: "National University of Ireland, Galway",
+      institutionLocation: "Galway, IRE",
+    },
+    {
+      image: "images/Li.png",
+      firstName: "Li",
+      lastName: "Wei",
+      prefix: "Ph.D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Management",
+      department: "Professor",
+      institutionName: "Shanghai University",
+      institutionLocation: "Shanghai, CHN",
+    },
+    {
+      image: "images/Denaye.png",
+      firstName: "Denaye",
+      lastName: "Thompson",
+      prefix: "Ph.D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Senior Lecturer",
+      department: "Department of Management",
+      institutionName: "Charles Stuart University",
+      institutionLocation: "Bathurst, AUS",
+    },
+    {
+      image: "images/Juan.png",
+      firstName: "Juan",
+      lastName: "Tyler",
+      prefix: "D.B.A.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Assistant Professor",
+      department: "International Business",
+      institutionName: "Linfield College",
+      institutionLocation: "Linfield, OR, USA",
+    },
+    {
+      image: "images/Fadhili.png",
+      firstName: "Fadhili",
+      lastName: "Kiserian",
+      prefix: "Ph. D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Department Chair",
+      department: "Economics",
+      institutionName: "Maseno University",
+      institutionLocation: "Maseno, Kisumu, KEN",
+    },
+    {
+      image: "images/Sara.png",
+      firstName: "Sara",
+      lastName: "McCabe",
+      prefix: "M.B.A.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Professor",
+      department: "Business & Finance",
+      institutionName: "Oklahoma City Community College",
+      institutionLocation: "Oklahoma City, OK, USA",
+    },
+    {
+      image: "images/Mani.png",
+      firstName: "Mani",
+      lastName: "Patel",
+      prefix: "Ph. D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Faculty",
+      department: "Business and Economics",
+      institutionName: "The University of Winnipeg",
+      institutionLocation: "Winnipeg, Manitoba, CAN",
+    },
+    {
+      image: "images/Michael.png",
+      firstName: "Michael",
+      lastName: "Hauer",
+      prefix: "Ph. D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Associate Professor",
+      department: "Management",
+      institutionName: "University of Connecticut",
+      institutionLocation: "Mansfield, CT, USA",
+    },
+    {
+      image: "images/Aileen.png",
+      firstName: "Aileen",
+      lastName: "Apfelbaum",
+      prefix: "Ph. D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Lecturer",
+      department: "Business",
+      institutionName: "University of Giessen",
+      institutionLocation: "Giessen, Hesse, DEU",
+    },
+    {
+      image: "images/Rosa.png",
+      firstName: "Rosalice",
+      lastName: "Santos",
+      prefix: "Ph. D.", // this is not correct. Not sure there is a field in professor profile that contains this.
+      title: "Dean",
+      department: "International Business",
+      institutionName: "University of São Paulo",
+      institutionLocation: "São Paulo, BRA",
+    },
   ];
 
   searchResults.map((result) => {
