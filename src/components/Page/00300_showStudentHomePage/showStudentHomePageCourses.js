@@ -1,22 +1,5 @@
 import React from "react";
-
-class Knob extends React.Component {
-  // javascript plugin that renders knob. See https://github.com/aterrien/jQuery-Knob
-
-  componentDidMount() {
-    /* global $ */
-    this.$tag = $(this.props.tag);
-    this.$tag.knob();
-  }
-
-  componentWillUnmount() {
-    this.$tag.knob("destroy");
-  }
-
-  render() {
-    return <div ref={(el) => (this.el = el)}></div>;
-  }
-}
+import Knob from "../../UI/Knob.js";
 
 class ShowStudentHomePageAcademics extends React.Component {
   render() {

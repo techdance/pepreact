@@ -6,7 +6,7 @@ import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 
 import InsitutionProfilePageContainer from "./Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
-import { menuItems } from "../data/institution.js";
+import { menuItems } from "../data/menuItems.js";
 
 const breadCrumbList = ["Home", "Institution Profiles", "AHEA University"];
 

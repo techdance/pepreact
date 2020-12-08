@@ -1,7 +1,14 @@
-import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
-import { disciplineList } from "../../../data/disciplines.js";
+import { projectTypeList } from "../data/areaOfInterestProjectType.js";
+import { disciplineList } from "../data/disciplines.js";
+
+class Task {
+  name = null;
+  dueDate = null;
+}
 
 class Project {
+  id = ""; // mimics project id from database.
+  professorId = ""; // a professor can have several projects
   projectType = "";
   discipline1 = "";
   discipline2 = "";
@@ -12,6 +19,10 @@ class Project {
   startDate = ""; // this is different from area of interest. but area of interest was halted because modal was re-designed
   endDate = ""; // this is different from area of interest.
   created = false; // shows in the modal for area of interest
+
+  progress = "0"; //% tasks done
+  projectTasks = []; // array of Task objects
+  projectPartners = []; // array of Professor objects
 
   constructor() {
     let current = new Date();

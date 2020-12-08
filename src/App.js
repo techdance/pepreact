@@ -6,14 +6,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import Register from "./components/Register";
 import Login from "./components/Login";
 
-import "./assets/css/react-select.css";
+import "./assets/css/fontawesome-all.css";
+
 import "./assets/css/sidebar.css";
 import "./assets/css/style.css";
-import "./assets/css/style-custom-icon.css";
 import "./assets/css/responsive.css";
+import "./assets/css/style-custom-icon.css";
+
 import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
-import "./assets/css/fontawesome-all.css";
+import "./assets/css/react-select.css";
 
 import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
 
@@ -34,6 +36,8 @@ import ProfessorMessagesReceivedContainer from "./components/Page/00108_showProf
 import AdministratorHomePageContainer from "./components/Page/00300_showAdminHomePage/adminHomePageContainer.js";
 import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/reportDrillDownContainer.js";
 import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion.js/courseDiscussionContainer.js";
+import ShowMatches from "./components/Page/01300/ShowMatches.js";
+import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
 
 import {
   gordonPageOwner,
@@ -52,7 +56,7 @@ import { administratorGordon } from "./data/administrator.js";
 import { student } from "./data/student.js";
 import { institution } from "./data/institution.js";
 
-import { menuItems } from "./data/institution.js";
+import { menuItems } from "./data/menuItems.js";
 
 function App() {
   return (
@@ -287,10 +291,29 @@ function App() {
           </Route>
           <Route exact path="/01CL_01300">
             <CollaboratedPage
-              render={() => <></>}
+              render={() => <ShowMatches />}
               breadcrumb={["Home", "Profile", "Matches"]}
               menuItems={menuItems}
               pageOwner={bradleyPageOwner}
+            />
+          </Route>
+          <Route exact path="/01CL_03100">
+            {/* "id" is the id of the professor record for whom we need to show the projects. Here "1" is a dummy for Bradley */}
+            <CollaboratedPage
+              render={() => <ShowMyProjects id="1" />}
+              breadcrumb={["Home", "My Projects"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
+          </Route>
+
+          {/* Inez */}
+          <Route exact path="/05CL_03100a">
+            <CollaboratedPage
+              render={() => <ShowMyProjects id="2" />}
+              breadcrumb={["Home", "My Projects"]}
+              menuItems={menuItems}
+              pageOwner={inezPageOwner}
             />
           </Route>
 

@@ -468,11 +468,11 @@ export const bradleyPageOwner = {
   },
 
   badges: [
-    // {
-    //   name: "Networking",
-    //   icon: "fa-chart-network",
-    //   iconColor: "#6C38",
-    // },
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
   ],
 
   alerts: [

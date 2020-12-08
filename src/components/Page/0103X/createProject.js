@@ -1,6 +1,6 @@
 import React from "react";
 
-import Project from "./Project.js";
+import Project from "../../../classes/Project.js";
 import ProjectFormPage from "./ProjectFormPage.js";
 
 class CreateProject extends React.Component {

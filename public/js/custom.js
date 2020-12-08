@@ -1,4 +1,132 @@
+function keyPressActivity(e, week_id, value){
+	if (e.keyCode == 13) {
+		var code = 1000 + Math.floor(Math.random() * 6000000);
+		hideInput('activity',week_id);
+        jQuery('.td-activity-'+week_id).append("<div class='font14 wrap-fontawesome activity-"+week_id+"-"+code+"'><i class='fas fa-chevron-circle-right color-orange fa-2x'></i> "+value+"</div>");
+        jQuery('.td-activity-modal-'+week_id).append("<div class='d-flex align-items-center form-group mb-1 activity-"+week_id+"-"+code+"'><a href='javascript::void(0);' class='color-orange font20 mr-1' onclick=\"removeInput('activity-"+week_id+"-"+code+"')\"><i class='fas fa-minus-circle fas-16'></i></a><input type='text' value='"+value+"' class='input2 bg-grey-light border-none'></div>");
+    }
+}
+
+function keyPressContent(e, week_id, value){
+	if (e.keyCode == 13) {
+		var code = 1000 + Math.floor(Math.random() * 6000000);
+		hideInput('content',week_id);
+        jQuery('.td-content-'+week_id).append("<div class='font14 wrap-fontawesome content-"+week_id+"-"+code+"'><i class='fas fa-chevron-circle-right color-orange fa-2x'></i> "+value+"</div>");
+        jQuery('.td-content-modal-'+week_id).append("<div class='d-flex align-items-center form-group mb-1 content-"+week_id+"-"+code+"'><a href='javascript::void(0);' class='color-orange font20 mr-1' onclick=\"removeInput('content-"+week_id+"-"+code+"')\"><i class='fas fa-minus-circle fas-16'></i></a><input type='text' value='"+value+"' class='input2 bg-grey-light border-none'></div>");
+    }
+}
+
+function removeInput(code){
+	jQuery("."+code).remove();
+}
+function hideInput(type, code){
+	jQuery(".td-"+type+"-"+code+"-input").hide();
+}
+
 jQuery(function() {
+	jQuery('.btn-week').click(function(){
+		jQuery(this).toggleClass('show');
+	});
+
+	jQuery("#btn-expand").click(function(){
+
+		var x = document.getElementById("span-text");
+		if (x.innerHTML === "Expand All") {
+			x.innerHTML = "Collapse All";
+		} else {
+			x.innerHTML = "Expand All";
+		}
+
+		jQuery(".btn-accordeon").toggleClass("collapsed");
+		jQuery(".multi-collapse").toggleClass("show");
+
+	});
+	jQuery(".toltip-open").click(function(e){
+		e.stopPropagation();
+		jQuery(this).find(".toltip5").slideToggle();
+	});
+
+	jQuery(".add-activity").click(function(){
+		var id=jQuery(this).data('activity');
+		jQuery('.td-activity-'+id+'-input').toggle();
+	});
+
+	jQuery(".add-content").click(function(){
+		var id=jQuery(this).data('content');
+		jQuery('.td-content-'+id+'-input').toggle();
+	});
+
+	jQuery('.week-co').click(function(){
+		jQuery(this).find('.dropdown_week').slideToggle(300);
+	});
+
+	jQuery('.btn-course-objetive-week').click(function(){
+		var btn, week, content;
+		btn = jQuery(this).data('btn');
+		week_id = jQuery(this).data('week');
+		content = jQuery(this).html();
+
+		jQuery(".wrap-modal-course-objectives-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-course-objetives-"+week_id+"-"+btn+"'><a href='javascript::void(0);' class='color-orange font20 mr-1 ml--25' onclick=\"removeInput('content-course-objetives-"+week_id+"-"+btn+"')\"><i class='fas fa-minus-circle fas-16'></i></a> "+content+"</div>");
+
+		jQuery(".wrap-course-objectives-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-course-objetives-"+week_id+"-"+btn+"'><i class='fas fa-chevron-circle-right color-orange fa-2x ml--25'></i> "+content+"</div>");
+	});
+
+	jQuery('.btn-learning-week').click(function(){
+		var btn, week, content;
+		btn = jQuery(this).data('btn');
+		week_id = jQuery(this).data('week');
+		content = jQuery(this).html();
+
+		jQuery(".wrap-modal-learning-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><a href='javascript::void(0);' class='color-orange font20 mr-1 ml--25' onclick=\"removeInput('content-learning-"+week_id+"-"+btn+"')\"><i class='fas fa-minus-circle fas-16'></i></a> "+content+"</div>");
+
+		jQuery(".wrap-learning-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><i class='fas fa-chevron-circle-right color-orange fa-2x ml--25'></i> "+content+"</div>");
+	});
+	jQuery('.btn-activity-week').click(function(){
+		var btn, week, content;
+		btn = jQuery(this).data('btn');
+		week_id = jQuery(this).data('week');
+		content = jQuery(this).html();
+
+		jQuery(".wrap-modal-activity-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><a href='javascript::void(0);' class='color-orange font20 mr-1 ml--25' onclick=\"removeInput('content-learning-"+week_id+"-"+btn+"')\"><i class='fas fa-minus-circle fas-16'></i></a> "+content+"</div>");
+
+		/*jQuery(".wrap-modal-activity-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><i class='fas fa-chevron-circle-right color-orange fa-2x ml--25'></i> "+content+"</div>");*/
+	});
+	jQuery('.btn-content-week').click(function(){
+		var btn, week, content;
+		btn = jQuery(this).data('btn');
+		week_id = jQuery(this).data('week');
+		content = jQuery(this).html();
+
+		jQuery(".wrap-modal-content-box-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><a href='javascript::void(0);' class='color-orange font20 mr-1 ml--25' onclick=\"removeInput('content-learning-"+week_id+"-"+btn+"')\"><i class='fas fa-minus-circle fas-16'></i></a> "+content+"</div>");
+
+		/*jQuery(".wrap-modal-activity-content-week-" + week_id).append("<div class='pl-25 mb-2 font14 wrap-fontawesome content-learning-"+week_id+"-"+btn+"'><i class='fas fa-chevron-circle-right color-orange fa-2x ml--25'></i> "+content+"</div>");*/
+	});
+
+
+
+	jQuery(function () {
+	  jQuery('[data-toggle="tooltip"]').tooltip();
+	});
+	jQuery("#email-toltip .toltip-content p").text(function(index, currentText) {
+	    if(currentText.length > 140)
+	    	return currentText.substr(0, 140)+"...";
+	    else
+	    	return currentText;
+	});
+	jQuery('.tab-btn-acordion').click(function(){
+
+		jQuery('#table-collapse-1').hide();
+		jQuery('#table-collapse-2').hide();
+		jQuery('#table-collapse-3').hide();
+		jQuery('#table-collapse-4').hide();
+		jQuery('#table-collapse-5').hide();
+		jQuery('#table-collapse-6').hide();
+
+
+		id=jQuery(this).data('acordion-id');
+		jQuery('#table-collapse-'+id).toggle();
+		//alert(jQuery(this).data('acordion-id'));
+	});
 	jQuery("#menu-button-hide-show").click(function(){
 		if(jQuery( "#sidebar" ).hasClass( "hidden" )){
 			jQuery(this).removeClass("icon-arrow-right");
@@ -20,7 +148,7 @@ jQuery(function() {
 		}
 	});
 
-jQuery('.dropdown a').click(function(){
+	jQuery('.dropdown a').click(function(){
     	jQuery('.dropdown-menu').toggle();
     });
 
@@ -89,6 +217,50 @@ jQuery('.dropdown a').click(function(){
 		jQuery("#membership-3").hide();
 	});
 
+	jQuery("#remove-course-1").click(function(e){
+		e.stopPropagation();
+		jQuery("#course-1").hide();
+	});
+	jQuery("#remove-course-2").click(function(e){
+		e.stopPropagation();
+		jQuery("#course-2").hide();
+	});
+	jQuery("#remove-course-3").click(function(e){
+		e.stopPropagation();
+		jQuery("#course-3").hide();
+	});
+	jQuery("#remove-course-4").click(function(e){
+		e.stopPropagation();
+		jQuery("#course-4").hide();
+	});
+	jQuery("#remove-course-5").click(function(e){
+		e.stopPropagation();
+		jQuery("#course-5").hide();
+	});
+	jQuery("#remove-courseobj-1").click(function(e){
+		e.stopPropagation();
+		jQuery("#courseobj-1").hide();
+	});
+	jQuery("#remove-courseobj-2").click(function(e){
+		e.stopPropagation();
+		jQuery("#courseobj-2").hide();
+	});
+	jQuery("#remove-courseobj-3").click(function(e){
+		e.stopPropagation();
+		jQuery("#courseobj-3").hide();
+	});
+	jQuery("#remove-courselearn-1").click(function(e){
+		e.stopPropagation();
+		jQuery("#courselearn-1").hide();
+	});
+	jQuery("#remove-courselearn-2").click(function(e){
+		e.stopPropagation();
+		jQuery("#courselearn-2").hide();
+	});
+	jQuery("#remove-courselearn-3").click(function(e){
+		e.stopPropagation();
+		jQuery("#courselearn-3").hide();
+	});
 
 	jQuery("#add-certificate").click(function(e){
 		e.stopPropagation();
@@ -108,6 +280,11 @@ jQuery('.dropdown a').click(function(){
 	jQuery("#add-area").click(function(e){
 		e.stopPropagation();
 		jQuery(".area").show();
+	});
+
+	jQuery("#remove-area-1").click(function(e){
+		e.stopPropagation();
+		jQuery("#area-1").hide();
 	});
 
 	jQuery("#remove-area-2").click(function(e){
@@ -430,3 +607,4 @@ function decline_row(row){
 	if(confirm('Are you sure to decline?'))
 		jQuery("#Project_Invites_" + row).remove();
 }
+

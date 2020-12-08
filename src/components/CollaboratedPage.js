@@ -13,38 +13,38 @@ class Page extends React.Component {
 
     return (
       <>
-        <div className="bg-grey-popup">
-          <div id="menu-top-responsive" className="">
-            <div id="wrap-logo">
-              <a href="#0">
-                <img src="images/logo.png" alt="" />
-              </a>
-              <a href="#0" id="menu-button-responsive">
-                <i className="fas fa-bars"></i>
-              </a>
-            </div>
+        <div id="menu-top-responsive" className="">
+          <div id="wrap-logo">
+            <a href="#0">
+              <img src="images/logo.png" alt="" />
+            </a>
+            <a href="#0" id="menu-button-responsive">
+              <i className="fas fa-bars"></i>
+            </a>
           </div>
-          <ShowMobileSideBarMenu />
-          <div id="container">
-            <ShowSideBarMenu
-              owner={pageOwner}
-              menuItems={menuItems}
-              activeMenuItem={"Home"}
-            />
-            <div id="content" className="">
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <ShowTopMenu
-                      owner={pageOwner}
-                      alerts={alerts}
-                      messages={messages}
-                      badges={badges}
-                    />
-                    <ShowBreadCrumb breadCrumbList={breadCrumb} />
+        </div>
 
-                    {this.props.render()}
-                  </div>
+        <ShowMobileSideBarMenu />
+
+        <div id="container">
+          <ShowSideBarMenu
+            owner={pageOwner}
+            menuItems={menuItems}
+            activeMenuItem={"Home"}
+          />
+          <div id="content" className="">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-lg-12">
+                  <ShowTopMenu
+                    owner={pageOwner}
+                    alerts={alerts}
+                    messages={messages}
+                    badges={badges}
+                  />
+                  <ShowBreadCrumb breadCrumbList={breadCrumb} />
+
+                  {this.props.render()}
                 </div>
               </div>
             </div>

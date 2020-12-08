@@ -43,8 +43,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011374', end
     position: -webkit-sticky;
     position: sticky;
 }
+.sidebar-fixed.hidden img{
+    width: 50px;
+}
 #sidebar.hidden ul#nav > li > a {
-    
+
     padding-left:15px !important;
 }
 

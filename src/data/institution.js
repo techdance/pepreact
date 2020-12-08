@@ -165,17 +165,3 @@ export const institutionTypes = [
   { value: "Female-only", label: "Female-only" },
   { value: "Male-only", label: "Male-only" },
 ];
-
-export const menuItems = [
-  { name: "Home", link: "#0", icon: "icon-home" },
-  { name: "My Calendar", link: "#0", icon: "icon-calendar" },
-  { name: "Tasks", link: "#0", icon: "icon-clipboard-list" },
-  { name: "Committees", link: "#0", icon: "icon-user-class icon-solid" },
-  { name: "Reports", link: "#0", icon: "icon-chart-bar" },
-  { name: "CollaboratED Engagement", link: "#0", icon: "icon-globe" },
-  { name: "BlendED LMS", link: "#0", icon: "icon-blender" },
-  { name: "ConnectED Student", link: "#0", icon: "icon-university" },
-  { name: "My Files", link: "#0", icon: "icon-copy" },
-  { name: "Resources", link: "#0", icon: "icon-th-large" },
-  { name: "Settings", link: "#0", icon: "icon-settings" },
-];
