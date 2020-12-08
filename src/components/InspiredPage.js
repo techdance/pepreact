@@ -9,12 +9,12 @@ import ShowTowerLogo from "./Navigation/showTowerLogo.js";
 class InspiredPage extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
-    let profile = this.props.profile;
-    const IT = this.props.IT;
+
     const breadCrumb = this.props.breadcrumb;
     const menuItems = this.props.menuItems;
     const edit = this.props.edit;
 
+    console.log(this.props.render);
     return (
       <>
         <div id="menu-top-responsive" className="">
@@ -40,7 +40,7 @@ class InspiredPage extends React.Component {
                   />
                   <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
-                  {this.props.render(profile, IT)}
+                  {this.props.render()}
                 </div>
               </div>
             </div>

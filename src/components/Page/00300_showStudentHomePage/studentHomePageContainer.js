@@ -17,6 +17,8 @@ import ShowStudentHomePageCampusFeeds from "./showStudentHomePageCampusFeeds.js"
 
 class StudentHomePageContainer extends React.Component {
   render() {
+    console.log(this.props);
+
     const {
       announcements,
       groups,

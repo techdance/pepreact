@@ -17,8 +17,6 @@ import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/react-select.css";
 
-import ExampleBrittany00300Page from "./components/ExampleBrittany00300Page.js";
-
 // these two pages use backend API so don't change yet.
 import Page03601 from "./components/Page03601.js";
 import Page00701 from "./components/Page00701.js";
@@ -38,6 +36,7 @@ import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/re
 import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion.js/courseDiscussionContainer.js";
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
+import StudentHomePageContainer from "./components/Page/00300_showStudentHomePage/studentHomePageContainer.js";
 
 import {
   gordonPageOwner,
@@ -53,12 +52,15 @@ import {
   inezProfessor,
 } from "./data/professor";
 import { administratorGordon } from "./data/administrator.js";
-import { student } from "./data/student.js";
+import { brittanyStudent } from "./data/student.js";
 import { institution } from "./data/institution.js";
 
 import { menuItems } from "./data/menuItems.js";
 
 function App() {
+  console.log("Student: ");
+  console.log(brittanyStudent);
+
   return (
     <Router>
       <div>
@@ -250,15 +252,24 @@ function App() {
           </Route>
 
           {/* Brittany Pages */}
-          <Route exact path="/ExampleBrittany-00300">
-            <ExampleBrittany00300Page />
+          <Route exact path="/03IN_00300">
+            {/* <ExampleBrittany00300Page /> */}
+
+            <InspiredPage
+              render={(student) => (
+                <StudentHomePageContainer student={brittanyStudent} />
+              )}
+              breadcrumb={["Home"]}
+              menuItems={menuItems}
+              pageOwner={brittanyPageOwner}
+            />
           </Route>
           <Route exact path="/03IN_01206">
             {/* <ExampleBrittany0120XPage /> */}
             <InspiredPage
               render={(course, location, term, screen) => (
                 <CourseDiscussionContainer
-                  course={student.courses[1]}
+                  course={brittanyStudent.courses[1]}
                   location={"Online"}
                   term={"Spring 2020"}
                   screen={1}

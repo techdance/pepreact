@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select";
 
 import ChangeDocument from "./changeDocument.js";
+import CalendarSelector from "../../UI/CalendarSelector.js";
 
 import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
 import { disciplineList } from "../../../data/disciplines.js";
@@ -189,12 +190,13 @@ class ProjectPageContainer extends React.Component {
                     type="text"
                     id="startDate"
                     className="form-control
-                              icon-cal"
+                              icon-cal datepicker"
                     name="startDate"
                     value={startDate}
                     onChange={this.handleChange}
                   />
                 </div>
+                <CalendarSelector tag={".datepicker"} />
               </div>
               <div className="col-md-6">
                 <label htmlFor="discipline3">End Date</label>
@@ -203,12 +205,13 @@ class ProjectPageContainer extends React.Component {
                     type="text"
                     id="endDate"
                     className="form-control
-                              icon-cal"
+                              icon-cal datepicker"
                     name="endDate"
                     value={endDate}
                     onChange={this.handleChange}
                   />
                 </div>
+                <CalendarSelector tag={".datepicker"} />
               </div>
             </div>
           </div>
