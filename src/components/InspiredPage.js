@@ -14,7 +14,6 @@ class InspiredPage extends React.Component {
     const menuItems = this.props.menuItems;
     const edit = this.props.edit;
 
-    console.log(this.props.render);
     return (
       <>
         <div id="menu-top-responsive" className="">

@@ -2,11 +2,18 @@ import React from "react";
 
 class ShowStudentHomePageHolds extends React.Component {
   render() {
-    const { holds } = this.props;
+    const { holds, disabled } = this.props;
     return (
       <>
         <div className="col-lg-3 mb-4">
-          <div className="resources box box-border-radius box-shadow bg-white">
+          <div
+            className={
+              "resources box box-border-radius box-shadow bg-white" +
+              (disabled ? "  disabled" : "")
+            }
+          >
+            <div className={disabled ? "disabled-overlay" : ""}></div>
+
             <div className="inner-wrap">
               <div className="box-top position-relative">
                 <h2 className="box-subhead">

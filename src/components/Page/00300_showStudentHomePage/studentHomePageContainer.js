@@ -17,8 +17,6 @@ import ShowStudentHomePageCampusFeeds from "./showStudentHomePageCampusFeeds.js"
 
 class StudentHomePageContainer extends React.Component {
   render() {
-    console.log(this.props);
-
     const {
       announcements,
       groups,
@@ -31,16 +29,20 @@ class StudentHomePageContainer extends React.Component {
     } = this.props.student;
     return (
       <>
-        <ShowAnnouncements announcements={announcements} />
+        <ShowAnnouncements announcements={announcements} disabled={true} />
 
         <section className="three-columns">
           <div className="row row-custom mb-4 sortable">
-            <ShowStudentHomePageGroups groups={groups} />
-            <ShowStudentHomePageHolds holds={holds} />
-            <ShowStudentHomePageFinancial financials={financials} />
+            <ShowStudentHomePageGroups groups={groups} disabled={true} />
+            <ShowStudentHomePageHolds holds={holds} disabled={true} />
+            <ShowStudentHomePageFinancial
+              financials={financials}
+              disabled={true}
+            />
             <ShowStudentHomePageAcademic
               advisor={advisor}
               academics={academics}
+              disabled={true}
             />
             <ShowStudentHomePageCourses courses={courses} />
 
@@ -49,26 +51,17 @@ class StudentHomePageContainer extends React.Component {
               <div className="calendar box box-border-radius box-shadow bg-white height-auto">
                 <ShowMyCalendar calendar={calendar} />
               </div>
-              <ShowStudentHomePageCourseRegistration />
+              <ShowStudentHomePageCourseRegistration disabled={true} />
             </div>
 
+            <ShowStudentHomePageOpportunities disabled={true} />
+
+            <ShowStudentHomePageCampusServices disabled={true} />
+
+            <ShowStudentHomePageCampusFeeds disabled={true} />
+
             <div className="col-lg-3 mb-4">
-              <div className="box box-border-radius box-shadow bg-white">
-                <ShowStudentHomePageOpportunities />
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div className="box box-border-radius box-shadow bg-white">
-                <ShowStudentHomePageCampusServices />
-              </div>
-            </div>
-            <div className="col-lg-3 mb-4">
-              <div className="box box-border-radius box-shadow bg-white">
-                <ShowStudentHomePageCampusFeeds />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="create-new box box-border-radius box-shadow bg-brown-light">
+              <div className="create-new box box-border-radius box-shadow bg-brown-light">
                 <ShowDownloadSherpaApp />
               </div>
             </div>

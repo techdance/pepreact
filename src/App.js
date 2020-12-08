@@ -55,12 +55,14 @@ import { administratorGordon } from "./data/administrator.js";
 import { brittanyStudent } from "./data/student.js";
 import { institution } from "./data/institution.js";
 
-import { menuItems } from "./data/menuItems.js";
+import {
+  menuItemsProfessor,
+  menuItemsAdministrator,
+  menuItemsStudent,
+  menuItems,
+} from "./data/menuItems.js";
 
 function App() {
-  console.log("Student: ");
-  console.log(brittanyStudent);
-
   return (
     <Router>
       <div>
@@ -158,7 +160,7 @@ function App() {
                 "Reports & Assessment",
                 "Retention Rates by College",
               ]}
-              menuItems={menuItems}
+              menuItems={menuItemsAdministrator}
               pageOwner={gordonPageOwner}
             />
           </Route>
@@ -172,7 +174,7 @@ function App() {
                 />
               )}
               breadcrumb={["Home"]}
-              menuItems={menuItems}
+              menuItems={menuItemsAdministrator}
               pageOwner={gordonPageOwner}
             />
           </Route>
@@ -187,7 +189,7 @@ function App() {
                 <ViewProfileContainer profile={gordonProfessor} IT="false" />
               )}
               breadcrumb={["Home", "Profile"]}
-              menuItems={menuItems}
+              menuItems={menuItemsAdministrator}
               pageOwner={gordonPageOwner}
             />
           </Route>
@@ -198,7 +200,7 @@ function App() {
                 <EditProfileContainer profile={gordonProfessor} IT="false" />
               )}
               breadcrumb={["Home", "Profile", "Edit Profile"]}
-              menuItems={menuItems}
+              menuItems={menuItemsAdministrator}
               pageOwner={gordonPageOwner}
               edit="true"
             />
@@ -216,7 +218,7 @@ function App() {
                 <ViewProfileContainer profile={bradleyProfessor} IT="false" />
               )}
               breadcrumb={["Home", "Profile"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -232,7 +234,7 @@ function App() {
                 "Project Invites",
                 "Inez Campos",
               ]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -242,7 +244,7 @@ function App() {
                 <EditProfileContainer profile={bradleyProfessor} IT={IT} />
               )}
               breadcrumb={["Home", "Profile", "Edit Profile"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
               edit="true"
             />
@@ -260,7 +262,7 @@ function App() {
                 <StudentHomePageContainer student={brittanyStudent} />
               )}
               breadcrumb={["Home"]}
-              menuItems={menuItems}
+              menuItems={menuItemsStudent}
               pageOwner={brittanyPageOwner}
             />
           </Route>
@@ -281,7 +283,7 @@ function App() {
                 "Ethics in Multinational Management",
                 "Discussion",
               ]}
-              menuItems={menuItems}
+              menuItems={menuItemsStudent}
               pageOwner={brittanyPageOwner}
             />
           </Route>
@@ -292,7 +294,7 @@ function App() {
             <CollaboratedPage
               render={() => <CreateProject />}
               breadcrumb={["Home", "My Projects", "New Project"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -300,7 +302,7 @@ function App() {
             <CollaboratedPage
               render={() => <EditProject />}
               breadcrumb={["Home", "My Projects", "Edit Project"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -308,7 +310,7 @@ function App() {
             <CollaboratedPage
               render={() => <EditProject />}
               breadcrumb={["Home", "My Projects", "Edit Project"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -316,7 +318,7 @@ function App() {
             <CollaboratedPage
               render={() => <ShowMatches />}
               breadcrumb={["Home", "Profile", "Matches"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>
@@ -325,7 +327,7 @@ function App() {
             <CollaboratedPage
               render={() => <ShowMyProjects id="1" />}
               breadcrumb={["Home", "My Projects"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
             />
           </Route>

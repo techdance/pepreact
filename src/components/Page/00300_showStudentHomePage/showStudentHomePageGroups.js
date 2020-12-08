@@ -2,11 +2,18 @@ import React from "react";
 
 class ShowStudentHomePageGroups extends React.Component {
   render() {
-    const { groups } = this.props;
+    const { groups, disabled } = this.props;
     return (
       <>
         <div className="col-lg-3 mb-4">
-          <div className="resources box box-border-radius box-shadow bg-white">
+          <div
+            className={
+              "resources box box-border-radius box-shadow bg-white" +
+              (disabled ? "  disabled" : "")
+            }
+          >
+            <div className={disabled ? "disabled-overlay" : ""}></div>
+
             <div className="inner-wrap">
               <div className="box-top position-relative">
                 <h2 className="box-subhead">

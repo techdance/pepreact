@@ -2,11 +2,18 @@ import React from "react";
 
 class ShowStudentHomePageFinancial extends React.Component {
   render() {
-    const { financials } = this.props;
+    const { financials, disabled } = this.props;
     return (
       <>
         <div className="col-lg-3 mb-4">
-          <div className="resources box box-border-radius box-shadow bg-white">
+          <div
+            className={
+              "resources box box-border-radius box-shadow bg-white" +
+              (disabled ? "  disabled" : "")
+            }
+          >
+            <div className={disabled ? "disabled-overlay" : ""}></div>
+
             <div className="inner-wrap">
               <div className="box-top position-relative">
                 <h2 className="box-subhead">

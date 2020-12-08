@@ -47,11 +47,19 @@ class OwlCarousel extends React.Component {
 
 class ShowAnnouncements extends React.Component {
   render() {
+    const { disabled, announcements } = this.props;
+
     return (
       <>
         <section className="row row-custom announcements mb-4">
           <div className="col-lg-12">
-            <div className="box box-border-radius box-shadow bg-white w-100">
+            <div
+              className={
+                "box box-border-radius box-shadow bg-white w-100" +
+                (disabled ? "  disabled" : "")
+              }
+            >
+              <div className={disabled ? "disabled-overlay" : ""}></div>
               <h2 className="box-subhead icon-fa-box icon-bullhorn">
                 Announcements
               </h2>
@@ -60,7 +68,7 @@ class ShowAnnouncements extends React.Component {
 
               <div id="wrap-owl-announcement">
                 <div id="owl-announcement" className="owl-carousel owl-theme">
-                  {this.props.announcements.map((announcement, index) => (
+                  {announcements.map((announcement, index) => (
                     <div key={index} className="item">
                       <p>
                         {announcement.msg}{" "}
