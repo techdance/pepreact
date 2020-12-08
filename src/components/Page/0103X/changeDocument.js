@@ -16,6 +16,7 @@ class ChangeDocument extends React.Component {
   }
 
   handleClick = (event) => {
+    event.preventDefault();
     // when button is clicked, call the click function of the hidden input element
     this.hiddenFileInput.click();
   };
@@ -39,7 +40,7 @@ class ChangeDocument extends React.Component {
         </sup>
         <input
           ref={this.setHiddenFileInputRef}
-          accept=".doc, .pdf"
+          accept=".csv"
           type="file"
           style={{
             visibility: "hidden",
