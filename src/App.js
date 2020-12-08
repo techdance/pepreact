@@ -304,6 +304,14 @@ function App() {
               pageOwner={bradleyPageOwner}
             />
           </Route>
+          <Route exact path="/01CL_01035">
+            <CollaboratedPage
+              render={() => <EditProject />}
+              breadcrumb={["Home", "My Projects", "Edit Project"]}
+              menuItems={menuItems}
+              pageOwner={bradleyPageOwner}
+            />
+          </Route>
           <Route exact path="/01CL_01300">
             <CollaboratedPage
               render={() => <ShowMatches />}
