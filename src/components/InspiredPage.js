@@ -13,40 +13,39 @@ class InspiredPage extends React.Component {
     const IT = this.props.IT;
     const breadCrumb = this.props.breadcrumb;
     const menuItems = this.props.menuItems;
+    const edit = this.props.edit;
 
     return (
       <>
-        <body className="bg-grey-popup">
-          <div id="menu-top-responsive" className="">
-            <ShowTowerLogo />
-          </div>
-          <ShowMobileSideBarMenu />
-          <div id="container">
-            <ShowSideBarMenu
-              owner={pageOwner}
-              menuItems={menuItems}
-              activeMenuItem={"Home"}
-            />
-            <div id="content" className="">
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="col-lg-12">
-                    <ShowTopMenu
-                      owner={pageOwner}
-                      alerts={alerts}
-                      messages={messages}
-                      badges={badges}
-                      edit="true"
-                    />
-                    <ShowBreadCrumb breadCrumbList={breadCrumb} />
+        <div id="menu-top-responsive" className="">
+          <ShowTowerLogo />
+        </div>
+        <ShowMobileSideBarMenu />
+        <div id="container">
+          <ShowSideBarMenu
+            owner={pageOwner}
+            menuItems={menuItems}
+            activeMenuItem={"Home"}
+          />
+          <div id="content" className="">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-lg-12">
+                  <ShowTopMenu
+                    owner={pageOwner}
+                    alerts={alerts}
+                    messages={messages}
+                    badges={badges}
+                    edit={edit}
+                  />
+                  <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
-                    {this.props.render(profile, IT)}
-                  </div>
+                  {this.props.render(profile, IT)}
                 </div>
               </div>
             </div>
           </div>
-        </body>
+        </div>
       </>
     );
   }

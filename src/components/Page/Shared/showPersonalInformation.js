@@ -105,7 +105,7 @@ class ShowPersonalInformation extends React.Component {
             </div>
             {sameUser === "true" ? (
               <a
-                href="#"
+                href="#0"
                 class="btn btn-blue position-absolute btn-edit-profile"
               >
                 <span class="position-relative">

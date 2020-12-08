@@ -16,7 +16,8 @@ class ShowCommitteesAndTeams extends React.Component {
           <div className="resources box box-border-radius box-shadow bg-white">
             <div className="inner-wrap">
               <div className="box-top position-relative">
-                <h2 className="box-subhead"><span class="icon-regular icon-users-class"></span>
+                <h2 className="box-subhead">
+                  <span className="icon-regular icon-users-class"></span>
                   <span className={committeesAndTeams.titleicon}></span>
                   <a href="#0" className="hover-underline color-black">
                     {committeesAndTeams.title}

@@ -130,6 +130,7 @@ function App() {
               breadcrumb={["Home", "Profile", "Edit Profile"]}
               menuItems={menuItems}
               pageOwner={pamelaPageOwner}
+              edit="true"
             />
           </Route>
           <Route exact path="/ExamplePamela-00701">
@@ -140,6 +141,7 @@ function App() {
               pageOwner={pamelaPageOwner}
               institution={institution}
               IT="true"
+              edit="true"
             />
           </Route>
 
@@ -196,6 +198,7 @@ function App() {
               breadcrumb={["Home", "Profile", "Edit Profile"]}
               menuItems={menuItems}
               pageOwner={gordonPageOwner}
+              edit="true"
             />
           </Route>
 
@@ -239,6 +242,7 @@ function App() {
               breadcrumb={["Home", "Profile", "Edit Profile"]}
               menuItems={menuItems}
               pageOwner={bradleyPageOwner}
+              edit="true"
             />
           </Route>
           <Route exact path="/ExampleBradley-00701">

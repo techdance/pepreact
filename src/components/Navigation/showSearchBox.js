@@ -7,30 +7,30 @@ class ShowSearchBox extends React.Component {
       <>
         <div className="wrap-top-search">
           {edit === "true" ? (
-            <div class="d-flex">
-              <div class="top-search">
-                <div class="box-search">
+            <div className="d-flex">
+              <div className="top-search">
+                <div className="box-search">
                   <form action="">
                     <input type="text" placeholder="Search" />
                     <button type="submit">
-                      <i class="fas fa-search"></i>
+                      <i className="fas fa-search"></i>
                     </button>
                   </form>
                 </div>
-                <div class="box-question">
+                <div className="box-question">
                   <a href="#0">
-                    <span class="icon-solid icon-input-search"></span>
+                    <span className="icon-solid icon-input-search"></span>
                   </a>
                 </div>
               </div>
               <div>
-                <a class="btn btn-blue ml-2" href="#0">
+                <a className="btn btn-blue ml-2" href="#0">
                   Save Profile
                 </a>
               </div>
             </div>
           ) : (
-            <div class="d-flex">
+            <div className="d-flex">
               <div className="top-search">
                 <div className="box-search">
                   <form action="">
