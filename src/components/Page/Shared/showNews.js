@@ -1,9 +1,9 @@
 import React from "react";
 
+import { news } from "../../../data/news.js";
+
 class ShowNews extends React.Component {
   render() {
-    const news = this.props.news;
-
     const newsTile = {
       title: "News",
       icon: "icon-regular icon-signal-stream",

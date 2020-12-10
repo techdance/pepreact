@@ -1,7 +1,7 @@
 import React from "react";
 import Knob from "../../UI/Knob.js";
 
-class ShowStudentHomePageAcademics extends React.Component {
+class ShowStudentHomePageCourses extends React.Component {
   render() {
     const courses = this.props.courses;
 
@@ -204,4 +204,4 @@ class ShowStudentHomePageAcademics extends React.Component {
   }
 }
 
-export default ShowStudentHomePageAcademics;
+export default ShowStudentHomePageCourses;

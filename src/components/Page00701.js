@@ -110,7 +110,7 @@ class Page00701 extends React.Component {
       institution.Overview.instagramLink = null;
       institution.Overview.linkedinLink = null;
       institution.Overview.youtubeLink = null;
-      socialMedias.map((socialMedia) => {
+      for (const socialMedia of socialMedias) {
         let sm = socialMedia.socialMedia;
         let url = socialMedia.url;
         switch (sm) {
@@ -132,7 +132,7 @@ class Page00701 extends React.Component {
           default:
             break;
         }
-      });
+      }
 
       institution.ContactInfo.address.name1 = institutionContact.mailingName;
       institution.ContactInfo.address.name2 = institutionContact.department;
@@ -151,7 +151,8 @@ class Page00701 extends React.Component {
       // each institution can have multiple locations. A location is different from the contact information above.
       // database contains timezone field but HTML does not support this as of now.
       institution.ContactInfo.Locations = [];
-      institutionLocationInfos.map((location, index) => {
+      let index = 0;
+      for (const location of institutionLocationInfos) {
         institution.ContactInfo.Locations[index] = {
           name: location.name,
           institution: location.institution,
@@ -163,7 +164,8 @@ class Page00701 extends React.Component {
           zipcode: location.postalCode,
           continent: location.region,
         };
-      });
+        index++;
+      }
 
       //  updated fields for student body, faculty information and academic information.
       institution.StudentBodyInfo.asofTerm = studentDetails.term;

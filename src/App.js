@@ -37,6 +37,7 @@ import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion.
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
 import StudentHomePageContainer from "./components/Page/00300_showStudentHomePage/studentHomePageContainer.js";
+import ShowProfessorHomePage from "./components/Page/00300_ShowProfessorHomePage/showProfessorHomepage.js";
 
 import {
   gordonPageOwner,
@@ -194,7 +195,6 @@ function App() {
             />
           </Route>
           <Route exact path="/02IN_00600">
-            {/* <Page00600 pageOwner={gordonPageOwner} profile={gordonProfessor} /> */}
             <InspiredPage
               render={(profile, IT) => (
                 <EditProfileContainer profile={gordonProfessor} IT="false" />
@@ -207,12 +207,15 @@ function App() {
           </Route>
 
           {/* Bradley Pages */}
-          <Route exact path="/01IN_00500">
-            {/* <Page00500
+          <Route exact path="/01IN_00300">
+            <InspiredPage
+              render={(id) => <ShowProfessorHomePage id="1" />}
+              breadcrumb={["Home"]}
+              menuItems={menuItemsProfessor}
               pageOwner={bradleyPageOwner}
-              profile={bradleyProfessor}
-              IT="false"
-            /> */}
+            />
+          </Route>
+          <Route exact path="/01IN_00500">
             <InspiredPage
               render={(profile, IT) => (
                 <ViewProfileContainer profile={bradleyProfessor} IT="false" />
@@ -223,7 +226,6 @@ function App() {
             />
           </Route>
           <Route exact path="/01IN_00511">
-            {/* <Page00511 pageOwner={bradleyPageOwner} profile={inezProfessor} /> */}
             <InspiredPage
               render={(profile) => (
                 <ViewProfileOtherUserContainer profile={inezProfessor} />

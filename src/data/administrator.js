@@ -147,39 +147,4 @@ export const administratorGordon = {
       },
     ],
   },
-  news: [
-    {
-      source: "Inside Higher Ed",
-      sourceLink: "#",
-      title: "Study of Student Learning Outcomes",
-    },
-    { source: "AHEA", sourceLink: "#", title: "2020 Study Abroad Outlook" },
-  ],
-
-  professionalEvents: [
-    {
-      eventName: "NBEA 2020 Annual Convention and Tradeshow",
-      eventLink: "#",
-      eventDateLocation: "April 7-11, 2020 Boston, MA, USA",
-    },
-    {
-      eventName: "AACSB International Conference and Annual Meeting",
-      eventLink:
-        "https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting",
-      eventDateLocation: "April 26-28, 2020 Denver,CO USA",
-    },
-  ],
 };
-
-export const menuItems = [
-  { name: "Home", link: "#", icon: "icon-home" },
-  { name: "My Calendar", link: "#", icon: "icon-calendar" },
-  { name: "Tasks", link: "#", icon: "icon-clipboard-list" },
-  { name: "Committees", link: "#", icon: "icon-users-class" },
-  { name: "Reports", link: "#", icon: "icon-chart-bar" },
-  { name: "Program Management", link: "#", icon: "icon-chart-pie" },
-  { name: "My Projects", link: "#", icon: "icon-book-title" },
-  { name: "My Files", link: "#", icon: "icon-copy" },
-  { name: "Resources", link: "#", icon: "icon-th-large" },
-  { name: "Settings", link: "#", icon: "icon-settings" },
-];

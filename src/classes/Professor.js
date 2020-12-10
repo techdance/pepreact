@@ -10,6 +10,7 @@ class Professor {
     personalMessage: "",
     onlineStatus: "",
   };
+
   communicationPreferences = {
     languages: ["English", "NA"],
     primaryLanguage: "English",

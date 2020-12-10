@@ -1,5 +1,6 @@
 import Project from "../classes/Project.js";
 import { inezProfessor, bradleyProfessor } from "../data/professor.js";
+import { projectTypeList } from "../data/areaOfInterestProjectType.js";
 
 export const getProfessorProjects = function (id, status) {
   // simulate get projects for a professor with id=id
@@ -10,7 +11,8 @@ export const getProfessorProjects = function (id, status) {
   const searchResultsBradleyInProgress = [
     {
       id: "1",
-      projectType: "",
+      organizer: { name: "William Stinson", image: "images/imag-organ-2.jpg" },
+      projectType: projectTypeList[0],
       discipline1: "",
       discipline2: "",
       discipline3: "",
@@ -21,7 +23,7 @@ export const getProfessorProjects = function (id, status) {
       startDate: "",
       endDate: "",
       created: false,
-      progress: "0",
+      progress: "10",
       projectTasks: [
         { name: "Refine Course Identification", dueDate: "2019-12-11" },
       ],
@@ -29,7 +31,8 @@ export const getProfessorProjects = function (id, status) {
     },
     {
       id: "2",
-      projectType: "",
+      organizer: { name: "Bradley Dexter", image: "images/bradley.png" },
+      projectType: projectTypeList[1],
       discipline1: "",
       discipline2: "",
       discipline3: "",
@@ -51,7 +54,8 @@ export const getProfessorProjects = function (id, status) {
   const searchResultsBradleyPast = [
     {
       id: "3",
-      projectType: "",
+      organizer: { name: "Randy Wolff", image: "images/randy.png" },
+      projectType: projectTypeList[2],
       discipline1: "",
       discipline2: "",
       discipline3: "",
@@ -117,6 +121,8 @@ export const getProfessorProjects = function (id, status) {
           for (const result of searchResultsBradleyInProgress) {
             project = new Project();
             project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
             project.name = result.name;
             project.description = result.description;
             project.progress = result.progress;
@@ -130,6 +136,8 @@ export const getProfessorProjects = function (id, status) {
           for (const result of searchResultsBradleyPast) {
             project = new Project();
             project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
             project.name = result.name;
             project.description = result.description;
             project.progress = result.progress;
@@ -138,6 +146,35 @@ export const getProfessorProjects = function (id, status) {
 
             projects.push(project);
           }
+          break;
+        case "all":
+          for (const result of searchResultsBradleyPast) {
+            project = new Project();
+            project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
+            project.name = result.name;
+            project.description = result.description;
+            project.progress = result.progress;
+            project.projectPartners = result.projectPartners;
+            project.projectTasks = result.projectTasks;
+
+            projects.push(project);
+          }
+          for (const result of searchResultsBradleyInProgress) {
+            project = new Project();
+            project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
+            project.name = result.name;
+            project.description = result.description;
+            project.progress = result.progress;
+            project.projectPartners = result.projectPartners;
+            project.projectTasks = result.projectTasks;
+
+            projects.push(project);
+          }
+
           break;
         default:
           break;
@@ -150,6 +187,8 @@ export const getProfessorProjects = function (id, status) {
           for (const result of searchResultsInezInProgress) {
             project = new Project();
             project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
             project.name = result.name;
             project.description = result.description;
             project.progress = result.progress;
@@ -163,6 +202,8 @@ export const getProfessorProjects = function (id, status) {
           for (const result of searchResultsInezPast) {
             project = new Project();
             project.id = result.id; // dummy set project id to location in the returned array but should be included in the actual db search results.
+            project.organizer = result.organizer;
+            project.projectType = result.projectType;
             project.name = result.name;
             project.description = result.description;
             project.progress = result.progress;

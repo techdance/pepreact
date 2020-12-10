@@ -1,14 +1,9 @@
 import React from "react";
 
+import { professionalEvents } from "../../../data/professionalEvents.js";
+
 class ShowProfessionalEvents extends React.Component {
   render() {
-    const events = this.props.events;
-
-    const professionalEvents = {
-      title: "Professonal Events",
-      icon: "icon-regular icon-briefcase",
-    };
-
     return (
       <>
         <div className="col-lg-3 mb-4">
@@ -16,8 +11,8 @@ class ShowProfessionalEvents extends React.Component {
             <div className="inner-wrap">
               <div className="box-top position-relative">
                 <h2 className="box-subhead">
-                  <span className={professionalEvents.icon}></span>
-                  {professionalEvents.title}
+                  <span className="icon-regular icon-briefcase"></span>
+                  Professonal Events
                 </h2>
                 <a href="#0" className="icon-setting icon-box">
                   <span className="icon-solid fa-cog"></span>
@@ -40,7 +35,7 @@ class ShowProfessionalEvents extends React.Component {
               </div>
             </div>
             <div className="box-middle">
-              {events.map((event, index) => (
+              {professionalEvents.map((event, index) => (
                 <div key={index} className="item">
                   <a href={event.eventLink}>
                     {event.eventName}

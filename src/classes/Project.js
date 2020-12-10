@@ -9,6 +9,7 @@ class Task {
 class Project {
   id = ""; // mimics project id from database.
   professorId = ""; // a professor can have several projects
+  organizer = ""; // object that contains {name: , image: }
   projectType = "";
   discipline1 = "";
   discipline2 = "";
