@@ -273,9 +273,7 @@ function App() {
             <InspiredPage
               render={(course, location, term, screen) => (
                 <CourseDiscussionContainer
-                  course={brittanyStudent.courses[1]}
-                  location={"Online"}
-                  term={"Spring 2020"}
+                  courseId="1" // dummy id for Ethics in Multinational Management Course
                   screen={1}
                 />
               )}

@@ -1,7 +1,12 @@
 import React from "react";
 
+import {
+  getStudentCourse,
+  getCourseDiscussions,
+} from "../../../repositories/CourseRepository.js";
+
 function RenderHeader(props) {
-  const { course, location, term } = props;
+  const { course } = props;
 
   return (
     <section className="row row-custom announcements mb-4">
@@ -11,9 +16,9 @@ function RenderHeader(props) {
             {course.code + ": " + course.name}
           </h2>
           <h3 className="color-orange font24 mb-3">
-            {"Location: " + location}
+            {"Location: " + (course.location.online ? "Online" : "InPerson")}
           </h3>
-          <h5 className="color-grey font18 font-weight-bold">{term}</h5>
+          <h5 className="color-grey font18 font-weight-bold">{course.term}</h5>
         </div>
       </div>
     </section>
@@ -22,53 +27,10 @@ function RenderHeader(props) {
 
 class CourseDiscussionContainer extends React.Component {
   constructor(props) {
-    //   this simulates call into LMS to get all discussions associated with a course.
-
-    let discussions = [
-      {
-        title: "Are ethical and legal the same thing",
-        startedBy: "Bradley Dexter",
-        startedByImage: "images/bradley.png",
-        createdTimeStamp: "2020-03-06 10:02 AM",
-        lastPostName: "Victoria Banks",
-        lastPostImage: "images/Victoria.png",
-        lastPostTimeStamp: "2020-03-09 12:17 PM",
-        numReplies: "1",
-      },
-      {
-        title: "Lab 1: Introducing myself",
-        startedBy: "Sean Johnson",
-        startedByImage: "images/Sean.png",
-        createdTimeStamp: "2020-03-07 3:17 PM",
-        lastPostName: "Timothy Parker",
-        lastPostImage: "images/Tim.png",
-        lastPostTimeStamp: "2020-03-04 8:03 AM",
-        numReplies: "6",
-      },
-      {
-        title: "Test message - hi everyone",
-        startedBy: "William Sandler",
-        startedByImage: "images/William.png",
-        createdTimeStamp: "2020-03-03 11:46 AM",
-        lastPostName: "Merrill Winston",
-        lastPostImage: "images/Merrill.png",
-        lastPostTimeStamp: "2020-03-03 1:37 PM",
-        numReplies: "2",
-      },
-
-      {
-        title: "Welcome",
-        startedBy: "Bradley Dexter",
-        startedByImage: "images/bradley.png",
-        createdTimeStamp: "2020-03-02 2:13 PM",
-        lastPostName: "Jessica Thompson",
-        lastPostImage: "images/Jessica.png",
-        lastPostTimeStamp: "2020-03-04 6:12 PM",
-        numReplies: "12",
-      },
-    ];
-
     super(props);
+
+    //   this simulates call into LMS to get all discussions associated with a course. it's not clear whether this call should be in the component's render or in the constructor
+    let discussions = getCourseDiscussions(Number(this.props.courseId));
 
     const makeState = {
       discussions: discussions,
@@ -114,8 +76,8 @@ class CourseDiscussionContainer extends React.Component {
                   width="100%"
                   className="table-course"
                   border="0"
-                  cellpadding="0"
-                  cellspacing="0"
+                  cellPadding="0"
+                  cellSpacing="0"
                 >
                   <thead>
                     <tr>
@@ -176,13 +138,15 @@ class CourseDiscussionContainer extends React.Component {
   };
 
   render() {
-    const { course, location, term } = this.props;
+    const { courseId } = this.props;
 
     const { screen } = this.state;
 
+    const course = getStudentCourse(Number(courseId));
+
     return (
       <>
-        <RenderHeader course={course} location={location} term={term} />
+        <RenderHeader course={course} />
         {screen === 1 && this.renderListofDiscussions(course)}
       </>
     );

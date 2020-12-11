@@ -14,6 +14,7 @@ import ShowStudentHomePageCourseRegistration from "./showStudentHomePageCourseRe
 import ShowStudentHomePageOpportunities from "./showStudentHomePageOpportunities.js";
 import ShowStudentHomePageCampusServices from "./showStudentHomePageCampusServices.js";
 import ShowStudentHomePageCampusFeeds from "./showStudentHomePageCampusFeeds.js";
+import { getAllStudentCourses } from "../../../repositories/CourseRepository.js";
 
 class StudentHomePageContainer extends React.Component {
   render() {
@@ -24,9 +25,11 @@ class StudentHomePageContainer extends React.Component {
       financials,
       advisor,
       academics,
-      courses,
       calendar,
     } = this.props.student;
+
+    const courses = getAllStudentCourses(Number("1"));
+
     return (
       <>
         <ShowAnnouncements announcements={announcements} disabled={true} />

@@ -96,7 +96,13 @@ class ShowStudentHomePageCourses extends React.Component {
                             <td className="align-center">
                               <div className="t-location">
                                 <a href="#0">
-                                  <span className="icon-duotone icon-backpack icon-size-40"></span>
+                                  <span
+                                    className={
+                                      "icon-duotone icon-" +
+                                      course.location.type +
+                                      " icon-size-40"
+                                    }
+                                  ></span>
                                 </a>
                               </div>
                             </td>

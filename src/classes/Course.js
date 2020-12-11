@@ -1,33 +1,37 @@
 export class StudentCourse {
-  name = "CHEMISTRY";
-  code = "CHE 200-01";
-  days = ["M", "W", "F"];
-  start = "2:30";
-  end = "3:30 PM";
+  name = null;
+  code = null;
+  term = null;
+  days = [];
+  start = "";
+  end = "";
   location = {
     link: "#0",
-    type: "backpack",
+    type: "",
+    online: "",
   };
   instructor = {
-    name: "Shaina Berube",
-    image: "images/Chem.png",
+    name: "",
+    image: "",
   };
 
-  syllabusLink = "#0";
-  classmatesLink = "#0";
+  syllabusLink = null;
+  classmatesLink = null;
   assignmentsExams = [];
-  progress = "61%";
+  progress = "";
 }
 
 export class ProfessorCourse {
   name = null;
   code = null;
+  term = null;
   days = [];
   start = "";
   end = "";
   location = {
     link: "",
     type: "",
+    online: "",
   };
   rosterLink = null;
   syllabusLink = null;
