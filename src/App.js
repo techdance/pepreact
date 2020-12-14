@@ -33,7 +33,8 @@ import ViewProfileOtherUserContainer from "./components/Page/00501_viewProfileOt
 import ProfessorMessagesReceivedContainer from "./components/Page/00108_showProfessorMessagesReceived/professorMessagesReceivedContainer.js";
 import AdministratorHomePageContainer from "./components/Page/00300_showAdminHomePage/adminHomePageContainer.js";
 import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/reportDrillDownContainer.js";
-import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion.js/courseDiscussionContainer.js";
+import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion/courseDiscussionContainer.js";
+
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
 import StudentHomePageContainer from "./components/Page/00300_showStudentHomePage/studentHomePageContainer.js";
@@ -269,12 +270,12 @@ function App() {
             />
           </Route>
           <Route exact path="/03IN_01206">
-            {/* <ExampleBrittany0120XPage /> */}
+            {/* 03IN_01207 and 03IN_01209 get called from links in the Discussion column shown in 03IN_01206. Id=1 is 01207 and Id=2 is 01209  */}
+            {/* 03IN_01208 gets called from the Reply link within 03IN_01207 (id=1) in Victoria's Post or within 03IN_01209 (03IN_01207 id=2) in Victoria's or Brittany's Post.  */}
             <InspiredPage
-              render={(course, location, term, screen) => (
+              render={() => (
                 <CourseDiscussionContainer
                   courseId="1" // dummy id for Ethics in Multinational Management Course
-                  screen={1}
                 />
               )}
               breadcrumb={[

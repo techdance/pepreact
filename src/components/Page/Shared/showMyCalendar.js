@@ -64,16 +64,19 @@ class MyCalendar extends React.Component {
       }
     );
 
-    this.$calendarContainer.on("click", ".event-styled .popup-close", function (
-      e
-    ) {
-      e.stopPropagation();
-      $(this).parents(".popup").css("display", "none");
-    });
+    this.$calendarContainer.on(
+      "click",
+      ".event-styled .popup-close",
+      function (e) {
+        e.stopPropagation();
+        $(this).parents(".popup").css("display", "none");
+      }
+    );
   }
 
   componentWillUnmount() {
     this.$calendar.zabuto_calendar("destroy");
+    this.$calendarContainer.zabuto_calendar("destroy");
   }
 
   render() {

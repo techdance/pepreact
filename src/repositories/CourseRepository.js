@@ -2,7 +2,7 @@ import { StudentCourse } from "../classes/Course.js";
 import ForumDiscussion from "../classes/ForumDiscussion.js";
 
 // returns an array of Discussion objects the belong to the course with id "courseId"
-export const getCourseDiscussions = function (courseId) {
+export const getCourseForumDiscussions = function (courseId) {
   let forumDiscussion = null; // object to add to array
   let forumDiscussions = []; // returned array of objects
 
