@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Roboto+Condensed&display=swap");
-
 @font-face {
   font-family: "FontAwesome";
   src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -909,8 +908,14 @@ a.btn:hover {
   margin-left: 15px;
   margin-right: 15px;
 }
+.bg-brown-2 {
+  background: #9f5a13 !important;
+}
 .bg-brown-light {
   background: #ffb253 !important;
+}
+.bg-blue-2 {
+  background: #000066 !important;
 }
 .bg-blue-light {
   background: #0099ff !important;
@@ -930,7 +935,12 @@ a.btn:hover {
 .bg-green {
   background: #fbb91e !important;
 }
-
+.bg-green-2 {
+  background: #2b9b04 !important;
+}
+.border {
+  border: 1px solid #d6d6d6 !important;
+}
 .border-bottom {
   border-bottom: 1px solid #d6d6d6 !important;
 }
@@ -1548,6 +1558,9 @@ body.bg-grey-popup .toltip-overlay:hover {
 }
 #notification-toltip .toltip-text {
   max-width: 240px;
+}
+#notification-toltip .toltip-icon-grey-dark ~ .toltip-text {
+  color: #c0c0c1;
 }
 #notification-toltip .toltip-text p {
   line-height: 1.3;
@@ -3792,7 +3805,7 @@ ul.list-bull i {
 select.select {
   border: 0;
   border-radius: 6px;
-  padding: 9px 12px;
+  padding: 5px 12px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
@@ -5625,7 +5638,6 @@ select option:disabled {
 }
 .ui-datepicker {
   z-index: 10000 !important;
-  width: 24em;
 }
 .link-profile {
   color: #000;
@@ -6571,4 +6583,135 @@ table.table-type-a thead a {
 body #calendar .fc-day-grid-event .fc-content {
   padding: 5px;
   white-space: normal;
+}
+.box-input {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: 1px solid #ececec;
+  padding: 5px 10px;
+  width: auto;
+}
+.icon-pen-custom {
+  right: 8px !important;
+  position: absolute !important;
+  top: 8px !important;
+  z-index: 1 !important;
+}
+.box-select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  display: inline-block;
+  padding: 0 8px;
+  width: auto;
+}
+.box-select select {
+  border: none !important;
+}
+.item-header {
+  margin-bottom: 1.5rem;
+}
+
+.item-box-filter {
+  display: flex;
+  justify-content: space-between;
+}
+.item-list {
+  border: 1px solid #e1e1e1;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  padding: 13px;
+}
+.item-list .circle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  height: 40px;
+  margin-right: 15px;
+  width: 40px;
+}
+.item-list .item-title {
+  font-weight: bold;
+  font-size: 90%;
+}
+.item-list .item-content {
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+.item-list-right {
+  display: flex;
+  align-items: center;
+}
+.item-list-right .item-donut {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.wrap-nav-angle span {
+  border: 1px solid #ccc;
+  line-height: 1;
+  margin: 0 1px;
+  padding: 2px 10px;
+}
+body div.zabuto_calendar .table tr.calendar-month-header td {
+  font-size: 20px !important;
+}
+.border-circle {
+  border: 1px solid #ccc !important;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.wrap-sms {
+  background: #eeeeee;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  line-height: 1.5;
+}
+.box-sms {
+  background: #879197;
+  color: white;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+.box-sms-header {
+  background: #f0f2f7;
+  color: #555555;
+  padding: 5px 10px;
+  text-align: center;
+}
+.box-sms-title {
+  font-size: 110%;
+  font-weight: bold;
+}
+.box-sms-custom {
+  max-width: 850px;
+}
+.box-sms-custom .item-text input {
+  padding: 8px 10px !important;
+}
+.box-sms-custom div.image {
+  padding-top: 30px;
+}
+.box-messages-content {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+
+  background: #dcebfe;
+  padding: 5px 12px;
 }

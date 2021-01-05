@@ -2,7 +2,7 @@
 // TODO split country abbreviation from institutionProfile.location in order to use in the tooltip to show full country name
 
 import React from "react";
-import Knob from "../../UI/Knob.js";
+import Knob from "../Shared/UI/Knob.js";
 
 import { getProfessorProjects } from "../../../repositories/ProjectRepository.js";
 import { getProfessorCalendar } from "../../../repositories/ProfessorRepository.js";

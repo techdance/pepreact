@@ -11,6 +11,7 @@ import "./assets/css/fontawesome-all.css";
 import "./assets/css/sidebar.css";
 import "./assets/css/style.css";
 import "./assets/css/responsive.css";
+import "./assets/css/style-lab.css";
 import "./assets/css/style-custom-icon.css";
 
 import "./assets/css/style-resources.css";
@@ -39,6 +40,8 @@ import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
 import StudentHomePageContainer from "./components/Page/00300_showStudentHomePage/studentHomePageContainer.js";
 import ShowProfessorHomePage from "./components/Page/00300_ShowProfessorHomePage/showProfessorHomepage.js";
+import EditProjectLabCourse from "./components/Page/01000/editProjectLabCourse";
+import EditProjectLabCertificate from "./components/Page/04200/editProjectLabCertificate.js";
 
 import {
   gordonPageOwner,
@@ -291,6 +294,19 @@ function App() {
 
           {/* CollaboratED pages */}
           {/* Bradley */}
+          <Route exact path="/01CL_01000">
+            {/* called with query string parameters ?projectid=1&step=X where X is 1-4 representing 1=courseinformation, 2=coursedesign, etc. */}
+            <CollaboratedPage
+              render={() => <EditProjectLabCourse />}
+              breadcrumb={[
+                "Home",
+                "My Projects",
+                "Ethics in Multinational Management",
+              ]}
+              menuItems={menuItemsProfessor}
+              pageOwner={bradleyPageOwner}
+            />
+          </Route>
           <Route exact path="/01CL_01033">
             <CollaboratedPage
               render={() => <CreateProject />}
@@ -338,7 +354,20 @@ function App() {
             <CollaboratedPage
               render={() => <ShowMyProjects id="2" />}
               breadcrumb={["Home", "My Projects"]}
-              menuItems={menuItems}
+              menuItems={menuItemsProfessor}
+              pageOwner={inezPageOwner}
+            />
+          </Route>
+          <Route exact path="/05CL_04200">
+            {/* called with query string parameters ?projectid=2&step=X where X is 1-4 representing 1=certificateinformation, 2=certificatedesign, etc. */}
+            <CollaboratedPage
+              render={() => <EditProjectLabCertificate />}
+              breadcrumb={[
+                "Home",
+                "My Projects",
+                "Cross-Cultural Business Management Certification",
+              ]}
+              menuItems={menuItemsProfessor}
               pageOwner={inezPageOwner}
             />
           </Route>

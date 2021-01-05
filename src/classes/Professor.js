@@ -1,3 +1,5 @@
+//  TODO - modify Professor object so that institutionProfile points to an Institution object.
+
 class Professor {
   personalInformation = {
     namePrefix: "",
@@ -9,6 +11,7 @@ class Professor {
     department: "",
     personalMessage: "",
     onlineStatus: "",
+    timezone: "",
   };
 
   communicationPreferences = {
@@ -40,6 +43,7 @@ class Professor {
     cvLink: "#",
   };
 
+  // below should point to an Institution object.
   institutionProfile = {
     name: "AHEA University, Iowa City Campus",
     type: "4-year Institution",
@@ -82,10 +86,6 @@ class Professor {
       created: true,
     },
   ];
-
-  constructor() {
-    // any default values for professor object?
-  }
 
   setProfessor(professor) {
     // setProfessor object to the professor object

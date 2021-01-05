@@ -1,18 +1,18 @@
 import React from "react";
 
-class CalendarSelector extends React.Component {
+class Knob extends React.Component {
   // javascript plugin that renders knob. See https://github.com/aterrien/jQuery-Knob
 
   componentDidMount() {
     /* global $ */
     this.$tag = $(this.props.tag);
-    this.$tag.datepicker({
-      dateFormat: "yy-mm-dd",
+    this.$tag.knob({
+      readOnly: true,
     });
   }
 
   componentWillUnmount() {
-    this.$tag.datepicker("destroy");
+    this.$tag.knob("destroy");
   }
 
   render() {
@@ -20,4 +20,4 @@ class CalendarSelector extends React.Component {
   }
 }
 
-export default CalendarSelector;
+export default Knob;

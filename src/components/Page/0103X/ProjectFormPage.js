@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 
 import ChangeDocument from "./changeDocument.js";
-import CalendarSelector from "../../UI/CalendarSelector.js";
+import CalendarSelector from "../Shared/UI/CalendarSelector.js";
 
 import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
 import { disciplineList } from "../../../data/disciplines.js";

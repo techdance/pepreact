@@ -128,6 +128,7 @@ export const bradleyProfessor = {
     personalMessage:
       '"Success in business requires training and discipline and hard work." David Rockefeller',
     onlineStatus: "public",
+    timezone: "EST",
   },
 
   communicationPreferences: {
@@ -234,6 +235,7 @@ export const inezProfessor = {
     personalMessage:
       '"Education is not the filling of a pail, but the lighting of a fire." -- W.B. Yeats',
     onlineStatus: "public",
+    timezone: "CET",
   },
 
   communicationPreferences: {

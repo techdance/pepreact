@@ -1,5 +1,5 @@
 import React from "react";
-import Knob from "../../UI/Knob.js";
+import Knob from "../Shared/UI/Knob.js";
 
 class ShowStudentHomePageCourses extends React.Component {
   render() {

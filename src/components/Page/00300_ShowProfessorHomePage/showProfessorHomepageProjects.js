@@ -2,8 +2,7 @@
 
 import React from "react";
 
-import Knob from "../../UI/Knob.js";
-import { projectTypeList } from "../../../data/areaOfInterestProjectType.js";
+import Knob from "../Shared/UI/Knob.js";
 
 class ShowProfessorHomepageProjects extends React.Component {
   render() {
