@@ -152,12 +152,13 @@ export const getProfessorMatches = function () {
 // get calendar for the Professor with id "id"
 //  returns a Calendar object
 export const getProfessorCalendar = function (id) {
+  //  this should be deprecated because ShowMyCalendar component is now accessing Moodle API for calendar information
   let calendar = new Calendar();
 
   // same search results for any id for now.
   const searchResult = {
-    month: "10",
-    year: "2019",
+    month: "01",
+    year: "2021",
     colorKeys: [],
     data: [
       //blue-event, green-event, orange-event, purple-event
