@@ -89,6 +89,16 @@ function App() {
               pageOwner={inezPageOwner}
             />
           </Route>
+          <Route exact path="/05IN_00500">
+            <InspiredPage
+              render={(profile, IT) => (
+                <ViewProfileContainer profile={inezProfessor} IT="false" />
+              )}
+              breadcrumb={["Home", "Profile"]}
+              menuItems={menuItemsProfessor}
+              pageOwner={inezPageOwner}
+            />
+          </Route>
           <Route exact path="/05IN_00511">
             {/* <Page00511 pageOwner={inezPageOwner} profile={bradleyProfessor} /> */}
 

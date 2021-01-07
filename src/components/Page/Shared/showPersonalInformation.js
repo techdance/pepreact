@@ -69,13 +69,13 @@ class ShowPersonalInformation extends React.Component {
                       </a>
                     </div>
                   </div>
-                  <div class="profile-info profile-name">
-                    <div class="title">
-                      <span class="icon-regular icon-business-time"></span>{" "}
+                  <div className="profile-info profile-name">
+                    <div className="title">
+                      <span className="icon-regular icon-business-time"></span>{" "}
                       Department
                     </div>
-                    <div class="text">
-                      <a href="#0" class="cl-gray">
+                    <div className="text">
+                      <a href="#0" className="cl-gray">
                         {personalInformation.department}
                       </a>
                     </div>
@@ -106,11 +106,11 @@ class ShowPersonalInformation extends React.Component {
             {sameUser === "true" ? (
               <a
                 href="#0"
-                class="btn btn-blue position-absolute btn-edit-profile"
+                className="btn btn-blue position-absolute btn-edit-profile"
               >
-                <span class="position-relative">
+                <span className="position-relative">
                   Edit Profile
-                  <span class="link-toltip">Profile 100% Complete</span>
+                  <span className="link-toltip">Profile 100% Complete</span>
                 </span>
               </a>
             ) : (

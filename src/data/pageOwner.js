@@ -273,7 +273,13 @@ export const inezPageOwner = {
     Person: { firstName: "Inez", iconImage: "./images/Inez.png" },
   },
 
-  badges: ["Tour Guide", "3.5 GPA", "Scholar-Athlete"],
+  badges: [
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
+  ],
 
   alerts: [
     {

@@ -32,8 +32,9 @@ class ShowCollaborationInterests extends React.Component {
                       {this.props.areaofinterest_list.map(
                         (areaofinterest, index) => (
                           <div
+                            key={index}
                             className="col-md-6"
-                            id={"areas-of-interest-".index + 1}
+                            id={"areas-of-interest-" + (index + 1)}
                           >
                             <div className="areas-of-interest">
                               <div className="row row-custom position-relative">
@@ -73,13 +74,7 @@ class ShowCollaborationInterests extends React.Component {
                                   </p>
                                 </div>
                               </div>
-                              {/* <div class="row row-custom mt-2">
-                                <div class="col-md-12 d-flex justify-content-between align-items-center">
-                                  <a href="#0" data-toggle="modal" data-target="#areaInterestVm1Modal">View more</a>
 
-                                  
-                                </div>
-                              </div> */}
                               <div className="row row-custom mt-2">
                                 <div className="col-md-12 d-flex justify-content-between align-items-center">
                                   <a
@@ -92,7 +87,10 @@ class ShowCollaborationInterests extends React.Component {
                                     View more
                                   </a>
                                   {areaofinterest.created ? (
-                                    <a href="#0" class="btn btn-blue btn-w-100">
+                                    <a
+                                      href="#0"
+                                      className="btn btn-blue btn-w-100"
+                                    >
                                       Project Created
                                     </a>
                                   ) : (

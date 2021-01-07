@@ -47,12 +47,10 @@ class ShowProfessionalBio extends React.Component {
                   <p className="blue-color pl-4">
                     {professionalBio.areasOfExpertise.map(
                       (expertise, index) => (
-                        <>
-                          <a key={index} href="#0">
-                            {expertise}
-                          </a>
-                          <br />
-                        </>
+                        <a key={index} href="#0">
+                          {" "}
+                          {expertise} <br />
+                        </a>
                       )
                     )}
                   </p>

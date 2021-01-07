@@ -30,8 +30,8 @@ class ShowCredentials extends React.Component {
                   </p>
                   {this.props.credentials.professionalMemberships.map(
                     (professionalMembership, index) => (
-                      <p className="blue-color pl-4">
-                        <a key={index} href={professionalMembership.link}>
+                      <p className="blue-color pl-4" key={index}>
+                        <a href={professionalMembership.link}>
                           {professionalMembership.name}
                         </a>
                       </p>

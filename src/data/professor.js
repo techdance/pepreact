@@ -295,7 +295,10 @@ export const inezProfessor = {
       credits: "4",
       programLevel: "Undergraduate",
       dateRange: "Today 2020",
-      created: false,
+      startDate: "2021-01-06",
+      endDate: "2022-12-31",
+      createdDate: "2020-01-07",
+      created: true,
     },
 
     {
@@ -327,7 +330,7 @@ export const inezProfessor = {
       credits: "3",
       programLevel: "Undergraduate",
       dateRange: "Today 2020",
-      created: false,
+      created: true,
     },
   ],
 };
@@ -387,8 +390,10 @@ export const pamelaIT = {
       { name: "National Center for Higher Ed Management Systems", link: "#" },
     ],
     links: ["#", "#"],
-    certificates: ["Certified Analytics Professional"],
-    certificates: ["Certified Big Data Professional"],
+    certificates: [
+      "Certified Analytics Professional",
+      "Certified Big Data Professional",
+    ],
   },
 
   areaofinterest_list: [],
