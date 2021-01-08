@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 // import Register from "./components/Register";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 
 import "./assets/css/fontawesome-all.css";
 
@@ -17,6 +17,8 @@ import "./assets/css/style-custom-icon.css";
 import "./assets/css/style-resources.css";
 import "./assets/css/style-profile.css";
 import "./assets/css/react-select.css";
+
+import "./assets/css/bootstrap-datetimepicker.min.css";
 
 // these two pages use backend API so don't change yet.
 import Page03601 from "./components/Page03601.js";
@@ -66,6 +68,11 @@ import {
   menuItemsStudent,
   menuItems,
 } from "./data/menuItems.js";
+
+// React global variables
+// Institution Logo for current page owner. Logo refers to the combined logoA and logoB file.
+export const InstitutionLogoContext = React.createContext("");
+InstitutionLogoContext.displayName = "LogoContext";
 
 function App() {
   return (
@@ -382,9 +389,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/">
+          {/* <Route path="/">
             <Login />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>

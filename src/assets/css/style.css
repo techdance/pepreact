@@ -5465,6 +5465,7 @@ span.square-orange {
 
 @media (min-width: 1500px) {
   .container-fluid {
+    /* max-width: 2440px !important; */
     max-width: 1440px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;

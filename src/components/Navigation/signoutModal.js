@@ -1,7 +1,7 @@
 import React from "react";
 import ModalPortal from "../Page/Shared/UI/ModalPortal.js";
 
-import { InstitutionLogoContext } from "../InspiredPage.js";
+import { InstitutionLogoContext } from "../../App.js";
 
 export default function SignoutModal(props) {
   return (

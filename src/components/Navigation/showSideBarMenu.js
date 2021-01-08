@@ -1,7 +1,7 @@
 import React from "react";
 
-import towerEdLogoA from "../../assets/images/logo-tower-education-a.png";
-import towerEdLogoB from "../../assets/images/logo-tower-education-b.png";
+const towerEdLogoA = "./images/logo-tower-education-a.png";
+const towerEdLogoB = "./images/logo-tower-education-b.png";
 
 class WrapLogo extends React.Component {
   render() {

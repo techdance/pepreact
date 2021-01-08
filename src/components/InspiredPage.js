@@ -4,14 +4,9 @@ import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
-import ShowTowerLogo from "./Navigation/showTowerLogo.js";
+import ShowInstitutionLogo from "./Navigation/showInstitutionLogo.js";
 
-// React global variables
-// Institution Logo for current page owner
-export const InstitutionLogoContext = React.createContext(
-  "./images/logo-a2.png"
-);
-InstitutionLogoContext.displayName = "LogoContext";
+import { InstitutionLogoContext } from "../App.js";
 
 class InspiredPage extends React.Component {
   render() {
@@ -21,11 +16,19 @@ class InspiredPage extends React.Component {
     const menuItems = this.props.menuItems;
     const edit = this.props.edit;
 
+    // backward compatibility - not all pageowner data objects contain logo - if it doesn't exist then default to AHEA
+    const logo =
+      pageOwner.Institution.logo !== undefined
+        ? pageOwner.Institution.logo
+        : "./images/logo.png";
     return (
       <>
-        <InstitutionLogoContext.Provider value={pageOwner.Institution.logoA2}>
-          <div id="menu-top-responsive" className="">
-            <ShowTowerLogo />
+        <InstitutionLogoContext.Provider value={logo}>
+          <div id="menu-top-responsive">
+            <ShowInstitutionLogo
+              logoA={pageOwner.Institution.logoA2}
+              logoB={pageOwner.Institution.logoB2}
+            />
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
@@ -35,7 +38,7 @@ class InspiredPage extends React.Component {
               activeMenuItem={"Home"}
             />
             <div id="content" className="">
-              <div className="container-fluid">
+              <div className="container-fluid" id="test">
                 <div className="row">
                   <div className="col-lg-12">
                     <ShowTopMenu
