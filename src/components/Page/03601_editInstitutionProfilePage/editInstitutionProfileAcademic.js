@@ -6,6 +6,7 @@ class EditInstitutionAcademicDegreesOffered extends React.Component {
 
     this.handleArrayChange = this.handleArrayChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.addDegreesOffered = this.addDegreesOffered.bind(this);
   }
 
   handleArrayChange = (event) => {
@@ -18,6 +19,15 @@ class EditInstitutionAcademicDegreesOffered extends React.Component {
     //  Not setting state since state needs to point to an object and we are working on an array.
     let degreesOffered = this.props.degreesOffered;
     degreesOffered[name] = value;
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("degreesOffered", degreesOffered);
+  };
+
+  addDegreesOffered = () => {
+    let degreesOffered = this.props.degreesOffered;
+    const newDegree = "";
+    degreesOffered.push(newDegree);
 
     /// pass current version up to parent to propogate changes
     this.props.onChange("degreesOffered", degreesOffered);
@@ -55,7 +65,10 @@ class EditInstitutionAcademicDegreesOffered extends React.Component {
 
             <div className="form-group d-flex align-items-center">
               <a href="#0" className="color-orange font20 mr-1">
-                <i className="fas fa-plus-circle"></i>
+                <i
+                  className="fas fa-plus-circle"
+                  onClick={this.addDegreesOffered}
+                ></i>
               </a>
             </div>
           </div>
@@ -71,6 +84,7 @@ class EditInstitutionAcademicRecognition extends React.Component {
 
     this.handleArrayChange = this.handleArrayChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.addAcademicRecognition = this.addAcademicRecognition.bind(this);
   }
 
   handleArrayChange = (event) => {
@@ -83,6 +97,15 @@ class EditInstitutionAcademicRecognition extends React.Component {
     //  Not setting state since state needs to point to an object and we are working on an array.
     let recognitions = this.props.recognitions;
     recognitions[name] = value;
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("recognitions", recognitions);
+  };
+
+  addAcademicRecognition = () => {
+    let recognitions = this.props.recognitions;
+    const newRecognition = "";
+    recognitions.push(newRecognition);
 
     /// pass current version up to parent to propogate changes
     this.props.onChange("recognitions", recognitions);
@@ -120,7 +143,10 @@ class EditInstitutionAcademicRecognition extends React.Component {
 
             <div className="form-group d-flex align-items-center">
               <a href="#0" className="color-orange font20 mr-1">
-                <i className="fas fa-plus-circle"></i>
+                <i
+                  className="fas fa-plus-circle"
+                  onClick={this.addAcademicRecognition}
+                ></i>
               </a>
             </div>
           </div>
@@ -136,6 +162,7 @@ class EditInstitutionAcademicAccreditation extends React.Component {
 
     this.handleArrayChange = this.handleArrayChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.addAccreditation = this.addAccreditation.bind(this);
   }
 
   handleArrayChange = (event) => {
@@ -148,6 +175,15 @@ class EditInstitutionAcademicAccreditation extends React.Component {
     //  Not setting state since state needs to point to an object and we are working on an array.
     let accreditations = this.props.accreditations;
     accreditations[name] = value;
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("accreditations", accreditations);
+  };
+
+  addAccreditation = () => {
+    let accreditations = this.props.accreditations;
+    const newAccreditation = "";
+    accreditations.push(newAccreditation);
 
     /// pass current version up to parent to propogate changes
     this.props.onChange("accreditations", accreditations);
@@ -185,7 +221,10 @@ class EditInstitutionAcademicAccreditation extends React.Component {
 
             <div className="form-group d-flex align-items-center">
               <a href="#0" className="color-orange font20 mr-1">
-                <i className="fas fa-plus-circle"></i>
+                <i
+                  className="fas fa-plus-circle"
+                  onClick={this.addAccreditation}
+                ></i>
               </a>
             </div>
           </div>
@@ -375,6 +414,7 @@ class EditInstitutionAcademicCollegesandSchools extends React.Component {
 
     this.handleArrayChange = this.handleArrayChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.addCollegeAndSchool = this.addCollegeAndSchool.bind(this);
   }
 
   handleArrayChange = (event) => {
@@ -392,6 +432,15 @@ class EditInstitutionAcademicCollegesandSchools extends React.Component {
     this.props.onChange("collegesAndSchools", collegesAndSchools);
   };
 
+  addCollegeAndSchool = () => {
+    let collegesAndSchools = this.props.collegesAndSchools;
+    const newCollegeAndSchool = "";
+    collegesAndSchools.push(newCollegeAndSchool);
+
+    /// pass current version up to parent to propogate changes
+    this.props.onChange("collegesAndSchools", collegesAndSchools);
+  };
+
   passChangeUp = (field, value) => {
     // This should not be called as we are working with an array of values so there are no children in the data object.
   };
@@ -401,29 +450,34 @@ class EditInstitutionAcademicCollegesandSchools extends React.Component {
 
     return (
       <>
-        <div className="box-color border-grey h-100">
-          <h4 className="mb-3">Colleges &amp; Schools</h4>
-          {collegesAndSchools.map((school, index) => (
-            <div key={index} className="form-group d-flex align-items-center">
-              <a href="#0" className="color-orange font20 mr-1">
-                <i className="fas fa-minus-circle"></i>
-              </a>
-              <textarea
-                className="input textarea2"
-                name={index}
-                value={school}
-                onChange={this.handleArrayChange}
-                rows="2"
-              >
-                {school}
-              </textarea>
-            </div>
-          ))}
+        <div className="col-md-4 mb-4">
+          <div className="box-color border-grey h-100">
+            <h4 className="mb-3">Departments</h4>
+            {collegesAndSchools.map((school, index) => (
+              <div key={index} className="form-group d-flex align-items-center">
+                <a href="#0" className="color-orange font20 mr-1">
+                  <i className="fas fa-minus-circle"></i>
+                </a>
+                <textarea
+                  className="input textarea2"
+                  name={index}
+                  value={school}
+                  onChange={this.handleArrayChange}
+                  rows="2"
+                >
+                  {school}
+                </textarea>
+              </div>
+            ))}
 
-          <div className="form-group d-flex align-items-center">
-            <a href="#0" className="color-orange font20 mr-1">
-              <i className="fas fa-plus-circle"></i>
-            </a>
+            <div className="form-group d-flex align-items-center">
+              <a href="#0" className="color-orange font20 mr-1">
+                <i
+                  className="fas fa-plus-circle"
+                  onClick={this.addCollegeAndSchool}
+                ></i>
+              </a>
+            </div>
           </div>
         </div>
       </>
@@ -526,14 +580,10 @@ class EditInstitutionAcademic extends React.Component {
                   </div>
 
                   <div className="row row-custom">
-                    <div className="col-md-4 mb-4">
-                      <div className="box-color border-grey h-100">
-                        <EditInstitutionAcademicCollegesandSchools
-                          collegesAndSchools={collegesAndSchools}
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                    </div>
+                    <EditInstitutionAcademicCollegesandSchools
+                      collegesAndSchools={collegesAndSchools}
+                      onChange={this.passChangeUp}
+                    />
 
                     <EditInstitutionAcademicDegreePrograms
                       degreePrograms={degreePrograms}

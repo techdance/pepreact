@@ -6,7 +6,7 @@ import ChangeImage from "../Shared/changeImage.js";
 import { institutionTypes } from "../../../data/institution.js"; // TODO read this object from backend API to close the loop
 import { languageList } from "../../../data/languages.js"; // TODO read this object from backend API to close the loop
 
-class Edit_InstitutionOverview_Type extends React.Component {
+class EditInstitutionOverviewType extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.Overview;
@@ -21,12 +21,13 @@ class Edit_InstitutionOverview_Type extends React.Component {
 
     // get user input change and convert to format used in institution data object
     let typeList = [];
-    typeSelected.map((institutionType, index) =>
-      typeList.push(institutionType.value)
-    );
+    // typeSelected.map((institutionType, index) =>
+    // typeList.push(institutionType.value)
+    typeList.push(typeSelected.value);
+    // );
 
     // set local state
-    this.setState({ ["type"]: typeList });
+    this.setState({ type: typeList });
 
     // pass current state up to parent to propogate changes
     let Overview = this.state;
@@ -52,7 +53,7 @@ class Edit_InstitutionOverview_Type extends React.Component {
           <div className="form-group mb-2">
             <label>Type</label>
             <Select
-              isMulti
+              // isMulti
               name="type"
               options={institutionTypes}
               className="basic-multi-select"
@@ -67,7 +68,7 @@ class Edit_InstitutionOverview_Type extends React.Component {
   }
 }
 
-class Edit_InstitutionOverview_OtherLanguages extends React.Component {
+class EditInstitutionOverviewOtherLanguages extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.Overview;
@@ -87,7 +88,7 @@ class Edit_InstitutionOverview_OtherLanguages extends React.Component {
     );
 
     // set local state
-    this.setState({ ["otherLanguages"]: otherLanguages });
+    this.setState({ otherLanguages: otherLanguages });
 
     // pass current state up to parent to propogate changes
     let Overview = this.state;
@@ -110,7 +111,7 @@ class Edit_InstitutionOverview_OtherLanguages extends React.Component {
     return (
       <>
         <div className="form-group mb-2">
-          <label>Other Languages</label>
+          <label>Secondary Languages</label>
           <Select
             isMulti
             name="otherLanguages"
@@ -337,14 +338,14 @@ class EditInstitutionOverview extends React.Component {
                             </div>
                           </div>
 
-                          <Edit_InstitutionOverview_Type
+                          <EditInstitutionOverviewType
                             Overview={this.state}
                             onChange={this.props.onChange}
                           />
 
                           <div className="col-md-3">
                             <div className="form-group mb-2">
-                              <label>Language</label>
+                              <label>Primary Language</label>
                               <input
                                 type="text"
                                 name="primaryLanguage"
@@ -354,7 +355,7 @@ class EditInstitutionOverview extends React.Component {
                               />
                             </div>
 
-                            <Edit_InstitutionOverview_OtherLanguages
+                            <EditInstitutionOverviewOtherLanguages
                               Overview={this.state}
                               onChange={this.props.onChange}
                             />

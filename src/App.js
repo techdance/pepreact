@@ -37,6 +37,8 @@ import ProfessorMessagesReceivedContainer from "./components/Page/00108_showProf
 import AdministratorHomePageContainer from "./components/Page/00300_showAdminHomePage/adminHomePageContainer.js";
 import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/reportDrillDownContainer.js";
 import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion/courseDiscussionContainer.js";
+import InsitutionProfilePageContainer from "./components/Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
+import EditInstitutionProfileForm from "./components/Page/03601_editInstitutionProfilePage/editInstitutionProfilePageContainer.js";
 
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
@@ -45,12 +47,15 @@ import ShowProfessorHomePage from "./components/Page/00300_ShowProfessorHomePage
 import EditProjectLabCourse from "./components/Page/01000/editProjectLabCourse";
 import EditProjectLabCertificate from "./components/Page/04200/editProjectLabCertificate.js";
 
+import TestState from "./TestState.js";
+
 import {
   gordonPageOwner,
   inezPageOwner,
   bradleyPageOwner,
   pamelaPageOwner,
   brittanyPageOwner,
+  tomPageOwner,
 } from "./data/pageOwner.js";
 import {
   gordonProfessor,
@@ -67,6 +72,7 @@ import {
   menuItemsAdministrator,
   menuItemsStudent,
   menuItems,
+  menuItemsLMSAdmin,
 } from "./data/menuItems.js";
 
 // React global variables
@@ -136,7 +142,7 @@ function App() {
             /> */}
             <InspiredPage
               render={(profile, IT) => (
-                <ViewProfileContainer profile={pamelaIT} IT="true" />
+                <ViewProfileContainer profile={pamelaIT} IT={true} />
               )}
               breadcrumb={["Home", "Profile"]}
               menuItems={menuItems}
@@ -309,6 +315,37 @@ function App() {
             />
           </Route>
 
+          {/* Tom pages */}
+          <Route exact path="/19IN_00701">
+            <InspiredPage
+              render={() => (
+                <InsitutionProfilePageContainer
+                  institution={institution}
+                  edit={true}
+                />
+              )}
+              breadcrumb={["Home", "Institution Profiles", "AHEA University"]}
+              menuItems={menuItemsLMSAdmin}
+              pageOwner={tomPageOwner}
+            />
+          </Route>
+
+          <Route exact path="/19IN_03601">
+            <InspiredPage
+              render={() => (
+                <EditInstitutionProfileForm institution={institution} />
+              )}
+              breadcrumb={[
+                "Home",
+                "Institution Profiles",
+                "AHEA University",
+                "Edit Profile",
+              ]}
+              menuItems={menuItemsLMSAdmin}
+              pageOwner={tomPageOwner}
+            />
+          </Route>
+
           {/* CollaboratED pages */}
           {/* Bradley */}
           <Route exact path="/01CL_01000">
@@ -389,9 +426,9 @@ function App() {
             />
           </Route>
 
-          {/* <Route path="/">
-            <Login />
-          </Route> */}
+          <Route path="/">
+            <TestState />
+          </Route>
         </Switch>
       </div>
     </Router>

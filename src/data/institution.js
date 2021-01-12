@@ -6,7 +6,7 @@ export const institution = {
       "AU has always had an inclusive and unique approach to education. It offers a personal, nurturing atmosphere. With so many traditional and non-traditional learning opportunities, AU is the ideal place for students of any age to reach their potential.",
     foundedYear: "1997",
     academicCalendar: "Semester",
-    type: ["Private", "Not-for-Profit", "Coed"],
+    type: ["Private"],
     primaryLanguage: "English",
     otherLanguages: ["Spanish", "Mandarin"],
     president: "Sean Gladwell",
@@ -37,6 +37,7 @@ export const institution = {
     },
     Locations: [
       {
+        mainCampus: true,
         name: "Main Campus",
         institution: "AHEA University",
         address1: "101 N. Federal Hwy",
@@ -48,6 +49,7 @@ export const institution = {
         continent: "North America",
       },
       {
+        mainCampus: false,
         name: "North Campus",
         institution: "AHEA University",
         address1: "601 N. Federal Hwy",

@@ -16,7 +16,7 @@ class ShowInstitutionLocation extends React.Component {
     const { value } = event.target;
 
     //  set local state
-    this.setState({ ["locationSelected"]: value });
+    this.setState({ locationSelected: value });
   };
 
   render() {

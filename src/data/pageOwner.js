@@ -613,3 +613,109 @@ export const brittanyPageOwner = {
     },
   ],
 };
+
+export const tomPageOwner = {
+  pageOwner: {
+    Institution: {
+      logoA2: "./images/TowerLogoWhite-a.png",
+      logoB2: "./images/TowerLogoWhite-b.png",
+      logo: "./images/TowerLogoWhite.png",
+    },
+    Person: { firstName: "Tome", iconImage: "./images/Tom.png" },
+  },
+
+  badges: [
+    // {
+    //   name: "Networking",
+    //   icon: "fa-chart-network",
+    //   iconColor: "#6C38",
+    // },
+  ],
+
+  alerts: [
+    // {
+    //   type: "message",
+    //   image: "images/randy.png",
+    //   text:
+    //     "Randy Wolff uploaded a document in What Artificial Intelligence Can Do for Small Business project",
+    // },
+    // {
+    //   type: "matches",
+    //   image: "",
+    //   text:
+    //     "Karthic Koothrappali, Joanne Byrne and others have matched with you as suggested partners",
+    // },
+    // {
+    //   type: "message",
+    //   image: "images/Inez.png",
+    //   text:
+    //     "Inez Campos was added to the Ethics in Multinational Management project",
+    // },
+    // {
+    //   type: "bullhorn",
+    //   image: "",
+    //   text:
+    //     "Register today for the International Conference on Big Data in Business",
+    // },
+    // {
+    //   type: "message",
+    //   image: "images/Li.png",
+    //   text: "Missed call from Li Wei",
+    // },
+  ],
+
+  messages: [
+    // {
+    //   from: "Clinton Harris",
+    //   time: "9:08 PM",
+    //   subject: "Welcome to AHEA",
+    //   text:
+    //     "We’re so glad you are taking advantage of the benefits of AHEA membership. Enclosed please find…",
+    // },
+    // {
+    //   from: "Clinton Harris",
+    //   time: "4:12 PM",
+    //   subject: "Your syllabus is available.",
+    //   text:
+    //     "Your syllabus template for the global business course is currently attached for review.",
+    // },
+    // {
+    //   from: "Inez Campos",
+    //   time: "2:23 PM",
+    //   subject: "Academic Paper",
+    //   text:
+    //     "Hello Bradley. I found an academic paper that would support our collaboration – relatively new and incorporates the cloud.",
+    // },
+    // {
+    //   from: "Brittany Simms",
+    //   time: "11:46 PM",
+    //   subject: "Chapter 1 Questions",
+    //   text:
+    //     "Hi Dr. Dexter – Chapter 1 has me wondering about the implications of regulations globally as well.",
+    // },
+    // {
+    //   from: "Inez Campos",
+    //   time: "8:59 PM",
+    //   subject: "Review Questions",
+    //   text:
+    //     "Hello Bradley. Looking forward to consolidating our review questions into a central area.",
+    // },
+  ],
+
+  announcements: [
+    // {
+    //   msg:
+    //     "Fall Term registration is open Wednesday, April 1 through Friday, May 1, 2020.",
+    //   link: "#",
+    // },
+    // {
+    //   msg: "AHEA Conference Grant Deadline is August 28, 2020.",
+    //   link: "#",
+    // },
+    // {
+    //   msg:
+    //     "Help us welcome our newest CollaboratED members: Georgia International University; Ballsbridge University, Dominica; and Edinburgh Institute for Global Affairs.",
+    //   link: "#",
+    // },
+  ],
+};

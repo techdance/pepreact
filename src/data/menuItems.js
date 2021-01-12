@@ -70,3 +70,21 @@ export const menuItemsStudent = [
   { name: "Resources", link: "#0", icon: "icon-th-large", grey: true },
   { name: "Settings", link: "#0", icon: "icon-settings", grey: true },
 ];
+
+// if the menuItem.grey exists and is true, then the menu items are set to "not-active"
+export const menuItemsLMSAdmin = [
+  { name: "Home", link: "#0", icon: "icon-home" },
+  { name: "Person Records", link: "#0", icon: "icon-calendar" },
+
+  { name: "Institution Profile", link: "#0", icon: "icon-book" },
+
+  { name: "Form Builder", link: "#0", icon: "icon-alarm-clock", grey: false },
+  {
+    name: "Role Permissions",
+    link: "#0",
+    icon: "icon-usd-square",
+    grey: false,
+  },
+
+  { name: "Settings", link: "#0", icon: "icon-settings", grey: false },
+];
