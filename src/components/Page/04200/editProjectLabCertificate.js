@@ -19,6 +19,8 @@ import ProjectLabShowMilestoneSection from "../Shared/projectLab/ProjectLabShowM
 import LearningEnvironmentsModal from "../Shared/projectLab/modals/learningEnvironmentsModal.js";
 import ProjectLabShowLearningEnvironments from "../Shared/projectLab/ProjectLabShowLearningEnvironments.js";
 
+import ModalPortal from "../Shared/UI/ModalPortal.js";
+
 import ProjectLabCertificateShowCertificateIdentification from "./CertificateInformation/ProjectLabCertificateShowCertificateIdentification.js";
 import ProjectLabCertificateShowDetails from "./CertificateInformation/ProjectLabCertificateShowDetails.js";
 import ProjectLabCertificateShowQualifications from "./CertificateInformation/ProjectLabCertificateShowQualifications.js";
@@ -154,6 +156,16 @@ export default class EditProjectLabCertificate extends React.Component {
                     learningEnvironments={learningEnvironments}
                   />
                   <ProjectLabCertificateShowStandards standards={standards} />
+                  {/* Modals for Certificate Design using ModalPortal */}
+                  <ModalPortal>
+                    <CertificateTopicsModal topics={topics} />
+
+                    <CertificateObjectivesModal objectives={objectives} />
+                    <LearningEnvironmentsModal
+                      learningEnvironments={learningEnvironments}
+                    />
+                    <CertificateStandardsModal standards={standards} />
+                  </ModalPortal>
                 </div>
               </div>
             </div>
@@ -289,21 +301,7 @@ export default class EditProjectLabCertificate extends React.Component {
             certificateProject.certificateInformation.qualifications
           }
         />
-        {/* Modals for Certificate Design */}
-        <CertificateTopicsModal
-          topics={certificateProject.certificateDesign.topics}
-        />
-        <CertificateObjectivesModal
-          objectives={certificateProject.certificateDesign.objectives}
-        />
-        <LearningEnvironmentsModal
-          learningEnvironments={
-            certificateProject.certificateDesign.learningEnvironments
-          }
-        />
-        <CertificateStandardsModal
-          standards={certificateProject.certificateDesign.standards}
-        />
+        {/* Modals for Certificate Design use ModalPortal in the showCertificateDesignStep function */}
       </>
     );
   }

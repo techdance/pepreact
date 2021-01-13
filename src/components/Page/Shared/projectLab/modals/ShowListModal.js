@@ -150,9 +150,9 @@ export function ShowListModalButtons(props) {
     <div className="row">
       <div className="col-md-12 d-flex justify-content-between">
         <div>
-          <a href="#0" className="btn btn-grey mr-2">
+          {/* <a href="#0" className="btn btn-grey mr-2">
             Learn More
-          </a>
+          </a> */}
         </div>
         <div className="d-flex">
           <a href="#0" className="btn btn-grey mr-2" data-dismiss="modal">

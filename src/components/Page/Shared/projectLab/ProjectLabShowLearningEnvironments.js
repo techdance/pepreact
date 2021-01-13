@@ -6,15 +6,13 @@ export default class ProjectLabShowLearningEnvironments extends React.Component 
 
     return (
       <>
-        <div className="col-md-12 mb-5">
+        <div className="col-md-12 mb-4">
           <div className="table-responsive table-wrapper-scroll-x my-custom-scrollbar rounded">
             <table className="table table4">
               <thead>
                 <tr>
-                  <th className="title-head-th-1" scope="col">
-                    Learning Environments
-                  </th>
-                  <th scope="col" className="text-right">
+                  <th className="title-head-th">Learning Environments</th>
+                  <th className="text-right">
                     <a
                       href="#0"
                       data-target="#modalLearningEnvironment"
@@ -28,8 +26,10 @@ export default class ProjectLabShowLearningEnvironments extends React.Component 
               <tbody>
                 {learningEnvironments.map((learningEnvironment, index) => (
                   <tr key={index}>
-                    <th className="title-row-th-1" scope="row"></th>
-                    <td>{learningEnvironment}</td>
+                    <td colspan="2">
+                      <strong>{index + 1 + ":"} </strong>
+                      {learningEnvironment}
+                    </td>
                   </tr>
                 ))}
               </tbody>
