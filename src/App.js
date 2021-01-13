@@ -39,6 +39,7 @@ import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/re
 import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion/courseDiscussionContainer.js";
 import InsitutionProfilePageContainer from "./components/Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
 import EditInstitutionProfileForm from "./components/Page/03601_editInstitutionProfilePage/editInstitutionProfilePageContainer.js";
+import ShowTemplatesPageContainer from "./components/Page/00409_showTemplates/ShowTemplatesPageContainer.js";
 
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
@@ -242,6 +243,16 @@ function App() {
               pageOwner={bradleyPageOwner}
             />
           </Route>
+
+          <Route exact path="/01IN_00409">
+            <InspiredPage
+              render={() => <ShowTemplatesPageContainer />}
+              breadcrumb={["Home", "Resources", "Templates"]}
+              menuItems={menuItemsProfessor}
+              pageOwner={bradleyPageOwner}
+            />
+          </Route>
+
           <Route exact path="/01IN_00500">
             <InspiredPage
               render={(profile, IT) => (
