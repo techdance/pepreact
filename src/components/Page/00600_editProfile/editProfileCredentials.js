@@ -97,7 +97,7 @@ class EditProfileCredentialsProfessionalMemberships extends React.Component {
         </h4>
 
         {professionalMemberships.map((membership, index) => (
-          <div className="form-group">
+          <div className="form-group" key={index}>
             <label>Membership &ndash; {index + 1}</label>
             <div className="d-flex">
               <a
@@ -107,9 +107,9 @@ class EditProfileCredentialsProfessionalMemberships extends React.Component {
                 onClick={(e) => this.handleClick(index, e)}
               >
                 {tempProfessionalMemberships[index].iconValue === "plus" ? (
-                  <i class="fas fa-plus-circle"></i>
+                  <i className="fas fa-plus-circle"></i>
                 ) : (
-                  <i class="fas fa-minus-circle"></i>
+                  <i className="fas fa-minus-circle"></i>
                 )}
               </a>
               {tempProfessionalMemberships[index].iconValue === "plus" ? (
@@ -141,7 +141,7 @@ class EditProfileCredentialsProfessionalMemberships extends React.Component {
                   this.handleClick(professionalMemberships.length, e)
                 }
               >
-                <i class="fas fa-plus-circle"></i>
+                <i className="fas fa-plus-circle"></i>
               </a>
             </div>
           </div>
@@ -239,7 +239,7 @@ class EditProfileCredentialsCertificates extends React.Component {
         </h4>
 
         {certificates.map((certificate, index) => (
-          <div className="form-group">
+          <div className="form-group" key={index}>
             <label>Certificate - {index + 1}</label>
             <>
               <div className="d-flex">
@@ -250,9 +250,9 @@ class EditProfileCredentialsCertificates extends React.Component {
                   onClick={(e) => this.handleClick(index, e)}
                 >
                   {tempCertificates[index].iconValue === "plus" ? (
-                    <i class="fas fa-plus-circle"></i>
+                    <i className="fas fa-plus-circle"></i>
                   ) : (
-                    <i class="fas fa-minus-circle"></i>
+                    <i className="fas fa-minus-circle"></i>
                   )}
                 </a>
                 {tempCertificates[index].iconValue === "plus" ? (
@@ -282,7 +282,7 @@ class EditProfileCredentialsCertificates extends React.Component {
                 className="cl-asset-type-d cl-hover-black font20 mr-1"
                 onClick={(e) => this.handleClick(certificates.length, e)}
               >
-                <i class="fas fa-plus-circle"></i>
+                <i className="fas fa-plus-circle"></i>
               </a>
             </div>
           </div>

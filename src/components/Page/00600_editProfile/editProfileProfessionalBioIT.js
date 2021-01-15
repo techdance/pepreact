@@ -77,17 +77,17 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
     let { areaOfExpertise, fieldName, holdAreaOfExpertise } = this.state;
 
     return (
-      <div class="d-flex">
+      <div className="d-flex">
         <a
           href="#0"
           id={"area-" + fieldName}
-          class="cl-asset-type-d cl-hover-black font20 mr-1"
+          className="cl-asset-type-d cl-hover-black font20 mr-1"
           onClick={this.handleClick}
         >
           {holdAreaOfExpertise.iconValue === "minus" ? (
-            <i class="fas fa-minus-circle"></i>
+            <i className="fas fa-minus-circle"></i>
           ) : (
-            <i class="fas fa-plus-circle"></i>
+            <i className="fas fa-plus-circle"></i>
           )}
         </a>
         {holdAreaOfExpertise.iconValue === "minus" ? (
@@ -95,7 +95,7 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
             type="text"
             name={fieldName}
             value={areaOfExpertise}
-            class="input"
+            className="input"
             onChange={this.handleChange}
           />
         ) : (
@@ -174,45 +174,45 @@ class EditProfileProfessionalBioIT extends React.Component {
 
     return (
       <>
-        <div class="col-lg-12 mb-4">
-          <div class="profesional box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead">
-                  <span class="icon-regular icon-user-secret"></span>{" "}
+        <div className="col-lg-12 mb-4">
+          <div className="profesional box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead">
+                  <span className="icon-regular icon-user-secret"></span>{" "}
                   Professional Bio
                 </h2>
               </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="box-middle">
-                    <div class="row row-custom mb-4">
-                      <div class="col-md-12">
-                        <h3 class="mb-3">
-                          <span class="icon-regular icon-camcorder pr-3"></span>{" "}
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="box-middle">
+                    <div className="row row-custom mb-4">
+                      <div className="col-md-12">
+                        <h3 className="mb-3">
+                          <span className="icon-regular icon-camcorder pr-3"></span>{" "}
                           Introduction Video
                         </h3>
                       </div>
                       <ChangeVideoImage introVideo={introVideo} />
-                      <div class="col-md-6">
+                      <div className="col-md-6">
                         <ChangeVideoButton />
 
-                        <div class="form-group w-100 mt-3">
+                        <div className="form-group w-100 mt-3">
                           <label>Link Your CV</label>
                           <input
                             type="url"
                             name="cLink"
                             value={cvLink}
-                            class="input"
+                            className="input"
                             onChange={this.handleChange}
                           />
                         </div>
-                        <div class="mb-4 mt-3">
-                          <h4 class="mb-3">
-                            <span class="icon-regular icon-user-ninja"></span>{" "}
+                        <div className="mb-4 mt-3">
+                          <h4 className="mb-3">
+                            <span className="icon-regular icon-user-ninja"></span>{" "}
                             Areas Of Expertise
                           </h4>
-                          <div id="area-1" class="form-group area pl-4">
+                          <div id="area-1" className="form-group area pl-4">
                             <label>Area of Expertise &ndash; 1</label>
                             <EditProfessionalBioAreaofExpertise
                               areaOfExpertise={areaOfExpertise1}
@@ -220,7 +220,7 @@ class EditProfileProfessionalBioIT extends React.Component {
                               onChange={this.passChangeUp}
                             />
                           </div>
-                          <div id="area-2" class="form-group area pl-4">
+                          <div id="area-2" className="form-group area pl-4">
                             <label>Area of Expertise &ndash; 2</label>
                             <EditProfessionalBioAreaofExpertise
                               areaOfExpertise={areaOfExpertise2}
@@ -228,7 +228,7 @@ class EditProfileProfessionalBioIT extends React.Component {
                               onChange={this.passChangeUp}
                             />
                           </div>
-                          <div id="area-3" class="form-group area pl-4">
+                          <div id="area-3" className="form-group area pl-4">
                             <label>Area of Expertise &ndash; 3</label>
                             <EditProfessionalBioAreaofExpertise
                               areaOfExpertise={areaOfExpertise3}
@@ -241,13 +241,13 @@ class EditProfileProfessionalBioIT extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="box-middle">
-                    <div class="row row-custom">
-                      <div class="col-md-12">
-                        <div class="form-group">
+                <div className="col-lg-6">
+                  <div className="box-middle">
+                    <div className="row row-custom">
+                      <div className="col-md-12">
+                        <div className="form-group">
                           <label>
-                            <span class="icon-regular icon-book-user"></span>{" "}
+                            <span className="icon-regular icon-book-user"></span>{" "}
                             Bio
                           </label>
                           <textarea

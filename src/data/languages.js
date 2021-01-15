@@ -1,6 +1,7 @@
 // TODO - read this from backend API so that the loop is closed.
 
 export const languageList = [
+  { value: "", label: "" },
   { value: "Afrikanns", label: "Afrikanns" },
   { value: "Albanian", label: "Albanian" },
   { value: "Arabic", label: "Arabic" },

@@ -124,8 +124,8 @@ class ReportDrillDownContainer extends React.Component {
               <div className="box box-border-radius box-shadow bg-white pt-4">
                 <div className="inner-wrap">
                   <div className="box-middle">
-                    <div class="row">
-                      <div class="col-md-12 img-resp">
+                    <div className="row">
+                      <div className="col-md-12 img-resp">
                         <div
                           id="chartContainer"
                           style={{ height: "300px", width: "100%" }}

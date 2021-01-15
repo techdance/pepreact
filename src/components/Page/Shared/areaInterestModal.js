@@ -3,20 +3,6 @@ import React from "react";
 import $ from "jquery";
 
 class AreaInterestModal extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick = (modalName, id, event) => {
-    // close the Area of Interest modal when the Edit button is clicked (which leads to Edit AOI Modal opening)
-    event.preventDefault();
-
-    let modalId = "#" + modalName + id;
-    window.$(modalId).modal("hide");
-  };
-
   render() {
     const {
       projectType,
@@ -150,10 +136,8 @@ class AreaInterestModal extends React.Component {
                               href="#0"
                               id="btn-research-project"
                               data-toggle="modal"
+                              data-dismiss="modal"
                               data-target={"#areaInterestModalEdit" + id}
-                              onClick={(e) =>
-                                this.handleClick("areaInterestModal", id, e)
-                              }
                               className="btn btn-blue btn-w-100 m-auto"
                             >
                               Edit

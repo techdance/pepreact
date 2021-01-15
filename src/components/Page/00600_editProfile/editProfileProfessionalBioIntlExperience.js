@@ -66,14 +66,14 @@ class InternationalExperience extends React.Component {
 
     return (
       <>
-        <div class="wrap-range-label">
+        <div className="wrap-range-label">
           <ul>
             <li>1 &ndash; 2 Years</li>
             <li>3 &ndash; 7 Years</li>
             <li>7+ Years</li>
           </ul>
         </div>
-        <div class="wrap-range">
+        <div className="wrap-range">
           <input
             type="range"
             min="0"

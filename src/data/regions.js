@@ -1,4 +1,5 @@
 export const regionList = [
+  { value: "", label: "" },
   { value: "All", label: "All" },
   { value: "Africa", label: "Africa" },
   { value: "Asia", label: "Asia" },

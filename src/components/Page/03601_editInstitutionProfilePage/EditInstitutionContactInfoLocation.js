@@ -4,7 +4,7 @@ import { InstitutionLocation } from "../../../classes/Institution.js";
 import EditInstitutionContactInfoLocationModal from "./EditInstitutionContactInfoLocationModal.js";
 
 import ModalPortal from "../Shared/UI/ModalPortal";
-import { removeFromArray } from "../Shared/usefulFunctions.js";
+import { removeFromArray } from "../Shared/usefulFunctions";
 
 // EditInstitutionContactInfoLocationOld shows the institution locations using a dropdown.
 //  It receives as props the array of locations stored in the Institution data object.

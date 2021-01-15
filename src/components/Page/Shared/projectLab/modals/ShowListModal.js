@@ -1,6 +1,6 @@
 import React from "react";
 
-import { removeFromArray } from "../../usefulFunctions.js";
+import { removeFromArray } from "../../usefulFunctions";
 
 export function ShowListModalHeader(props) {
   const { headerString } = props;

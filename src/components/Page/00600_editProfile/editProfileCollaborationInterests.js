@@ -2,74 +2,55 @@ import React from "react";
 
 //  Used for the modal triggered on clicking "View More" link
 import AreaInterestModal from "../Shared/areaInterestModal.js";
-import AreaInterestModalEdit from "../Shared/areaInterestModalEdit.js";
+import AreaInterestModalEdit, {
+  AreaInterestModalAdd,
+} from "../Shared/areaInterestModalEdit.js";
+
+import AreaofInterest from "../../../classes/AreaofInterest.jsx";
+import { removeFromArray } from "../Shared/usefulFunctions.js";
+import { ConfirmModal } from "../Shared/UI/MessageModal";
+import ModalPortal from "../Shared/UI/ModalPortal";
 
 class EditProfileCollaborationInterests extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.areaofinterest_list;
+    this.state = {
+      areaofinterest_list: this.props.areaofinterest_list,
+      currentIndex: 0,
+    };
 
     // initialize states to match current values of links in the "areaofinterest_list" data object.
 
-    this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.addNewAreaOfInterest = this.addNewAreaOfInterest.bind(this);
+    this.removeAreaOfInterest = this.removeAreaOfInterest.bind(this);
+    this.showConfirmDeleteModal = this.showConfirmDeleteModal.bind(this);
   }
-
-  handleChange = (event) => {
-    // handles field form changes at this level of nested form components and then passes changes up to parent component
-    //  sets local state first and then passes current stateful object up to parent to propogate changes
-
-    // get user input change from the synthetic event;
-    const { name, value } = event.target;
-
-    //  set local state
-    let areaofinterest_list = this.state;
-    areaofinterest_list[name] = value;
-    this.setState({ [name]: value });
-
-    /// pass current state up to parent to propogate changes
-    this.props.onChange("areaofinterest_list", areaofinterest_list);
-  };
-
-  handleChangeSingleSelect = (field, selected) => {
-    // handles field form changes at this level of nested form components and then passes changes up to parent component
-    //  sets local state first and then passes current stateful object up to parent to propogate changes
-
-    // get user input change from the synthetic event
-    const { value } = selected;
-
-    //  set local state
-    let areaofinterest_list = this.state;
-    areaofinterest_list[field] = value;
-    this.setState({ [field]: value });
-
-    /// pass current state up to parent to propogate changes
-    this.props.onChange("areaofinterest_list", areaofinterest_list);
-  };
-
-  handleChangeTelephone = (field, number) => {
-    let telephone = number.target.value;
-    const regexp = /^[0-9-+ \b]+$/;
-
-    // if value is not blank, then test the regex
-    if (telephone === "" || regexp.test(telephone)) {
-      //  set local state
-      let areaofinterest_list = this.state;
-      areaofinterest_list[field] = telephone;
-      this.setState({ [field]: telephone });
-
-      /// pass current state up to parent to propogate changes
-      this.props.onChange("areaofinterest_list", areaofinterest_list);
-    }
-  };
 
   addNewAreaOfInterest = (index, value) => {
     // index is not useful but the function needs to match passChangeUp arguments
-    let areaofinterest_list = this.state;
+    let { areaofinterest_list } = this.state;
     areaofinterest_list.push(value); // push new area of interest to the end of the array
 
     // pass the updated area of interest list back up to parent component
     this.props.onChange("areaofinterest_list", areaofinterest_list);
+  };
+
+  showConfirmDeleteModal(index) {
+    this.setState({ currentIndex: index });
+
+    /* global $ */
+    this.$confirmDeleteModal = $(this.confirmDeleteModal);
+    this.$confirmDeleteModal.modal("toggle");
+  }
+
+  removeAreaOfInterest = (confirm) => {
+    if (confirm) {
+      const { currentIndex } = this.state;
+      let { areaofinterest_list } = this.state;
+      areaofinterest_list = removeFromArray(areaofinterest_list, currentIndex);
+      this.props.onChange("areaofinterest_list", areaofinterest_list);
+    }
   };
 
   passChangeUp = (index, value) => {
@@ -79,7 +60,7 @@ class EditProfileCollaborationInterests extends React.Component {
     //  so it passes up the index instead of the field name.
 
     //  update local state wth changes from child component
-    let areaofinterest_list = this.state;
+    let { areaofinterest_list } = this.state;
     areaofinterest_list[index] = value;
     // you could pass the event here but also null if it is not necessary nor useful
     this.props.onChange("areaofinterest_list", areaofinterest_list);
@@ -88,56 +69,45 @@ class EditProfileCollaborationInterests extends React.Component {
   render() {
     const randomIndex = Math.floor(Math.random() * 100000) + 9999;
 
-    var blankAreaOfInterest = {
-      projectType: "",
-      description: "",
-      discipline: "",
-      deliveryMethod: "",
-      collaborationType: "",
-      region: "",
-      programLength: "",
-      preferredLanguage: "",
-      credits: "",
-      programLevel: "",
-      dateRange: "",
-      created: false,
-    };
-
     return (
       <>
-        <div class="col-lg-6 mb-4">
-          <div class="collaboration box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead mw-100">
-                  <span class="icon-regular icon-comment-smile"></span>{" "}
+        <div className="col-lg-6 mb-4">
+          <div className="collaboration box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead mw-100">
+                  <span className="icon-regular icon-comment-smile"></span>{" "}
                   Collaboration Interests
                 </h2>
               </div>
-              <div class="box-middle">
-                <div class="row row-custom">
-                  <div class="col-md-12">
-                    <h4 class="mb-3">
-                      <span class="icon-regular icon-s-search pr-3"></span>{" "}
+              <div className="box-middle">
+                <div className="row row-custom">
+                  <div className="col-md-12">
+                    <h4 className="mb-3">
+                      <span className="icon-regular icon-s-search pr-3"></span>{" "}
                       Areas of interest
                       <i
-                        class="fa fa-info-circle icon-info cl-blue"
+                        className="fa fa-info-circle icon-info cl-blue"
                         aria-hidden="true"
                       >
-                        <span class="info-toltip">
+                        <span className="info-toltip">
                           Click "Learn More" to learn about CollaboratED
                           Projects in our Resources section.
                         </span>
                       </i>
                     </h4>
-                    <div class="row">
+                    <div className="row">
                       {this.props.areaofinterest_list.map(
                         (areaofinterest, index) => (
-                          <div class="col-md-6" id="areas-of-interest-1">
-                            <div class="areas-of-interest">
-                              <div class="row row-custom position-relative">
-                                <span class="left-corner">{index + 1}</span>
-                                <div class="col-md-8">
+                          <div
+                            className="col-md-6"
+                            id="areas-of-interest-1"
+                            key={index}
+                          >
+                            <div className="areas-of-interest">
+                              <div className="row row-custom position-relative">
+                                <span className="left-corner">{index + 1}</span>
+                                <div className="col-md-8">
                                   <p>
                                     <strong>Project</strong>
                                     <br />
@@ -151,7 +121,7 @@ class EditProfileCollaborationInterests extends React.Component {
                                     </small>
                                   </p>
                                 </div>
-                                <div class="col-md-4">
+                                <div className="col-md-4">
                                   <p>
                                     <strong>Discipline</strong>
                                     <br />
@@ -164,9 +134,9 @@ class EditProfileCollaborationInterests extends React.Component {
                                   </p>
                                 </div>
                               </div>
-                              <div class="row row-custom mt-2">
-                                <div class="col-md-12 d-flex justify-content-between">
-                                  <div class="text-center">
+                              <div className="row row-custom mt-2">
+                                <div className="col-md-12 d-flex justify-content-between">
+                                  <div className="text-center">
                                     <a
                                       href="#0"
                                       data-toggle="modal"
@@ -183,11 +153,14 @@ class EditProfileCollaborationInterests extends React.Component {
                                     id={index}
                                     editMode="true"
                                   />
-                                  <div class="text-center">
+                                  <div className="text-center">
                                     <a
                                       href="#0"
                                       data-id="1"
-                                      class="remove-interest"
+                                      className="remove-interest"
+                                      onClick={(event) => {
+                                        this.showConfirmDeleteModal(index);
+                                      }}
                                     >
                                       Remove
                                     </a>
@@ -200,23 +173,20 @@ class EditProfileCollaborationInterests extends React.Component {
                                   />
                                 </div>
                               </div>
-
-                              {/* <!-- Modal what type of  project --> */}
                             </div>
-                            {/* <!-- areas of interest --> */}
                           </div>
                         )
                       )}
                     </div>
-                    <div class="mb-2 mt-2">
-                      <a href="#0" class="btn btn-blue btn-w-100 mr-1">
+                    <div className="mb-2 mt-2">
+                      <a href="#0" className="btn btn-blue btn-w-100 mr-1">
                         Learn More
                       </a>
                       <a
                         href="#0"
                         data-toggle="modal"
                         data-target={"#areaInterestModalEdit" + randomIndex}
-                        class="btn btn-blue btn-w-100"
+                        className="btn btn-blue btn-w-100"
                       >
                         Add
                       </a>
@@ -225,8 +195,13 @@ class EditProfileCollaborationInterests extends React.Component {
                           a blank areaofinterest data structure
                            the randomIndex to identify the modal code
                            a new onChange function to add the new structure to the end of areaofinterest_list */}
-                    <AreaInterestModalEdit
+                    {/* <AreaInterestModalEdit
                       areaOfInterest={blankAreaOfInterest}
+                      index={randomIndex}
+                      onChange={this.addNewAreaOfInterest}
+                    /> */}
+                    <AreaInterestModalAdd
+                      areaofInterest={new AreaofInterest()}
                       index={randomIndex}
                       onChange={this.addNewAreaOfInterest}
                     />
@@ -236,7 +211,14 @@ class EditProfileCollaborationInterests extends React.Component {
             </div>
           </div>
         </div>
-        {/* <!-- END COL --> */}
+        <ModalPortal>
+          <ConfirmModal
+            modalID="confirmDelete"
+            modalRef={(el) => (this.confirmDeleteModal = el)}
+            modalMsg="Are you sure you want to delete this Area of Interest?"
+            confirmCallBack={this.removeAreaOfInterest}
+          />
+        </ModalPortal>
       </>
     );
   }

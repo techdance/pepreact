@@ -151,11 +151,6 @@ function App() {
             />
           </Route>
           <Route exact path="/18IN_00600">
-            {/* <Page00600
-              pageOwner={pamelaPageOwner}
-              profile={pamelaIT}
-              IT="true"
-            /> */}
             <InspiredPage
               render={(profile, IT) => (
                 <EditProfileContainer profile={pamelaIT} IT="true" />

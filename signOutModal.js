@@ -8,26 +8,26 @@ class signOutModal extends Component {
   render() {
     return (
       <div
-        class="modal fade"
+        className="modal fade"
         id="signOutModal"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="sign-out-logo">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-body">
+              <div className="sign-out-logo">
                 <img src="images/logo.png" />
               </div>
               <h2>Sign Out</h2>
               <p>Are you sure you would like to Sign Out of your account?</p>
             </div>
-            <div class="modal-footer ac">
+            <div className="modal-footer ac">
               <button
                 type="button"
-                class=""
+                className=""
                 data-dismiss="modal"
                 aria-label="Close"
               >
@@ -35,7 +35,7 @@ class signOutModal extends Component {
               </button>
               <button
                 type="button"
-                class=""
+                className=""
                 data-dismiss="modal"
                 aria-label="Close"
               >

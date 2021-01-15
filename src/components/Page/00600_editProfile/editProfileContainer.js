@@ -71,9 +71,9 @@ class EditProfileContainer extends React.Component {
 
     return (
       <>
-        <section class="wrap-profile">
+        <section className="wrap-profile">
           <form onSubmit={this.handleSubmit}>
-            <div class="row row-custom ">
+            <div className="row row-custom ">
               <EditProfilePersonalInformation
                 personalInformation={personalInformation}
                 onChange={this.passChangeUp}
@@ -109,9 +109,9 @@ class EditProfileContainer extends React.Component {
                 </>
               )}
             </div>
-            <div class="row row-custom ">
-              <div class="col-lg-12 mb-4 text-right">
-                <a class="btn btn-blue" href="#0">
+            <div className="row row-custom ">
+              <div className="col-lg-12 mb-4 text-right">
+                <a className="btn btn-blue" href="#0">
                   Save Profile
                 </a>
               </div>

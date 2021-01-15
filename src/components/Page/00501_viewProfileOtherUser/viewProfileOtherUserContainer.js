@@ -32,8 +32,8 @@ class ViewProfileOtherUserContainer extends React.Component {
 
     return (
       <>
-        <section class="wrap-profile">
-          <div class="row row-custom sortable">
+        <section className="wrap-profile">
+          <div className="row row-custom sortable">
             <ShowPersonalInformation
               personalInformation={profile.personalInformation}
               sameUser="false"

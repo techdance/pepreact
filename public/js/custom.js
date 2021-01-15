@@ -524,18 +524,18 @@ jQuery(function () {
     jQuery("#userModal").modal("hide");
   });
 
-  jQuery(".remove-interest").click(function () {
-    var id;
-    id = jQuery(this).data("id");
+  // jQuery(".remove-interest").click(function () {
+  //   var id;
+  //   id = jQuery(this).data("id");
 
-    if (confirm("Are you sure to remove areas of interest?"))
-      jQuery("#areas-of-interest-" + id)
-        .slideUp()
-        .remove();
-  });
-  jQuery("#save-what-type").click(function () {
-    jQuery("#areas-of-interest-3").show();
-  });
+  //   if (confirm("Are you sure to remove areas of interest?"))
+  //     jQuery("#areas-of-interest-" + id)
+  //       .slideUp()
+  //       .remove();
+  // });
+  // jQuery("#save-what-type").click(function () {
+  //   jQuery("#areas-of-interest-3").show();
+  // });
 
   jQuery("a[data-target='#badgesModal']").click(function () {
     jQuery(this).find(".note").hide();
@@ -553,13 +553,12 @@ jQuery(function () {
     }
   );
 
-  /* always end
-	jQuery('.datepicker').datepicker({
-		changeMonth: true,
-		changeYear: true,
-		dateFormat: 'dd-mm-yy'
-	});
-	*/
+  /* always end */
+  // jQuery(".datepicker").datepicker({
+  //   changeMonth: true,
+  //   changeYear: true,
+  //   dateFormat: "dd-mm-yy",
+  // });
 });
 
 function project_type(values) {

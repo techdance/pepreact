@@ -15,3 +15,7 @@ export const removeFromArray = function (targetArray, index) {
 
   return targetArray;
 };
+
+export function reducer(prevState, { name, value }) {
+  return { ...prevState, [name]: value };
+}

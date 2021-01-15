@@ -1,4 +1,6 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useRef } from "react";
+
+import MessageModal from "./components/Page/Shared/UI/MessageModal";
 
 export default function TestState() {
   const [parentCount, setParentCount] = useState(0);
@@ -9,7 +11,13 @@ export default function TestState() {
 
   console.log("Parent Rendered called ");
   return (
-    <ChildState parentCount={parentCount} callBackFunction={callBackFunction} />
+    <div>
+      <ChildState
+        parentCount={parentCount}
+        callBackFunction={callBackFunction}
+      />
+      <TestModal />
+    </div>
   );
 }
 
@@ -56,6 +64,24 @@ function ChildState(props) {
         name="field"
         onChange={handleFieldChange}
       />
+    </div>
+  );
+}
+
+function TestModal() {
+  const modalRef = useRef(null);
+  const toggleModal = () => {
+    /* global $ */
+    const $modalRef = $(modalRef.current);
+    $modalRef.modal("toggle");
+  };
+  return (
+    <div>
+      {/* <a href="#0" data-toggle="modal" data-target="#saveConfirmationModal"> */}
+      <a href="#0" onClick={toggleModal}>
+        ShowModal
+      </a>
+      <MessageModal modalRef={modalRef} modalID={"saveConfirmationModal"} />
     </div>
   );
 }
