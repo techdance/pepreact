@@ -291,9 +291,9 @@ export class ModuleActivityModal extends React.Component {
                 <div className="row mt-5">
                   <div className="col-md-12">
                     <div className="float-left">
-                      <a href="#0" className="btn btn-blue">
+                      {/* <a href="#0" className="btn btn-blue">
                         Learn more
-                      </a>
+                      </a> */}
                     </div>
                     <div className="float-right d-flex">
                       <a
