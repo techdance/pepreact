@@ -39,7 +39,7 @@ import ReportDrillDownContainer from "./components/Page/01404_reportDrillDown/re
 import CourseDiscussionContainer from "./components/Page/0120X_CourseDiscussion/courseDiscussionContainer.js";
 import InsitutionProfilePageContainer from "./components/Page/00701_showInstitutionProfilePage/showInstitutionProfilePageContainer.js";
 import EditInstitutionProfileForm from "./components/Page/03601_editInstitutionProfilePage/editInstitutionProfilePageContainer.js";
-import ShowTemplatesPageContainer from "./components/Page/00409_showTemplates/ShowTemplatesPageContainer.js";
+import ShowTemplatesPageContainer from "./components/Page/00400/ShowTemplatesPageContainer.js";
 
 import ShowMatches from "./components/Page/01300/ShowMatches.js";
 import ShowMyProjects from "./components/Page/03100/ShowMyProjects.js";
@@ -47,6 +47,9 @@ import StudentHomePageContainer from "./components/Page/00300_showStudentHomePag
 import ShowProfessorHomePage from "./components/Page/00300_ShowProfessorHomePage/showProfessorHomepage.js";
 import EditProjectLabCourse from "./components/Page/01000/editProjectLabCourse";
 import EditProjectLabCertificate from "./components/Page/04200/editProjectLabCertificate.js";
+
+import ShowResources from "./components/Page/00400/ShowResources";
+import ManageTemplates from "./components/Page/00400/ManageTemplates";
 
 import TestState from "./TestState.js";
 
@@ -57,6 +60,7 @@ import {
   pamelaPageOwner,
   brittanyPageOwner,
   tomPageOwner,
+  sidneyPageOwner,
 } from "./data/pageOwner.js";
 import {
   gordonProfessor,
@@ -74,6 +78,7 @@ import {
   menuItemsStudent,
   menuItems,
   menuItemsLMSAdmin,
+  menuItemsWhateverRoleSidney,
 } from "./data/menuItems.js";
 
 // React global variables
@@ -349,6 +354,24 @@ function App() {
               ]}
               menuItems={menuItemsLMSAdmin}
               pageOwner={tomPageOwner}
+            />
+          </Route>
+
+          {/* Sidney Pages */}
+          <Route exact path="/20IN_00400">
+            <InspiredPage
+              render={() => <ShowResources />}
+              breadcrumb={["Home", "Resources"]}
+              menuItems={menuItemsWhateverRoleSidney}
+              pageOwner={sidneyPageOwner}
+            />
+          </Route>
+          <Route exact path="/20IN_00413">
+            <InspiredPage
+              render={() => <ManageTemplates />}
+              breadcrumb={["Home", "Resources", "Manage Templates"]}
+              menuItems={menuItemsWhateverRoleSidney}
+              pageOwner={sidneyPageOwner}
             />
           </Route>
 

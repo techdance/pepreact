@@ -88,3 +88,15 @@ export const menuItemsLMSAdmin = [
 
   { name: "Settings", link: "#0", icon: "icon-settings", grey: false },
 ];
+
+// if the menuItem.grey exists and is true, then the menu items are set to "not-active"
+export const menuItemsWhateverRoleSidney = [
+  { name: "Home", link: "#0", icon: "icon-home" },
+  { name: "My Calendar", link: "#0", icon: "icon-calendar" },
+  { name: "Reports", link: "#0", icon: "icon-chart-bar" },
+  { name: "My Files", link: "#0", icon: "icon-copy", grey: false },
+  { name: "Resources", link: "#0", icon: "icon-th-large" },
+  { name: "My Projects", link: "#0", icon: "icon-book-title" },
+  { name: "Opportunities", link: "#0", icon: "icon-sun-haze" },
+  { name: "Settings", link: "#0", icon: "icon-settings", grey: false },
+];

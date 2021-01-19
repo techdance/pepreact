@@ -443,8 +443,6 @@ section.top {
 
 .box {
   padding: 10px 18px 20px;
-  overflow: hidden;
-  position: relative;
 }
 .box.box-collaborated {
   padding: 10px;
@@ -771,24 +769,6 @@ div.item span {
   min-width: 150px;
 }
 .btn:hover {
-  background: black;
-  color: white;
-  cursor: pointer;
-  opacity: 1;
-}
-.btn-new {
-  color: white;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 12px !important;
-  padding: 12px 14px;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-}
-.btn-new:hover {
   background: black;
   color: white;
   cursor: pointer;
@@ -1548,8 +1528,10 @@ body.bg-grey-popup .toltip-overlay:hover {
   margin-left: auto;
   flex-direction: column;
 }
+
 .toltip-item {
   align-items: center;
+
   overflow: hidden;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1589,6 +1571,7 @@ body.bg-grey-popup .toltip-overlay:hover {
   line-height: 1.5;
   margin-right: 10px;
 }
+
 .toltip-close-details a {
   background: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid #3d3d3d;
@@ -1895,6 +1878,7 @@ body.bg-grey-popup .toltip-overlay:hover {
   padding-right: 0px;
   width: 100px !important;
 }
+
 #owl-announcement {
   max-width: 1000px;
   margin: auto;
@@ -1938,6 +1922,7 @@ body.bg-grey-popup .toltip-overlay:hover {
   -o-border-radius: 10px;
   overflow: hidden;
 }
+
 #dots-number {
   text-align: center;
 }
@@ -1955,6 +1940,7 @@ body.bg-grey-popup .toltip-overlay:hover {
   background: #006fbe;
   color: white;
 }
+
 .wrap-step {
   display: flex;
 }
@@ -2092,6 +2078,7 @@ a.button-green-3 {
 .partner-name .toltip-phone a:last-child {
   margin-right: 0px;
 }
+
 .form-group {
   margin-bottom: 10px;
 }
@@ -2166,6 +2153,7 @@ a.button-green-3 {
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ededed', GradientType=0 );
 }
+
 .form-group .textarea {
   /*font-style: italic;*/
   min-height: 74px;
@@ -2182,6 +2170,7 @@ a.button-green-3 {
 .flex-bottom .form-group {
   align-self: flex-end;
 }
+
 .active {
   color: #37adbf;
 }
@@ -2202,9 +2191,11 @@ a.button-green-3 {
 .active.selected::before {
   display: none;
 }
+
 .wrap-range input {
   width: 100%;
 }
+
 .wrap-range-label ul,
 .wrap-range-label li {
   display: inline-block;
@@ -5474,6 +5465,7 @@ span.square-orange {
 
 @media (min-width: 1500px) {
   .container-fluid {
+    /* max-width: 2440px !important; */
     max-width: 1440px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
@@ -6723,9 +6715,4 @@ body div.zabuto_calendar .table tr.calendar-month-header td {
 
   background: #dcebfe;
   padding: 5px 12px;
-}
-.form-group .input.inactive-input {
-  background-color: #848586 !important;
-  pointer-events: none;
-  cursor: default;
 }
