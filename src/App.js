@@ -50,6 +50,7 @@ import EditProjectLabCertificate from "./components/Page/04200/editProjectLabCer
 
 import ShowResources from "./components/Page/00400/ShowResources";
 import ManageTemplates from "./components/Page/00400/ManageTemplates";
+import NewTemplate from "./components/Page/00400/NewTemplate";
 
 import TestState from "./TestState.js";
 
@@ -370,6 +371,19 @@ function App() {
             <InspiredPage
               render={() => <ManageTemplates />}
               breadcrumb={["Home", "Resources", "Manage Templates"]}
+              menuItems={menuItemsWhateverRoleSidney}
+              pageOwner={sidneyPageOwner}
+            />
+          </Route>
+          <Route exact path="/20IN_00414">
+            <InspiredPage
+              render={() => <NewTemplate />}
+              breadcrumb={[
+                "Home",
+                "Resources",
+                "Manage Templates",
+                "New Templates",
+              ]}
               menuItems={menuItemsWhateverRoleSidney}
               pageOwner={sidneyPageOwner}
             />

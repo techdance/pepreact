@@ -1,6 +1,6 @@
 export default class Template {
   id = "";
-  coverImage = "";
+  coverImage = ""; // image to show in Template Tiles
   type = ""; // Course Development or Bookmark
   category = ""; // category is under type; For Course Development, this is Course or Syllabus
   title = "";
@@ -8,6 +8,7 @@ export default class Template {
   author = "";
   state = ""; // Published or Draft
   date = ""; // published date (state=Published) or last edited date (state=Draft)
+  resourceFile = "";
 
   setTemplate(template) {
     this.coverImage = template.coverImage;

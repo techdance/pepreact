@@ -37,7 +37,7 @@ const resourceTiles = [
       "Utilize AHEA's professionally-constructed templates to support curriculum development, campus programs, and strategic initiatives.",
     icon: "icon-clipboard-list-check",
     viewMoreLink: HOST + "/01IN_00409", // Should go to 00409
-    manageLink: HOST + "/01IN_00409", // Not sure where this should go.
+    manageLink: HOST + "/20IN_00413", // Not sure where this should go.
   },
 ];
 

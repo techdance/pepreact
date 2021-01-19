@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { getTemplateCourseDevelopment } from "../../../repositories/TemplateRepository";
 import { removeFromArray } from "../Shared/usefulFunctions";
 
+const HOST = "http://localhost:3000"; // this needs to be consolidated into one file containing constants (or ENV vars)
+
 export default function ManageTemplates() {
   // get all Templates from DB.
   const [courseDevelopments, setCourseDevelopments] = useState(() => {
@@ -104,7 +106,10 @@ export default function ManageTemplates() {
               </h2>
 
               <div className="mt-2">
-                <a href="#0" className="btn btn-blue btn-w-100 mb-2">
+                <a
+                  href={HOST + "/20IN_00414"}
+                  className="btn btn-blue btn-w-100 mb-2"
+                >
                   Add Resources
                 </a>
               </div>
