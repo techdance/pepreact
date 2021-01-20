@@ -140,7 +140,10 @@ export default function ManageTemplates() {
       return (
         <tr key={courseDevelopment.id}>
           <td>
-            <a href="#0" className="link color-black">
+            <a
+              href={HOST + "/20IN_00415?templateid=" + courseDevelopment.id}
+              className="link color-black"
+            >
               {courseDevelopment.title}
             </a>
           </td>

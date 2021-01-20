@@ -51,6 +51,7 @@ import EditProjectLabCertificate from "./components/Page/04200/editProjectLabCer
 import ShowResources from "./components/Page/00400/ShowResources";
 import ManageTemplates from "./components/Page/00400/ManageTemplates";
 import NewTemplate from "./components/Page/00400/NewTemplate";
+import EditTemplate from "./components/Page/00400/EditTemplate";
 
 import TestState from "./TestState.js";
 
@@ -376,6 +377,7 @@ function App() {
             />
           </Route>
           <Route exact path="/20IN_00414">
+            {/* called with no query string parameters */}
             <InspiredPage
               render={() => <NewTemplate />}
               breadcrumb={[
@@ -383,6 +385,20 @@ function App() {
                 "Resources",
                 "Manage Templates",
                 "New Templates",
+              ]}
+              menuItems={menuItemsWhateverRoleSidney}
+              pageOwner={sidneyPageOwner}
+            />
+          </Route>
+          <Route exact path="/20IN_00415">
+            {/* called with query string parameters ?templateid=X  */}
+            <InspiredPage
+              render={() => <EditTemplate />}
+              breadcrumb={[
+                "Home",
+                "Resources",
+                "Manage Templates",
+                "Edit Templates",
               ]}
               menuItems={menuItemsWhateverRoleSidney}
               pageOwner={sidneyPageOwner}

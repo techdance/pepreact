@@ -3,33 +3,31 @@ import { reducer } from "../Shared/usefulFunctions";
 
 import TemplateForm, { TemplateFormHeader } from "./TemplateForm";
 
-import Template from "../../../classes/Template";
+import { getTemplateCourseDevelopmentById } from "../../../repositories/TemplateRepository";
 
 // TODO: Update the author field (not sure what should be added)
 // TODO: Upload image and resource files when selected.
 
-export default function NewTemplate() {
-  const [newTemplate, setNewTemplate] = useReducer(reducer, new Template());
+export default function EditTemplate() {
+  const url = new URL(document.location.href);
+  const templateId = url.searchParams.get("templateid");
 
-  const handleSave = ({ target: { name } }, value) => {
-    console.log(value);
-    setNewTemplate({ name, value });
+  const initialTemplate = getTemplateCourseDevelopmentById(templateId);
+  const [newTemplate, setNewTemplate] = useReducer(reducer, initialTemplate);
 
-    // update the date in the record;
-    const today = new Date();
-    name = "date";
-    value =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getDate();
-    setNewTemplate({ name, value });
+  if (!templateId || !initialTemplate) return null; // Either id doesn't exist in url or in the db
+
+  const handleRemove = () => {
+    // delete template from db
+  };
+
+  const handleUpdate = () => {
+    // udpate template to db
   };
 
   return (
     <section className="three-columns">
-      <TemplateFormHeader headerText="New Template" />
+      <TemplateFormHeader headerText="Edit Template" />
 
       <TemplateForm newTemplate={newTemplate} setNewTemplate={setNewTemplate} />
 
@@ -42,17 +40,17 @@ export default function NewTemplate() {
             href="#0"
             className="btn btn-grey mx-2"
             name="state"
-            onClick={(event) => handleSave(event, "Draft")}
+            onClick={handleRemove}
           >
-            "Save Draft"
+            Remove
           </a>
           <a
             href="#0"
             className="btn btn-blue"
             name="state"
-            onClick={(event) => handleSave(event, "Published")}
+            onClick={(event) => handleUpdate(event, "Published")}
           >
-            "Publish"
+            Update
           </a>
         </div>
       </div>
