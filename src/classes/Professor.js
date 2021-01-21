@@ -1,4 +1,5 @@
 //  TODO - modify Professor object so that institutionProfile points to an Institution object.
+// TODO - reconcile and integrate PersonRecord class with Professor class
 
 class Professor {
   personalInformation = {

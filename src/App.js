@@ -53,6 +53,8 @@ import ManageTemplates from "./components/Page/00400/ManageTemplates";
 import NewTemplate from "./components/Page/00400/NewTemplate";
 import EditTemplate from "./components/Page/00400/EditTemplate";
 
+import ViewPersonRecord from "./components/Page/00610/ViewPersonRecord";
+
 import TestState from "./TestState.js";
 
 import {
@@ -354,6 +356,15 @@ function App() {
                 "AHEA University",
                 "Edit Profile",
               ]}
+              menuItems={menuItemsLMSAdmin}
+              pageOwner={tomPageOwner}
+            />
+          </Route>
+          <Route exact path="/19IN_00612">
+            {/* called with query string parameters ?personrecordid=X  */}
+            <InspiredPage
+              render={() => <ViewPersonRecord />}
+              breadcrumb={["Home", "Person Record", "Bradley Dexter"]}
               menuItems={menuItemsLMSAdmin}
               pageOwner={tomPageOwner}
             />
