@@ -19,3 +19,14 @@ export const removeFromArray = function (targetArray, index) {
 export function reducer(prevState, { name, value }) {
   return { ...prevState, [name]: value };
 }
+
+export function arrayReducer(prevState, { name, value, id }) {
+  return { ...prevState, [id]: { ...prevState[id], [name]: value } };
+}
+
+export function nestedReducer(prevState, { name, value, childObjectName }) {
+  return {
+    ...prevState,
+    [childObjectName]: { ...prevState[childObjectName], [name]: value },
+  };
+}

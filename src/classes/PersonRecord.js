@@ -1,8 +1,8 @@
 // TODO - reconcile and integrate PersonRecord class with Professor class
 
 export default class PersonRecord {
-  role = "";
   personalInformation = {
+    role: "",
     namePrefix: "",
     firstName: "",
     middleName: "",

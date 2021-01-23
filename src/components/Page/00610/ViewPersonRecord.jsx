@@ -42,7 +42,7 @@ export default function ViewPersonRecord() {
               </div>
               <div className="col-md-4 mb-4 color-black">
                 <span className="icon-regular icon-id-badge mr-2"></span>{" "}
-                {personRecord.role}
+                {personalInformation.role}
               </div>
               <div className="col-md-4 mb-4 color-black">
                 <span className="icon-regular icon-user-tie mr-2"></span>{" "}

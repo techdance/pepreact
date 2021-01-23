@@ -1,4 +1,3 @@
-// data object used by Select in react-select
 export const projectTypeList = [
   { value: "Select a Project", label: "Select a Project", disabled: "" },
   {

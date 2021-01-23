@@ -54,6 +54,7 @@ import NewTemplate from "./components/Page/00400/NewTemplate";
 import EditTemplate from "./components/Page/00400/EditTemplate";
 
 import ViewPersonRecord from "./components/Page/00610/ViewPersonRecord";
+import EditPersonRecord from "./components/Page/00610/EditPersonRecord";
 
 import TestState from "./TestState.js";
 
@@ -365,6 +366,20 @@ function App() {
             <InspiredPage
               render={() => <ViewPersonRecord />}
               breadcrumb={["Home", "Person Record", "Bradley Dexter"]}
+              menuItems={menuItemsLMSAdmin}
+              pageOwner={tomPageOwner}
+            />
+          </Route>
+          <Route exact path="/19IN_00613">
+            {/* called with query string parameters ?personrecordid=X  */}
+            <InspiredPage
+              render={() => <EditPersonRecord />}
+              breadcrumb={[
+                "Home",
+                "Person Record",
+                "Bradley Dexter",
+                "Edit Record",
+              ]}
               menuItems={menuItemsLMSAdmin}
               pageOwner={tomPageOwner}
             />

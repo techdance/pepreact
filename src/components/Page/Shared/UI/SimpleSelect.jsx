@@ -7,16 +7,19 @@ export default function SimpleSelect(props) {
     onChange,
     selectName,
     initialValue,
+    selectId,
   } = props;
 
   onChange = onChange !== undefined ? onChange : null;
   initialValue = initialValue !== undefined ? initialValue : "";
+  selectId = selectId !== undefined ? selectId : "";
   return (
     <select
       className={selectClass}
       name={selectName}
       onChange={onChange}
       value={initialValue}
+      id={selectId}
     >
       {selectOptions.map((selectOption, index) => (
         <option

@@ -1,7 +1,7 @@
 export function getPersonRecordByID(id) {
   const searchResult = {
-    role: "Faculty",
     personalInformation: {
+      role: "Faculty",
       namePrefix: "",
       firstName: "Bradley",
       middleName: "Joshua",
