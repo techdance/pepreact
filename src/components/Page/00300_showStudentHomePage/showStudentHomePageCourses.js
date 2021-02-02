@@ -1,24 +1,7 @@
 import React from "react";
+import Knob from "../Shared/UI/Knob.js";
 
-class Knob extends React.Component {
-  // javascript plugin that renders knob. See https://github.com/aterrien/jQuery-Knob
-
-  componentDidMount() {
-    /* global $ */
-    this.$tag = $(this.props.tag);
-    this.$tag.knob();
-  }
-
-  componentWillUnmount() {
-    this.$tag.knob("destroy");
-  }
-
-  render() {
-    return <div ref={(el) => (this.el = el)}></div>;
-  }
-}
-
-class ShowStudentHomePageAcademics extends React.Component {
+class ShowStudentHomePageCourses extends React.Component {
   render() {
     const courses = this.props.courses;
 
@@ -113,7 +96,13 @@ class ShowStudentHomePageAcademics extends React.Component {
                             <td className="align-center">
                               <div className="t-location">
                                 <a href="#0">
-                                  <span className="icon-duotone icon-backpack icon-size-40"></span>
+                                  <span
+                                    className={
+                                      "icon-duotone icon-" +
+                                      course.location.type +
+                                      " icon-size-40"
+                                    }
+                                  ></span>
                                 </a>
                               </div>
                             </td>
@@ -221,4 +210,4 @@ class ShowStudentHomePageAcademics extends React.Component {
   }
 }
 
-export default ShowStudentHomePageAcademics;
+export default ShowStudentHomePageCourses;

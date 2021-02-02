@@ -1,7 +1,7 @@
 import React from "react";
 
 import ProjectFormPage from "./ProjectFormPage.js";
-import Project from "./Project.js";
+import Project from "../../../classes/Project.js";
 
 class EditProject extends React.Component {
   constructor(props) {

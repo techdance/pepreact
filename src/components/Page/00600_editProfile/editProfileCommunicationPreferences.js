@@ -190,7 +190,7 @@ class EditProfileCommunicationPreferences extends React.Component {
                         name="officePhone"
                         value={officePhone}
                         className="input"
-                        maxlength="15"
+                        maxLength="15"
                         pattern="[0-9*]"
                         onChange={(e) =>
                           this.handleChangeTelephone("officePhone", e)
@@ -224,7 +224,7 @@ class EditProfileCommunicationPreferences extends React.Component {
                         name="mobilePhone"
                         value={mobilePhone}
                         className="input"
-                        maxlength="15"
+                        maxLength="15"
                         pattern="[0-9]*"
                         onChange={(e) =>
                           this.handleChangeTelephone("mobilePhone", e)

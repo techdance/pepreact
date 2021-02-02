@@ -80,17 +80,17 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
     let { areaOfExpertise, fieldName, holdAreaOfExpertise } = this.state;
 
     return (
-      <div class="d-flex">
+      <div className="d-flex">
         <a
           href="#0"
           id={"area-" + fieldName}
-          class="cl-asset-type-d cl-hover-black font20 mr-1"
+          className="cl-asset-type-d cl-hover-black font20 mr-1"
           onClick={this.handleClick}
         >
           {holdAreaOfExpertise.iconValue === "minus" ? (
-            <i class="fas fa-minus-circle"></i>
+            <i className="fas fa-minus-circle"></i>
           ) : (
-            <i class="fas fa-plus-circle"></i>
+            <i className="fas fa-plus-circle"></i>
           )}
         </a>
         {holdAreaOfExpertise.iconValue === "minus" ? (
@@ -98,7 +98,7 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
             type="text"
             name={fieldName}
             value={areaOfExpertise}
-            class="input"
+            className="input"
             onChange={this.handleChange}
           />
         ) : (
@@ -177,37 +177,37 @@ class EditProfileProfessionalBio extends React.Component {
 
     return (
       <>
-        <div class="col-lg-6 mb-4">
-          <div class="profesional box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead">
-                  <span class="icon-regular icon-user-secret"></span>{" "}
+        <div className="col-lg-6 mb-4">
+          <div className="profesional box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead">
+                  <span className="icon-regular icon-user-secret"></span>{" "}
                   Professional Bio
                 </h2>
               </div>
-              <div class="box-middle">
-                <div class="row row-custom mb-4">
-                  <div class="col-md-12">
-                    <h3 class="mb-3">
-                      <span class="icon-regular icon-camcorder pr-3"></span>{" "}
+              <div className="box-middle">
+                <div className="row row-custom mb-4">
+                  <div className="col-md-12">
+                    <h3 className="mb-3">
+                      <span className="icon-regular icon-camcorder pr-3"></span>{" "}
                       Introduction Video
                     </h3>
                   </div>
 
                   <ChangeVideoImage introVideo={introVideo} />
-                  <div class="col-md-6">
+                  <div className="col-md-6">
                     <ChangeVideoButton />
                   </div>
                 </div>
-                <div class="row row-custom mb-4">
-                  <div class="col-md-12">
-                    <div class="content-icon position-relative mb-4">
+                <div className="row row-custom mb-4">
+                  <div className="col-md-12">
+                    <div className="content-icon position-relative mb-4">
                       <div>
-                        <span class="icon-regular icon-shield-check"></span>{" "}
+                        <span className="icon-regular icon-shield-check"></span>{" "}
                         <strong>Discipline</strong>
                       </div>
-                      <div class="form-group ml-4">
+                      <div className="form-group ml-4">
                         <Select
                           options={disciplineList}
                           className="inputSelect"
@@ -224,13 +224,13 @@ class EditProfileProfessionalBio extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12">
-                    <div class="mb-4">
-                      <h4 class="mb-3">
-                        <span class="icon-regular icon-user-ninja"></span> Areas
-                        Of Expertise
+                  <div className="col-md-12">
+                    <div className="mb-4">
+                      <h4 className="mb-3">
+                        <span className="icon-regular icon-user-ninja"></span>{" "}
+                        Areas Of Expertise
                       </h4>
-                      <div id="area-1" class="form-group area pl-4">
+                      <div id="area-1" className="form-group area pl-4">
                         <label>Area of Expertise &ndash; 1</label>
                         <EditProfessionalBioAreaofExpertise
                           areaOfExpertise={areaOfExpertise1}
@@ -238,7 +238,7 @@ class EditProfileProfessionalBio extends React.Component {
                           onChange={this.passChangeUp}
                         />
                       </div>
-                      <div id="area-2" class="form-group area pl-4">
+                      <div id="area-2" className="form-group area pl-4">
                         <label>Area of Expertise &ndash; 2</label>
                         <EditProfessionalBioAreaofExpertise
                           areaOfExpertise={areaOfExpertise2}
@@ -246,7 +246,7 @@ class EditProfileProfessionalBio extends React.Component {
                           onChange={this.passChangeUp}
                         />
                       </div>
-                      <div id="area-3" class="form-group area pl-4">
+                      <div id="area-3" className="form-group area pl-4">
                         <label>Area of Expertise &ndash; 3</label>
                         <EditProfessionalBioAreaofExpertise
                           areaOfExpertise={areaOfExpertise3}
@@ -257,17 +257,17 @@ class EditProfileProfessionalBio extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div class="row row-custom">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="position-relative">
-                        <span class="icon-regular icon-globe-stand"></span>{" "}
+                <div className="row row-custom">
+                  <div className="col-md-6">
+                    <div className="form-group">
+                      <label className="position-relative">
+                        <span className="icon-regular icon-globe-stand"></span>{" "}
                         International Experience
                         <i
-                          class="fa fa-info-circle cl-blue icon-info"
+                          className="fa fa-info-circle cl-blue icon-info"
                           aria-hidden="true"
                         >
-                          <span class="info-toltip">
+                          <span className="info-toltip">
                             Please select the range that most accurately matches
                             your international skills, experience, and studies.
                           </span>
@@ -279,24 +279,25 @@ class EditProfileProfessionalBio extends React.Component {
                       />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group w-100">
+                  <div className="col-md-6">
+                    <div className="form-group w-100">
                       <label>Link Your CV</label>
                       <input
                         type="url"
                         name="cLink"
                         value={cvLink}
-                        class="input"
+                        className="input"
                         onChange={this.handleChange}
                       />
                     </div>
                   </div>
                 </div>
-                <div class="row row-custom">
-                  <div class="col-md-12">
-                    <div class="form-group">
+                <div className="row row-custom">
+                  <div className="col-md-12">
+                    <div className="form-group">
                       <label>
-                        <span class="icon-regular icon-book-user"></span> Bio
+                        <span className="icon-regular icon-book-user"></span>{" "}
+                        Bio
                       </label>
                       <textarea
                         className="input textarea"

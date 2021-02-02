@@ -3,20 +3,6 @@ import React from "react";
 import $ from "jquery";
 
 class AreaInterestModal extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick = (modalName, id, event) => {
-    // close the Area of Interest modal when the Edit button is clicked (which leads to Edit AOI Modal opening)
-    event.preventDefault();
-
-    let modalId = "#" + modalName + id;
-    window.$(modalId).modal("hide");
-  };
-
   render() {
     const {
       projectType,
@@ -29,12 +15,19 @@ class AreaInterestModal extends React.Component {
       preferredLanguage,
       credits,
       programLevel,
-      dateRange,
-      created,
+      startDate,
+      endDate,
+      createdDate,
     } = this.props.modal;
 
     const editMode = this.props.editMode;
     const id = this.props.id;
+
+    // below is for backward compatibility - startDate, endDate and createdDate should be in collaboration interest data object
+    const startDateValue = startDate !== undefined ? startDate : "2020-11-01";
+    const endDatevalue = endDate !== undefined ? endDate : "2021-02-28";
+    const createdDateValue =
+      createdDate !== undefined ? createdDate : "2019-01-01";
 
     return (
       <div
@@ -53,7 +46,7 @@ class AreaInterestModal extends React.Component {
                   <i className="fa fa-times-circle"></i>
                 </a>
               </div>
-              <div className="text-left font15">
+              <div className="text-center w-100 font15">
                 <strong>Project</strong>
                 <br />
                 {projectType}
@@ -71,7 +64,7 @@ class AreaInterestModal extends React.Component {
                       </div>
                     </div>
                     <div className="row  mb-2">
-                      <div className="col-md-6">
+                      <div className="col-md-4">
                         <strong>Discipline</strong>
                         <br />
                         {discipline}
@@ -120,35 +113,17 @@ class AreaInterestModal extends React.Component {
                     <div className="row mb-2">
                       <div className="col-md-12">
                         <strong>Project Date Range</strong>
-                        <div className="top-label-range">
-                          <div className="year-init-range">Today 2020</div>
-                          <div className="year-last-range">2021</div>
-                        </div>
-                        <div className="wrap-range">
-                          <input
-                            type="range"
-                            min="1"
-                            max="100"
-                            value="90"
-                          ></input>
-                        </div>
-                        <div className="wrap-range-label width-inherit">
-                          <ul className="d-flex">
-                            <li>Jan</li>
-                            <li>Feb</li>
-                            <li>Mar</li>
-                            <li>Apr</li>
-                            <li>May</li>
-                            <li>Jun</li>
-                            <li>Jul</li>
-                            <li>Aug</li>
-                            <li>Sep</li>
-                            <li>Oct</li>
-                            <li>Nov</li>
-                            <li>Dec</li>
-                            <li>Jan</li>
-                            <li>Feb</li>
-                          </ul>
+                        <div className="row mb-3">
+                          <div className="col-md-4">
+                            <strong>Start Date</strong>
+                            <br />
+                            {startDateValue}
+                          </div>
+                          <div className="col-md-4">
+                            <strong>End Date</strong>
+                            <br />
+                            {endDatevalue}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -156,22 +131,23 @@ class AreaInterestModal extends React.Component {
                       {editMode === "true" ? (
                         <>
                           {" "}
-                          <div class="col-md-6 ac">
+                          <div className="col-md-6 ac">
                             <a
                               href="#0"
                               id="btn-research-project"
                               data-toggle="modal"
+                              data-dismiss="modal"
                               data-target={"#areaInterestModalEdit" + id}
-                              onClick={(e) =>
-                                this.handleClick("areaInterestModal", id, e)
-                              }
-                              class="btn btn-blue btn-w-100 m-auto"
+                              className="btn btn-blue btn-w-100 m-auto"
                             >
                               Edit
                             </a>
                           </div>
-                          <div class="col-md-6 ac">
-                            <a href="#0" class="btn btn-blue btn-w-100 m-auto">
+                          <div className="col-md-6 ac">
+                            <a
+                              href="#0"
+                              className="btn btn-blue btn-w-100 m-auto"
+                            >
                               Find Matches
                             </a>
                           </div>
@@ -189,7 +165,7 @@ class AreaInterestModal extends React.Component {
                     </div>
                     <div className="row text-center">
                       <div className="col-md-12 ac mt-3">
-                        <strong>Created: 2019-07-15</strong>
+                        <strong>Created: {createdDateValue}</strong>
                       </div>
                     </div>
                   </div>

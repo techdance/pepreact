@@ -3,16 +3,17 @@ export const gordonPageOwner = {
     Institution: {
       logoA2: "./images/logo-a.png",
       logoB2: "./images/logo-b.png",
+      logo: "./images/logo.png",
     },
     Person: { firstName: "Gordon", iconImage: "./images/Gordon.png" },
   },
 
   badges: [
-    // {
-    //   name: "Networking",
-    //   icon: "fa-chart-network",
-    //   iconColor: "#6C38",
-    // },
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
   ],
 
   alerts: [
@@ -110,170 +111,25 @@ export const gordonPageOwner = {
       link: "#",
     },
   ],
-  programs: [
-    { name: "Budget vs. Actuals", link: "#" },
-    { name: "Faculty/Course Matrix", link: "#" },
-    { name: "Program/Space Optimization", link: "#" },
-  ],
-
-  tasksandOverrides: [
-    { name: "Adjunct Contracts Approvals", link: "#", count: "22" },
-    { name: "Faculty Evaluations", link: "#", count: "37" },
-    { name: "Expense Report Approvals", link: "#", count: "10" },
-    { name: "Approve Fall Term Schedule & Rosters", link: "#", count: "" },
-  ],
-
-  committeesandteams: [
-    { name: "Student Success Committee", link: "#" },
-    { name: "Cross-Dept Collaboration", link: "#" },
-    { name: "Curriculum Committee", link: "#" },
-    { name: "Accreditation Task Force", link: "#" },
-  ],
-
-  calendar: {
-    month: "03",
-    year: "2020",
-    colorKeys: [
-      {
-        name: "College of communications",
-        iconColor: "toltip-icon-brown",
-      },
-      {
-        name: "College of Business",
-        iconColor: "toltip-icon-blue-light",
-      },
-      {
-        name: "College of Science & Engineering",
-        iconColor: "toltip-icon-green",
-      },
-    ],
-    data: [
-      //blue-event, green-event, orange-event, purple-event
-      {
-        date: "2020-03-05",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "http://www.google.com",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-10",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-12",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-16",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-      {
-        date: "2020-03-18",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-19",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-24",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-26",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-30",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-    ],
-  },
-  news: [
-    {
-      source: "Inside Higher Ed",
-      sourceLink: "#",
-      title: "Study of Student Learning Outcomes",
-    },
-    { source: "AHEA", sourceLink: "#", title: "2020 Study Abroad Outlook" },
-  ],
-
-  professionalEvents: [
-    {
-      eventName: "NBEA 2020 Annual Convention and Tradeshow",
-      eventLink: "#",
-      eventDateLocation: "April 7-11, 2020 Boston, MA, USA",
-    },
-    {
-      eventName: "AACSB International Conference and Annual Meeting",
-      eventLink:
-        "https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting",
-      eventDateLocation: "April 26-28, 2020 Denver,CO USA",
-    },
-  ],
 };
 
 export const inezPageOwner = {
   pageOwner: {
     Institution: {
-      logoA2: "./images/logo-a2.png",
+      logoA2: "./images/logo-universidade-lisboa.png",
       logoB2: "./images/logo-b2.png",
+      logo: "./images/logo-universidade-de-usboa.png",
     },
     Person: { firstName: "Inez", iconImage: "./images/Inez.png" },
   },
 
-  badges: ["Tour Guide", "3.5 GPA", "Scholar-Athlete"],
+  badges: [
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
+  ],
 
   alerts: [
     {
@@ -468,11 +324,11 @@ export const bradleyPageOwner = {
   },
 
   badges: [
-    // {
-    //   name: "Networking",
-    //   icon: "fa-chart-network",
-    //   iconColor: "#6C38",
-    // },
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
   ],
 
   alerts: [
@@ -568,158 +424,6 @@ export const bradleyPageOwner = {
       msg:
         "Help us welcome our newest CollaboratED members: Georgia International University; Ballsbridge University, Dominica; and Edinburgh Institute for Global Affairs.",
       link: "#",
-    },
-  ],
-  programs: [
-    { name: "Budget vs. Actuals", link: "#" },
-    { name: "Faculty/Course Matrix", link: "#" },
-    { name: "Program/Space Optimization", link: "#" },
-  ],
-
-  tasksandOverrides: [
-    { name: "Adjunct Contracts Approvals", link: "#", count: "22" },
-    { name: "Faculty Evaluations", link: "#", count: "37" },
-    { name: "Expense Report Approvals", link: "#", count: "10" },
-    { name: "Approve Fall Term Schedule & Rosters", link: "#", count: "" },
-  ],
-
-  committeesandteams: [
-    { name: "Student Success Committee", link: "#" },
-    { name: "Cross-Dept Collaboration", link: "#" },
-    { name: "Curriculum Committee", link: "#" },
-    { name: "Accreditation Task Force", link: "#" },
-  ],
-
-  calendar: {
-    month: "03",
-    year: "2020",
-    colorKeys: [
-      {
-        name: "College of communications",
-        iconColor: "toltip-icon-brown",
-      },
-      {
-        name: "College of Business",
-        iconColor: "toltip-icon-blue-light",
-      },
-      {
-        name: "College of Science & Engineering",
-        iconColor: "toltip-icon-green",
-      },
-    ],
-    data: [
-      //blue-event, green-event, orange-event, purple-event
-      {
-        date: "2020-03-05",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "http://www.google.com",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-10",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-12",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-16",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-      {
-        date: "2020-03-18",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-19",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-24",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-26",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-30",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-    ],
-  },
-  news: [
-    {
-      source: "Inside Higher Ed",
-      sourceLink: "#",
-      title: "Study of Student Learning Outcomes",
-    },
-    { source: "AHEA", sourceLink: "#", title: "2020 Study Abroad Outlook" },
-  ],
-
-  professionalEvents: [
-    {
-      eventName: "NBEA 2020 Annual Convention and Tradeshow",
-      eventLink: "#",
-      eventDateLocation: "April 7-11, 2020 Boston, MA, USA",
-    },
-    {
-      eventName: "AACSB International Conference and Annual Meeting",
-      eventLink:
-        "https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting",
-      eventDateLocation: "April 26-28, 2020 Denver,CO USA",
     },
   ],
 };
@@ -734,11 +438,11 @@ export const pamelaPageOwner = {
   },
 
   badges: [
-    // {
-    //   name: "Networking",
-    //   icon: "fa-chart-network",
-    //   iconColor: "#6C38",
-    // },
+    {
+      name: "Networking",
+      icon: "fa-chart-network",
+      iconColor: "#6C38",
+    },
   ],
 
   alerts: [
@@ -836,156 +540,114 @@ export const pamelaPageOwner = {
       link: "#",
     },
   ],
-  programs: [
-    { name: "Budget vs. Actuals", link: "#" },
-    { name: "Faculty/Course Matrix", link: "#" },
-    { name: "Program/Space Optimization", link: "#" },
-  ],
+};
 
-  tasksandOverrides: [
-    { name: "Adjunct Contracts Approvals", link: "#", count: "22" },
-    { name: "Faculty Evaluations", link: "#", count: "37" },
-    { name: "Expense Report Approvals", link: "#", count: "10" },
-    { name: "Approve Fall Term Schedule & Rosters", link: "#", count: "" },
-  ],
-
-  committeesandteams: [
-    { name: "Student Success Committee", link: "#" },
-    { name: "Cross-Dept Collaboration", link: "#" },
-    { name: "Curriculum Committee", link: "#" },
-    { name: "Accreditation Task Force", link: "#" },
-  ],
-
-  calendar: {
-    month: "03",
-    year: "2020",
-    colorKeys: [
-      {
-        name: "College of communications",
-        iconColor: "toltip-icon-brown",
-      },
-      {
-        name: "College of Business",
-        iconColor: "toltip-icon-blue-light",
-      },
-      {
-        name: "College of Science & Engineering",
-        iconColor: "toltip-icon-green",
-      },
-    ],
-    data: [
-      //blue-event, green-event, orange-event, purple-event
-      {
-        date: "2020-03-05",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "http://www.google.com",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-10",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-12",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-16",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-      {
-        date: "2020-03-18",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-19",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-24",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-light-event",
-      },
-      {
-        date: "2020-03-26",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "green-dark-event",
-      },
-      {
-        date: "2020-03-30",
-        badge: true,
-        title: "Human Subjects Approval",
-        description: "<b>William Stinson</b>, <i>Organizer</i>",
-        hour: "8:00am EST",
-        link: "#",
-        textlink: "View Event <i className='fas fa-angle-double-right'></i>",
-        classname: "blue-light-event",
-      },
-    ],
+export const brittanyPageOwner = {
+  pageOwner: {
+    Institution: {
+      logoA2: "./images/logo-a.png",
+      logoB2: "./images/logo-b.png",
+    },
+    Person: { firstName: "Brittany", iconImage: "./images/Brittany.png" },
   },
-  news: [
+
+  badges: [
+    { name: "Tour Guide", icon: "fa-route", iconColor: "toltip-icon-green" },
+    { name: "3.5 GPA", icon: "fa-award", iconColor: "toltip-icon-blue" },
     {
-      source: "Inside Higher Ed",
-      sourceLink: "#",
-      title: "Study of Student Learning Outcomes",
+      name: "Scholar-Athlete",
+      icon: "fa-medal",
+      iconColor: "toltip-icon-brown",
     },
-    { source: "AHEA", sourceLink: "#", title: "2020 Study Abroad Outlook" },
   ],
 
-  professionalEvents: [
+  alerts: [
     {
-      eventName: "NBEA 2020 Annual Convention and Tradeshow",
-      eventLink: "#",
-      eventDateLocation: "April 7-11, 2020 Boston, MA, USA",
+      type: "matches",
+      image: "",
+      text: "Summer term tuition payment due May 1, 2020.",
     },
     {
-      eventName: "AACSB International Conference and Annual Meeting",
-      eventLink:
-        "https://www.aacsb.edu/events/conference/2020/international-conference-and-annual-meeting",
-      eventDateLocation: "April 26-28, 2020 Denver,CO USA",
+      type: "bullhorn",
+      image: "",
+      text:
+        "Alert! Your passport expires in 120 days. Click here for renevwal.",
     },
   ],
+
+  messages: [
+    {
+      from: "Clinton Harris",
+      time: "4:12 PM",
+      subject: "Your syllabus is available.",
+      text:
+        "Your syllabus template for the global business course is currently attached for review.",
+    },
+    {
+      from: "Clinton Harris",
+      time: "9:08 PM",
+      subject: "Welcome to AHEA",
+      text:
+        "We’re so glad you are taking advantage of the benefits of AHEA membership. Enclosed please find…",
+    },
+    {
+      from: "Inez Campos",
+      time: "2:23 PM",
+      subject: "Academic Paper",
+      text:
+        "Hello Bradley. I found an academic paper that would support our collaboration – relatively new and incorporates the cloud.",
+    },
+    {
+      from: "Brittany Simms",
+      time: "11:46 PM",
+      subject: "Chapter 1 Questions",
+      text:
+        "Hi Dr. Dexter – Chapter 1 has me wondering about the implications of regulations globally as well.",
+    },
+    {
+      from: "Inez Campos",
+      time: "8:59 PM",
+      subject: "Review Questions",
+      text:
+        "Hello Bradley. Looking forward to consolidating our review questions into a central area.",
+    },
+  ],
+};
+
+export const tomPageOwner = {
+  pageOwner: {
+    Institution: {
+      logoA2: "./images/TowerLogoWhite-a.png",
+      logoB2: "./images/TowerLogoWhite-b.png",
+      logo: "./images/TowerLogoWhite.png",
+    },
+    Person: { firstName: "Tom ", iconImage: "./images/Tom.png" },
+  },
+
+  badges: [],
+
+  alerts: [],
+
+  messages: [],
+
+  announcements: [],
+};
+
+export const sidneyPageOwner = {
+  pageOwner: {
+    Institution: {
+      logoA2: "./images/logo-a.png",
+      logoB2: "./images/logo-b.png",
+      logo: "./images/logo.png",
+    },
+    Person: { firstName: "Sidney", iconImage: "./images/Sidney Oval.png" },
+  },
+
+  badges: [],
+
+  alerts: [],
+
+  messages: [],
+
+  announcements: [],
 };

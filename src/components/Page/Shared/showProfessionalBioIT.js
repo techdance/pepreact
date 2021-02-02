@@ -6,31 +6,31 @@ class ShowProfessionalBio extends React.Component {
 
     return (
       <>
-        <div class="col-lg-12 mb-4">
-          <div class="profesional box box-border-radius box-shadow bg-white">
-            <div class="inner-wrap">
-              <div class="box-top position-relative">
-                <h2 class="box-subhead">
-                  <span class="icon-regular icon-user-secret"></span>{" "}
+        <div className="col-lg-12 mb-4">
+          <div className="profesional box box-border-radius box-shadow bg-white">
+            <div className="inner-wrap">
+              <div className="box-top position-relative">
+                <h2 className="box-subhead">
+                  <span className="icon-regular icon-user-secret"></span>{" "}
                   Professional Bio
                 </h2>
               </div>
-              <div class="box-middle">
-                <div class="row row-custom mb-4">
-                  <div class="col-md-12">
-                    <span class="icon-regular icon-camcorder"></span>{" "}
+              <div className="box-middle">
+                <div className="row row-custom mb-4">
+                  <div className="col-md-12">
+                    <span className="icon-regular icon-camcorder"></span>{" "}
                     <strong>Introduction Video</strong>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="wrap-video img-resp mb-2 position-relative">
+                  <div className="col-lg-6">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="wrap-video img-resp mb-2 position-relative">
                           <img src={professionalBio.introVideo} alt="" />
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div className="col-md-6">
                         <div
-                          class="content-icon position-relative"
+                          className="content-icon position-relative"
                           style={{ height: 38.1 }}
                         >
                           <a
@@ -41,12 +41,12 @@ class ShowProfessionalBio extends React.Component {
                           </a>
                         </div>
 
-                        <div class="content-icon position-relative">
+                        <div className="content-icon position-relative">
                           <div>
-                            <span class="icon-regular icon-user-ninja"></span>{" "}
+                            <span className="icon-regular icon-user-ninja"></span>{" "}
                             <strong>Areas of Expertise</strong>
                           </div>
-                          <p class="blue-color pl-4">
+                          <p className="blue-color pl-4">
                             {professionalBio.areasOfExpertise.map(
                               (expertise, index) => (
                                 <>
@@ -62,13 +62,13 @@ class ShowProfessionalBio extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6">
-                    <div class="content-icon">
+                  <div className="col-lg-6">
+                    <div className="content-icon">
                       <div>
-                        <span class="icon-regular icon-book-user"></span>{" "}
+                        <span className="icon-regular icon-book-user"></span>{" "}
                         <strong>Bio</strong>
                       </div>
-                      <div class="text pl-4">
+                      <div className="text pl-4">
                         <p>{professionalBio.bio}</p>
                       </div>
                     </div>

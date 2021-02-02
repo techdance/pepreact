@@ -10,8 +10,8 @@ export class ChangeVideoImage extends React.Component {
 
     return (
       <>
-        <div class="col-md-6">
-          <div class="wrap-video img-resp mb-2">
+        <div className="col-md-6">
+          <div className="wrap-video img-resp mb-2">
             <img src={introVideo} alt="" />
           </div>
         </div>
@@ -49,7 +49,7 @@ export class ChangeVideoButton extends React.Component {
         <p>
           <a
             href="#0"
-            class="btn btn-blue btn-w-100"
+            className="btn btn-blue btn-w-100"
             onClick={this.handleClick}
           >
             Upload Video

@@ -6,7 +6,7 @@ export const institution = {
       "AU has always had an inclusive and unique approach to education. It offers a personal, nurturing atmosphere. With so many traditional and non-traditional learning opportunities, AU is the ideal place for students of any age to reach their potential.",
     foundedYear: "1997",
     academicCalendar: "Semester",
-    type: ["Private", "Not-for-Profit", "Coed"],
+    type: ["Private"],
     primaryLanguage: "English",
     otherLanguages: ["Spanish", "Mandarin"],
     president: "Sean Gladwell",
@@ -37,6 +37,7 @@ export const institution = {
     },
     Locations: [
       {
+        mainCampus: true,
         name: "Main Campus",
         institution: "AHEA University",
         address1: "101 N. Federal Hwy",
@@ -48,6 +49,7 @@ export const institution = {
         continent: "North America",
       },
       {
+        mainCampus: false,
         name: "North Campus",
         institution: "AHEA University",
         address1: "601 N. Federal Hwy",
@@ -164,18 +166,4 @@ export const institutionTypes = [
   { value: "Coed", label: "Coed" },
   { value: "Female-only", label: "Female-only" },
   { value: "Male-only", label: "Male-only" },
-];
-
-export const menuItems = [
-  { name: "Home", link: "#0", icon: "icon-home" },
-  { name: "My Calendar", link: "#0", icon: "icon-calendar" },
-  { name: "Tasks", link: "#0", icon: "icon-clipboard-list" },
-  { name: "Committees", link: "#0", icon: "icon-user-class icon-solid" },
-  { name: "Reports", link: "#0", icon: "icon-chart-bar" },
-  { name: "CollaboratED Engagement", link: "#0", icon: "icon-globe" },
-  { name: "BlendED LMS", link: "#0", icon: "icon-blender" },
-  { name: "ConnectED Student", link: "#0", icon: "icon-university" },
-  { name: "My Files", link: "#0", icon: "icon-copy" },
-  { name: "Resources", link: "#0", icon: "icon-th-large" },
-  { name: "Settings", link: "#0", icon: "icon-settings" },
 ];

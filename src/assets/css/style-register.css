@@ -1,3 +1,6 @@
+body {
+	overflow-x: hidden;
+}
 .m0 p{
 	margin:0px !important;
 }
@@ -186,6 +189,9 @@ body.page-enter a{
 	color:#299eff;
 	text-decoration: none;
 }
+.btn-blue{
+	background:#299eff !important;
+}
 body.page-enter a:hover{
 	text-decoration: underline;
 }
@@ -212,6 +218,7 @@ body.page-sign-in #container {
 }
 
 body.page-sign-in #container {
+	flex-direction: column;
     padding: 40px 0px 0px;
 	box-shadow: rgba(176, 176, 176, 0.12) 0px 2px 0px 0px;
 }
@@ -221,7 +228,7 @@ body.page-sign-in #container {
 	border-color: #f8e2b4;
 }
 body.page-sign-in .wrap-input-submit {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 body.page-enter .wrap-logo-bottom{
 	margin-top: 35px;

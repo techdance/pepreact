@@ -1,4 +1,5 @@
 export const disciplineList = [
+  { value: "", label: "" },
   { value: "Anthropology", label: "Anthropology" },
   { value: "Archaeology", label: "Archaeology" },
   { value: "Arts", label: "Arts" },

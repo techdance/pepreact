@@ -1,7 +1,7 @@
 import React from "react";
 
-import towerEdLogoA from "../../assets/images/logo-tower-education-a.png";
-import towerEdLogoB from "../../assets/images/logo-tower-education-b.png";
+const towerEdLogoA = "./images/logo-tower-education-a.png";
+const towerEdLogoB = "./images/logo-tower-education-b.png";
 
 class WrapLogo extends React.Component {
   render() {
@@ -59,7 +59,10 @@ class ShowSideBarMenu extends React.Component {
                   // set class to active if menu name is "Home"
                   <li
                     key={index}
-                    className={activeMenuItem === menuItem.name ? "active" : ""}
+                    className={
+                      (activeMenuItem === menuItem.name ? "active" : "") +
+                      (menuItem.grey ? "  not-active" : "")
+                    }
                   >
                     <a href="#0" className={"icon-fa " + menuItem.icon}>
                       <span className="group-hide">{menuItem.name}</span>

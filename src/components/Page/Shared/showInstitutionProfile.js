@@ -19,9 +19,9 @@ class ShowInstitutionProfle extends React.Component {
                 <iframe
                   title="ShowInstitutionProfileTile"
                   src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11922.656204986277!2d-91.534944!3d41.663!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1578620721149!5m2!1sen!2sus"
-                  frameborder="0"
+                  frameBorder="0"
                   style={{ border: "0" }}
-                  allowfullscreen=""
+                  allowFullScreen=""
                 />
               </div>
               <div className="box-middle">

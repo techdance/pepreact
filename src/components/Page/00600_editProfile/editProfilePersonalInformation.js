@@ -26,13 +26,14 @@ class EditProfilePersonalInformationOnlineStatus extends React.Component {
   render() {
     return (
       <>
-        <div className="form-group" onChange={this.onChangeValue}>
+        <div className="form-group">
           <label className="d-inline mr-2">Online Status</label>
           <input
             type="radio"
             name="onlineStatus"
             value="public"
             checked={this.state.onlineStatus === "public" ? true : false}
+            onChange={this.onChangeValue}
             // checked={true}
           />
           Public
@@ -42,6 +43,7 @@ class EditProfilePersonalInformationOnlineStatus extends React.Component {
             value="private"
             className="ml-2"
             checked={this.state.onlineStatus === "private" ? true : false}
+            onChange={this.onChangeValue}
           />
           Private
         </div>

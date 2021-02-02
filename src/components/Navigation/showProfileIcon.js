@@ -1,4 +1,5 @@
 import React from "react";
+import SignoutModal from "./signoutModal.js";
 
 class ShowProfileIcon extends React.Component {
   render() {
@@ -51,6 +52,7 @@ class ShowProfileIcon extends React.Component {
             </div>
           </div>
         </div>
+        <SignoutModal />
       </>
     );
   }

@@ -421,6 +421,12 @@
 .icon-university::before{
     content: "\f19c";
 }
+.icon-arrow-circle-left::before{
+    content: "\f0a8";
+}
+.icon-arrow-circle-right::before{
+    content: "\f0a9";
+}
 /*End Custom Icons Ligth*/
 
 /*Custom Icons Solid*/
@@ -444,6 +450,9 @@
 }
 .icon-comment::before{
     content: "\f075";
+}
+.icon-file-spreadsheet::before{
+    content: "\f65b";
 }
 .icon-more::after{
     content: "\f0a9";
@@ -473,6 +482,9 @@
 .icon-edit::before{
     content: "\f044";
 }
+.icon-trash-alt::before{
+    content: "\f2ed";
+}
 .icon-cog::before{
     content: "\f013";
 }
@@ -481,6 +493,14 @@
 }
 .icon-anglebotton::before{
     content: "\f13a";
+
+}
+.icon-caret-circle-right::before{
+    content: "\f330";
+
+}
+.icon-caret-circle-down::before{
+    content: "\f32d";
 
 }
 .icon-plus-circle::before{

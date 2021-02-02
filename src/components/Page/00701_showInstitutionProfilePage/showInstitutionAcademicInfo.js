@@ -117,7 +117,7 @@ const ShowAccreditations = (props) => {
           <ul>
             {accreditations.map((accreditation, index) => (
               <li key={index}>
-                <a href="#">{accreditation}</a>
+                <a href="#0">{accreditation}</a>
               </li>
             ))}
           </ul>

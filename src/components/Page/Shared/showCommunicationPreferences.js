@@ -2,10 +2,7 @@ import React from "react";
 
 class ShowCommunicationPreferences extends React.Component {
   render() {
-
-    const {
-      communicationPreferences,
-    } = this.props;
+    const { communicationPreferences } = this.props;
 
     return (
       <>
@@ -20,16 +17,14 @@ class ShowCommunicationPreferences extends React.Component {
               </div>
               <div className="box-middle">
                 <div className="content-icon">
-                  {communicationPreferences.languages.map(
-                    (language, index) => (
-                      <p className="mb-1">
-                        <span className="icon-regular icon-comment-check"></span>{" "}
-                        <span key={index} className="cl-gray">
-                          {language}
-                        </span>
-                      </p>
-                    )
-                  )}
+                  {communicationPreferences.languages.map((language, index) => (
+                    <p className="mb-1" key={index}>
+                      <span className="icon-regular icon-comment-check"></span>{" "}
+                      <span key={index} className="cl-gray">
+                        {language}
+                      </span>
+                    </p>
+                  ))}
                 </div>
 
                 <div className="content-icon">
@@ -44,16 +39,18 @@ class ShowCommunicationPreferences extends React.Component {
                   </p>
                 </div>
 
-                {communicationPreferences.phoneNumbers.map((phoneNumber, index) => (
-                  <div className="content-icon">
-                    <p className="mb-1">
-                      <span className="icon-regular icon-phone-office"></span>{" "}
-                      <a key={index} href={"tel:" + phoneNumber}>
-                        {phoneNumber}
-                      </a>
-                    </p>
-                  </div>
-                ))}
+                {communicationPreferences.phoneNumbers.map(
+                  (phoneNumber, index) => (
+                    <div className="content-icon" key={index}>
+                      <p className="mb-1">
+                        <span className="icon-regular icon-phone-office"></span>{" "}
+                        <a key={index} href={"tel:" + phoneNumber}>
+                          {phoneNumber}
+                        </a>
+                      </p>
+                    </div>
+                  )
+                )}
 
                 <div className="content-icon">
                   <p className="mb-1">

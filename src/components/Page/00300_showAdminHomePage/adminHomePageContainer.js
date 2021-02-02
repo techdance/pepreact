@@ -7,8 +7,8 @@ import ShowProgramManagement from "./showProgramManagement.js";
 import ShowTasksAndOverRides from "./showTasksAndOverrides.js";
 import ShowCommitteesAndTeams from "./showCommitteesAndTeams.js";
 import ShowReportsandAssessments from "./showReportsandAssessments.js";
-import ShowNews from "./showNews.js";
-import ShowProfessionalEvents from "./showProfessionalEvents.js";
+import ShowNews from "../Shared/showNews.js";
+import ShowProfessionalEvents from "../Shared/showProfessionalEvents.js";
 import ShowCommunicateNow from "./showCommunicateNow.js";
 import ShowEngageYourTeam from "./showEngageYourTeam.js";
 
@@ -20,8 +20,6 @@ class AdministratorHomePageContainer extends React.Component {
       tasksandOverrides,
       committeesandteams,
       calendar,
-      news,
-      professionalEvents,
     } = this.props.administrator;
     return (
       <>
@@ -41,8 +39,8 @@ class AdministratorHomePageContainer extends React.Component {
             </div>
 
             <ShowReportsandAssessments />
-            <ShowNews news={news} />
-            <ShowProfessionalEvents events={professionalEvents} />
+            <ShowNews />
+            <ShowProfessionalEvents />
             <ShowCommunicateNow />
             <ShowEngageYourTeam />
           </div>

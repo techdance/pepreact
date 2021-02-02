@@ -4,25 +4,31 @@ import ShowBreadCrumb from "./Navigation/showBreadCrumb.js";
 import ShowTopMenu from "./Navigation/showTopMenu.js";
 import ShowSideBarMenu from "./Navigation/showSideBarMenu.js";
 import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
-import ShowTowerLogo from "./Navigation/showTowerLogo.js";
+import ShowInstitutionLogo from "./Navigation/showInstitutionLogo.js";
 
-import { menuItems } from "../data/administrator.js";
+import { InstitutionLogoContext } from "../App.js";
 
-const breadCrumbList = ["Home", "Profile", "Edit Profile"];
-
-class Page00600 extends React.Component {
+class InspiredPage extends React.Component {
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
-    let profile = this.props.profile;
-    const IT = this.props.IT;
+
     const breadCrumb = this.props.breadcrumb;
     const menuItems = this.props.menuItems;
+    const edit = this.props.edit;
 
+    // backward compatibility - not all pageowner data objects contain logo - if it doesn't exist then default to AHEA
+    const logo =
+      pageOwner.Institution.logo !== undefined
+        ? pageOwner.Institution.logo
+        : "./images/logo.png";
     return (
       <>
-        <body className="bg-grey-popup">
-          <div id="menu-top-responsive" className="">
-            <ShowTowerLogo />
+        <InstitutionLogoContext.Provider value={logo}>
+          <div id="menu-top-responsive">
+            <ShowInstitutionLogo
+              logoA={pageOwner.Institution.logoA2}
+              logoB={pageOwner.Institution.logoB2}
+            />
           </div>
           <ShowMobileSideBarMenu />
           <div id="container">
@@ -32,7 +38,7 @@ class Page00600 extends React.Component {
               activeMenuItem={"Home"}
             />
             <div id="content" className="">
-              <div className="container-fluid">
+              <div className="container-fluid" id="test">
                 <div className="row">
                   <div className="col-lg-12">
                     <ShowTopMenu
@@ -40,20 +46,20 @@ class Page00600 extends React.Component {
                       alerts={alerts}
                       messages={messages}
                       badges={badges}
-                      edit="true"
+                      edit={edit}
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
-                    {this.props.render(profile, IT)}
+                    {this.props.render()}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </body>
+        </InstitutionLogoContext.Provider>
       </>
     );
   }
 }
 
-export default Page00600;
+export default InspiredPage;

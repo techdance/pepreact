@@ -2,9 +2,17 @@ import React from "react";
 
 class ShowStudentHomePageCourseRegistration extends React.Component {
   render() {
+    const { disabled } = this.props;
     return (
       <>
-        <div className="box box-border-radius box-shadow bg-white height-auto mt-4">
+        <div
+          className={
+            "box box-border-radius box-shadow bg-white height-auto mt-4" +
+            (disabled ? "  disabled" : "")
+          }
+        >
+          <div className={disabled ? "disabled-overlay" : ""}></div>
+
           <div className="inner-wrap">
             <div className="box-top position-relative">
               <h2 className="box-subhead">
