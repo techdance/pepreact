@@ -19,7 +19,7 @@ export default class ShowBodySelectList extends React.Component {
                 className="dropdown_week_inner btn-course-objetive-week"
                 data-btn={index + 1}
                 data-week={itemIndex + 1}
-                onClick={(e) => clickCallBack(itemIndex, index, e)}
+                onClick={(e) => clickCallBack(itemIndex, item, e)}
               >
                 {item}
               </div>

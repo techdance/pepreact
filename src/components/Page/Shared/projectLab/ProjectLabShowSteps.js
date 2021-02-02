@@ -47,7 +47,7 @@ export default class ProjectLabShowSteps extends React.Component {
         classReview =
           "step bar-progress button-lead next-step color-black mr--15";
 
-        iconStep1 = <i class="fa fa-check" aria-hidden="true"></i>;
+        iconStep1 = <i className="fa fa-check" aria-hidden="true"></i>;
 
         break;
       case "3":
@@ -60,8 +60,8 @@ export default class ProjectLabShowSteps extends React.Component {
         classReview =
           "step bar-progress button-lead next-step color-black mr--15";
 
-        iconStep1 = <i class="fa fa-check" aria-hidden="true"></i>;
-        iconStep2 = <i class="fa fa-check" aria-hidden="true"></i>;
+        iconStep1 = <i className="fa fa-check" aria-hidden="true"></i>;
+        iconStep2 = <i className="fa fa-check" aria-hidden="true"></i>;
 
         break;
       case "4":
@@ -73,10 +73,10 @@ export default class ProjectLabShowSteps extends React.Component {
           "step step-complete bar-progress previous-step button-green-2 step-h-blue-2 color-white mr--15";
         classReview = "bar-progress button-green-3 color-white";
 
-        iconStep1 = <i class="fa fa-check" aria-hidden="true"></i>;
-        iconStep2 = <i class="fa fa-check" aria-hidden="true"></i>;
-        iconStep3 = <i class="fa fa-check" aria-hidden="true"></i>;
-        iconStep4 = <i class="fa fa-check" aria-hidden="true"></i>;
+        iconStep1 = <i className="fa fa-check" aria-hidden="true"></i>;
+        iconStep2 = <i className="fa fa-check" aria-hidden="true"></i>;
+        iconStep3 = <i className="fa fa-check" aria-hidden="true"></i>;
+        iconStep4 = <i className="fa fa-check" aria-hidden="true"></i>;
 
         break;
       default:

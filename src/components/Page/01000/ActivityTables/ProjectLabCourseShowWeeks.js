@@ -1,5 +1,5 @@
 import React from "react";
-import { removeFromArray } from "../../Shared/usefulFunctions";
+import { removeFromArray, makeXORList } from "../../Shared/usefulFunctions";
 
 import {
   ShowBodyActivitiesList,
@@ -14,6 +14,7 @@ import ShowBodySelectList from "../../Shared/projectLab/ShowBodySelectList.js";
 
 import ModalPortal from "../../Shared/UI/ModalPortal.js";
 import WeekActivityModal from "../modals/WeekActivityModal.js";
+import { faEraser } from "@fortawesome/free-solid-svg-icons";
 
 export default class ProjectLabCourseShowWeeks extends React.Component {
   constructor(props) {
@@ -58,11 +59,10 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
     this.setState({ weeks: weeks });
   }
 
-  handleObjectiveClick(weekIndex, objectiveIndex) {
-    const { objectives } = this.state;
+  handleObjectiveClick(weekIndex, item) {
     let { weeks } = this.state;
 
-    weeks[weekIndex].objective.push(objectives[objectiveIndex]);
+    weeks[weekIndex].objective.push(item);
     this.setState({ weeks: weeks });
   }
 
@@ -76,11 +76,10 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
     this.setState({ weeks: weeks });
   }
 
-  handleLearningEnvironmentClick(weekIndex, leIndex) {
-    const { learningEnvironments } = this.state;
+  handleLearningEnvironmentClick(weekIndex, item) {
     let { weeks } = this.state;
 
-    weeks[weekIndex].learningEnvironment.push(learningEnvironments[leIndex]);
+    weeks[weekIndex].learningEnvironment.push(item);
     this.setState({ weeks: weeks });
   }
 
@@ -212,8 +211,13 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
 
   ShowWeekBody(weekIndex) {
     const { objectives, learningEnvironments, weeks } = this.state;
-    let { activity, content } = this.state;
     const week = weeks[weekIndex];
+
+    let showObjectivesList = makeXORList(objectives, week.objective);
+    let showLearningEnvironementsList = makeXORList(
+      learningEnvironments,
+      week.learningEnvironment
+    );
 
     const ShowWeekBodyHeader = () => {
       return (
@@ -275,14 +279,14 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
           <tr>
             <td className="text-center" valign="top">
               <ShowBodySelectList
-                itemList={objectives}
+                itemList={showObjectivesList}
                 itemIndex={weekIndex}
                 clickCallBack={this.handleObjectiveClick}
               />
             </td>
             <td className="text-center" valign="top">
               <ShowBodySelectList
-                itemList={learningEnvironments}
+                itemList={showLearningEnvironementsList}
                 itemIndex={weekIndex}
                 clickCallBack={this.handleLearningEnvironmentClick}
               />

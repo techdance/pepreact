@@ -1,7 +1,7 @@
 import React from "react";
 import Flexslider from "../../Shared/projectLab/modals/Flexslider.js";
 
-import { removeFromArray } from "../../Shared/usefulFunctions";
+import { removeFromArray, makeXORList } from "../../Shared/usefulFunctions";
 
 import ShowBodySelectList from "../../Shared/projectLab/ShowBodySelectList.js";
 import ShowBodySelectedFromList from "../../Shared/projectLab/ShowBodySelectedFromList.js";
@@ -49,11 +49,10 @@ export default class WeekActivityModal extends React.Component {
     this.setState({ weeks: weeks });
   }
 
-  handleObjectiveClick(weekIndex, objectiveIndex) {
-    const { objectives } = this.state;
+  handleObjectiveClick(weekIndex, item) {
     let { weeks } = this.state;
 
-    weeks[weekIndex].objective.push(objectives[objectiveIndex]);
+    weeks[weekIndex].objective.push(item);
     this.setState({ weeks: weeks });
   }
 
@@ -67,11 +66,10 @@ export default class WeekActivityModal extends React.Component {
     this.setState({ weeks: weeks });
   }
 
-  handleLearningEnvironmentClick(weekIndex, leIndex) {
-    const { learningEnvironments } = this.state;
+  handleLearningEnvironmentClick(weekIndex, item) {
     let { weeks } = this.state;
 
-    weeks[weekIndex].learningEnvironment.push(learningEnvironments[leIndex]);
+    weeks[weekIndex].learningEnvironment.push(item);
     this.setState({ weeks: weeks });
   }
 
@@ -177,7 +175,10 @@ export default class WeekActivityModal extends React.Component {
                                     </div>
                                     <div className="courses-box-footer text-center">
                                       <ShowBodySelectList
-                                        itemList={objectives}
+                                        itemList={makeXORList(
+                                          objectives,
+                                          week.objective
+                                        )}
                                         itemIndex={indexWeek}
                                         clickCallBack={
                                           this.handleObjectiveClick
@@ -204,7 +205,10 @@ export default class WeekActivityModal extends React.Component {
                                     </div>
                                     <div className="courses-box-footer text-center">
                                       <ShowBodySelectList
-                                        itemList={learningEnvironments}
+                                        itemList={makeXORList(
+                                          learningEnvironments,
+                                          week.learningEnvironment
+                                        )}
                                         itemIndex={indexWeek}
                                         clickCallBack={
                                           this.handleLearningEnvironmentClick

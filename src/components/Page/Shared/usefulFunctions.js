@@ -30,3 +30,13 @@ export function nestedReducer(prevState, { name, value, childObjectName }) {
     [childObjectName]: { ...prevState[childObjectName], [name]: value },
   };
 }
+
+export function makeXORList(mainList, subsetList) {
+  let xorList = [];
+  let addItem = "";
+  for (const item of mainList) {
+    addItem = subsetList.find((element) => element === item);
+    if (addItem === undefined) xorList.push(item);
+  }
+  return xorList;
+}
