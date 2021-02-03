@@ -1,8 +1,9 @@
 import React from "react";
-import Select from "react-select";
 import ChangeImage from "../Shared/changeImage.js";
 
+import SimpleSelect from "../Shared/UI/SimpleSelect";
 import { prefixList } from "../../../data/prefixList.js";
+import { suffix as suffixList } from "../../../data/miscSelects";
 
 class EditProfilePersonalInformationOnlineStatus extends React.Component {
   constructor(props) {
@@ -62,24 +63,7 @@ class EditProfilePersonalInformation extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
-    this.handleChangeSingleSelect = this.handleChangeSingleSelect.bind(this);
   }
-
-  handleChangeSingleSelect = (field, selected) => {
-    // handles field form changes at this level of nested form components and then passes changes up to parent component
-    //  sets local state first and then passes current stateful object up to parent to propogate changes
-
-    // get user input change from the synthetic event
-    const { value } = selected;
-
-    //  set local state
-    let personalInformation = this.state;
-    personalInformation[field] = value;
-    this.setState({ [field]: value });
-
-    /// pass current state up to parent to propogate changes
-    this.props.onChange("personalInformation", personalInformation);
-  };
 
   handleChange = (event) => {
     // handles field form changes at this level of nested form components and then passes changes up to parent component
@@ -114,6 +98,7 @@ class EditProfilePersonalInformation extends React.Component {
       firstName,
       lastName,
       title,
+      nameSuffix,
       image,
       personalMessage,
       department,
@@ -139,21 +124,27 @@ class EditProfilePersonalInformation extends React.Component {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="form-group">
-                      <label>Prefix</label>
-                      <Select
-                        options={prefixList}
-                        className="inputSelect"
-                        classNamePrefix="rs"
-                        onChange={(e) =>
-                          this.handleChangeSingleSelect("namePrefix", e)
-                        }
-                        value={{
-                          value: namePrefix,
-                          label: namePrefix,
-                        }}
-                        isSearchable="true"
-                      />
+                    <div class="row">
+                      <div className="form-group col-6">
+                        <label>Prefix</label>
+                        <SimpleSelect
+                          selectOptions={prefixList}
+                          selectClass="input select"
+                          selectName="namePrefix"
+                          initialValue={namePrefix}
+                          onChange={this.handleChange}
+                        />
+                      </div>
+                      <div className="form-group col-6">
+                        <label>Suffix</label>
+                        <SimpleSelect
+                          selectOptions={suffixList}
+                          selectClass="input select"
+                          selectName="nameSuffix"
+                          initialValue={nameSuffix}
+                          onChange={this.handleChange}
+                        />
+                      </div>
                     </div>
                     <div className="form-group">
                       <label>First Name</label>

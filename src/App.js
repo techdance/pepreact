@@ -30,7 +30,7 @@ import CreateProject from "./components/Page/0103X/createProject.js";
 import EditProject from "./components/Page/0103X/editProject.js";
 
 import InspiredPage from "./components/InspiredPage.js";
-import EditProfileContainer from "./components/Page/00600_editProfile/editProfileContainer.js";
+import EditProfileContainer from "./components/Page/00600_editProfile/editProfileContainer";
 import ViewProfileContainer from "./components/Page/00500_viewProfile/viewProfileContainer.js";
 import ViewProfileOtherUserContainer from "./components/Page/00501_viewProfileOtherUser/viewProfileOtherUserContainer.js";
 import ProfessorMessagesReceivedContainer from "./components/Page/00108_showProfessorMessagesReceived/professorMessagesReceivedContainer.js";
@@ -284,9 +284,11 @@ function App() {
             />
           </Route>
           <Route exact path="/01IN_00600">
+            {/* 0060 now supports url parameters professorId='id'&IT='true/false' e.g. /O1IN_00600?professorId='1'&IT='false' */}
             <InspiredPage
-              render={(profile, IT) => (
-                <EditProfileContainer profile={bradleyProfessor} IT={IT} />
+              render={() => (
+                // <EditProfileContainer profile={bradleyProfessor} IT="false" />
+                <EditProfileContainer />
               )}
               breadcrumb={["Home", "Profile", "Edit Profile"]}
               menuItems={menuItemsProfessor}
