@@ -1,8 +1,6 @@
 import React from "react";
 
-import $ from "jquery";
-
-class AreaInterestModal extends React.Component {
+export default class AreaInterestModalView extends React.Component {
   render() {
     const {
       projectType,
@@ -178,5 +176,3 @@ class AreaInterestModal extends React.Component {
     );
   }
 }
-
-export default AreaInterestModal;

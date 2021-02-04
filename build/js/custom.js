@@ -559,6 +559,10 @@ jQuery(function () {
   //   changeYear: true,
   //   dateFormat: "dd-mm-yy",
   // });
+
+  // $("body").delegate(".datepicker", "focusin", function () {
+  //   $(this).datepicker({ dateFormat: "dd-mm-yy" });
+  // });
 });
 
 function project_type(values) {

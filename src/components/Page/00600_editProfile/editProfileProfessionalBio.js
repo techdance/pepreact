@@ -64,12 +64,16 @@ class EditProfessionalBioAreaofExpertise extends React.Component {
               className="cl-asset-type-d cl-hover-black font20 mr-1"
               onClick={this.addAreaofExpertise}
             >
-              <i class="fas fa-plus-circle"></i>
+              <i className="fas fa-plus-circle"></i>
             </a>
           </h4>
 
           {areasOfExpertise.map((aoe, index) => (
-            <div id={"area-" + (index + 1)} className="form-group area pl-4">
+            <div
+              id={"area-" + (index + 1)}
+              className="form-group area pl-4"
+              key={index}
+            >
               {/* <label>Area of Expertise &ndash; 1</label> */}
               <div className="d-flex">
                 <a

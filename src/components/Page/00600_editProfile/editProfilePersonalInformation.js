@@ -124,7 +124,7 @@ class EditProfilePersonalInformation extends React.Component {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div class="row">
+                    <div className="row">
                       <div className="form-group col-6">
                         <label>Prefix</label>
                         <SimpleSelect
