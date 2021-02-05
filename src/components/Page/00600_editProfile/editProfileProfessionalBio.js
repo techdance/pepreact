@@ -4,106 +4,98 @@ import { ChangeVideoImage, ChangeVideoButton } from "../Shared/changeVideo.js";
 import InternationalExperience from "./editProfileProfessionalBioIntlExperience.js";
 
 import { disciplineList } from "../../../data/disciplines.js";
+import { removeFromArray } from "../Shared/usefulFunctions.js";
+
+const maxAreasOfInterest = 3;
 
 class EditProfessionalBioAreaofExpertise extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      areaOfExpertise: this.props.areaOfExpertise,
-      fieldName: this.props.fieldName,
-      holdAreaOfExpertise: {
-        name: "",
-        iconValue: "plus",
-      },
+      areasOfExpertise: this.props.areasOfExpertise,
     };
 
-    let { areaOfExpertise } = this.state;
-
-    // structure to maintain status of areaofexpertise entry field
-    // iconValue repesent whether the oranga icon is a plus or minus
-    //  name contains the last value from the areaOfExpertise passed as props to the class
-    //  so that the informaion is retained if user clicks "minus" on a valid AOE and wants it back.
-
-    if (areaOfExpertise) {
-      this.state.holdAreaOfExpertise = {
-        name: areaOfExpertise,
-        iconValue: "minus",
-      };
-    }
-
     // initialize states to match current values of links in the "professionalBio" data object.
-
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.removeAreaofExpertise = this.removeAreaofExpertise.bind(this);
+    this.addAreaofExpertise = this.addAreaofExpertise.bind(this);
   }
 
   handleChange = (event) => {
-    // handles field form changes at this level of nested form components and then passes changes up to parent component
-    //  sets local state first and then passes current stateful object up to parent to propogate changes
-
-    // get user input change from the synthetic event;
     const { name, value } = event.target;
 
-    //  set local state
-    // let {areaOfExpertise, fieldName } = this.state;
-    // areaOfExpertise[name] = value;
-    this.setState({ areaOfExpertise: value });
-
-    /// pass current state up to parent to propogate changes
-    this.props.onChange(name, value);
+    let { areasOfExpertise } = this.state;
+    areasOfExpertise[name] = value;
+    this.setState({ areasOfExpertise: areasOfExpertise });
+    // pass current state up to parent to propogate changes
+    this.props.onChange("areasOfExpertise", areasOfExpertise);
   };
 
-  handleClick = (event) => {
-    // function that handles clicks on the icons next to certificate fields
+  addAreaofExpertise = (event) => {
+    let { areasOfExpertise } = this.state;
 
-    let { holdAreaOfExpertise, areaOfExpertise, fieldName } = this.state;
-
-    event.preventDefault();
-
-    //  if the current icon in a plus - make it minus (and then show text input field where this anchor is setup)
-    //  if the current icon is a minus - set link to a null string (so it won't show in ShowProfle) and set icon to plus
-    if (holdAreaOfExpertise.iconValue === "minus") {
-      holdAreaOfExpertise = { name: areaOfExpertise, iconValue: "plus" };
-      areaOfExpertise = "";
-    } else {
-      areaOfExpertise = holdAreaOfExpertise.name;
-      holdAreaOfExpertise.iconValue = "minus";
+    if (areasOfExpertise.length < maxAreasOfInterest) {
+      areasOfExpertise.push("");
+      // pass current state up to parent to propogate changes
+      this.props.onChange("areasOfExpertise", areasOfExpertise);
     }
+  };
 
-    this.setState({ areaOfExpertise: areaOfExpertise });
-    this.setState({ holdAreaOfExpertise: holdAreaOfExpertise });
+  removeAreaofExpertise = (index, event) => {
+    let { areasOfExpertise } = this.state;
+    areasOfExpertise = removeFromArray(areasOfExpertise, index);
+    this.setState({ areasOfExpertise: areasOfExpertise });
+
     /// pass current state up to parent to propogate changes
-    this.props.onChange(fieldName, areaOfExpertise);
+    this.props.onChange("areasOfExpertise", areasOfExpertise);
   };
 
   render() {
-    let { areaOfExpertise, fieldName, holdAreaOfExpertise } = this.state;
+    let { areasOfExpertise } = this.state;
 
     return (
-      <div className="d-flex">
-        <a
-          href="#0"
-          id={"area-" + fieldName}
-          className="cl-asset-type-d cl-hover-black font20 mr-1"
-          onClick={this.handleClick}
-        >
-          {holdAreaOfExpertise.iconValue === "minus" ? (
-            <i className="fas fa-minus-circle"></i>
-          ) : (
-            <i className="fas fa-plus-circle"></i>
-          )}
-        </a>
-        {holdAreaOfExpertise.iconValue === "minus" ? (
-          <input
-            type="text"
-            name={fieldName}
-            value={areaOfExpertise}
-            className="input"
-            onChange={this.handleChange}
-          />
-        ) : (
-          ""
-        )}
+      <div className="col-md-12">
+        <div className="mb-4">
+          <h4 className="mb-3">
+            <span className="icon-regular icon-user-ninja"></span>
+            Areas Of Expertise
+            <a
+              href="#0"
+              className="cl-asset-type-d cl-hover-black font20 mr-1"
+              onClick={this.addAreaofExpertise}
+            >
+              <i className="fas fa-plus-circle"></i>
+            </a>
+          </h4>
+
+          {areasOfExpertise.map((aoe, index) => (
+            <div
+              id={"area-" + (index + 1)}
+              className="form-group area pl-4"
+              key={index}
+            >
+              {/* <label>Area of Expertise &ndash; 1</label> */}
+              <div className="d-flex">
+                <a
+                  href="#0"
+                  id={"area-" + index}
+                  className="cl-asset-type-d cl-hover-black font20 mr-1"
+                  onClick={(event) => this.removeAreaofExpertise(index, event)}
+                >
+                  <i className="fas fa-minus-circle"></i>
+                </a>
+
+                <input
+                  type="text"
+                  name={index}
+                  value={aoe}
+                  className="input"
+                  onChange={this.handleChange}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -167,9 +159,7 @@ class EditProfileProfessionalBio extends React.Component {
     const {
       introVideo,
       discipline,
-      areaOfExpertise1,
-      areaOfExpertise2,
-      areaOfExpertise3,
+      areasOfExpertise,
       internationalExperience,
       bio,
       cvLink,
@@ -224,38 +214,11 @@ class EditProfileProfessionalBio extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-12">
-                    <div className="mb-4">
-                      <h4 className="mb-3">
-                        <span className="icon-regular icon-user-ninja"></span>{" "}
-                        Areas Of Expertise
-                      </h4>
-                      <div id="area-1" className="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 1</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise1}
-                          fieldName="areaOfExpertise1"
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                      <div id="area-2" className="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 2</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise2}
-                          fieldName="areaOfExpertise2"
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                      <div id="area-3" className="form-group area pl-4">
-                        <label>Area of Expertise &ndash; 3</label>
-                        <EditProfessionalBioAreaofExpertise
-                          areaOfExpertise={areaOfExpertise3}
-                          fieldName="areaOfExpertise3"
-                          onChange={this.passChangeUp}
-                        />
-                      </div>
-                    </div>
-                  </div>
+
+                  <EditProfessionalBioAreaofExpertise
+                    areasOfExpertise={areasOfExpertise}
+                    onChange={this.passChangeUp}
+                  />
                 </div>
                 <div className="row row-custom">
                   <div className="col-md-6">

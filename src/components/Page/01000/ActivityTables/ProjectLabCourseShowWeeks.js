@@ -14,7 +14,7 @@ import ShowBodySelectList from "../../Shared/projectLab/ShowBodySelectList.js";
 
 import ModalPortal from "../../Shared/UI/ModalPortal.js";
 import WeekActivityModal from "../modals/WeekActivityModal.js";
-import { faEraser } from "@fortawesome/free-solid-svg-icons";
+import { ConfirmModal } from "../../Shared/UI/MessageModal";
 
 export default class ProjectLabCourseShowWeeks extends React.Component {
   constructor(props) {
@@ -26,10 +26,12 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
       weeks: weeks,
       objectives: objectives,
       learningEnvironments: learningEnvironments,
+      currentIndex: 0,
     };
 
     this.addWeek = this.addWeek.bind(this);
     this.removeWeek = this.removeWeek.bind(this);
+    this.showConfirmDeleteModal = this.showConfirmDeleteModal.bind(this);
     this.addActivity = this.addActivity.bind(this);
     this.removeActivity = this.removeActivity.bind(this);
     this.addContent = this.addContent.bind(this);
@@ -107,12 +109,30 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
     this.setState({ weeks: weeks });
   }
 
-  removeWeek(index) {
-    let { weeks } = this.state;
+  showConfirmDeleteModal(index) {
+    this.setState({ currentIndex: index });
 
-    weeks = removeFromArray(weeks, index);
-    this.setState({ weeks: weeks });
+    /* global $ */
+    this.$confirmDeleteModal = $(this.confirmDeleteModal);
+    this.$confirmDeleteModal.modal("toggle");
   }
+
+  removeWeek = (confirm) => {
+    if (confirm) {
+      const { currentIndex } = this.state;
+      let { weeks } = this.state;
+
+      weeks = removeFromArray(weeks, currentIndex);
+      this.setState({ weeks: weeks });
+    }
+  };
+
+  // removeWeek(index) {
+  //   let { weeks } = this.state;
+
+  //   weeks = removeFromArray(weeks, index);
+  //   this.setState({ weeks: weeks });
+  // }
 
   addActivity(weekIndex) {
     let { weeks } = this.state;
@@ -170,7 +190,9 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
               <a
                 href="#0"
                 className="btn-week-edit"
-                onClick={(e) => this.removeWeek(index)}
+                onClick={(e) => {
+                  this.showConfirmDeleteModal(index);
+                }}
               >
                 <span className="icon-solid icon-trash-alt color-blue-link"></span>
               </a>
@@ -335,6 +357,13 @@ export default class ProjectLabCourseShowWeeks extends React.Component {
             objectives={objectives}
             learningEnvironments={learningEnvironments}
             weeks={weeks}
+          />
+
+          <ConfirmModal
+            modalID="confirmDelete"
+            modalRef={(el) => (this.confirmDeleteModal = el)}
+            modalMsg="Are you sure you want to delete this week?"
+            confirmCallBack={this.removeWeek}
           />
         </ModalPortal>
       </>

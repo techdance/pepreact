@@ -4,6 +4,21 @@ import Announcement from "../classes/Announcement.js";
 import Student from "../classes/Student.js";
 import { ProfessorCourse } from "../classes/Course.js";
 
+import { bradleyProfessor, gordonProfessor } from "../data/professor";
+
+export function getProfessor(id) {
+  // call get method in API to retrieve a project by id
+  //  Below is a simulation of filling the returned data
+
+  switch (id) {
+    case "1": //Bradley
+      return bradleyProfessor;
+    case "2": //Gordon
+      return gordonProfessor;
+    default:
+  }
+}
+
 export const getProfessorMatches = function () {
   // simulate call to API to get matches to the current professor
   let professor = "";

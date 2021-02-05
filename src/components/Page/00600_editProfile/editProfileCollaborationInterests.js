@@ -1,13 +1,11 @@
 import React from "react";
 
 //  Used for the modal triggered on clicking "View More" link
-import AreaInterestModal from "../Shared/areaInterestModal.js";
-import AreaInterestModalEdit, {
-  AreaInterestModalAdd,
-} from "../Shared/areaInterestModalEdit.js";
+import AreaInterestModalEdit from "../Shared/areaInterestModalEdit";
+import AreaInterestModalView from "../Shared/areaInterestModalView";
 
-import AreaofInterest from "../../../classes/AreaofInterest.jsx";
-import { removeFromArray } from "../Shared/usefulFunctions.js";
+import AreaofInterest from "../../../classes/AreaofInterest";
+import { removeFromArray } from "../Shared/usefulFunctions";
 import { ConfirmModal } from "../Shared/UI/MessageModal";
 import ModalPortal from "../Shared/UI/ModalPortal";
 
@@ -148,7 +146,7 @@ class EditProfileCollaborationInterests extends React.Component {
                                     </a>
                                   </div>
                                   {/* Shows modal if the View More link is clicked.  */}
-                                  <AreaInterestModal
+                                  <AreaInterestModalView
                                     modal={areaofinterest}
                                     id={index}
                                     editMode="true"
@@ -166,8 +164,9 @@ class EditProfileCollaborationInterests extends React.Component {
                                     </a>
                                   </div>
                                   {/* Edit modal if the Edit button on the View Modal is clicked.  */}
+
                                   <AreaInterestModalEdit
-                                    areaOfInterest={areaofinterest}
+                                    areaofInterest={areaofinterest}
                                     index={index}
                                     onChange={this.passChangeUp}
                                   />
@@ -195,12 +194,8 @@ class EditProfileCollaborationInterests extends React.Component {
                           a blank areaofinterest data structure
                            the randomIndex to identify the modal code
                            a new onChange function to add the new structure to the end of areaofinterest_list */}
-                    {/* <AreaInterestModalEdit
-                      areaOfInterest={blankAreaOfInterest}
-                      index={randomIndex}
-                      onChange={this.addNewAreaOfInterest}
-                    /> */}
-                    <AreaInterestModalAdd
+
+                    <AreaInterestModalEdit
                       areaofInterest={new AreaofInterest()}
                       index={randomIndex}
                       onChange={this.addNewAreaOfInterest}

@@ -5663,6 +5663,11 @@ select option:disabled {
 .ui-datepicker {
   z-index: 10000 !important;
 }
+
+.datepicker {
+  z-index: 1000 !important;
+}
+
 .link-profile {
   color: #000;
 }

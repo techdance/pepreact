@@ -54,7 +54,8 @@ export default class ProjectLabShowSteps extends React.Component {
         classStep1 =
           "step step-complete bar-progress previous-step button-green mr--15";
         classStep2 =
-          "step step-complete bar-progress previous-step button-green mr--15";
+          "step step-complete bar-progress previous-step button-green-2 step-h-blue-2 color-white mr--15";
+        // "step step-complete bar-progress previous-step button-green mr--15";
         classStep3 =
           "step step-current bar-progress button-blue color-white mr--15";
         classReview =
