@@ -1,13 +1,11 @@
 import React from "react";
-
-import {
-  getProfessor,
-  getProfessorMatches,
-} from "../../../repositories/ProfessorRepository";
+import Professor from "../../../classes/Professor";
+import { getProfessorMatches } from "../../../repositories/ProfessorRepository";
 
 class ShowMatches extends React.Component {
   render() {
-    let professor = getProfessor("2"); // dummy id for Gordon
+    let professor = new Professor();
+    professor.getProfessor(1); // dummy id
     let professors = getProfessorMatches(professor);
 
     return (

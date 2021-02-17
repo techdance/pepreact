@@ -1,50 +1,69 @@
 import React from "react";
-import { removeFromArray } from "../Shared/usefulFunctions";
 
 // globals
-const maxProfessionalMemberships = 3;
-const maxCertificates = 3;
+const maxprofessionaMemberships = 3;
+const maxcertificate = 3;
 
-class EditProfileCredentialsProfessionalMemberships extends React.Component {
+class EditProfileCredentialsprofessionaMemberships extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      professionalMemberships: this.props.professionaMemberships,
+      professionaMemberships: this.props.professionaMemberships,
+      tempprofessionaMemberships: [],
+      educationallevel: this.props.educationallevel,
     };
 
+    let { professionaMemberships } = this.state;
+
+    // structure to maintain status of certificate entry fields
+    // iconValue repesent whether the oranga icon is a plus or minus
+    //  certificate contains the last value from the professionaMemberships array passed as props to the class
+    //  so that the informaion is retained if user clicks "minus" on a valid certificate and wants it back.
+    var i;
+    for (i = 0; i < maxprofessionaMemberships; i++) {
+      if (i < professionaMemberships.length) {
+        this.state.tempprofessionaMemberships.push({
+          iconValue: "minus",
+          professionaMembership: professionaMemberships[i],
+        });
+      } else {
+        this.state.tempprofessionaMemberships.push({
+          iconValue: "plus",
+          professionaMembership: "",
+        });
+      }
+    }
+
     this.handleArrayChange = this.handleArrayChange.bind(this);
-    this.removeMembership = this.removeMembership.bind(this);
-    this.addMembership = this.addMembership.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  addMembership = (event) => {
-    let { professionalMemberships } = this.state;
-
-    if (professionalMemberships.length < maxProfessionalMemberships) {
-      professionalMemberships.push({
-        name: "",
-        link: "#0",
-      });
-
-      this.setState({ professionalMemberships: professionalMemberships });
-      /// pass current state up to parent to propogate changes
-      this.props.onChange("professionalMemberships", professionalMemberships);
-    }
-  };
-
-  removeMembership = (index, event) => {
+  handleClick = (index, event) => {
     // function that handles clicks on the icons next to certificate fields
 
-    let { professionalMemberships } = this.state;
+    let { professionaMemberships, tempprofessionaMemberships } = this.state;
 
     event.preventDefault();
-    professionalMemberships = removeFromArray(professionalMemberships, index);
-    this.setState({ professionalMemberships: professionalMemberships });
+
+    //  if the current icon in a plus - make it minus (and then show text input field where this anchor is setup)
+    //  if the current icon is a minus - set link to a null string (so it won't show in ShowProfle) and set icon to plus
+    if (tempprofessionaMemberships[index].iconValue === "minus") {
+      tempprofessionaMemberships[index].professionaMembership =
+        professionaMemberships[index];
+      tempprofessionaMemberships[index].iconValue = "plus";
+      professionaMemberships[index] = "";
+    } else {
+     
+      professionaMemberships[index] = tempprofessionaMemberships[index].professionaMembership;
+      tempprofessionaMemberships[index].iconValue = "minus";
+    }
+    this.setState({ professionaMemberships: professionaMemberships });
+    this.setState({ tempprofessionaMemberships: tempprofessionaMemberships });
     /// pass current state up to parent to propogate changes
-    this.props.onChange("professionalMemberships", professionalMemberships);
+    this.props.onChange("professionaMemberships", professionaMemberships);
   };
 
-  handleArrayChange = (event) => {
+  handleArrayChange = (event, index) => {
     // handles field form changes at this level of nested form components and then passes changes up to parent component
     //  sets local state first and then passes current stateful object up to parent to propogate changes
 
@@ -52,96 +71,172 @@ class EditProfileCredentialsProfessionalMemberships extends React.Component {
     const { name, value } = event.target;
 
     //  Set state
-    let { professionalMemberships } = this.state;
-    professionalMemberships[name].link = "#0";
-    professionalMemberships[name].name = value;
-    this.setState({ professionalMemberships: professionalMemberships });
+    let { professionaMemberships } = this.state;
+
+    // professionaMemberships[name].link = "#0";
+    professionaMemberships[index] = value;
+    this.setState({ professionaMemberships: professionaMemberships });
 
     /// pass current state up to parent to propogate changes
-    this.props.onChange("professionalMemberships", professionalMemberships);
+    this.props.onChange("professionaMemberships", professionaMemberships);
   };
 
   passChangeUp = (field, value) => {
     // This should not be called as we are working with an array of values so there are no children in the data object.
   };
 
+
+  componentWillReceiveProps(nextProps){
+    if (this.state?.educationallevel !== nextProps?.educationallevel) {
+      
+        this.setState({ ...nextProps,  tempprofessionaMemberships: [] });
+        let { professionaMemberships } =  nextProps;
+        if(professionaMemberships){
+        var i;
+        for (i = 0; i < maxprofessionaMemberships; i++) {
+          if (i < professionaMemberships.length) {
+            let newObj = {
+              iconValue: "minus",
+              professionaMembership: professionaMemberships[i],
+            }
+            this.setState( prevs => ({  ...prevs, tempprofessionaMemberships:  [...prevs.tempprofessionaMemberships, newObj ]  }))
+          } else {
+           let newObj = {
+              iconValue: "plus",
+              professionaMembership: "",
+            };
+            this.setState( prevs => ({  ...prevs, tempprofessionaMemberships:  [...prevs.tempprofessionaMemberships, newObj ]  }))
+          }
+        }
+      }
+    }
+  }
+
+
+
+
   render() {
-    let { professionalMemberships } = this.state;
+    let { professionaMemberships, tempprofessionaMemberships } = this.state;
 
     return (
-      <div className="col-md-6">
+      <>
         <h4 className="mb-3">
           <span className="icon-regular icon-trophy-alt"></span> Professional
           Memberships
-          <a
-            href="#0"
-            className="cl-asset-type-d cl-hover-black font20 mr-1"
-            onClick={(e) => this.addMembership(e)}
-          >
-            <i className="fas fa-plus-circle"></i>
-          </a>
         </h4>
 
-        {professionalMemberships.map((membership, index) => (
-          <div className="form-group membership mb-4" key={index}>
+        {tempprofessionaMemberships.length && professionaMemberships.map((membership, index) =>{ 
+          return (
+          <div className="form-group" key={index}>
+            <label>Membership &ndash; {index + 1}</label>
             <div className="d-flex">
               <a
                 href="#0"
+                // id="add-membership"
                 className="cl-asset-type-d cl-hover-black font20 mr-1"
-                onClick={(e) => this.removeMembership(index, e)}
+                onClick={(e) => this.handleClick(index, e)}
               >
-                <i className="fas fa-minus-circle"></i>
+                {tempprofessionaMemberships[index].iconValue === "plus" ? (
+                  <i className="fas fa-plus-circle"></i>
+                ) : (
+                  <i className="fas fa-minus-circle"></i>
+                )}
               </a>
-
-              <input
-                type="text"
-                name={index}
-                value={membership.name}
-                className="input"
-                onChange={this.handleArrayChange}
-              />
+              {tempprofessionaMemberships[index].iconValue === "plus" ? (
+                ""
+              ) : (
+                <input
+                  type="text"
+                  name={"membership"+index}
+                  value={membership}
+                  className="input"
+                  onChange={(e)=>this.handleArrayChange(e, index)}
+                />
+              )}
             </div>
           </div>
-        ))}
-      </div>
+        ) } )  }
+        {/* if less than maxprofessionaMemberships then show plus icon to add one */}
+        {professionaMemberships.length < maxprofessionaMemberships ? (
+          <div className="form-group">
+            <label>
+              Membership &ndash; {professionaMemberships.length + 1}
+            </label>
+            <div className="d-flex">
+              <a
+                href="#0"
+                // id="add-membership"
+                className="cl-asset-type-d cl-hover-black font20 mr-1"
+                onClick={(e) =>
+                  this.handleClick(professionaMemberships.length, e)
+                }
+              >
+                <i className="fas fa-plus-circle"></i>
+              </a>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+      </>
     );
   }
 }
 
-class EditProfileCredentialsCertificates extends React.Component {
+class EditProfileCredentialscertificate extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   certificates: this.props.certificates,
-    // };
+    this.state = {
+      certificate: this.props.certificate,
+      tempcertificate: [],
+      educationallevel: this.props.educationallevel
+    };
+
+    let { certificate } = this.state;
+
+    // structure to maintain status of certificate entry fields
+    // iconValue repesent whether the oranga icon is a plus or minus
+    //  certificate contains the last value from the certificate array passed as props to the class
+    //  so that the informaion is retained if user clicks "minus" on a valid certificate and wants it back.
+    var i;
+    for (i = 0; i < maxcertificate; i++) {
+      if (i < certificate.length) {
+        this.state.tempcertificate.push({
+          iconValue: "minus",
+          certificate: certificate[i],
+        });
+      } else {
+        this.state.tempcertificate.push({
+          iconValue: "plus",
+          certificate: "",
+        });
+      }
+    }
 
     this.handleArrayChange = this.handleArrayChange.bind(this);
-    this.removeCertificate = this.removeCertificate.bind(this);
-    this.addCertificate = this.addCertificate.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  addCertificate = () => {
-    let { certificates } = this.props;
-
-    if (certificates.length < maxCertificates) {
-      certificates.push("");
-
-      // this.setState({ certificates: certificates });
-      /// pass current state up to parent to propogate changes
-      this.props.onChange("certificates", certificates);
-    }
-  };
-
-  removeCertificate = (index, event) => {
+  handleClick = (index, event) => {
     // function that handles clicks on the icons next to certificate fields
-    let { certificates } = this.props;
+
+    let { certificate, tempcertificate } = this.state;
 
     event.preventDefault();
 
-    certificates = removeFromArray(certificates, index);
-    // this.setState({ certificates: certificates });
-    /// pass current state up to parent to propogate changes
-    this.props.onChange("certificates", certificates);
+    //  if the current icon in a plus - make it minus (and then show text input field where this anchor is setup)
+    //  if the current icon is a minus - set link to a null string (so it won't show in ShowProfle) and set icon to plus
+    if (tempcertificate[index].iconValue === "minus") {
+      tempcertificate[index].certificate = certificate[index];
+      tempcertificate[index].iconValue = "plus";
+      certificate[index] = "";
+    } else {
+      certificate[index] = tempcertificate[index].certificate;
+      tempcertificate[index].iconValue = "minus";
+    }
+
+    this.setState({ certificate: certificate });
+    this.setState({ tempcertificate: tempcertificate });
   };
 
   handleArrayChange = (event) => {
@@ -152,58 +247,106 @@ class EditProfileCredentialsCertificates extends React.Component {
     const { name, value } = event.target;
 
     //  Set state
-    let { certificates } = this.props;
-    certificates[name] = value;
-    // this.setState({ certificates: certificates });
+    let { certificate } = this.state;
+    certificate[name] = value;
+    this.setState({ certificate: certificate });
 
     /// pass current state up to parent to propogate changes
-    this.props.onChange("certificates", certificates);
+    this.props.onChange("certificate", certificate);
   };
 
   passChangeUp = (field, value) => {
     // This should not be called as we are working with an array of values so there are no children in the data object.
   };
 
-  render() {
-    let { certificates } = this.props;
 
+  componentWillReceiveProps(nextProps){
+    if (this.state?.educationallevel !== nextProps?.educationallevel) {
+      
+        this.setState({ ...nextProps,  tempcertificate: [] });
+        let { certificate } =  nextProps;
+      var i;
+      for (i = 0; i < maxcertificate; i++) {
+        if (i < certificate.length) {
+          let newObj = {
+            iconValue: "minus",
+            certificate: certificate[i],
+          };
+          this.setState( prevs => ({  ...prevs, tempcertificate:  [...prevs.tempcertificate, newObj ]  }))
+        } else {
+          let newObj = {
+            iconValue: "plus",
+            certificate: "",
+          };
+          this.setState( prevs => ({  ...prevs, tempcertificate:  [...prevs.tempcertificate, newObj ]  }))
+        }
+      }
+    }
+  }
+
+
+
+
+  render() {
+    let { certificate, tempcertificate } = this.state;
     return (
       <div className="col-md-6">
         <h4 className="mb-3">
           <span className="icon-regular icon-file-certificate"></span>{" "}
-          Certificates
-          <a
-            href="#0"
-            className="cl-asset-type-d cl-hover-black font20 mr-1"
-            onClick={(e) => this.addCertificate(e)}
-          >
-            <i className="fas fa-plus-circle"></i>
-          </a>
+          certificate
         </h4>
 
-        {certificates.map((certificate, index) => (
-          <div className="form-group certificate mb-4" key={index}>
+        {tempcertificate.length && certificate.map((certificateName, index) => (
+          <div className="form-group" key={index}>
+            <label>Certificate - {index + 1}</label>
             <>
               <div className="d-flex">
                 <a
                   href="#0"
+                  // id="add-certificate"
                   className="cl-asset-type-d cl-hover-black font20 mr-1"
-                  onClick={(e) => this.removeCertificate(index, e)}
+                  onClick={(e) => this.handleClick(index, e)}
                 >
-                  <i className="fas fa-minus-circle"></i>
+                  {tempcertificate[index].iconValue === "plus" ? (
+                    <i className="fas fa-plus-circle"></i>
+                  ) : (
+                    <i className="fas fa-minus-circle"></i>
+                  )}
                 </a>
-
-                <input
-                  type="text"
-                  name={index}
-                  value={certificate}
-                  className="input"
-                  onChange={this.handleArrayChange}
-                />
+                {tempcertificate[index].iconValue === "plus" ? (
+                  ""
+                ) : (
+                  <input
+                    type="text"
+                    name={"certificate"+index}
+                    value={certificateName}
+                    className="input"
+                    onChange={this.handleArrayChange}
+                  />
+                )}
               </div>
             </>
           </div>
         ))}
+
+        {/* if less than maxcertificate then show plus icon to add one */}
+        {certificate.length < maxcertificate ? (
+          <div className="form-group">
+            <label>Certificate - {certificate.length + 1}</label>
+            <div className="d-flex">
+              <a
+                href="#0"
+                // id="add-certificate"
+                className="cl-asset-type-d cl-hover-black font20 mr-1"
+                onClick={(e) => this.handleClick(certificate.length, e)}
+              >
+                <i className="fas fa-plus-circle"></i>
+              </a>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
@@ -227,7 +370,7 @@ class EditProfileCredentials extends React.Component {
     const { name, value } = event.target;
 
     //  set local state
-    let credentials = this.props;
+    let credentials = this.state;
     credentials[name] = value;
     this.setState({ [name]: value });
 
@@ -246,12 +389,25 @@ class EditProfileCredentials extends React.Component {
     this.props.onChange("credentials", credentials);
   };
 
+  componentWillReceiveProps(nextProps){
+    if (this.state?.userId !== nextProps?.credentials?.userId) {
+        this.setState({ ...nextProps?.credentials })
+    }
+  }
+
+
   render() {
     const {
-      educationLevel,
-      professionalMemberships,
-      certificates,
-    } = this.state;
+      membership={},
+      educationallevel,
+      certificate={},
+      status,
+    } = this.state || {
+      membership:{},
+      educationallevel:"",
+      certificate:{},
+      status: true
+    };
 
     return (
       <>
@@ -277,25 +433,30 @@ class EditProfileCredentials extends React.Component {
                       <div className="d-flex">
                         <input
                           type="text"
-                          name="educationLevel"
-                          value={educationLevel}
+                          name="educationallevel"
+                          value={educationallevel}
                           className="input"
                           onChange={this.handleChange}
                         />
                       </div>
                     </div>
+                    
                   </div>
-                </div>
-                <div className="row row-custom">
-                  <EditProfileCredentialsProfessionalMemberships
-                    professionaMemberships={professionalMemberships}
+                  <div class="col-md-6"></div>
+                  <div className="col-md-6"> 
+                  <EditProfileCredentialsprofessionaMemberships
+                      professionaMemberships={Object.values(membership)}
+                      educationallevel={educationallevel}
+                      onChange={this.passChangeUp}
+                    />
+                  </div>
+                  <div className="col-md-6">
+                  <EditProfileCredentialscertificate
+                    certificate={Object.values(certificate)}
+                    educationallevel={educationallevel}
                     onChange={this.passChangeUp}
                   />
-
-                  <EditProfileCredentialsCertificates
-                    certificates={certificates}
-                    onChange={this.passChangeUp}
-                  />
+                  </div>
                 </div>
               </div>
             </div>

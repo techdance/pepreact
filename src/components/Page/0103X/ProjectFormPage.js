@@ -186,26 +186,32 @@ class ProjectPageContainer extends React.Component {
               <div className="col-md-6">
                 <label htmlFor="startDate">Start Date</label>
                 <div className="wrap-input-calendar">
-                  <CalendarSelector
+                  <input
+                    type="text"
                     id="startDate"
-                    className={"form-control icon-cal datepicker"}
+                    className="form-control
+                              icon-cal datepicker"
                     name="startDate"
                     value={startDate}
                     onChange={this.handleChange}
                   />
                 </div>
+                <CalendarSelector tag={".datepicker"} />
               </div>
               <div className="col-md-6">
                 <label htmlFor="discipline3">End Date</label>
                 <div className="wrap-input-calendar">
-                  <CalendarSelector
+                  <input
+                    type="text"
                     id="endDate"
-                    className={"form-control icon-cal datepicker"}
+                    className="form-control
+                              icon-cal datepicker"
                     name="endDate"
                     value={endDate}
                     onChange={this.handleChange}
                   />
                 </div>
+                <CalendarSelector tag={".datepicker"} />
               </div>
             </div>
           </div>

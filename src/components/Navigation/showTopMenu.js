@@ -5,6 +5,15 @@ import ShowAlerts from "./showAlerts.js";
 import ShowMessages from "./showMessages.js";
 import ShowProfileIcon from "./showProfileIcon.js";
 import ShowSearchBox from "./showSearchBox.js";
+import {connect} from "react-redux";
+import {  
+    getCollaboratedUserProfileimage,
+    getUserData
+   } from "../../redux/actions/users"
+
+   import AuthService from "../../services/AuthService";
+
+
 
 const alert1 = {
   type: "message",
@@ -81,10 +90,31 @@ const message5 = {
 };
 
 class ShowTopMenu extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    let paramiter = {token: AuthService.getToken() } ;
+    this.props.getCollaboratedUserProfileimage(paramiter);
+    this.props.getUserData(paramiter);
+  }
+
   render() {
     // backward compatibility.
     // Prior version set messages, alerts and badge within this file.
     // This version allows those to be passed in as arguments. Need to address prior Example pages to remove the code below.
+
+   
+    let { CollaboratedUserProfileimage } = this.props.app?.profile;
+    let { userInfo } = this.props.app;
+    const imageSrc =  CollaboratedUserProfileimage?.blobData;
+
+
+    console.log(' CollaboratedUserProfileimage: ', CollaboratedUserProfileimage,  'userInfo:  ', userInfo, ' imageSrc: ', imageSrc);
+
+
 
     let messages =
       "messages" in this.props
@@ -112,8 +142,10 @@ class ShowTopMenu extends React.Component {
           <ShowAlerts alerts={alerts} />
           <ShowMessages messages={messages} />
           <ShowProfileIcon
-            firstName={this.props.owner.Person.firstName}
-            image={this.props.owner.Person.iconImage}
+            firstName={userInfo?.firstName}
+            image={imageSrc}
+            history={this.props.history}
+            Loader={this.props.Loader}
           />
 
           <ShowSearchBox />
@@ -123,4 +155,15 @@ class ShowTopMenu extends React.Component {
   }
 }
 
-export default ShowTopMenu;
+// export default ShowTopMenu;
+const mapStateToProps = state => {
+  return {
+    app: state.users
+  }
+}
+
+// export default ViewProfileContainer;
+export default connect(mapStateToProps, {
+  getCollaboratedUserProfileimage,
+  getUserData
+})(ShowTopMenu)

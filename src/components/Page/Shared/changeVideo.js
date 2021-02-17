@@ -66,6 +66,7 @@ export class ChangeVideoButton extends React.Component {
             height: 0,
           }}
           onChange={this.onFileChange}
+          disabled
         />
       </>
     );

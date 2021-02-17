@@ -89,20 +89,15 @@ class Professor {
   ];
 
   setProfessor(professor) {
-    this.personalInformation = professor.personalInformation;
-    this.personalInformation.namePrefix =
-      professor.personalInformation.namePrefix;
-    this.personalInformation.firstName =
-      professor.personalInformation.firstName;
-    this.personalInformation.lastName = professor.personalInformation.lastName;
-    // name: "Dr. Bradley Dexter",
-    // title: "Professor",
-    // image: "./images/bradley.png",
-    // department: "College of Business",
-    // personalMessage:
-    //   '"Success in business requires training and discipline and hard work." David Rockefeller',
-    // onlineStatus: "public",
-    // timezone: "EST",
+    // setProfessor object to the professor object
+    // this.projectType = project.projectType;
+    // this.discipline = project.discipline;
+    // this.description = project.description;
+    // this.name = project.name;
+    // this.programLength = project.programLength;
+    // this.startDate = project.startDate;
+    // this.endDate = project.endDate;
+    // this.created = project.created;
   }
 
   addProfessor() {
@@ -114,6 +109,22 @@ class Professor {
     //  simulates returning the id of the saved record;
     let id = 1;
     return id;
+  }
+
+  getProfessor(id) {
+    // call get method in API to retrieve a project by id
+    //  Below is a simulation of filling the returned data
+
+    this.personalInformation.namePrefix = "Dr";
+    this.personalInformation.firstName = "Gordon";
+    this.personalInformation.lastName = "Stanley";
+    this.personalInformation.name = "Dr. Gordon Stanley";
+    this.personalInformation.title = "Provost";
+    this.personalInformation.image = "./images/Gordon.png";
+    this.personalInformation.department = "Academic Affairs";
+    this.personalInformation.personalMessage =
+      '"The goal of education is the advancement of knowledge and the dissemination of truth." -John Fitzgerald Kennedy';
+    this.personalInformation.onlineStatus = "private";
   }
 
   updateProfessor(id) {

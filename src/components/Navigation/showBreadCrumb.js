@@ -20,7 +20,7 @@ class ShowBreadCrumb extends React.Component {
                     : "breadcrumb-item"
                 }
               >
-                <a href="#0">{breadCrumb}</a>
+                <a href={breadCrumb}>{breadCrumb}</a>
               </li>
             ))}
           </ol>

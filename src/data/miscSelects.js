@@ -83,8 +83,8 @@ export const department = [
 
 export const suffix = [
   {
-    name: "Ph.D.",
-    label: "Ph.D.",
+    name: "Dr.",
+    label: "Dr.",
     disabled: "",
   },
   {

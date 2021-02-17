@@ -1,8 +1,10 @@
 import React from "react";
+import Loader from "react-loader-spinner";
 
 class ShowCommunicationPreferences extends React.Component {
   render() {
     const { communicationPreferences } = this.props;
+    const { language, phoneNumber } =  communicationPreferences || {language: null, phoneNumber: null };
 
     return (
       <>
@@ -16,12 +18,21 @@ class ShowCommunicationPreferences extends React.Component {
                 </h2>
               </div>
               <div className="box-middle">
+
+              {      !language &&     ( <Loader
+                          type="ThreeDots"
+                          color="#00BFFF"
+                          height={200}
+                          width={100}
+                          timeout={10000}
+                        />
+                    )}
                 <div className="content-icon">
-                  {communicationPreferences.languages.map((language, index) => (
+                  { language &&  Object.keys(language).map((keyName, index) => (
                     <p className="mb-1" key={index}>
                       <span className="icon-regular icon-comment-check"></span>{" "}
                       <span key={index} className="cl-gray">
-                        {language}
+                        {language?.[keyName]?.LanguageName}
                       </span>
                     </p>
                   ))}
@@ -34,18 +45,18 @@ class ShowCommunicationPreferences extends React.Component {
                       href="mailto:bdexter@ahea.edu"
                       className="dont-break-out"
                     >
-                      {communicationPreferences.emailAddress}
+                      {communicationPreferences?.emailAddress}
                     </a>
                   </p>
                 </div>
 
-                {communicationPreferences.phoneNumbers.map(
-                  (phoneNumber, index) => (
+                {phoneNumber && Object.keys(phoneNumber)?.map(
+                  (phoneKey, index) => (
                     <div className="content-icon" key={index}>
                       <p className="mb-1">
                         <span className="icon-regular icon-phone-office"></span>{" "}
                         <a key={index} href={"tel:" + phoneNumber}>
-                          {phoneNumber}
+                          {phoneNumber[phoneKey]}
                         </a>
                       </p>
                     </div>
@@ -56,10 +67,10 @@ class ShowCommunicationPreferences extends React.Component {
                   <p className="mb-1">
                     <span className="icon-regular icon-desktop-alt"></span>{" "}
                     <a
-                      href={communicationPreferences.url}
+                      href={communicationPreferences?.website?.path}
                       className="dont-break-out"
                     >
-                      {communicationPreferences.url}
+                      {communicationPreferences?.website?.path}
                     </a>
                   </p>
                 </div>

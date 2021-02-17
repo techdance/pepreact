@@ -320,7 +320,7 @@ export const bradleyPageOwner = {
       logoA2: "./images/logo-a.png",
       logoB2: "./images/logo-b.png",
     },
-    Person: { firstName: "Bradley", iconImage: "./images/bradley.png" },
+    Person: { firstName: "Bradley", iconImage: "./images/Bradley.png" },
   },
 
   badges: [

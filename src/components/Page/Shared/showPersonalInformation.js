@@ -1,18 +1,19 @@
-import React from "react";
+import React, {PureComponent} from "react";
 
 import ProgressBar from "progressbar.js";
+import ImageShow from "../../Page/Shared/UI/ProfilePic";
 
-class ShowPersonalInformation extends React.Component {
+class ShowPersonalInformation extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = { percent: this.props.progress };
+    this.state = { percent: this.props.percentage, bar: "", count:0 };
   }
 
   componentDidMount() {
-    const { sameUser } = this.props;
-
+    let { sameUser , percentage}= this.props;
     if (sameUser === "true") {
+    
       let bar = new ProgressBar.Circle("#progress", {
         strokeWidth: 15,
         easing: "easeInOut",
@@ -23,13 +24,37 @@ class ShowPersonalInformation extends React.Component {
         svgStyle: null,
       });
 
-      bar.animate(this.state.percent);
+      this.setState({bar: bar});
     }
   }
 
-  render() {
-    const { personalInformation, sameUser } = this.props;
 
+  UNSAFE_componentWillReceiveProps(nextProps){
+    if(nextProps.percentage){
+      const { bar, count } = this.state;
+      this.setState({count: count+1});
+      if(count==2){ 
+        bar.animate(nextProps.percentage-1);
+      };
+   
+    }
+  }
+
+
+  render() {
+    const { personalInformation, sameUser , CollaboratedUserProfileimage, percentage } = this.props;
+   const { bar } = this.state;
+    const imageSrc =  CollaboratedUserProfileimage?.blobData;
+    const disable = {
+      "pointer-events": "none",
+      "color": "#ccc"
+    };
+    const styleImgae = {
+      "display": "inline-block",
+      "width": "141px"
+    };
+
+  
     return (
       <>
         <div className="col-lg-6 mb-4" draggable="true">
@@ -44,7 +69,7 @@ class ShowPersonalInformation extends React.Component {
               <div className="box-middle d-flex align-items-center">
                 <div className="content-left">
                   <div className="bg-profile no-bg" id="progress">
-                    <img src={personalInformation.image} width="141" alt="" />
+                    <ImageShow  image={imageSrc} styletag={styleImgae} alt="profile Picture" />
                   </div>
                 </div>
                 <div className="content-right">
@@ -54,7 +79,7 @@ class ShowPersonalInformation extends React.Component {
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
-                        {personalInformation.name}
+                        {personalInformation?.name}
                       </a>
                     </div>
                   </div>
@@ -65,7 +90,7 @@ class ShowPersonalInformation extends React.Component {
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
-                        {personalInformation.title}
+                        {personalInformation?.position}
                       </a>
                     </div>
                   </div>
@@ -76,7 +101,7 @@ class ShowPersonalInformation extends React.Component {
                     </div>
                     <div className="text">
                       <a href="#0" className="cl-gray">
-                        {personalInformation.department}
+                        {personalInformation?.department}
                       </a>
                     </div>
                   </div>
@@ -84,7 +109,7 @@ class ShowPersonalInformation extends React.Component {
                     ""
                   ) : (
                     <div className="profile-info profile-title mt-2">
-                      <a href="#0">
+                      <a href="#0" style={disable} >
                         <img
                           className="message-info mr-3"
                           src="./images/message-info.png"
@@ -100,12 +125,12 @@ class ShowPersonalInformation extends React.Component {
                   <span className="icon-regular icon-user-cog"></span> My
                   Thoughts
                 </h4>
-                <p>{personalInformation.personalMessage}</p>
+                <p>{personalInformation?.thoughts}</p>
               </div>
             </div>
             {sameUser === "true" ? (
               <a
-                href="#0"
+                href="/edit-profile"
                 className="btn btn-blue position-absolute btn-edit-profile"
               >
                 <span className="position-relative">

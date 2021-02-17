@@ -1,14 +1,16 @@
 import React from "react";
 
-export default class AreaInterestModalView extends React.Component {
+import $ from "jquery";
+
+class AreaInterestModal extends React.Component {
   render() {
     const {
       projectType,
       description,
-      discipline,
+      discipline1,
       deliveryMethod,
       collaborationType,
-      region,
+      location1,
       programLength,
       preferredLanguage,
       credits,
@@ -22,10 +24,32 @@ export default class AreaInterestModalView extends React.Component {
     const id = this.props.id;
 
     // below is for backward compatibility - startDate, endDate and createdDate should be in collaboration interest data object
-    const startDateValue = startDate !== undefined ? startDate : "2020-11-01";
-    const endDatevalue = endDate !== undefined ? endDate : "2021-02-28";
-    const createdDateValue =
-      createdDate !== undefined ? createdDate : "2019-01-01";
+    const startDateValue = (startDate !== undefined  || startDate) ? startDate : "2020-11-01";
+    const endDatevalue = (endDate !== undefined || endDate)  ? endDate : "2021-02-28";
+    const createdDateValue = (createdDate !== undefined || createdDate) ? createdDate : "2019-01-01";
+
+
+
+
+
+
+    let styleContainer = {
+      "background-color":"rgba(129,140,147,0.9)"
+    }
+    let styleContainerHeader = {
+      "background-color":"#f1f3f7"
+    }
+    let style ={
+        viewMore: {
+           findMacth: {"margin-left": "9pc"},
+           footer: {"margin-right": "-10pc" }
+        },
+        viewMoreEdit:{
+          "margin-left": "3pc",
+          "margin-right": "-50px"
+        }
+
+    }
 
     return (
       <div
@@ -34,11 +58,11 @@ export default class AreaInterestModalView extends React.Component {
         tabIndex="-1"
         role="dialog"
         aria-labelledby="modalLabel"
-        aria-hidden="true"
+        // aria-hidden="true"
       >
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog" role="document" style={styleContainer} >
           <div className="modal-content">
-            <div className="modal-header position-relative">
+            <div className="modal-header position-relative" style={styleContainerHeader}>
               <div className="toltip-close3">
                 <a href="#0" data-dismiss="modal">
                   <i className="fa fa-times-circle"></i>
@@ -65,7 +89,7 @@ export default class AreaInterestModalView extends React.Component {
                       <div className="col-md-4">
                         <strong>Discipline</strong>
                         <br />
-                        {discipline}
+                        {discipline1}
                       </div>
                       <div className="col-md-6">
                         <strong>Delivery Method</strong>
@@ -82,7 +106,7 @@ export default class AreaInterestModalView extends React.Component {
                       <div className="col-md-4">
                         <strong>Region</strong>
                         <br />
-                        {region}
+                        {location1}
                       </div>
                       <div className="col-md-4">
                         <strong>Program Length</strong>
@@ -125,7 +149,7 @@ export default class AreaInterestModalView extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="row text-center pt-2 mt-3">
+                    <div className="row text-center pt-2 mt-5" style={style.viewMoreEdit}>
                       {editMode === "true" ? (
                         <>
                           {" "}
@@ -136,7 +160,7 @@ export default class AreaInterestModalView extends React.Component {
                               data-toggle="modal"
                               data-dismiss="modal"
                               data-target={"#areaInterestModalEdit" + id}
-                              className="btn btn-blue btn-w-100 m-auto"
+                              className="btn btn-blue btn-w-160 m-auto"
                             >
                               Edit
                             </a>
@@ -144,7 +168,7 @@ export default class AreaInterestModalView extends React.Component {
                           <div className="col-md-6 ac">
                             <a
                               href="#0"
-                              className="btn btn-blue btn-w-100 m-auto"
+                              className="btn btn-blue btn-w-160 m-auto"
                             >
                               Find Matches
                             </a>
@@ -154,14 +178,15 @@ export default class AreaInterestModalView extends React.Component {
                         <div className="col-md-12 ac">
                           <a
                             href="#0"
-                            className="btn btn-blue btn-w-100 m-auto"
+                            className="btn btn-blue btn-w-100 m-center"
+                            style={style.viewMore.findMacth}
                           >
                             Find Matches
                           </a>
                         </div>
                       )}
                     </div>
-                    <div className="row text-center">
+                    <div className="row text-center" style={style.viewMore.footer}>
                       <div className="col-md-12 ac mt-3">
                         <strong>Created: {createdDateValue}</strong>
                       </div>
@@ -176,3 +201,5 @@ export default class AreaInterestModalView extends React.Component {
     );
   }
 }
+
+export default AreaInterestModal;

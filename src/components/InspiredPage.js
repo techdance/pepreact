@@ -7,15 +7,18 @@ import ShowMobileSideBarMenu from "./Navigation/showMobileSideBarMenu.js";
 import ShowInstitutionLogo from "./Navigation/showInstitutionLogo.js";
 
 import { InstitutionLogoContext } from "../App.js";
+import { withRouter } from 'react-router-dom';
+import { toast, ToastContainer } from "react-toastify";
 
 class InspiredPage extends React.Component {
+
+
   render() {
     const { pageOwner, alerts, messages, badges } = this.props.pageOwner;
 
     const breadCrumb = this.props.breadcrumb;
     const menuItems = this.props.menuItems;
     const edit = this.props.edit;
-
     // backward compatibility - not all pageowner data objects contain logo - if it doesn't exist then default to AHEA
     const logo =
       pageOwner.Institution.logo !== undefined
@@ -37,6 +40,7 @@ class InspiredPage extends React.Component {
               menuItems={menuItems}
               activeMenuItem={"Home"}
             />
+            <ToastContainer closeButton={false} position="top-right" />
             <div id="content" className="">
               <div className="container-fluid" id="test">
                 <div className="row">
@@ -47,6 +51,7 @@ class InspiredPage extends React.Component {
                       messages={messages}
                       badges={badges}
                       edit={edit}
+                      history={this.props.history}
                     />
                     <ShowBreadCrumb breadCrumbList={breadCrumb} />
 
@@ -62,4 +67,4 @@ class InspiredPage extends React.Component {
   }
 }
 
-export default InspiredPage;
+export default withRouter(InspiredPage);

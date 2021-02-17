@@ -1,8 +1,15 @@
 import React from "react";
 
+import videoImage from "../../../assets/images/video-bradley.png"
+import Loader from "react-loader-spinner";
+
 class ShowProfessionalBio extends React.Component {
   render() {
     const { professionalBio } = this.props;
+    const disable = {
+      "pointer-events": "none",
+      "color": "#ccc"
+    };
 
     return (
       <>
@@ -15,7 +22,9 @@ class ShowProfessionalBio extends React.Component {
                   Professional Bio
                 </h2>
               </div>
+             
               <div className="box-middle">
+                
                 <div className="row row-custom mb-4">
                   <div className="col-md-12">
                     <h4>
@@ -25,10 +34,18 @@ class ShowProfessionalBio extends React.Component {
                   </div>
                   <div className="col-md-6">
                     <div className="wrap-video img-resp mb-2">
-                      <img src={professionalBio.introVideo} alt="" />
+                      <img src={videoImage} alt="" />
                     </div>
                   </div>
                 </div>
+                {      !professionalBio &&     ( <Loader
+                    type="ThreeDots"
+                    color="#00BFFF"
+                    height={200}
+                    width={100}
+                    timeout={10000}
+                  />
+               )}
                 <div className="content-icon position-relative">
                   <div>
                     <span className="icon-regular icon-shield-check"></span>{" "}
@@ -36,7 +53,7 @@ class ShowProfessionalBio extends React.Component {
                   </div>
 
                   <p className="blue-color pl-4">
-                    <a href="#0">{professionalBio.discipline}</a>
+                    <a href="#0">{professionalBio?.bioDiscipline}</a>
                   </p>
                 </div>
                 <div className="content-icon position-relative">
@@ -45,21 +62,22 @@ class ShowProfessionalBio extends React.Component {
                     <strong>Areas of Expertise</strong>
                   </div>
                   <p className="blue-color pl-4">
-                    {professionalBio.areasOfExpertise.map(
-                      (expertise, index) => (
+                    {professionalBio?.areaofexpertise1 &&
+                     Object.keys(professionalBio?.areaofexpertise1)?.map(
+                      (expertiseNum, index) => (
                         <a key={index} href="#0">
                           {" "}
-                          {expertise} <br />
+                          {professionalBio?.areaofexpertise1[expertiseNum]} <br />
                         </a>
                       )
                     )}
                   </p>
                 </div>
                 <div className="content-icon plane">
-                  {professionalBio.internationalExperience ? (
+                  {professionalBio?.internationalExperience ? (
                     <p>
                       <span className="icon-regular icon-globe-stand"></span>{" "}
-                      <strong>{professionalBio.internationalExperience}</strong>
+                      <strong>{professionalBio?.internationalExperience}</strong>
                     </p>
                   ) : (
                     ""
@@ -71,13 +89,17 @@ class ShowProfessionalBio extends React.Component {
                     <strong>Bio</strong>
                   </div>
                   <div className="text pl-4">
-                    <p>{professionalBio.bio}</p>
+                    <p>{professionalBio?.biodescription}</p>
                   </div>
                 </div>
-
+                <div class="content-icon plane">
+													<p><span class="icon-regular icon-globe-stand"></span>  
+                          <strong class="cl-blue"> {professionalBio?.experienceyears} Years of International Experience</strong></p>
+												</div>
                 <a
-                  href={professionalBio.cvLink}
+                  href={professionalBio?.cvlink}
                   className="btn btn-blue view-cv"
+                  style={disable}
                 >
                   View CV
                 </a>

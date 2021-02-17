@@ -1,7 +1,13 @@
 import React from "react";
-
+import Loader from "react-loader-spinner";
 class ShowCredentials extends React.Component {
   render() {
+    const disable = {
+      "pointer-events": "none",
+      "color": "#ccc"
+    };
+
+    let { credentials = null} = this.props;
     return (
       <>
         <div className="col-lg-6 mb-4" draggable="true">
@@ -20,19 +26,27 @@ class ShowCredentials extends React.Component {
                     <strong>Highest Education Level</strong>
                   </p>
                   <p className="cl-gray pl-4">
-                    {this.props.credentials.educationLevel}
+                    {this.props.credentials?.educationallevel}
                   </p>
                 </div>
+                {      !credentials &&     ( <Loader
+                          type="ThreeDots"
+                          color="#00BFFF"
+                          height={200}
+                          width={100}
+                          timeout={10000}
+                        />
+                    )}
                 <div className="content-icon">
                   <p className="mb-0">
                     <span className="icon-regular icon-trophy-alt"></span>{" "}
                     <strong>Professional Memberships</strong>
                   </p>
-                  {this.props.credentials.professionalMemberships.map(
-                    (professionalMembership, index) => (
+                  { credentials?.membership && Object.keys(credentials?.membership)?.map(
+                    (PMembershipKey, index) => (
                       <p className="blue-color pl-4" key={index}>
-                        <a href={professionalMembership.link}>
-                          {professionalMembership.name}
+                        <a href={credentials?.membership[PMembershipKey]}>
+                          {credentials?.membership[PMembershipKey]}
                         </a>
                       </p>
                     )
@@ -43,17 +57,17 @@ class ShowCredentials extends React.Component {
                     <span className="icon-regular icon-file-certificate"></span>{" "}
                     <strong>Certificates</strong>
                   </p>
-                  {this.props.credentials.certificates.map(
-                    (certificate, index) => (
+                  {credentials?.certificate && Object.keys(credentials?.certificate)?.map(
+                    (certificateNum, index) => (
                       <p key={index} className="cl-gray pl-4">
-                        {certificate}
+                        {credentials?.certificate[certificateNum]}
                       </p>
                     )
                   )}
                 </div>
               </div>
               <div className="box-bottom text-center">
-                <a href="#0" className="btn btn-blue">
+                <a href="#0" className="btn btn-blue" style={disable}>
                   View More
                 </a>
               </div>

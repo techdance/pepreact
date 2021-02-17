@@ -40,7 +40,7 @@ class EditProfileInstitutionProfile extends React.Component {
   };
 
   render() {
-    const { name, calendar } = this.state;
+    const { institutionName= "", institutetimezone="" } = this.props?.institutionProfile || {};
 
     return (
       <>
@@ -69,20 +69,22 @@ class EditProfileInstitutionProfile extends React.Component {
                       <label>Institution</label>
                       <input
                         type="text"
-                        name="name"
-                        value={name}
+                        name="institutionName"
+                        value={institutionName}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled={true}
                       />
                     </div>
                     <div className="form-group">
                       <label>Academic Calendar</label>
                       <input
                         type="text"
-                        name="calendar"
-                        value={calendar}
+                        name="institutetimezone"
+                        value={institutetimezone}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled={true}
                       />
                     </div>
                   </div>

@@ -3,7 +3,7 @@ import Select from "react-select";
 
 import { languageList } from "../../../data/languages.js";
 
-class EditProfileCommunicationPreferencesReceiveSMS extends React.Component {
+class EditProfileCommunicationPreferencesstatus extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props;
@@ -12,38 +12,39 @@ class EditProfileCommunicationPreferencesReceiveSMS extends React.Component {
 
   onChangeValue(event) {
     // toggle if true then false and if false then true
-    if (this.state.receiveSMS) {
-      this.setState({ receiveSMS: false });
-      this.props.onChange("receiveSMS", false);
+    if (this.state.status) {
+      this.setState({ status: false });
+      this.props.onChange("status", false);
     } else {
-      this.setState({ receiveSMS: true });
-      this.props.onChange("receiveSMS", true);
+      this.setState({ status: true });
+      this.props.onChange("status", true);
     }
   }
 
   render() {
-    let receiveSMS = this.state;
+    let status = this.state;
 
     return (
       <>
         <div className="col-md-6">
-          <div className="form-group">
+          <div className="form-group" style={this.props.styleProp.checkGroup}>
             <label>&nbsp;</label>
 
             <input
-              name="receiveSMS"
+              name="status"
               type="checkbox"
-              value={receiveSMS.receiveSMS}
-              checked={receiveSMS.receiveSMS}
+              value={status.status}
+              checked={status.status}
               onChange={this.onChangeValue}
+              style={this.props.styleProp.checkBox}
             />
 
-            <span className="font-weight-bold"> Receive SMS Notifications</span>
+            <span className="font-weight-bold" style={ this.props.styleProp.checkRadio}> Receive SMS Notifications</span>
             <i
               className="fa fa-info-circle icon-info cl-blue"
               aria-hidden="true"
             >
-              <span className="info-toltip">
+              <span className="info-toltip" >
                 Standard messaging rates may apply.
               </span>
             </i>
@@ -124,17 +125,49 @@ class EditProfileCommunicationPreferences extends React.Component {
     this.props.onChange("communicationPreferences", communicationPreferences);
   };
 
+
+  componentWillReceiveProps(nextProps){
+    if (this.state?.createDate !== nextProps?.communicationPreferences?.createDate) {
+        this.setState({ ...nextProps?.communicationPreferences })
+    }
+  }
+
+
   render() {
+
     const {
-      primaryLanguage,
-      secondaryLanguage,
-      tertiaryLanguage,
-      emailAddress,
-      officePhone,
-      mobilePhone,
-      url,
-      receiveSMS,
-    } = this.state;
+      language={},
+      emailAddress="",
+      phoneNumber={},
+      website="",
+      status="",
+      userId,
+    } = this.state || {
+      language:{},
+      emailAddress:"",
+      phoneNumber:"",
+      website:"",
+      status:"",
+      status: true,
+      userId: "",
+      website:{},
+    };
+
+ let style = {
+   checkBox:{
+   "opacity": "1",
+   "margin-left": "-7.5pc",
+    "margin-top": "1px"
+   },
+   checkGroup:{
+    "display": "inline-block",
+   },
+   checkRadio: {
+     "margin-left": "2pc"
+   }
+ }
+
+
 
     return (
       <>
@@ -172,11 +205,11 @@ class EditProfileCommunicationPreferences extends React.Component {
                         className="inputSelect"
                         classNamePrefix="rs"
                         onChange={(e) =>
-                          this.handleChangeSingleSelect("primaryLanguage", e)
+                          this.handleChangeSingleSelect("primaryLanguageName", e)
                         }
                         value={{
-                          value: primaryLanguage,
-                          label: primaryLanguage,
+                          value: language?.primary?.LanguageId || "",
+                          label: language?.primary?.LanguageName || "",
                         }}
                         isSearchable="true"
                       />
@@ -187,13 +220,13 @@ class EditProfileCommunicationPreferences extends React.Component {
                       <label>Office</label>
                       <input
                         type="tel"
-                        name="officePhone"
-                        value={officePhone}
+                        name="phoneNumber"
+                        value={phoneNumber?.landphone}
                         className="input"
                         maxLength="15"
-                        pattern="[0-9*]"
+                        pattern="^+ [ 0-9]{4}-[0-9]{3}-[0-9]{4}"
                         onChange={(e) =>
-                          this.handleChangeTelephone("officePhone", e)
+                          this.handleChangeTelephone("phoneNumber", e)
                         }
                       />
                     </div>
@@ -206,11 +239,11 @@ class EditProfileCommunicationPreferences extends React.Component {
                         className="inputSelect"
                         classNamePrefix="rs"
                         onChange={(e) =>
-                          this.handleChangeSingleSelect("secondaryLanguage", e)
+                          this.handleChangeSingleSelect("secondaryLanguageName", e)
                         }
                         value={{
-                          value: secondaryLanguage,
-                          label: secondaryLanguage,
+                          value: language?.secondary?.LanguageId || "",
+                          label: language?.secondary?.LanguageName || "" ,
                         }}
                         isSearchable="true"
                       />
@@ -221,13 +254,13 @@ class EditProfileCommunicationPreferences extends React.Component {
                       <label>Mobile</label>
                       <input
                         type="tel"
-                        name="mobilePhone"
-                        value={mobilePhone}
+                        name="mobileNumber"
+                        value={phoneNumber?.mobileNumber}
                         className="input"
                         maxLength="15"
-                        pattern="[0-9]*"
+                        pattern="^+ [ 0-9]{4}-[0-9]{3}-[0-9]{4}"
                         onChange={(e) =>
-                          this.handleChangeTelephone("mobilePhone", e)
+                          this.handleChangeTelephone("mobileNumber", e)
                         }
                       />
                     </div>
@@ -240,28 +273,29 @@ class EditProfileCommunicationPreferences extends React.Component {
                         className="inputSelect"
                         classNamePrefix="rs"
                         onChange={(e) =>
-                          this.handleChangeSingleSelect("tertiaryLanguage", e)
+                          this.handleChangeSingleSelect("tertiaryLanguageName", e)
                         }
                         value={{
-                          value: tertiaryLanguage,
-                          label: tertiaryLanguage,
+                          value: language?.tertiary?.LanguageId || "",
+                          label: language?.tertiary?.LanguageName || "" ,
                         }}
                         isSearchable="true"
                       />
                     </div>
                   </div>
 
-                  <EditProfileCommunicationPreferencesReceiveSMS
-                    receiveSMS={receiveSMS}
+                  <EditProfileCommunicationPreferencesstatus
+                    status={status}
                     onChange={this.passChangeUp}
+                    styleProp={style}
                   />
                   <div className="col-md-12">
                     <div className="form-group">
                       <label>Website</label>
                       <input
                         type="url"
-                        name="url"
-                        value={url}
+                        name="website"
+                        value={website?.path}
                         className="input"
                         onChange={this.handleChange}
                       />
@@ -274,6 +308,15 @@ class EditProfileCommunicationPreferences extends React.Component {
         </div>
       </>
     );
+
+
+    // return (
+    //   <>
+      
+    //     <h1> demo </h1>
+    //   </>
+    // )
+
   }
 }
 

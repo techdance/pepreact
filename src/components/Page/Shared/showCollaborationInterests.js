@@ -1,8 +1,10 @@
 import React from "react";
 
 //  Used for the modal triggered on clicking "View More" link
-import AreaInterestModal from "./areaInterestModalView";
-
+import AreaInterestModal from "./areaInterestModal.js";
+import AreaInterestModalCreate from "./areaInterestModalCreate.js";
+import AreaInterestModalEdit from "./areaInterestModalEdit.js";
+import Loader from "react-loader-spinner";
 //  Window to show collaboration interests
 
 class ShowCollaborationInterests extends React.Component {
@@ -28,8 +30,16 @@ class ShowCollaborationInterests extends React.Component {
 
                     {/*  Props contains an array of AOI db records used to display collaboration interests */}
                     {/*  For each db record show data */}
+                    {      !this.props.areaofinterest_list &&     ( <Loader
+                          type="ThreeDots"
+                          color="#00BFFF"
+                          height={200}
+                          width={100}
+                          timeout={10000}
+                        />
+                    )}
                     <div className="row">
-                      {this.props.areaofinterest_list.map(
+                      {this.props.areaofinterest_list?.map(
                         (areaofinterest, index) => (
                           <div
                             key={index}
@@ -46,14 +56,14 @@ class ShowCollaborationInterests extends React.Component {
                                     <strong>Project</strong>
                                     <br />
                                     <small key={index}>
-                                      {areaofinterest.projectType}
+                                      {areaofinterest?.projectType}
                                     </small>
                                   </p>
                                   <p>
                                     <strong>Preferred Language</strong>
                                     <br />
                                     <small key={index}>
-                                      {areaofinterest.preferredLanguage}
+                                      {areaofinterest?.preferredLanguage}
                                     </small>
                                   </p>
                                 </div>
@@ -62,14 +72,14 @@ class ShowCollaborationInterests extends React.Component {
                                     <strong>Discipline</strong>
                                     <br />
                                     <small key={index}>
-                                      {areaofinterest.discipline}
+                                      {areaofinterest?.discipline}
                                     </small>
                                   </p>
                                   <p>
                                     <strong>Region</strong>
                                     <br />
                                     <small key={index}>
-                                      {areaofinterest.region}
+                                      {areaofinterest?.region}
                                     </small>
                                   </p>
                                 </div>
@@ -81,12 +91,11 @@ class ShowCollaborationInterests extends React.Component {
                                     href="#0"
                                     data-toggle="modal"
                                     // data target is the same as ID used to create modal in AreaInterestModal class component.
-
                                     data-target={"#areaInterestModal" + index}
                                   >
                                     View more
                                   </a>
-                                  {areaofinterest.created ? (
+                                  {areaofinterest?.created ? (
                                     <a
                                       href="#0"
                                       className="btn btn-blue btn-w-100"
@@ -104,11 +113,21 @@ class ShowCollaborationInterests extends React.Component {
                                 id={index}
                                 editMode="false"
                               />
+                               <AreaInterestModalEdit
+                                editMode="true"
+                                areaOfInterest={areaofinterest}
+                                index={index}
+                              />
+                              
                             </div>
                           </div>
                         )
                       )}
                     </div>
+                 
+                     
+                           
+												   
                   </div>
                 </div>
               </div>

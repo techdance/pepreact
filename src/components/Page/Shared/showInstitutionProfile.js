@@ -1,5 +1,5 @@
 import React from "react";
-
+import Loader from "react-loader-spinner";
 // import Iframe from "react-iframe";
 
 class ShowInstitutionProfle extends React.Component {
@@ -25,13 +25,21 @@ class ShowInstitutionProfle extends React.Component {
                 />
               </div>
               <div className="box-middle">
+              {      !this.props.institutionProfile &&  ( <Loader
+                          type="ThreeDots"
+                          color="#00BFFF"
+                          height={200}
+                          width={100}
+                          timeout={10000}
+                        />
+              )}
                 <div className="content-icon">
                   <span className="icon-regular icon-user-shield"></span>{" "}
-                  <a href="#0">{this.props.institutionProfile.name}</a>
+                  <a href="#0">{this.props.institutionProfile?.institutionName}</a>
                 </div>
                 <div className="content-icon">
                   <span className="icon-regular icon-calendar-check"></span>{" "}
-                  {this.props.institutionProfile.type}
+                  { (Number(new Date().getFullYear()) - this.props.institutionProfile?.duration ) +"-year institution" }
                 </div>
                 <div className="content-icon">
                   <span className="icon-regular icon-globe"></span>{" "}
@@ -40,7 +48,7 @@ class ShowInstitutionProfle extends React.Component {
                     rel="noopener noreferrer"
                     href="https://www.google.com/maps/place/Iowa+City,+Iowa,+EE.+UU./@41.6470317,-91.6094033,12z/data=!3m1!4b1!4m5!3m4!1s0x87e441c16a208817:0x6d711867870582b0!8m2!3d41.6611277!4d-91.5301683"
                   >
-                    {this.props.institutionProfile.location}
+                    {this.props.institutionProfile?.location}
                   </a>
                 </div>
                 <div className="content-icon">
@@ -50,12 +58,12 @@ class ShowInstitutionProfle extends React.Component {
                     rel="noopener noreferrer"
                     href="https://www.google.com/maps/place/Iowa+City,+IA/@41.6470317,-91.6094032,12z/data=!3m1!4b1!4m5!3m4!1s0x87e441c16a208817:0x6d711867870582b0!8m2!3d41.6611277!4d-91.5301683"
                   >
-                    {this.props.institutionProfile.continent}
+                    {this.props.institutionProfile?.institutecountry}
                   </a>
                 </div>
                 <div className="content-icon">
                   <span className="icon-regular icon-calendar-week"></span>{" "}
-                  {this.props.institutionProfile.calendar}
+                  {this.props.institutionProfile?.institutetimezone}
                 </div>
               </div>
             </div>

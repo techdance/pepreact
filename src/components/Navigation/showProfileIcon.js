@@ -1,8 +1,20 @@
 import React from "react";
+import { Redirect } from "react-router";
 import SignoutModal from "./signoutModal.js";
+import Loader from "react-loader-spinner";
+import ImageShow from "../Page/Shared/UI/ProfilePic";
 
 class ShowProfileIcon extends React.Component {
+  state = { redirect: null };
+
+  logout = (e) => {
+    e.preventDefault(); 
+    console.log(' from tri logOut', this.props);
+    this.props.history.replace("/");
+ }
+
   render() {
+
     return (
       <>
         <div className="top-icon top-icon-user hello">
@@ -14,13 +26,11 @@ class ShowProfileIcon extends React.Component {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <img
-                className="img-circle img-border-blue"
-                src={this.props.image}
-                alt=""
-              />
+
+             <ImageShow  image={this.props.image}/>
+             
               <span className="user-name">
-                {"Hello, " + this.props.firstName}
+                {"Hello, " + (this.props.firstName || "")}
               </span>
             </a>
             <div className="dropdown-menu">
@@ -31,7 +41,7 @@ class ShowProfileIcon extends React.Component {
                 >
                   <ul>
                     <li>
-                      <a href="bradley profile 1 screen.html">My Profile</a>
+                      <a href="/profile">My Profile</a>
                     </li>
                     <li>
                       <a href="#0">Settings & Privacy</a>
@@ -52,7 +62,7 @@ class ShowProfileIcon extends React.Component {
             </div>
           </div>
         </div>
-        <SignoutModal />
+        <SignoutModal logout={this.logout}/>
       </>
     );
   }

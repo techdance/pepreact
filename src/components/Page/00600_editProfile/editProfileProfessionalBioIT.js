@@ -162,15 +162,22 @@ class EditProfileProfessionalBioIT extends React.Component {
 
   render() {
     const {
-      introVideo,
       discipline,
       areaOfExpertise1,
-      areaOfExpertise2,
-      areaOfExpertise3,
-      internationalExperience,
+      experienceyears,
       bio,
       cvLink,
-    } = this.state;
+      biodescription,
+      bioDiscipline,
+    } = this.state || {
+      discipline: {},
+      areaOfExpertise1: {},
+      experienceyears: {},
+      bio: "",
+      cvLink: "",
+      biodescription: "",
+      bioDiscipline: ""
+    };
 
     return (
       <>
@@ -193,7 +200,7 @@ class EditProfileProfessionalBioIT extends React.Component {
                           Introduction Video
                         </h3>
                       </div>
-                      <ChangeVideoImage introVideo={introVideo} />
+                      <ChangeVideoImage introVideo={""} />
                       <div className="col-md-6">
                         <ChangeVideoButton />
 
@@ -223,7 +230,7 @@ class EditProfileProfessionalBioIT extends React.Component {
                           <div id="area-2" className="form-group area pl-4">
                             <label>Area of Expertise &ndash; 2</label>
                             <EditProfessionalBioAreaofExpertise
-                              areaOfExpertise={areaOfExpertise2}
+                              areaOfExpertise={ "areaOfExpertise2"}
                               fieldName="areaOfExpertise2"
                               onChange={this.passChangeUp}
                             />
@@ -231,7 +238,7 @@ class EditProfileProfessionalBioIT extends React.Component {
                           <div id="area-3" className="form-group area pl-4">
                             <label>Area of Expertise &ndash; 3</label>
                             <EditProfessionalBioAreaofExpertise
-                              areaOfExpertise={areaOfExpertise3}
+                              areaOfExpertise={ "areaOfExpertise3"}
                               fieldName="areaOfExpertise3"
                               onChange={this.passChangeUp}
                             />

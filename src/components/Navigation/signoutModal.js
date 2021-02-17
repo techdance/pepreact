@@ -4,6 +4,7 @@ import ModalPortal from "../Page/Shared/UI/ModalPortal.js";
 import { InstitutionLogoContext } from "../../App.js";
 
 export default function SignoutModal(props) {
+
   return (
     <ModalPortal>
       <div
@@ -42,6 +43,7 @@ export default function SignoutModal(props) {
                 className=""
                 data-dismiss="modal"
                 aria-label="Close"
+                onClick={props.logout}
               >
                 Sign Out
               </button>

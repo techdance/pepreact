@@ -25,7 +25,7 @@ class ShowProfessionalBio extends React.Component {
                     <div className="row">
                       <div className="col-md-6">
                         <div className="wrap-video img-resp mb-2 position-relative">
-                          <img src={professionalBio.introVideo} alt="" />
+                          <img src={professionalBio?.introVideo} alt="" />
                         </div>
                       </div>
                       <div className="col-md-6">
@@ -34,7 +34,7 @@ class ShowProfessionalBio extends React.Component {
                           style={{ height: 38.1 }}
                         >
                           <a
-                            href={professionalBio.cvLink}
+                            href={professionalBio?.cvLink}
                             className="btn btn-blue view-cv"
                           >
                             View CV
@@ -47,7 +47,7 @@ class ShowProfessionalBio extends React.Component {
                             <strong>Areas of Expertise</strong>
                           </div>
                           <p className="blue-color pl-4">
-                            {professionalBio.areasOfExpertise.map(
+                            {professionalBio?.areasOfExpertise.map(
                               (expertise, index) => (
                                 <>
                                   <a key={index} href="#0">
@@ -69,7 +69,7 @@ class ShowProfessionalBio extends React.Component {
                         <strong>Bio</strong>
                       </div>
                       <div className="text pl-4">
-                        <p>{professionalBio.bio}</p>
+                        <p>{professionalBio?.bio}</p>
                       </div>
                     </div>
                   </div>

@@ -1,11 +1,13 @@
 import React from "react";
 
 //  Used for the modal triggered on clicking "View More" link
-import AreaInterestModalEdit from "../Shared/areaInterestModalEdit";
-import AreaInterestModalView from "../Shared/areaInterestModalView";
+import AreaInterestModal from "../Shared/areaInterestModal.js";
+import AreaInterestModalEdit, {
+  AreaInterestModalAdd,
+} from "../Shared/areaInterestModalEdit.js";
 
-import AreaofInterest from "../../../classes/AreaofInterest";
-import { removeFromArray } from "../Shared/usefulFunctions";
+import AreaofInterest from "../../../classes/AreaofInterest.jsx";
+import { removeFromArray } from "../Shared/usefulFunctions.js";
 import { ConfirmModal } from "../Shared/UI/MessageModal";
 import ModalPortal from "../Shared/UI/ModalPortal";
 
@@ -64,9 +66,20 @@ class EditProfileCollaborationInterests extends React.Component {
     this.props.onChange("areaofinterest_list", areaofinterest_list);
   };
 
+
+  // componentWillReceiveProps(nextProps){
+  //   if (this.state?.areaofinterest_list !== nextProps?.areaofinterest_list) {
+  //       this.setState({ areaofinterest_list: nextProps.areaofinterest_list });
+     
+  //   }
+  // }
+
+
   render() {
     const randomIndex = Math.floor(Math.random() * 100000) + 9999;
 
+    // console.log(' this.state: ', this.state);
+    console.log(' this.props: ', this.props);
     return (
       <>
         <div className="col-lg-6 mb-4">
@@ -95,7 +108,7 @@ class EditProfileCollaborationInterests extends React.Component {
                       </i>
                     </h4>
                     <div className="row">
-                      {this.props.areaofinterest_list.map(
+                      {this.props?.areaofinterest_list?.map(
                         (areaofinterest, index) => (
                           <div
                             className="col-md-6"
@@ -109,7 +122,7 @@ class EditProfileCollaborationInterests extends React.Component {
                                   <p>
                                     <strong>Project</strong>
                                     <br />
-                                    <small>{areaofinterest.projectType}</small>
+                                    <small>{areaofinterest?.projectType}</small>
                                   </p>
                                   <p>
                                     <strong>Preferred Language</strong>
@@ -123,12 +136,12 @@ class EditProfileCollaborationInterests extends React.Component {
                                   <p>
                                     <strong>Discipline</strong>
                                     <br />
-                                    <small>{areaofinterest.discipline} </small>
+                                    <small>{areaofinterest?.discipline} </small>
                                   </p>
                                   <p>
                                     <strong>Region</strong>
                                     <br />
-                                    <small>{areaofinterest.region} </small>
+                                    <small>{areaofinterest?.region} </small>
                                   </p>
                                 </div>
                               </div>
@@ -146,7 +159,7 @@ class EditProfileCollaborationInterests extends React.Component {
                                     </a>
                                   </div>
                                   {/* Shows modal if the View More link is clicked.  */}
-                                  <AreaInterestModalView
+                                  <AreaInterestModal
                                     modal={areaofinterest}
                                     id={index}
                                     editMode="true"
@@ -164,9 +177,8 @@ class EditProfileCollaborationInterests extends React.Component {
                                     </a>
                                   </div>
                                   {/* Edit modal if the Edit button on the View Modal is clicked.  */}
-
                                   <AreaInterestModalEdit
-                                    areaofInterest={areaofinterest}
+                                    areaOfInterest={areaofinterest}
                                     index={index}
                                     onChange={this.passChangeUp}
                                   />
@@ -194,8 +206,12 @@ class EditProfileCollaborationInterests extends React.Component {
                           a blank areaofinterest data structure
                            the randomIndex to identify the modal code
                            a new onChange function to add the new structure to the end of areaofinterest_list */}
-
-                    <AreaInterestModalEdit
+                    {/* <AreaInterestModalEdit
+                      areaOfInterest={blankAreaOfInterest}
+                      index={randomIndex}
+                      onChange={this.addNewAreaOfInterest}
+                    /> */}
+                    <AreaInterestModalAdd
                       areaofInterest={new AreaofInterest()}
                       index={randomIndex}
                       onChange={this.addNewAreaOfInterest}

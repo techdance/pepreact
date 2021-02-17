@@ -39,6 +39,7 @@ import {
   CourseLearningEnvironmentsModal,
 } from "./modals/courseDesignModals.js";
 import InstructorQualificationsModal from "../Shared/projectLab/modals/InstructorQualificationModal.js";
+import WeekActivityModal from "./modals/WeekActivityModal";
 
 export default class EditProjectLabCourse extends React.Component {
   constructor(props) {

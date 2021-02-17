@@ -58,7 +58,7 @@ class InternationalExperience extends React.Component {
     }
 
     /// pass current state up to parent to propogate changes
-    this.props.onChange("internationalExperience", internationalExperience);
+    this.props.onChange("experienceyears", internationalExperience);
   };
 
   render() {

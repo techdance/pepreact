@@ -1,11 +1,12 @@
 import React from "react";
+import Select from "react-select";
 import ChangeImage from "../Shared/changeImage.js";
 
-import SimpleSelect from "../Shared/UI/SimpleSelect";
 import { prefixList } from "../../../data/prefixList.js";
-import { suffix as suffixList } from "../../../data/miscSelects";
+import UserService from '../../../services/User';
+import { prefix } from "@fortawesome/free-solid-svg-icons";
 
-class EditProfilePersonalInformationOnlineStatus extends React.Component {
+class EditProfilePersonalInformationstatus extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props;
@@ -16,37 +17,44 @@ class EditProfilePersonalInformationOnlineStatus extends React.Component {
     const { value } = event.target;
 
     //  set local state
-    let onlineStatus = this.state;
-    onlineStatus = value;
-    this.setState({ onlineStatus: onlineStatus });
+    let status = this.state;
+    status = value;
+    this.setState({ status: status });
 
     /// pass current state up to parent to propogate changes
-    this.props.onChange("onlineStatus", onlineStatus);
+    this.props.onChange("status", status);
   }
 
+  componentDidUpdate(prevProps){
+    if (this.state?.status !== prevProps?.status) {
+      this.setState({ status: prevProps?.status })
+  }
+  }
+
+
+
   render() {
+
+    let { styleProp } = this.props;
+    let { status } = this.state;
     return (
       <>
-        <div className="form-group">
-          <label className="d-inline mr-2">Online Status</label>
-          <input
-            type="radio"
-            name="onlineStatus"
-            value="public"
-            checked={this.state.onlineStatus === "public" ? true : false}
-            onChange={this.onChangeValue}
-            // checked={true}
-          />
-          Public
-          <input
-            type="radio"
-            name="onlineStatus"
-            value="private"
-            className="ml-2"
-            checked={this.state.onlineStatus === "private" ? true : false}
-            onChange={this.onChangeValue}
-          />
-          Private
+      <label className="d-inline mr-2">Online Status</label>
+        <div class="form-check-inline">
+          <label class="form-check-label d-flex text-nowrap">
+            <input type="radio" class="form-check-input"  name="status"  
+              checked={status}
+              onChange={this.onChangeValue}
+            id="Public" style={styleProp.remembarStyle} value="1"/> Public 
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label d-flex text-nowrap">
+            <input type="radio" class="form-check-input"  name="status"  id="private"  
+             checked={!status}
+             onChange={this.onChangeValue}
+            style={styleProp.remembarStyle} value="0" />Private
+          </label>
         </div>
       </>
     );
@@ -56,19 +64,35 @@ class EditProfilePersonalInformationOnlineStatus extends React.Component {
 class EditProfilePersonalInformation extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.personalInformation;
+    let { personalInformation= {} } = this.props;
+    this.state = {...personalInformation };
 
     // initialize icon states to match current values of links in the "Overview" data object.
     //  if the link is an empty string "", then icon is plus otherwise is minus.
 
     this.handleChange = this.handleChange.bind(this);
     this.passChangeUp = this.passChangeUp.bind(this);
+    this.handleChangeSingleSelect = this.handleChangeSingleSelect.bind(this);
   }
 
-  handleChange = (event) => {
+  handleChangeSingleSelect = (field, selected) => {
     // handles field form changes at this level of nested form components and then passes changes up to parent component
     //  sets local state first and then passes current stateful object up to parent to propogate changes
 
+    // get user input change from the synthetic event
+    const { value } = selected;
+
+    //  set local state
+    let personalInformation = this.state;
+    personalInformation[field] = value;
+    this.setState({ [field]: value });
+
+    /// pass current state up to parent to propogate changes
+    this.props.onChange("personalInformation", personalInformation);
+  };
+
+  handleChange = (event) => {
+    
     // get user input change from the synthetic event;
     const { name, value } = event.target;
 
@@ -87,30 +111,61 @@ class EditProfilePersonalInformation extends React.Component {
 
     //  update local state wth changes from child component
     let personalInformation = this.state;
-    personalInformation[field] = value;
+    personalInformation[field] = ['status'].includes(field)? Boolean(Number(value)) : value;
     // you could pass the event here but also null if it is not necessary nor useful
     this.props.onChange("personalInformation", personalInformation);
+
   };
+
+
+  componentWillReceiveProps(nextProps){
+    if (this.state?.name !== nextProps?.personalInformation?.name) {
+        this.setState({ ...nextProps?.personalInformation })
+    }
+  }
+
+
 
   render() {
     const {
-      namePrefix,
+      thoughts,
+      status
+    } = this.state || {
+      thoughts:"",
+      status: true,
+    };
+
+    let {   
+      prefix,
       firstName,
+      middleName,
       lastName,
-      title,
-      nameSuffix,
-      image,
-      personalMessage,
-      department,
-      onlineStatus,
-    } = this.state;
+      userName, department, position } = this.props?.userInfo;
+
+    let {collaboratedUserProfileimage, reflashImage } = this.props;
+
+    const imageSrc = collaboratedUserProfileimage?.blobData;
+    const disable = {
+      "pointer-events": "none",
+      "color": "#ccc"
+    };
+
+    let style = {
+      remembarStyle: {
+        "position": "relative",
+        "opacity": "1",
+        "display": "inline-block",
+        "vertical-align": "middle",
+        "width": "15px"
+      },
+    }
 
     return (
       <>
         <div className="col-lg-6 mb-4">
           <div className="personal box box-border-radius box-shadow bg-white">
             <div className="inner-wrap">
-              <div className="box-top position-relative">
+              <div className="box-top position-rela4a03c658a0aa506e3954128968956dc22c124a166f4388ef1919e6381f391f3ftive">
                 <h2 className="box-subhead">
                   <span className="icon-regular icon-user-circle"></span>
                   Personal Information
@@ -120,31 +175,27 @@ class EditProfilePersonalInformation extends React.Component {
                 <div className="row row-custom">
                   <div className="col-md-6">
                     <div className="bg-profile no-bg">
-                      <ChangeImage image="images/Gordon-camera.png" />
+                      <ChangeImage image={imageSrc} reflashImage={reflashImage} alt="profile Picture" />
+
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="row">
-                      <div className="form-group col-6">
-                        <label>Prefix</label>
-                        <SimpleSelect
-                          selectOptions={prefixList}
-                          selectClass="input select"
-                          selectName="namePrefix"
-                          initialValue={namePrefix}
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                      <div className="form-group col-6">
-                        <label>Suffix</label>
-                        <SimpleSelect
-                          selectOptions={suffixList}
-                          selectClass="input select"
-                          selectName="nameSuffix"
-                          initialValue={nameSuffix}
-                          onChange={this.handleChange}
-                        />
-                      </div>
+                    <div className="form-group">
+                      <label>Prefix</label>
+                      <Select
+                        options={prefixList}
+                        className="inputSelect"
+                        classNamePrefix="rs"
+                        // onChange={(e) =>
+                        //   this.handleChangeSingleSelect("namePrefix", e)
+                        // }
+                        value={{
+                          value: prefix,
+                          label: prefix,
+                        }}
+                        isSearchable="true"
+                        isDisabled={true}
+                      />
                     </div>
                     <div className="form-group">
                       <label>First Name</label>
@@ -153,7 +204,8 @@ class EditProfilePersonalInformation extends React.Component {
                         name="firstName"
                         value={firstName}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled
                       />
                     </div>
                     <div className="form-group">
@@ -163,7 +215,8 @@ class EditProfilePersonalInformation extends React.Component {
                         name="lastName"
                         value={lastName}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled
                       />
                     </div>
                     <div className="form-group">
@@ -171,9 +224,10 @@ class EditProfilePersonalInformation extends React.Component {
                       <input
                         type="text"
                         name="title"
-                        value={title}
+                        value={position}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled
                       />
                     </div>
                     <div className="form-group">
@@ -183,7 +237,8 @@ class EditProfilePersonalInformation extends React.Component {
                         name="department"
                         value={department}
                         className="input"
-                        onChange={this.handleChange}
+                        // onChange={this.handleChange}
+                        disabled
                       />
                     </div>
                   </div>
@@ -198,14 +253,15 @@ class EditProfilePersonalInformation extends React.Component {
                   <textarea
                     className="input textarea"
                     rows="3"
-                    name="personalMessage"
-                    value={personalMessage}
+                    name="thoughts"
+                    value={thoughts}
                     onChange={this.handleChange}
                   ></textarea>
                 </div>
-                <EditProfilePersonalInformationOnlineStatus
-                  onlineStatus={onlineStatus}
+                <EditProfilePersonalInformationstatus
+                  status={status}
                   onChange={this.passChangeUp}
+                  styleProp={style}
                 />
               </div>
             </div>
@@ -217,3 +273,5 @@ class EditProfilePersonalInformation extends React.Component {
 }
 
 export default EditProfilePersonalInformation;
+
+

@@ -4,7 +4,6 @@ export const gordonProfessor = {
     namePrefix: "Dr",
     firstName: "Gordon",
     lastName: "Stanley",
-    nameSuffix: "Ph.D.",
     name: "Dr. Gordon Stanley",
     title: "Provost",
     image: "./images/Gordon.png",
@@ -122,7 +121,6 @@ export const bradleyProfessor = {
     namePrefix: "Dr",
     firstName: "Bradley",
     lastName: "Dexter",
-    nameSuffix: "Ph.D.",
     name: "Dr. Bradley Dexter",
     title: "Professor",
     image: "./images/bradley.png",
@@ -191,18 +189,6 @@ export const bradleyProfessor = {
       programLevel: "Undergraduate",
       dateRange: "Today 2020",
       created: false,
-      //  new version of Interest Form contains much fewer fields - see ADO task 16485.
-      // Only fields needed are projectType, collaborationType, 3 disciplines, 4 regions and project range.
-      // Unneeded fields above are kept for backward compatibility.
-      discipline1: "Business",
-      discipline2: "Mathematics",
-      discipline3: "Psychology",
-      region1: "Asia",
-      region2: "Europe",
-      region3: "Oceania",
-      region4: "The Caribbean",
-      startDate: "2020-05-12",
-      endDate: "2021-05-12",
     },
     {
       projectType: "Academic Journal",
@@ -218,18 +204,6 @@ export const bradleyProfessor = {
       programLevel: "Undergraduate",
       dateRange: "Today 2020",
       created: false,
-      //  new version of Interest Form contains much fewer fields - see ADO task 16485.
-      // Only fields needed are projectType, collaborationType, 3 disciplines, 4 regions and project range.
-      // Unneeded fields above are kept for backward compatibility.
-      discipline1: "Economics",
-      discipline2: "Chemistry",
-      discipline3: "Education",
-      region1: "Asia",
-      region2: "Europe",
-      region3: "Oceania",
-      region4: "The Caribbean",
-      startDate: "2020-02-03",
-      endDate: "2022-02-03",
     },
     {
       projectType: "Course Development",
@@ -245,18 +219,6 @@ export const bradleyProfessor = {
       programLevel: "Undergraduate",
       dateRange: "Today 2020",
       created: false,
-      //  new version of Interest Form contains much fewer fields - see ADO task 16485.
-      // Only fields needed are projectType, collaborationType, 3 disciplines, 4 regions and project range.
-      // Unneeded fields above are kept for backward compatibility.
-      discipline1: "Physics",
-      discipline2: "Theology",
-      discipline3: "Statistics",
-      region1: "Asia",
-      region2: "Europe",
-      region3: "Oceania",
-      region4: "The Caribbean",
-      startDate: "2019-06-28",
-      endDate: "2023-06-28",
     },
   ],
 };
@@ -268,7 +230,7 @@ export const inezProfessor = {
     lastName: "Campos",
     name: "Dr. Inez Campos",
     title: "Professor",
-    image: "./images/Inez.png",
+    image: "./images/inez.png",
     department: "Higher Institute of Economics and Management",
     personalMessage:
       '"Education is not the filling of a pail, but the lighting of a fire." -- W.B. Yeats',
